@@ -1,0 +1,14 @@
+{
+  "conferenceName": "Konferenca Test 2026",
+  "options": [
+    { "id": "ws-ai", "name": "AI workshop", "category": "WORKSHOP", "active": false },
+    { "id": "ws-pro", "name": "Professional practice workshop", "category": "WORKSHOP", "availableTo": ["EXTERNAL"] },
+    { "id": "ws-new", "name": "New robotics workshop", "category": "WORKSHOP" },
+    { "id": "ev-gala", "name": "Gala dinner", "category": "EVENT" },
+    { "id": "ml-lunch", "name": "Lunch", "category": "MEAL" },
+    { "id": "ot-tour", "name": "City tour", "category": "OTHER" }
+  ],
+  "consents": [
+    { "id": "privacy", "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.", "mandatory": true }
+  ]
+}
