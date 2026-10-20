@@ -17,8 +17,8 @@
 - Type: blocking
 - Trigger: `java -version` reports Oracle Java SE 21.0.11+9-LTS-211 (`JAVA_HOME` = `C:\Program Files\Java\jdk-21.0.11`); `tech-stack.md` pins platform `java` = Eclipse Temurin JDK 21.0.10+7. The patch difference alone matches PA-05, but PA-05 does not cover a different JDK vendor. The container runtime uses the pinned `eclipse-temurin:21.0.10_7-jre-alpine` image, which runs and reports Temurin-21.0.10+7.
 - Options: 1. approve Oracle JDK 21.0.11 on the host for building and testing in this run; shipped images keep the pinned Temurin base; `tech-stack.md` unchanged (proposed default); 2. the human installs Eclipse Temurin JDK 21.0.10+7 (or another 21.0.x Temurin patch under PA-05) and points `JAVA_HOME` at it
-- Human response: none
-- Resolution: pending
+- Human response: option 1 approved (2026-10-20T19:01Z)
+- Resolution: option 1
 
 ## D-03: Docker Compose 5.6.0 installed instead of 5.5.1
 - Timestamp: 2026-10-20T18:25:00Z
@@ -26,8 +26,8 @@
 - Type: blocking
 - Trigger: `docker compose version` reports v5.6.0 (bundled with Docker Desktop 29.8.2); `tech-stack.md` pins `compose` 5.5.1. This is a minor-version difference and Compose is not listed in PA-05.
 - Options: 1. approve Compose 5.6.0 for this run; `tech-stack.md` unchanged; the compose file uses only features available in 5.5.1 (proposed default); 2. the human installs Docker Compose 5.5.1
-- Human response: none
-- Resolution: pending
+- Human response: option 1 approved (2026-10-20T19:01Z)
+- Resolution: option 1
 
 ## D-04: Dependency-Check OSS Index analyser disabled
 - Timestamp: 2026-10-20T18:31:00Z

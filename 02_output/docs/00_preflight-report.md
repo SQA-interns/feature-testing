@@ -7,7 +7,7 @@ Run `tanej-single-agent-sdd-v001-run-1-opus-5-5-t1.7-ft-20261020T1823Z-8493`, st
 | Check | Source of truth | Result |
 |---|---|---|
 | Run configuration complete | `project/00_setup/run-config.md` | Pass. All lines filled; Run ID and Starting commit empty as required; `stat.mjs init` recorded them. |
-| Platforms and tools installed at the listed versions | `project/00_setup/tech-stack.md` | Pass with decisions. Node 24.13.0 and npm 11.6.2 exact. Docker Engine 29.8.2 (PA-05, D-01). JDK is Oracle 21.0.11+9 instead of Temurin 21.0.10+7 (D-02, blocking). Compose 5.6.0 instead of 5.5.1 (D-03, blocking). Every tooling entry runs at its pinned version; cloc image 2.10 reports 1.98 (D-07). |
+| Platforms and tools installed at the listed versions | `project/00_setup/tech-stack.md` | Pass with decisions. Node 24.13.0 and npm 11.6.2 exact. Docker Engine 29.8.2 (PA-05, D-01). JDK is Oracle 21.0.11+9 instead of Temurin 21.0.10+7 (D-02, approved). Compose 5.6.0 instead of 5.5.1 (D-03, approved). Every tooling entry runs at its pinned version; cloc image 2.10 reports 1.98 (D-07). |
 | Local environments and services running or reachable | `project/00_setup/environments.md` | Pass. Docker Desktop running; Docker Hub, Maven Central and npm registry reachable; all eight pinned images pulled and started; Playwright Chromium 1243 present. |
 | Secrets present in `.env` or marked test-only | `project/00_setup/secrets.env.example` | Pass. `POSTGRES_PASSWORD`, `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` (length >= 16), `ORGANIZER_EMAILS`, `NVD_API_KEY` non-empty. `RECAPTCHA_*` (test-mode only) and `SMTP_*` (not needed) empty, as allowed. `.env` is ignored by git. |
 | Every listed dependency resolves | `project/00_setup/tech-stack.md` | Pass. Every Maven POM answers 200 on Maven Central; every npm version resolves with its licence; the resolved backend tree and `npm ls` match the pins. |
@@ -64,5 +64,5 @@ Backend versions as resolved (`dependency:tree`); vulnerabilities from Dependenc
 
 | When | What was missing | Answer | Re-check |
 |---|---|---|---|
-| 2026-10-20 | D-02: JDK vendor and version differ from the pin | pending | |
-| 2026-10-20 | D-03: Docker Compose minor version differs from the pin | pending | |
+| 2026-10-20 | D-02: JDK vendor and version differ from the pin | option 1: Oracle JDK 21.0.11 approved for host build and test this run | `java -version` 21.0.11, pass |
+| 2026-10-20 | D-03: Docker Compose minor version differs from the pin | option 1: Compose 5.6.0 approved for this run | `docker compose version` 5.6.0, pass |
