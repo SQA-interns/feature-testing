@@ -23,6 +23,7 @@ Features: `search` (organizer search and filter) and `group` (group registration
 | `oracle/` | the hidden oracle: regression scenarios for every run, feature scenarios per feature; how to run it |
 | `instructions/greenfield.md` | how a greenfield run is done |
 | `instructions/brownfield.md` | what brownfield shares with greenfield, and the proposed brownfield procedure |
+| `instructions/brownfield-step-by-step.md` | the complete brownfield walkthrough: folders, clones, files, the run, the oracle, what to send back |
 | `instructions/normal.md` | how a normal (baseline) run is done |
 
 ## Naming

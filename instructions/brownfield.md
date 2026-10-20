@@ -2,6 +2,8 @@
 
 > Owner: brownfield colleague · Shared parts are fixed; the procedure below is a **proposal** for the brownfield owner to decide and complete
 
+**Doing a run?** Follow `brownfield-step-by-step.md`: every step from an empty folder to the pushed results, with where and why. This file explains what is shared and what is still open.
+
 ## Fixed: shared with greenfield (do not change)
 
 | What | Where | Why it must be the same |
