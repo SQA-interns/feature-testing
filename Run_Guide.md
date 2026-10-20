@@ -1,11 +1,13 @@
 # Run guide
 
+> Feature experiment (template 1.7-ft): the folder name and branch follow `<user>/single-agent/sdd/v001/run-<n>[-<feature>]`, and greenfield and brownfield runs have extra steps. Follow `instructions/normal.md`, `greenfield.md` or `brownfield.md` on the `experiment` branch; they list only what differs from this guide. Clone with `--single-branch -b main` so the `experiment` branch never reaches the run folder.
+
 This setup is run three times, once each by kyuhi, tanej and tjan, in one shared environment, and the three runs are compared. Everything below is therefore the same for everyone; the only things that may differ are the four lines in the table "If you are not kyuhi".
 
 ## 1. Prepare the run folder (clone, branch, .env)
 1. **Clone the template** into a new folder named after the run (`kyuhi_single-agent_sdd_v007`). Branch `main` is the template you clone and never commit to it.
    ```bash
-   git clone https://github.com/SQA-interns/Structured_Input_Files.git <user>_single-agent_sdd_<version>
+   git clone --single-branch -b main https://github.com/SQA-interns/feature-testing.git <user>_single-agent_sdd_<version>
    cd <user>_single-agent_sdd_<version>
    ```
    
