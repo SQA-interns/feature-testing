@@ -23,6 +23,7 @@ The REST API between the frontend or organizer and the backend is fixed by this 
 - Times are ISO 8601 with offset or `Z`.
 - A rejected request (HTTP 400) has the body `{"errors": [{"field": "<name>", "message": "<text>"}]}`, one entry per invalid field. `field` is the request field's name as written in this file (for example `email`, `options`, `consents`, `captchaToken`); for a query parameter it is the parameter name.
 - A request without valid organizer credentials on an organizer endpoint is answered with HTTP 401 and no registration data.
+- A request over the rate limit (`RATE_LIMIT_PER_MINUTE`) is answered with HTTP 429.
 
 ## Endpoints
 
