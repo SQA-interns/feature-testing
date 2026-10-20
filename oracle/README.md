@@ -57,3 +57,13 @@ docker compose --env-file ../.env down -v
 ```
 
 `summarize.py` prints every scenario and writes `oracle-summary.json` with the regression pass rate and the feature pass rate. Report results as they are: do not fix the run's code, and note any manual step (for example a setting the compose file did not pass through) in the run's notes. If the stack runs on other ports, set `ORACLE_BASE_URL` and `ORACLE_MAILPIT_URL`. `down -v` at the end deletes the run's database, so the next run starts clean.
+
+## Oracle results into the statistics
+
+So the report shows the oracle's pass rates next to every other measure (template 1.7-ft):
+
+1. Copy the three result files into the run folder: `$R/oracle-main.json`, `oracle-ratelimit.json`, `oracle-summary.json` → `<run folder>/03_statistics/results/oracle/`.
+2. Rebuild the report in the run folder: `node 03_statistics/tools/build-report.mjs --run 03_statistics`. The report and `run-summary.md` then show "Hidden oracle: base project scenarios passed" and, for a feature run, "Hidden oracle: feature scenarios passed".
+3. Commit (`oracle <run label>`) and push the run's branch.
+
+The oracle results are added **after** the run is finished and committed, so the agent never sees them.
