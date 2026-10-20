@@ -1,0 +1,152 @@
+
+Running 5 tests using 1 worker
+
+error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+  x  1 [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) (2.8s)
+  ok 2 [chromium] › e2e\field-errors.e2e.spec.ts:11:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (2.8s)
+error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+  x  3 [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (3.4s)
+error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+  x  4 [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (1.9s)
+error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+  x  5 [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (2.3s)
+
+
+  1) [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) 
+
+    Error: Command failed: docker compose -f C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\docker-compose.yml exec -T postgres psql -U registration -d registration -At -F 	 -v ON_ERROR_STOP=1 -c SELECT type, first_name, last_name, email, organization FROM registration WHERE id = 'e3425d0c-33cb-4634-a566-2499b0a17a86'
+    error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+    error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+    error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+
+
+       at support.ts:76
+
+      74 |
+      75 | function compose(args: string[]): Buffer {
+    > 76 |   return execFileSync("docker", ["compose", "-f", COMPOSE_FILE, ...args], {
+         |          ^
+      77 |     maxBuffer: 32 * 1024 * 1024,
+      78 |   });
+      79 | }
+        at compose (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:76:10)
+        at sql (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:83:15)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\external-registration.e2e.spec.ts:44:16
+
+    Error Context: test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+
+    Error: Command failed: docker compose -f C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\docker-compose.yml exec -T postgres psql -U registration -d registration -At -F 	 -v ON_ERROR_STOP=1 -c SELECT count(*) FROM registration
+    error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+    error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+    error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+
+
+       at support.ts:76
+
+      74 |
+      75 | function compose(args: string[]): Buffer {
+    > 76 |   return execFileSync("docker", ["compose", "-f", COMPOSE_FILE, ...args], {
+         |          ^
+      77 |     maxBuffer: 32 * 1024 * 1024,
+      78 |   });
+      79 | }
+        at compose (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:76:10)
+        at sql (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:83:15)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\organizer-export.e2e.spec.ts:47:21
+
+    Error Context: test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+
+    Error: Command failed: docker compose -f C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\docker-compose.yml exec -T postgres psql -U registration -d registration -At -F 	 -v ON_ERROR_STOP=1 -c SELECT first_name, last_name, organization FROM registration WHERE id = '65e70721-6282-49d1-a5d3-b12384a66e46'
+    error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+    error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+    error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+
+
+       at support.ts:76
+
+      74 |
+      75 | function compose(args: string[]): Buffer {
+    > 76 |   return execFileSync("docker", ["compose", "-f", COMPOSE_FILE, ...args], {
+         |          ^
+      77 |     maxBuffer: 32 * 1024 * 1024,
+      78 |   });
+      79 | }
+        at compose (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:76:10)
+        at sql (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:83:15)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\slovenian-characters.e2e.spec.ts:45:5
+
+    Error Context: test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+
+    Error: Command failed: docker compose -f C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\docker-compose.yml exec -T postgres psql -U registration -d registration -At -F 	 -v ON_ERROR_STOP=1 -c SELECT type, first_name, last_name, email, organization IS NULL, study_institution, study_programme, student_id FROM registration WHERE id = 'f667f69c-bb83-4124-9a74-398a62e081b9'
+    error while interpolating services.backend.environment.ORGANIZER_EMAILS: required variable ORGANIZER_EMAILS is missing a value: set ORGANIZER_EMAILS in .env
+    error while interpolating services.backend.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+    error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: set POSTGRES_PASSWORD in .env
+
+
+       at support.ts:76
+
+      74 |
+      75 | function compose(args: string[]): Buffer {
+    > 76 |   return execFileSync("docker", ["compose", "-f", COMPOSE_FILE, ...args], {
+         |          ^
+      77 |     maxBuffer: 32 * 1024 * 1024,
+      78 |   });
+      79 | }
+        at compose (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:76:10)
+        at sql (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\support.ts:83:15)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\student-registration.e2e.spec.ts:74:5
+
+    Error Context: test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) 
+    [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+    [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+    [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+  1 passed (19.9s)

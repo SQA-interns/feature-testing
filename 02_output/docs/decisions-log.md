@@ -118,3 +118,12 @@
 - Options: 1. add `@types/node` 24.19.2 (MIT, matches Node 24, published 2026-10-09) as an exact dev dependency (default); 2. exclude `e2e/` from the type check
 - Human response: none
 - Resolution: option 1 (dev only, not in the bundle; `npm audit --omit=dev` still 0)
+
+## D-14: SpotBugs EI_EXPOSE_REP2 excluded for injected collaborators
+- Timestamp: 2026-10-20T20:25:20Z
+- Phase: 4
+- Type: non-blocking
+- Trigger: SpotBugs 4.10 (Max effort, threshold Medium) reports EI_EXPOSE_REP2 for constructor-injected ports and Spring beans (`RegistrationService.jsonCopies`); these are shared collaborators by design, not internal state. The ES/DoD-02 gate needs a clean static analysis.
+- Options: 1. exclude only EI_EXPOSE_REP2 in `application`, `adapter` and `config` via `backend/spotbugs-exclude.xml` (default; every other pattern stays on, incl. EI_EXPOSE_REP); 2. copy each collaborator defensively (impossible for interfaces); 3. add `spotbugs-annotations` to suppress per field (a new dependency)
+- Human response: none
+- Resolution: option 1
