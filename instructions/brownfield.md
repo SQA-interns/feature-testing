@@ -16,6 +16,10 @@
 
 ## Proposed procedure (to be decided by the brownfield owner)
 
+0. **Have this branch in its own folder** (once), outside every run folder; it holds the feature files and the oracle:
+   ```bash
+   git clone -b experiment https://github.com/SQA-interns/feature-testing.git feature-testing-experiment
+   ```
 1. **Starting point**: the final commit of a finished normal run (`instructions/normal.md`). Clone that run's branch into a new folder, then create the brownfield branch from its final commit. Write down the SHA as Base run.
 2. **Reset the statistics, keep the system**: remove the base run's `03_statistics/run-log.json`, `run-summary.md` content, `results/` and `data/` (they stay in git history), so the brownfield run measures only the change. `02_output/` (code, tests, docs, frozen-test manifest) stays as the base run left it.
 3. **Apply the change to the inputs**: copy `features/<feature>/01_input/` over `01_input/`, exactly as greenfield does. The inputs then describe the system with the feature.
@@ -26,7 +30,7 @@
    - the existing frozen tests stay frozen and unchanged; new acceptance tests get their own manifest (for example `docs/03_acceptance-manifest-change.sha256`); the full suite, old and new, must pass;
    - the quality gate applies to the whole system after the change.
    Whatever is chosen must be the same in every brownfield run, and is a template change: record it in `DECISIONS.md`.
-6. **After the run**: commit the statistics, run the oracle with `--feature <feature>`, follow "Oracle results into the statistics" in `oracle/README.md`.
+6. **After the run**: commit the statistics as the run guide says. Then run the oracle with `--feature <feature>` exactly as `oracle/README.md` shows (two backend starts: rate limit 10000, then 3; results in a folder outside the run folder), and follow its section "Oracle results into the statistics" (copy the three result files to `03_statistics/results/oracle/`, rebuild the report, commit, push).
 
 ## Brownfield-only measures worth recording
 
