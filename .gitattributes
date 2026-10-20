@@ -1,0 +1,2 @@
+# Same line endings for everyone: the run tools parse these files line by line
+* text=auto eol=lf
