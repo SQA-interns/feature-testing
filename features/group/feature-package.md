@@ -1,6 +1,6 @@
 # Feature package: `group` (group registration)
 
-> Owner: Product owner · Status: draft for review · Shared by greenfield and brownfield runs, word for word
+> Owner: Product owner · Status: approved 2026-10-20 · Shared by greenfield and brownfield runs, word for word
 
 This file is the complete and only specification of the feature. Both run types use exactly this text:
 

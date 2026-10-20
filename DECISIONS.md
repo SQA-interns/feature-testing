@@ -34,10 +34,10 @@ One row per decision, newest last. "Status" is `agreed` (both sides use it) or `
 
 | # | Decision | Status |
 |---|---|---|
-| G-01 | A contact person (not a payer: payment is out of scope in the base project) registers 2 to 10 members of one organization; members are external participants only, no student or mixed groups. | proposed |
-| G-02 | The contact person gives each mandatory consent for the whole group; the contact person is a member only if also listed as one. | proposed |
-| G-03 | All or nothing: if any member is invalid or any member's JSON copy cannot be written, nothing is stored and no email is sent (new AR-08). | proposed |
-| G-04 | Each member is a normal external registration with its own database row and JSON copy, both linked to the group and naming the contact person. | proposed |
-| G-05 | Emails: one confirmation per member, one group confirmation to the contact person, one organizer notification per group with one JSON attachment per member. | proposed |
-| G-06 | Export: one row per member with the group id and contact person; individual registrations leave those cells empty. | proposed |
-| G-07 | Two members with the same email (any upper or lower case) are rejected. | proposed |
+| G-01 | A contact person (not a payer: payment is out of scope in the base project) registers 2 to 10 members of one organization; members are external participants only, no student or mixed groups. | agreed |
+| G-02 | The contact person gives each mandatory consent for the whole group; the contact person is a member only if also listed as one. | agreed |
+| G-03 | All or nothing: if any member is invalid or any member's JSON copy cannot be written, nothing is stored and no email is sent (new AR-08). | agreed |
+| G-04 | Each member is a normal external registration with its own database row and JSON copy, both linked to the group and naming the contact person. | agreed |
+| G-05 | Emails: one confirmation per member, one group confirmation to the contact person, one organizer notification per group with one JSON attachment per member. | agreed |
+| G-06 | Export: one row per member with the group id and contact person; individual registrations leave those cells empty. | agreed |
+| G-07 | Two members with the same email (any upper or lower case) are rejected. | agreed |
