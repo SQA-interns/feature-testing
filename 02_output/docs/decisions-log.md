@@ -64,3 +64,21 @@
 - Options: 1. keep the pinned tag `aldanial/cloc:2.10` and record the reported version next to every cloc figure (default); 2. ask for another tag
 - Human response: none (`tech-stack.md` rule)
 - Resolution: option 1
+
+## D-08: Maximum length of text fields
+- Timestamp: 2026-10-20T19:05:00Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-1 in `docs/01_requirements-check.md`: BR-01/BR-02 define required fields but no maximum length; SR-03 limits only the body size. A participant would notice a rejection of a long value.
+- Options: 1. limit every text field after trimming to 200 characters and the email to 254 (RFC 5321), rejected with a field error (proposed default, conservative: bounded storage, export and email content); 2. no per-field limit, only the body-size limit
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-09: Definition of a valid email format
+- Timestamp: 2026-10-20T19:05:00Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-2 in `docs/01_requirements-check.md`: BR-03 requires "a valid email format" without defining it. The address is used as an SMTP recipient (US-006), so a lax rule lets undeliverable or header-breaking values through.
+- Options: 1. after trimming: one `@`, a non-empty local part without whitespace or control characters, a domain of dot-separated labels with at least one dot, at most 254 characters (proposed default, conservative); 2. Bean Validation `@Email` only (accepts `a@b`)
+- Human response: none
+- Resolution: pending review (option 1 applied)
