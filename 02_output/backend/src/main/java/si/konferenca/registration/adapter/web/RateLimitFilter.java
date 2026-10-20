@@ -57,6 +57,11 @@ public class RateLimitFilter extends OncePerRequestFilter {
     chain.doFilter(request, response);
   }
 
+  /** Number of client and endpoint windows currently kept in memory. */
+  int trackedClients() {
+    return windows.size();
+  }
+
   private static final class Window {
     private final long minute;
     private final AtomicInteger count = new AtomicInteger();

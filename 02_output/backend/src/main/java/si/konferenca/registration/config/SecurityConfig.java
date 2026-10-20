@@ -72,7 +72,7 @@ public class SecurityConfig {
   }
 
   /** An authenticated organizer on a refused transport (SR-06): 403, no data. */
-  private static void refuse(HttpServletResponse response) throws IOException {
+  static void refuse(HttpServletResponse response) throws IOException {
     response.setStatus(HttpServletResponse.SC_FORBIDDEN);
     response.setContentType("application/json;charset=UTF-8");
     response.getWriter().write("{\"message\":\"Organizer access requires HTTPS.\"}");
