@@ -2,6 +2,7 @@ package si.konferenca.registration.config;
 
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -15,6 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 /**
  * Access control (SB-02, BR-08) and security headers (SB-10). Participants are anonymous; the
@@ -47,10 +51,24 @@ public class SecurityConfig {
                     .permitAll()
                     .anyRequest()
                     .denyAll())
+        .cors(cors -> cors.configurationSource(corsSource(properties.cors().allowedOrigin())))
         .httpBasic(Customizer.withDefaults())
         .exceptionHandling(
             e -> e.accessDeniedHandler((request, response, denied) -> refuse(response)));
     return http.build();
+  }
+
+  /** CORS for the one configured frontend origin (local development only); none by default. */
+  static CorsConfigurationSource corsSource(String allowedOrigin) {
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    if (allowedOrigin != null && !allowedOrigin.isBlank()) {
+      CorsConfiguration cors = new CorsConfiguration();
+      cors.setAllowedOrigins(List.of(allowedOrigin.strip()));
+      cors.setAllowedMethods(List.of("GET", "POST"));
+      cors.setAllowedHeaders(List.of("Content-Type", "Authorization"));
+      source.registerCorsConfiguration("/api/**", cors);
+    }
+    return source;
   }
 
   /** An authenticated organizer on a refused transport (SR-06): 403, no data. */
