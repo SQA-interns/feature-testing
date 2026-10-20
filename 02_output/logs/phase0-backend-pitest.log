@@ -1,0 +1,16 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- pitest:1.30.0:mutationCoverage (default-cli) @ registration-backend ---
+[INFO] Skipping project because:
+[INFO]   - Project has either no tests or no production code.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.785 s
+[INFO] Finished at: 2026-10-20T20:38:36+02:00
+[INFO] ------------------------------------------------------------------------
