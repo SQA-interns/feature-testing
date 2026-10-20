@@ -1,5 +1,7 @@
 package si.konferenca.registration.config;
 
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -24,7 +26,7 @@ public class SecurityConfig {
   static final String ORGANIZER_ROLE = "ORGANIZER";
 
   @Bean
-  SecurityFilterChain apiSecurity(HttpSecurity http) throws Exception {
+  SecurityFilterChain apiSecurity(HttpSecurity http, AppProperties properties) throws Exception {
     http.csrf(csrf -> csrf.disable())
         .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .headers(
@@ -39,12 +41,23 @@ public class SecurityConfig {
                     .permitAll()
                     .requestMatchers(HttpMethod.POST, "/api/registrations")
                     .permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/export")
+                    .access(new OrganizerAccess(properties.organizer().httpsOnly()))
                     .requestMatchers("/actuator/health", "/actuator/health/**", "/error")
                     .permitAll()
                     .anyRequest()
                     .denyAll())
-        .httpBasic(Customizer.withDefaults());
+        .httpBasic(Customizer.withDefaults())
+        .exceptionHandling(
+            e -> e.accessDeniedHandler((request, response, denied) -> refuse(response)));
     return http.build();
+  }
+
+  /** An authenticated organizer on a refused transport (SR-06): 403, no data. */
+  private static void refuse(HttpServletResponse response) throws IOException {
+    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+    response.setContentType("application/json;charset=UTF-8");
+    response.getWriter().write("{\"message\":\"Organizer access requires HTTPS.\"}");
   }
 
   /** The organizer account; only the BCrypt hash of the password is kept (SB-03). */

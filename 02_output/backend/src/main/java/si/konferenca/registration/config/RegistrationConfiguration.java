@@ -14,9 +14,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 import si.konferenca.registration.adapter.captcha.RecaptchaHttpVerifier;
 import si.konferenca.registration.adapter.captcha.TestModeCaptchaVerifier;
+import si.konferenca.registration.adapter.export.ExcelRegistrationExporter;
 import si.konferenca.registration.adapter.jsoncopy.FileJsonCopyStore;
 import si.konferenca.registration.adapter.mail.MailRegistrationNotifier;
 import si.konferenca.registration.application.CaptchaVerifier;
+import si.konferenca.registration.application.ExportService;
 import si.konferenca.registration.application.JsonCopyStore;
 import si.konferenca.registration.application.RegistrationNotifier;
 import si.konferenca.registration.application.RegistrationRepository;
@@ -67,6 +69,11 @@ public class RegistrationConfiguration {
         }
       }
     };
+  }
+
+  @Bean
+  ExportService exportService(RegistrationRepository repository) {
+    return new ExportService(repository, new ExcelRegistrationExporter());
   }
 
   @Bean
