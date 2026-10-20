@@ -6,12 +6,15 @@ The only file a human fills before starting the agent; the agent checks everythi
 
 - Model: claude-opus-5-5
 - Effort: medium
-- Template version: 1.7
+- Template version: 1.7-ft
 - Run label: kyuhi_single-agent_sdd_v007
 - Operator: kyuhi
 - Machine: kyuhiPC
 - Plan: PRO
 - Permission mode: auto
+- Run type: normal
+- Feature: none
+- Base run:
 - Run ID:
 - Starting commit:
 
@@ -25,3 +28,6 @@ The only file a human fills before starting the agent; the agent checks everythi
 | Machine | a label for the computer, no host names or addresses |
 | Plan | `PRO`, `Max 5x`, `API`, … |
 | Permission mode | `auto` or `default` (ask first) |
+| Run type | `normal`, `greenfield` or `brownfield` (feature experiment; `normal` for every run without a feature) |
+| Feature | `none`, `search` or `group`: the feature package the run's inputs contain |
+| Base run | brownfield only: the run label and commit the change starts from (`<label> @ <sha>`); empty otherwise |

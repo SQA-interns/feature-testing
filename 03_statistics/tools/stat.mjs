@@ -86,6 +86,8 @@ function init() {
   log.model = cfg["Model"] || null;
   log.effort = cfg["Effort"] || null;
   log.templateVersion = cfg["Template version"] || null;
+  // feature experiment: what kind of run this is (absent in older runs, which count as normal runs)
+  log.experiment = { runType: cfg["Run type"] || "normal", feature: cfg["Feature"] || "none", baseRun: cfg["Base run"] || null };
   log.start = now();
   log.startCommit = head();
   if (cfg["Starting commit"] && log.startCommit && !log.startCommit.startsWith(cfg["Starting commit"])) log.startCommitNote = `run-config.md names ${cfg["Starting commit"]}, HEAD is ${log.startCommit.slice(0, 7)}`;
