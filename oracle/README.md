@@ -1,0 +1,59 @@
+# Hidden oracle
+
+> Branch `experiment` · Used after every run (normal, greenfield, brownfield) · **Never copy it into a run folder or mention it to the agent**
+
+Black-box checks of a finished run through the fixed API (`02_design/api-contract.md`), Mailpit and the organizer export. The same oracle judges every run, so the results are comparable.
+
+| Group | Scenarios | Runs |
+|---|---|---|
+| Regression, the base project | R01–R15: form configuration, external and student registration, rejections leave nothing stored (whitespace-only name, invalid email, unknown option, missing consent, rejected captcha), participant email, organizer email with the JSON attachment, export (columns, rows, no access without credentials), Slovenian characters, trimming, rate limit | every run |
+| Feature `search` | S01–S10: list newest first with total, text search across fields and case, type filter, option filter, combined filters, no match, paging 20 + 5, invalid parameters, no access without credentials, Slovenian characters | runs with `--feature search` |
+| Feature `group` | G01–G11: a group of three is accepted, export rows with group and contact, member, contact and organizer emails with one JSON attachment per member, rejections (1 or 11 members, invalid member email, duplicate member email, invalid contact email, missing consent, rejected captcha) leave nothing stored | runs with `--feature group` |
+
+All generated names are letters only (a strict name validation must not block the oracle: lesson from the confreg study), and each execution uses a random tag, so earlier data does not disturb it. Standard library only (Python 3.10+).
+
+## How to run it after a run
+
+The stack must be the one the run built (`02_output/docker-compose.yml`). The oracle needs two backend starts with different settings; results go to a folder **outside** the repository.
+
+`<feature>` is `none` for a normal run, `search` or `group` for a feature run.
+
+### PowerShell
+
+```powershell
+cd <run folder>\02_output
+$env:ORGANIZER_USERNAME = "..."; $env:ORGANIZER_PASSWORD = "..."; $env:ORGANIZER_EMAILS = "..."   # from the run's .env
+$O = "C:\path\to\feature-testing-experiment\oracle"      # this folder, outside the run folder
+$R = "C:\path\to\results\<run label>"                    # outside the run folder
+New-Item -ItemType Directory -Force $R | Out-Null
+$env:CAPTCHA_TEST_MODE = "true"; $env:ORGANIZER_HTTPS_ONLY = "false"
+
+$env:RATE_LIMIT_PER_MINUTE = "10000"
+docker compose --env-file ..\.env up -d --build --force-recreate --wait
+py "$O\oracle.py" main --feature <feature> --out "$R\oracle-main.json"
+
+$env:RATE_LIMIT_PER_MINUTE = "3"
+docker compose --env-file ..\.env up -d --force-recreate --wait
+py "$O\oracle.py" ratelimit --feature <feature> --out "$R\oracle-ratelimit.json"
+
+py "$O\summarize.py" $R
+docker compose --env-file ..\.env down -v
+```
+
+### Git Bash, Linux or macOS
+
+```bash
+cd <run folder>/02_output
+export ORGANIZER_USERNAME=... ORGANIZER_PASSWORD=... ORGANIZER_EMAILS=...   # from the run's .env
+O=/path/to/feature-testing-experiment/oracle; R=/path/to/results/<run label>; mkdir -p "$R"
+export CAPTCHA_TEST_MODE=true ORGANIZER_HTTPS_ONLY=false
+
+RATE_LIMIT_PER_MINUTE=10000 docker compose --env-file ../.env up -d --build --force-recreate --wait
+python3 $O/oracle.py main --feature <feature> --out "$R/oracle-main.json"
+RATE_LIMIT_PER_MINUTE=3 docker compose --env-file ../.env up -d --force-recreate --wait
+python3 $O/oracle.py ratelimit --feature <feature> --out "$R/oracle-ratelimit.json"
+python3 $O/summarize.py "$R"
+docker compose --env-file ../.env down -v
+```
+
+`summarize.py` prints every scenario and writes `oracle-summary.json` with the regression pass rate and the feature pass rate. Report results as they are: do not fix the run's code, and note any manual step (for example a setting the compose file did not pass through) in the run's notes. If the stack runs on other ports, set `ORACLE_BASE_URL` and `ORACLE_MAILPIT_URL`. `down -v` at the end deletes the run's database, so the next run starts clean.
