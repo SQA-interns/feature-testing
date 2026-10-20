@@ -82,3 +82,30 @@
 - Options: 1. after trimming: one `@`, a non-empty local part without whitespace or control characters, a domain of dot-separated labels with at least one dot, at most 254 characters (proposed default, conservative); 2. Bean Validation `@Email` only (accepts `a@b`)
 - Human response: none
 - Resolution: pending review (option 1 applied)
+
+## D-10: Default rate limit of 60 requests per minute per client and endpoint
+- Timestamp: 2026-10-20T19:07:09Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: `api-contract.md` leaves the `RATE_LIMIT_PER_MINUTE` default to the agent (SR-03). Too low a value locks out legitimate users behind one shared address (for example a class of students on one network, a High example in `severity-scale.md`); too high weakens SB-06.
+- Options: 1. 60 per minute per client address and endpoint, fixed window, 429 with `Retry-After` (proposed default); 2. 10 per minute (stricter, risks locking out shared networks); 3. 300 per minute
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-11: Local compose stack runs with ORGANIZER_HTTPS_ONLY=false by default
+- Timestamp: 2026-10-20T19:07:09Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: SR-06 and `environments.md` allow HTTPS-only to be off only on local plain HTTP. With Docker Desktop port publishing the backend sees the Docker gateway address, not a loopback address, so with the setting on, the local export (E2E-05, DoD-P04) would always be refused. The backend's own default stays `true` and production refuses to start with `false`.
+- Options: 1. `docker-compose.yml` passes `${ORGANIZER_HTTPS_ONLY:-false}` (local only, ports bound to 127.0.0.1), overridable at `docker compose up` (proposed default); 2. default `true` in compose too, export refused locally
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-12: Add eclipse-temurin:21.0.10_7-jdk-alpine as the backend image build stage
+- Timestamp: 2026-10-20T19:07:09Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: `tech-stack.md` lists only the JRE image for the backend. Without a JDK build stage, `docker compose up --build` from a clean checkout needs a host build first (DoD-08). `tech-stack.md` allows an unlisted tool with an exact version and a non-blocking record; it is the same Temurin release as the pinned platform and runtime image (GPL-2.0-with-classpath-exception, build stage only, not shipped).
+- Options: 1. multi-stage Dockerfile with `eclipse-temurin:21.0.10_7-jdk-alpine` (pulls and reports Temurin-21.0.10+7) as build stage (proposed default); 2. copy a host-built jar into the JRE image
+- Human response: none
+- Resolution: option 1 (scanned in phase 6 like any other image)

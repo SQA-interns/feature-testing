@@ -1,0 +1,6 @@
+openapi.yaml vs OAS 3.1 schema (2022-10-07): valid
+paths: ['/api/export', '/api/form-config', '/api/registrations']
+conference-config.schema.json: valid JSON Schema 2020-12
+registration-copy.schema.json: valid JSON Schema 2020-12
+conference-config samples: valid accepted = True ; unknown category/missing name rejected = True ; blank name rejected = True
+database-schema.sql applied to postgres:16.15-alpine with ON_ERROR_STOP: valid

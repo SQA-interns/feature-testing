@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "registration-copy.schema.json",
+  "title": "Raw JSON copy of an accepted registration (BR-07, AC-005-02, AC-007-02)",
+  "description": "Written UTF-8 to <JSON_COPY_DIR>/<id>.json before the success response; the organizer notification attaches the same bytes. Values are the accepted (trimmed) values; fields of the other registration type are null.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "firstName", "lastName", "email", "organization", "studyInstitution", "studyProgramme", "studentId", "options", "consents", "registeredAt"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "type": { "enum": ["EXTERNAL", "STUDENT"] },
+    "firstName": { "type": "string", "minLength": 1 },
+    "lastName": { "type": "string", "minLength": 1 },
+    "email": { "type": "string", "minLength": 3 },
+    "organization": { "type": ["string", "null"] },
+    "studyInstitution": { "type": ["string", "null"] },
+    "studyProgramme": { "type": ["string", "null"] },
+    "studentId": { "type": ["string", "null"] },
+    "options": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "givenAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "givenAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "registeredAt": { "type": "string", "format": "date-time" }
+  }
+}

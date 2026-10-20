@@ -1,0 +1,253 @@
+# Written in: phase 2 · Source: project/02_design/api-contract.md (AR-09) · Agent: writes
+openapi: 3.1.0
+info:
+  title: Conference registration API
+  version: 1.0.0
+  description: >
+    REST API between the frontend or organizer and the backend. Describes exactly the API fixed by
+    project/02_design/api-contract.md. Every endpoint is rate limited per client and endpoint
+    (RATE_LIMIT_PER_MINUTE, HTTP 429) and request bodies are limited to 16 KiB (HTTP 413) (SR-03).
+servers:
+  - url: http://127.0.0.1:8080
+    description: local stack (docker compose)
+paths:
+  /api/form-config:
+    get:
+      operationId: getFormConfig
+      summary: Form configuration with the active options only (AC-003-01)
+      security: []
+      responses:
+        "200":
+          description: Active options, consents and the reCAPTCHA site key
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormConfig"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+  /api/registrations:
+    post:
+      operationId: createRegistration
+      summary: Submit a registration (US-001, US-002, US-005)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegistrationRequest"
+      responses:
+        "201":
+          description: Accepted; the database row and the JSON copy exist (AR-05)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegistrationCreated"
+        "400":
+          $ref: "#/components/responses/ValidationFailed"
+        "413":
+          description: Request body larger than the size limit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "500":
+          description: The registration could not be stored (AC-005-03); no row and no JSON copy remain
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/export:
+    get:
+      operationId: exportRegistrations
+      summary: Excel export of all registrations, organizer only (US-008, BR-08)
+      security:
+        - organizerBasic: []
+      responses:
+        "200":
+          description: >
+            Workbook whose first sheet's first row holds the headers id, type, firstName, lastName,
+            email, organization, studyInstitution, studyProgramme, studentId, options, consents,
+            registeredAt, followed by one row per registration. options and consents are ids joined
+            with ", "; a cell that does not apply to the registration's type is empty.
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                contentEncoding: binary
+        "401":
+          description: Missing or wrong organizer credentials; no registration data
+        "403":
+          description: >
+            Organizer HTTPS-only access is on and the request came over plain HTTP from a client that
+            is not on localhost (SR-06, AC-008-04); no registration data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+components:
+  securitySchemes:
+    organizerBasic:
+      type: http
+      scheme: basic
+      description: ORGANIZER_USERNAME and ORGANIZER_PASSWORD from the environment
+  responses:
+    ValidationFailed:
+      description: Rejected; one entry per invalid field; nothing stored, no email sent
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ValidationErrors"
+    TooManyRequests:
+      description: More than RATE_LIMIT_PER_MINUTE requests per minute from this client to this endpoint
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+  schemas:
+    RegistrationType:
+      type: string
+      enum: [EXTERNAL, STUDENT]
+    OptionCategory:
+      type: string
+      enum: [WORKSHOP, EVENT, MEAL, OTHER]
+    FormOption:
+      type: object
+      required: [id, name, category, availableTo]
+      properties:
+        id:
+          type: string
+          examples: [ws-ai]
+        name:
+          type: string
+          examples: [AI workshop]
+        category:
+          $ref: "#/components/schemas/OptionCategory"
+        availableTo:
+          type: array
+          items:
+            $ref: "#/components/schemas/RegistrationType"
+    FormConsent:
+      type: object
+      required: [id, text, mandatory]
+      properties:
+        id:
+          type: string
+          examples: [privacy]
+        text:
+          type: string
+        mandatory:
+          type: boolean
+    FormConfig:
+      type: object
+      required: [options, consents, captchaSiteKey]
+      properties:
+        options:
+          type: array
+          items:
+            $ref: "#/components/schemas/FormOption"
+        consents:
+          type: array
+          items:
+            $ref: "#/components/schemas/FormConsent"
+        captchaSiteKey:
+          type: string
+          description: reCAPTCHA v2 site key from configuration (AR-07); empty in test mode
+        captchaTestMode:
+          type: boolean
+          description: Additional optional field; true when CAPTCHA_TEST_MODE is on
+        conferenceName:
+          type: string
+          description: Additional optional field; the configured conference name
+    RegistrationRequest:
+      type: object
+      required: [type, firstName, lastName, email, options, consents, captchaToken]
+      properties:
+        type:
+          $ref: "#/components/schemas/RegistrationType"
+        firstName:
+          type: string
+          maxLength: 200
+        lastName:
+          type: string
+          maxLength: 200
+        email:
+          type: string
+          maxLength: 254
+        organization:
+          type: [string, "null"]
+          maxLength: 200
+          description: Required for EXTERNAL; ignored for STUDENT
+        studyInstitution:
+          type: [string, "null"]
+          maxLength: 200
+          description: Required for STUDENT; ignored for EXTERNAL
+        studyProgramme:
+          type: [string, "null"]
+          maxLength: 200
+          description: Required for STUDENT; ignored for EXTERNAL
+        studentId:
+          type: [string, "null"]
+          maxLength: 200
+          description: Required for STUDENT; ignored for EXTERNAL
+        options:
+          type: array
+          items:
+            type: string
+          description: Distinct ids of active options available to the type
+        consents:
+          type: array
+          items:
+            type: string
+          description: Ids of the consents given; every mandatory consent must be listed
+        captchaToken:
+          type: string
+          description: reCAPTCHA v2 response token; in test mode only "test-pass" is accepted
+      examples:
+        - type: EXTERNAL
+          firstName: Ana
+          lastName: Novak
+          email: ana@example.org
+          organization: Example d.o.o.
+          studyInstitution: null
+          studyProgramme: null
+          studentId: null
+          options: [ws-ai]
+          consents: [privacy]
+          captchaToken: test-pass
+    RegistrationCreated:
+      type: object
+      required: [id]
+      properties:
+        id:
+          type: string
+          format: uuid
+    FieldError:
+      type: object
+      required: [field, message]
+      properties:
+        field:
+          type: string
+          description: Request field name as in this document (email, options, consents, captchaToken, ...)
+        message:
+          type: string
+    ValidationErrors:
+      type: object
+      required: [errors]
+      properties:
+        errors:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/FieldError"
+    ErrorResponse:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+          description: General message without internal details (SB-07)
