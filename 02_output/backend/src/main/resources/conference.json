@@ -1,0 +1,22 @@
+{
+  "conferenceName": "Konferenca 2026",
+  "options": [
+    { "id": "ws-ai", "name": "Applied AI workshop", "category": "WORKSHOP" },
+    { "id": "ws-research", "name": "Research methods for students", "category": "WORKSHOP", "availableTo": ["STUDENT"] },
+    { "id": "ws-industry", "name": "Industry practice workshop", "category": "WORKSHOP", "availableTo": ["EXTERNAL"] },
+    { "id": "ev-opening", "name": "Opening reception", "category": "EVENT" },
+    { "id": "ev-gala", "name": "Conference gala dinner", "category": "EVENT", "availableTo": ["EXTERNAL"] },
+    { "id": "ev-career", "name": "Student career fair", "category": "EVENT", "availableTo": ["STUDENT"] },
+    { "id": "ml-lunch-1", "name": "Lunch, day 1", "category": "MEAL" },
+    { "id": "ml-lunch-2", "name": "Lunch, day 2", "category": "MEAL" },
+    { "id": "ot-tour", "name": "Ljubljana city tour", "category": "OTHER" },
+    { "id": "ot-excursion", "name": "Lake Bled excursion", "category": "OTHER", "active": false }
+  ],
+  "consents": [
+    {
+      "id": "privacy",
+      "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.",
+      "mandatory": true
+    }
+  ]
+}
