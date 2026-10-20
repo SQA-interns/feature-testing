@@ -105,6 +105,18 @@ class OutboundAdaptersTest {
   }
 
   @Test
+  void failedMoveLeavesNoTemporaryFile(@TempDir Path dir) throws Exception {
+    Path occupied = dir.resolve(student().id() + ".json");
+    Files.createDirectories(occupied.resolve("inside"));
+    FileJsonCopyStore store = new FileJsonCopyStore(dir);
+
+    assertThatThrownBy(() -> store.write(student())).isInstanceOf(UncheckedIOException.class);
+    try (var files = Files.list(dir)) {
+      assertThat(files).containsExactly(occupied);
+    }
+  }
+
+  @Test
   void deleteOfAnUndeletablePathOnlyLogs(@TempDir Path dir) throws Exception {
     Path directoryWithContent = dir.resolve(student().id() + ".json");
     Files.createDirectories(directoryWithContent.resolve("inside"));

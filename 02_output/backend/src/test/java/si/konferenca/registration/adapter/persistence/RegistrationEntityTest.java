@@ -56,6 +56,7 @@ class RegistrationEntityTest {
     ConsentEmbeddable c = new ConsentEmbeddable("photos", AT);
 
     assertThat(a).isEqualTo(b).hasSameHashCodeAs(b).isNotEqualTo(c).isNotEqualTo("privacy");
+    assertThat(a.hashCode()).isEqualTo("privacy".hashCode());
     assertThat(a.consentId()).isEqualTo("privacy");
     assertThat(a.givenAt()).isEqualTo(AT);
     assertThat(new ConsentEmbeddable().hashCode()).isZero();

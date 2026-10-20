@@ -127,6 +127,7 @@ class MailRegistrationNotifierTest {
     assertThat(addresses(sender.sent.get(1).getAllRecipients())).containsExactly("o2@x.org");
     for (MimeMessage mail : sender.sent) {
       mail.saveChanges();
+      assertThat(addresses(mail.getFrom())).containsExactly("registration@konferenca.local");
       assertThat(mail.getSubject()).isEqualTo("New registration: Konferenca 2026");
       Part attachment = findAttachment(mail);
       assertThat(attachment.getFileName()).isEqualTo("registration-" + ID + ".json");
