@@ -1,6 +1,6 @@
 import type { FormOption, OptionCategory } from "../types";
 
-export const GROUP_TITLES: [OptionCategory, string][] = [
+const GROUP_TITLES: [OptionCategory, string][] = [
   ["WORKSHOP", "Workshops"],
   ["EVENT", "Events"],
   ["MEAL", "Meals"],
