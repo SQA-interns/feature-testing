@@ -1,0 +1,97 @@
+[32m22:51:43 (16112) INFO ProjectReader[39m Found 1 of 62 file(s) to be mutated.
+[32m22:51:44 (16112) INFO Instrumenter[39m Instrumented 1 source file(s) with 82 mutant(s)
+[32m22:51:46 (16112) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m22:51:51 (16112) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m22:51:55 (16112) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m22:52:24 (16112) INFO DryRunExecutor[39m Initial test run succeeded. Ran 40 tests in 28 seconds (net 7794.651599999965 ms, overhead 21108.348400000035 ms).
+Mutation testing 4% (elapsed: <1m, remaining: ~3m) 4/82 tested (0 survived, 0 timed out)
+Mutation testing 13% (elapsed: <1m, remaining: ~2m) 11/82 tested (0 survived, 0 timed out)
+Mutation testing 17% (elapsed: <1m, remaining: ~2m) 18/82 tested (0 survived, 0 timed out)
+Mutation testing 22% (elapsed: <1m, remaining: ~2m) 23/82 tested (0 survived, 0 timed out)
+Mutation testing 26% (elapsed: <1m, remaining: ~2m) 26/82 tested (0 survived, 0 timed out)
+Mutation testing 33% (elapsed: ~1m, remaining: ~2m) 32/82 tested (0 survived, 0 timed out)
+Mutation testing 40% (elapsed: ~1m, remaining: ~1m) 39/82 tested (0 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~1m, remaining: ~1m) 50/82 tested (0 survived, 0 timed out)
+Mutation testing 60% (elapsed: ~1m, remaining: <1m) 57/82 tested (0 survived, 0 timed out)
+Mutation testing 71% (elapsed: ~1m, remaining: <1m) 64/82 tested (0 survived, 0 timed out)
+Mutation testing 82% (elapsed: ~1m, remaining: <1m) 71/82 tested (0 survived, 0 timed out)
+Mutation testing 88% (elapsed: ~2m, remaining: <1m) 75/82 tested (1 survived, 0 timed out)
+Mutation testing 93% (elapsed: ~2m, remaining: <1m) 78/82 tested (1 survived, 0 timed out)
+Mutation testing 96% (elapsed: ~2m, remaining: <1m) 80/82 tested (2 survived, 0 timed out)
+
+All tests
+  acceptance
+    confirmation.acceptance.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form (killed 9)
+      ~ US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain (covered 44)
+      ~ US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears (covered 44)
+      ✓ US-004 registration confirmation AC-004-03 an empty required field and an invalid email are shown and nothing is sent (killed 5)
+      ~ US-004 registration confirmation AC-004-04 a backend failure shows a general error without technical details (covered 44)
+      ~ US-004 registration confirmation AC-004-04 an unreachable backend shows a general error without technical details (covered 44)
+    registration-form.acceptance.test.tsx
+      ~ US-001 external participant form AC-001-08 shows exactly the external fields, grouped active options and unchecked consents (covered 10)
+      ~ US-002 student form AC-002-07 shows exactly the student fields and only student options, all unchecked (covered 12)
+      ~ US-002 student form AC-002-07 switching from external to student replaces the organization field (covered 17)
+  components/RegistrationForm.test.tsx
+    ✘ RegistrationForm shows no fields before a type is chosen (covered 0)
+    ✓ RegistrationForm drops options the new type cannot select and clears errors (killed 2)
+    ✓ RegistrationForm sends a student request with trimmed names in the confirmation (killed 6)
+    ~ RegistrationForm shows field errors it cannot place as a general message (covered 46)
+    ✓ RegistrationForm resets a Google captcha after a failed submission (killed 1)
+    ~ RegistrationForm ignores a second submit while the first is running (covered 46)
+    ~ App names the conference and shows the confirmation after registering (covered 46)
+    ✘ App explains when the form cannot be loaded (covered 0)
+    ✘ App does not update after unmounting (covered 0)
+    ✘ small components TextInput links its error and marks the input invalid (covered 0)
+    ✘ small components OptionGroups hides empty groups and reports toggles (covered 0)
+    ✘ small components Confirmation lists options or says there are none (covered 0)
+  validation.test.ts
+    ✓ fieldsOf lists the fixed fields of each type (killed 5)
+    ✓ validate accepts a complete form (killed 19)
+    ✓ validate requires every field of the type after trimming (killed 4)
+    ~ validate checks only the fields of the chosen type (covered 48)
+    ✓ validate limits text to 200 and email to 254 characters (killed 13)
+    ✓ validate rejects the email not-an-email (killed 3)
+    ~ validate rejects the email ana@ (covered 45)
+    ~ validate rejects the email @example.org (covered 45)
+    ~ validate rejects the email ana@example (covered 45)
+    ~ validate rejects the email ana@@example.org (covered 45)
+    ✓ validate rejects the email ana novak@example.org (killed 1)
+    ~ validate rejects the email .ana@example.org (covered 45)
+    ~ validate rejects the email ana@-example.org (covered 45)
+    ~ validate rejects the email ana@example-.org (covered 45)
+    ✓ validate accepts the email a@b.co (killed 1)
+    ✓ validate accepts the email first.last+tag@sub.example.org (killed 3)
+    ~ validate accepts the email  x_y@a-b.si (covered 44)
+    ✓ validate requires the mandatory consents only (killed 5)
+    ✓ validate requires a captcha token (killed 2)
+
+[Survived] Regex
+src/validation.ts:9:3
+-     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+/;
+Ran all tests for this mutant.
+
+[Survived] Regex
+src/validation.ts:9:3
+-     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9]))+$/;
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/validation.ts:15:12
+-     consent: "The required consent must be given.",
++     consent: "",
+Ran all tests for this mutant.
+
+Ran 6.35 tests per mutant on average.
+---------------|------------------|----------|-----------|------------|----------|----------|
+               | % Mutation score |          |           |            |          |          |
+File           |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+All files      |  96.34 |   96.34 |       79 |         0 |          3 |        0 |        0 |
+ validation.ts |  96.34 |   96.34 |       79 |         0 |          3 |        0 |        0 |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m22:54:54 (16112) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1/02_output/frontend/reports/mutation/mutation.json
+[32m22:54:54 (16112) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1/02_output/frontend/reports/mutation/index.html
+[32m22:54:54 (16112) INFO MutationTestExecutor[39m Done in 3 minutes and 12 seconds.

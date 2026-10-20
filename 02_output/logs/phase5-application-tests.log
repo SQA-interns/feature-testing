@@ -1,0 +1,47 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\tanej\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1\\02_output\\backend\\target\\jacoco.exec,excludes=si/konferenca/registration/RegistrationApplication.class
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 20 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.application.RegistrationServiceTest
+22:33:35.596 [main] ERROR si.konferenca.registration.application.RegistrationService -- registration 476aa13c-e4e5-4329-8160-989e107c1c5e could not be stored (IllegalStateException)
+22:33:35.758 [main] WARN si.konferenca.registration.application.RegistrationService -- confirmation mail failed for registration 628fd66e-d384-4b6e-9f64-657213fa8245 (IllegalStateException)
+22:33:35.759 [main] WARN si.konferenca.registration.application.RegistrationService -- organizer mail failed for registration 628fd66e-d384-4b6e-9f64-657213fa8245 (IllegalStateException)
+22:33:35.875 [main] ERROR si.konferenca.registration.application.RegistrationService -- registration 64b10f47-6d43-45d2-8011-4b5baec0ba54 could not be stored (IllegalStateException)
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.019 s -- in si.konferenca.registration.application.RegistrationServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.582 s
+[INFO] Finished at: 2026-10-20T22:33:36+02:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,18 @@
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  2 passed (2)
+      Tests  9 passed (9)
+   Start at  22:28:18
+   Duration  7.28s (transform 609ms, setup 0ms, import 2.59s, tests 4.26s, environment 4.44s)
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 79.73% ( 181/227 )
+Branches     : 65.64% ( 107/163 )
+Functions    : 83.11% ( 64/77 )
+Lines        : 80.47% ( 169/210 )
+================================================================================

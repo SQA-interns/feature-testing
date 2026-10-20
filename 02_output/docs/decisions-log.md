@@ -127,3 +127,12 @@
 - Options: 1. exclude only EI_EXPOSE_REP2 in `application`, `adapter` and `config` via `backend/spotbugs-exclude.xml` (default; every other pattern stays on, incl. EI_EXPOSE_REP); 2. copy each collaborator defensively (impossible for interfaces); 3. add `spotbugs-annotations` to suppress per field (a new dependency)
 - Human response: none
 - Resolution: option 1
+
+## D-15: Mutation runs use each component's in-process suite; the e2e tests are not run per mutant
+- Timestamp: 2026-10-20T20:55:17Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: `measurement-scope.md` asks for the full automated suite at every level per mutant, or a decision record when infeasible. The 5 Playwright e2e tests need the docker compose images rebuilt with the mutated code for every mutant (several minutes per mutant, about 1 000 mutants); PIT and Stryker can only run tests inside their own JVM / Vitest process.
+- Options: 1. backend PIT runs every JUnit test of the backend (unit, architecture and all 102 acceptance tests, 237 in total); frontend Stryker runs every Vitest test (unit and the 9 acceptance tests, 55 in total); the 5 e2e tests are excluded from mutation runs only (default); 2. narrow the scope (not allowed)
+- Human response: none
+- Resolution: option 1 (tests run are recorded with each score)
