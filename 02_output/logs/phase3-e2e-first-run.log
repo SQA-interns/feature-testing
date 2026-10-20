@@ -1,0 +1,155 @@
+
+Running 5 tests using 1 worker
+
+  x  1 [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) (2.0m)
+  x  2 [chromium] › e2e\field-errors.e2e.spec.ts:11:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (2.0m)
+  x  3 [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (44ms)
+  x  4 [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (2.0m)
+  x  5 [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (4.2s)
+
+
+  1) [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.check: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByRole('radio', { name: 'External participant' })
+
+
+      21 |   const email = uniqueEmail("external");
+      22 |   await page.goto("/");
+    > 23 |   await page.getByRole("radio", { name: "External participant" }).check();
+         |                                                                   ^
+      24 |
+      25 |   await expect(field(page, LABELS.organization)).toBeVisible();
+      26 |   await expect(field(page, LABELS.studentId)).toHaveCount(0);
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\external-registration.e2e.spec.ts:23:67
+
+    Error Context: test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\external-registration.e2e--0dbf5-005-01-AC-006-01-AC-007-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e\field-errors.e2e.spec.ts:11:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.check: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByRole('radio', { name: 'External participant' })
+
+
+      19 |
+      20 |   await page.goto("/");
+    > 21 |   await page.getByRole("radio", { name: "External participant" }).check();
+         |                                                                   ^
+      22 |   await field(page, LABELS.lastName).fill("Novak");
+      23 |   await field(page, LABELS.email).fill("not-an-email");
+      24 |   await field(page, LABELS.organization).fill("Example d.o.o.");
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\field-errors.e2e.spec.ts:21:67
+
+    Error Context: test-results\field-errors.e2e-E2E-03-fi-6a61d-fields-AC-004-02-AC-004-03--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\field-errors.e2e-E2E-03-fi-6a61d-fields-AC-004-02-AC-004-03--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\field-errors.e2e-E2E-03-fi-6a61d-fields-AC-004-02-AC-004-03--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+
+    Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080
+    Call log:
+      - → POST http://127.0.0.1:8080/api/registrations
+        - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+        - content-type: application/json
+        - content-length: 268
+
+
+      20 | test("E2E-05 organizer exports registrations (AC-008-01, AC-008-02)", async ({ request }) => {
+      21 |   const email = uniqueEmail("export");
+    > 22 |   const created = await request.post(`${BACKEND_URL}/api/registrations`, {
+         |                                 ^
+      23 |     data: {
+      24 |       type: "EXTERNAL",
+      25 |       firstName: "Eva",
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\organizer-export.e2e.spec.ts:22:33
+
+    Error Context: test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\organizer-export.e2e-E2E-0-bd883-ations-AC-008-01-AC-008-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.check: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByRole('radio', { name: 'External participant' })
+
+
+      27 |
+      28 |   await page.goto("/");
+    > 29 |   await page.getByRole("radio", { name: "External participant" }).check();
+         |                                                                   ^
+      30 |   await field(page, LABELS.firstName).fill(firstName);
+      31 |   await field(page, LABELS.lastName).fill(lastName);
+      32 |   await field(page, LABELS.email).fill(email);
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\slovenian-characters.e2e.spec.ts:29:67
+
+    Error Context: test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\slovenian-characters.e2e-E-c2397--chain-AC-005-04-AC-008-03--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+
+    SyntaxError: Unexpected token '<', "<html>
+    <h"... is not valid JSON
+
+      23 |
+      24 | test("E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01)", async ({ page, request }) => {
+    > 25 |   const config = (await (await request.get("/api/form-config")).json()) as {
+         |                   ^
+      26 |     options: FormOption[];
+      27 |   };
+      28 |   const studentOptions = config.options
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1\02_output\frontend\e2e\student-registration.e2e.spec.ts:25:19
+
+    Error Context: test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\student-registration.e2e-E-cf13d-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › e2e\external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) 
+    [chromium] › e2e\field-errors.e2e.spec.ts:11:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) 
+    [chromium] › e2e\organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+    [chromium] › e2e\slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+    [chromium] › e2e\student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 

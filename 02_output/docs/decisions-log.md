@@ -109,3 +109,12 @@
 - Options: 1. multi-stage Dockerfile with `eclipse-temurin:21.0.10_7-jdk-alpine` (pulls and reports Temurin-21.0.10+7) as build stage (proposed default); 2. copy a host-built jar into the JRE image
 - Human response: none
 - Resolution: option 1 (scanned in phase 6 like any other image)
+
+## D-13: Add @types/node 24.19.2 for the end-to-end test helpers
+- Timestamp: 2026-10-20T19:41:28Z
+- Phase: 3
+- Type: non-blocking
+- Trigger: the Playwright e2e helpers use Node APIs (`child_process`, `zlib`, `Buffer`, `process.env`); `tsc --noEmit` needs their type declarations, and `tech-stack.md` lists none. `tech-stack.md` allows dev-only tooling with an exact version and a non-blocking record.
+- Options: 1. add `@types/node` 24.19.2 (MIT, matches Node 24, published 2026-10-09) as an exact dev dependency (default); 2. exclude `e2e/` from the type check
+- Human response: none
+- Resolution: option 1 (dev only, not in the bundle; `npm audit --omit=dev` still 0)
