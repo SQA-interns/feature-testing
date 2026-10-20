@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
@@ -50,19 +51,17 @@ public class BodySizeLimitFilter extends OncePerRequestFilter {
   static final class LimitedRequest extends HttpServletRequestWrapper {
 
     private final long maxBytes;
-    private ServletInputStream stream;
+    private final AtomicLong read = new AtomicLong();
 
     LimitedRequest(HttpServletRequest request, long maxBytes) {
       super(request);
       this.maxBytes = maxBytes;
     }
 
+    /** Every stream handed out shares one byte count for the whole request body. */
     @Override
     public ServletInputStream getInputStream() throws IOException {
-      if (stream == null) {
-        stream = new LimitedStream(super.getInputStream(), maxBytes);
-      }
-      return stream;
+      return new LimitedStream(super.getInputStream(), maxBytes, read);
     }
 
     @Override
@@ -77,11 +76,12 @@ public class BodySizeLimitFilter extends OncePerRequestFilter {
 
     private final ServletInputStream delegate;
     private final long maxBytes;
-    private long read;
+    private final AtomicLong read;
 
-    LimitedStream(ServletInputStream delegate, long maxBytes) {
+    LimitedStream(ServletInputStream delegate, long maxBytes, AtomicLong read) {
       this.delegate = delegate;
       this.maxBytes = maxBytes;
+      this.read = read;
     }
 
     @Override
@@ -103,8 +103,7 @@ public class BodySizeLimitFilter extends OncePerRequestFilter {
     }
 
     private void count(int bytes) throws IOException {
-      read += bytes;
-      if (read > maxBytes) {
+      if (read.addAndGet(bytes) > maxBytes) {
         throw new IOException("request body larger than " + maxBytes + " bytes");
       }
     }
