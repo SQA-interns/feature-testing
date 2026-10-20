@@ -36,6 +36,7 @@ Project folder numbers match the phase that first uses them; later phases (3-7) 
 | `01_input/01_project/02_design/architecture.md` | components, constraints, interfaces |
 | `01_input/01_project/02_design/security-requirements.md` | security level, authentication, personal data, project requirements |
 | `01_input/01_project/02_design/quality-requirements.md` | non-functional requirements, thresholds, mutation scope, extra done criteria |
+| `01_input/01_project/02_design/api-contract.md` | the fixed REST API (paths, fields, status codes, local test settings) that external checks rely on |
 | `03_statistics/usage.md` | prices before the run (one row per model id, shape as in the file); nothing else |
 
 Order: fill `01_requirements/` and `02_design/`, then `00_setup/`, then start the agent. It checks everything else in phase 0 and asks for whatever is missing.
