@@ -2,7 +2,7 @@
 FROM eclipse-temurin:21.0.10_7-jdk-alpine AS build
 WORKDIR /src
 COPY .mvn .mvn
-COPY mvnw pom.xml dependency-check-suppressions.xml ./
+COPY mvnw pom.xml dependency-check-suppressions.xml spotbugs-exclude.xml ./
 RUN chmod +x mvnw && ./mvnw -B -q dependency:resolve
 COPY src src
 RUN ./mvnw -B -q -DskipTests package && cp target/registration-backend-1.0.0.jar /app.jar

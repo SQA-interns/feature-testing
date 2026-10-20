@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- D-14: constructor injection stores the injected collaborators (ports, Spring beans); SpotBugs
+     reports this as EI_EXPOSE_REP2. Excluded only for that pattern in the wired packages. -->
+<FindBugsFilter>
+  <Match>
+    <Class name="~si\.konferenca\.registration\.(application|adapter|config)\..*"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+</FindBugsFilter>
