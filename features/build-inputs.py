@@ -36,6 +36,7 @@ OPS = {
         ("after", "02_design/security-requirements.md", "| SR-08 |"),
         ("replace", "02_design/architecture.md", "| Options, registration, export |"),
         ("after", "02_design/quality-requirements.md", "| DoD-P05 |"),
+        ("append", "02_design/api-contract.md"),
     ],
     "group": [
         ("append", "01_requirements/user-stories.md"),
@@ -52,6 +53,8 @@ OPS = {
         ("after", "02_design/architecture.md", "| AR-07 |"),
         ("replace", "02_design/architecture.md", "| Options, registration, export |"),
         ("after", "02_design/quality-requirements.md", "| DoD-P05 |"),
+        ("replace", "02_design/api-contract.md", "`id`, `type`, `firstName`,"),
+        ("append", "02_design/api-contract.md"),
     ],
 }
 

@@ -52,10 +52,11 @@ Checkable rules the code must respect (layering, allowed dependencies, patterns)
 | AR-06 | The database schema changes only through Flyway migrations (ES-08). |
 | AR-07 | The frontend contains no secret; the reCAPTCHA site key is its only key and comes from configuration. |
 | AR-08 | A group is stored as one unit: a success response is sent only after the database rows and JSON copies of every member are written; if any of them fails, none of the group remains (BR-10, AR-05). |
+| AR-09 | The REST API under `/api` follows `api-contract.md` exactly: paths, methods, field names, status codes and the local test settings. |
 
 ## Interfaces
 
-Every interface between components or with external systems is defined as a contract in `docs/02_contracts/` in phase 2.
+Every interface between components or with external systems is defined as a contract in `docs/02_contracts/` in phase 2. The REST API is fixed by `api-contract.md` (AR-09); its phase 2 contract describes exactly that API.
 
 | Interface | Between | Style (e.g. REST, gRPC, events, file, UI) |
 |---|---|---|

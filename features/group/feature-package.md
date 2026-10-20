@@ -7,7 +7,7 @@ This file is the complete and only specification of the feature. Both run types 
 - **Greenfield:** before the run, every block below is applied to the named file in `01_input/01_project/` (added or replaced exactly as written), then the inputs are committed and the run starts as a normal run.
 - **Brownfield:** the same blocks are the change request given to the agent on top of a finished normal run (procedure: `brownfield-instructions.md`).
 
-IDs continue the project's numbering: `US-009`, `AC-009-nn`, `BR-09` to `BR-11`, `AR-08`, `E2E-06`, `DoD-P06`. Every feature package of this experiment uses the next free IDs of the base project, because a run gets exactly one feature: the inputs of each run then have no gaps and do not hint at other features. Nothing else in the project changes.
+IDs continue the project's numbering: `US-009`, `AC-009-nn`, `BR-09` to `BR-11`, `AR-08`, `E2E-06`, `DoD-P06`; the endpoint and export columns are added to the fixed API contract (`api-contract.md`, AR-09). Every feature package of this experiment uses the next free IDs of the base project, because a run gets exactly one feature: the inputs of each run then have no gaps and do not hint at other features. Nothing else in the project changes.
 
 ---
 
@@ -125,6 +125,37 @@ In "Interfaces", replace the row `| Options, registration, export | frontend or 
 
 ```markdown
 | DoD-P06 | Against the running local stack: a group of three external participants registers; every member is in PostgreSQL with a JSON copy, the member and contact confirmations and the organizer notification with three attachments arrive in Mailpit, and the export shows the group. | runtime demonstration log, Mailpit API output |
+```
+
+## 9. `02_design/api-contract.md`
+
+Replace the export's column line (the line starting `` `id`, `type`, ``) with:
+
+```markdown
+`id`, `type`, `firstName`, `lastName`, `email`, `organization`, `studyInstitution`, `studyProgramme`, `studentId`, `options`, `consents`, `registeredAt`, `groupId`, `contactName`, `contactEmail`
+```
+
+Add at the end:
+
+```markdown
+### `POST /api/group-registrations` (public)
+
+Request:
+
+    {
+      "contact": {"firstName": "Maja", "lastName": "Kranjc", "email": "maja@example.org"},
+      "organization": "Example d.o.o.",
+      "members": [
+        {"firstName": "Ana", "lastName": "Novak", "email": "ana@example.org", "options": ["ws-ai"]},
+        {"firstName": "Luka", "lastName": "Zupan", "email": "luka@example.org", "options": []}
+      ],
+      "consents": ["privacy"],
+      "captchaToken": "test-pass"
+    }
+
+Responses: 201 `{"groupId": "<group id>", "registrationIds": ["<id of member 1>", "<id of member 2>"]}`, the ids in the order of `members`; 400 with field errors, where a member's field is named `members[<index from 0>].<field>` (for example `members[1].email`), the member list as a whole `members`, the contact person's fields `contact.<field>`; any other error status when the group could not be stored (AC-009-09).
+
+In the export, `contactName` is the contact person's first and last name separated by a space; `groupId`, `contactName` and `contactEmail` are empty for individual registrations.
 ```
 
 ---

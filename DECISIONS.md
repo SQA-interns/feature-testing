@@ -17,6 +17,7 @@ One row per decision, newest last. "Status" is `agreed` (both sides use it) or `
 | E-07 | 2026-10-20 | Both packages use the next free IDs of the base project (US-009, BR-09…, AC-009-…, E2E-06, DoD-P06): a run gets exactly one feature, so its inputs have no gaps and do not hint at the other feature. | agreed |
 | E-08 | 2026-10-20 | A hidden oracle (feature scenarios plus regression scenarios of the base project) judges every run the same way; template 1.7 has none. | agreed |
 | E-09 | 2026-10-20 | The oracle needs a known API, but template 1.7 lets the agent design the API. Option A chosen: a fixed API contract becomes a project input (`02_design/api-contract.md`) for the base project, and each feature package adds its endpoints. Rejected: B (oracle through the browser, fragile because every run's UI differs), C (map each run's API by hand, a human judgement per run). Consequence: new normal runs in this repo get the contract too, so they are compared with each other, not with earlier 1.7 runs. | agreed |
+| E-10 | 2026-10-20 | The base contract (`main`, commit `a3f308f`) fixes form configuration, registration and export, the local URLs (backend 8080, Mailpit 8025) and three test settings passed through Compose: `CAPTCHA_TEST_MODE` (token `test-pass`), `RATE_LIMIT_PER_MINUTE`, `ORGANIZER_HTTPS_ONLY`. Each feature package adds its endpoint (`search`: `GET /api/registrations`; `group`: `POST /api/group-registrations` and three export columns). | agreed |
 
 ## Feature `search` (US-009 organizer search and filter)
 

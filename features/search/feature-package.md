@@ -7,7 +7,7 @@ This file is the complete and only specification of the feature. Both run types 
 - **Greenfield:** before the run, every block below is applied to the named file in `01_input/01_project/` (added or replaced exactly as written), then the inputs are committed and the run starts as a normal run.
 - **Brownfield:** the same blocks are the change request given to the agent on top of a finished normal run (procedure: `brownfield-instructions.md`, to be written).
 
-IDs continue the project's numbering: `US-009`, `AC-009-nn`, `BR-09`, `BR-10`, `SR-09`, `E2E-06`, `DoD-P06`. Nothing else in the project changes.
+IDs continue the project's numbering: `US-009`, `AC-009-nn`, `BR-09`, `BR-10`, `SR-09`, `E2E-06`, `DoD-P06`; the endpoint is added to the fixed API contract (`api-contract.md`, AR-09). Nothing else in the project changes.
 
 Every feature package of this experiment uses the next free IDs of the base project, because a run gets exactly one feature: the inputs of each run then have no gaps and do not hint at other features.
 
@@ -118,6 +118,28 @@ Replace the row `| Options, registration, export | frontend or organizer and bac
 
 ```markdown
 | DoD-P06 | Against the running local stack: the organizer finds a registration by last name and by type on the search page; the same search without organizer access is refused. | runtime demonstration log |
+```
+
+## 9. `02_design/api-contract.md`: add at the end
+
+```markdown
+### `GET /api/registrations` (organizer)
+
+Query parameters, all optional: `text` (search text, at most 100 characters), `type` (`EXTERNAL` or `STUDENT`), `option` (an option id), `page` (1 or more, default 1).
+
+Response 200:
+
+    {
+      "total": 25,
+      "page": 1,
+      "items": [
+        {"id": "…", "type": "EXTERNAL", "firstName": "Ana", "lastName": "Novak", "email": "ana@example.org",
+         "organization": "Example d.o.o.", "studyInstitution": null, "options": ["ws-ai"],
+         "registeredAt": "2026-10-20T10:15:00Z"}
+      ]
+    }
+
+`items` holds at most 20 registrations, newest first (BR-10). Response 400 with an error for the invalid parameter (`text`, `type`, `option` or `page`); 401 without valid organizer credentials.
 ```
 
 ---
