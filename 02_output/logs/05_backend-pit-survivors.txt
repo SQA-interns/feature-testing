@@ -1,0 +1,14 @@
+{'KILLED': 296, 'SURVIVED': 13, 'TIMED_OUT': 1}
+SURVIVED RegistrationValidator email 109 replaced return value with "" for si/konferenca/registration/domain/RegistrationValidator::email
+SURVIVED RegistrationValidator text 95 replaced return value with "" for si/konferenca/registration/domain/RegistrationValidator::text
+SURVIVED RegistrationValidator text 99 replaced return value with "" for si/konferenca/registration/domain/RegistrationValidator::text
+SURVIVED SmtpRegistrationNotifier notifyOrganizers 66 removed call to org/springframework/mail/javamail/MimeMessageHelper::setFrom
+SURVIVED JsonConferenceCatalogLoader bool 122 replaced boolean return with true for si/konferenca/registration/adapter/catalog/JsonConferenceCatalogLoader::bool
+SURVIVED RequestSizeFilter$LimitedInputStream isReady 113 replaced boolean return with false for si/konferenca/registration/web/RequestSizeFilter$LimitedInputStream::isReady
+SURVIVED ApplicationConfig captchaVerifier 51 replaced return value with null for si/konferenca/registration/config/ApplicationConfig::captchaVerifier
+SURVIVED GoogleCaptchaVerifier <init> 33 removed call to org/springframework/http/client/SimpleClientHttpRequestFactory::setConnectTimeout
+SURVIVED GoogleCaptchaVerifier <init> 34 removed call to org/springframework/http/client/SimpleClientHttpRequestFactory::setReadTimeout
+SURVIVED SecurityConfig apiSecurity 64 removed call to org/springframework/web/cors/CorsConfiguration::setAllowedOrigins
+SURVIVED WebFilterConfig requestSizeFilter 29 removed call to org/springframework/boot/web/servlet/FilterRegistrationBean::setOrder
+SURVIVED JpaRegistrationRepository save 21 removed call to jakarta/persistence/EntityManager::flush
+SURVIVED ConsentEmbeddable givenAt 31 replaced return value with null for si/konferenca/registration/adapter/persistence/ConsentEmbeddable::givenAt

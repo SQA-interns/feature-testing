@@ -1,0 +1,10 @@
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  9 passed (9)
+      Tests  86 passed (86)
+   Start at  16:15:49
+   Duration  5.81s (transform 1.13s, setup 0ms, import 6.85s, tests 8.56s, environment 13.95s)
+

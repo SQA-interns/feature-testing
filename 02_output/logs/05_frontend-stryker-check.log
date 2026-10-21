@@ -1,0 +1,97 @@
+[32m15:21:56 (23736) INFO ProjectReader[39m Found 1 of 47 file(s) to be mutated.
+[32m15:21:58 (23736) INFO Instrumenter[39m Instrumented 1 source file(s) with 61 mutant(s)
+[32m15:22:00 (23736) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m15:22:10 (23736) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m15:22:43 (23736) INFO DryRunExecutor[39m Initial test run succeeded. Ran 37 tests in 32 seconds (net 6944.103300000021 ms, overhead 25542.89669999998 ms).
+
+All tests
+  src
+    domain/validation.test.ts
+      ✓ validate accepts a complete external form (killed 24)
+      ✓ validate asks for a type before anything else (killed 3)
+      ✓ validate requires every field of the type after trimming (killed 2)
+      ~ validate checks only the fields of the chosen type (covered 39)
+      ✓ validate limits text by characters, not UTF-16 units (killed 5)
+      ✓ validate limits the email to 254 characters (killed 3)
+      ✓ validate rejects the email ana (killed 2)
+      ~ validate rejects the email ana@ (covered 39)
+      ~ validate rejects the email @x.si (covered 39)
+      ~ validate rejects the email ana@x (covered 39)
+      ✓ validate rejects the email a b@x.si (killed 1)
+      ~ validate rejects the email ana@x..si (covered 39)
+      ~ validate rejects the email ana@-x.si (covered 39)
+      ✓ validate accepts a trimmed valid email (killed 1)
+      ✓ validate requires mandatory consents only (killed 4)
+      ✓ validate requires a captcha token (killed 2)
+      ✘ buildPayload and optionsFor sends trimmed fields of the type with options and consents in configuration order (covered 0)
+      ✘ buildPayload and optionsFor offers each type only its options (covered 0)
+    App.test.tsx
+      ✘ App shows loading until the configuration is there, then only the type chooser (covered 0)
+      ✘ App shows a general error when the configuration cannot be loaded (covered 0)
+      ~ App keeps entered text, drops options the new type cannot have, and has no field errors yet (covered 39)
+      ~ App shows backend errors of unknown fields as the general error and keeps known ones (covered 39)
+      ~ App clears the general error on the next submission and shows no general error for known fields (covered 39)
+      ~ App disables the button while the submission is in flight and sends it once (covered 39)
+  tests/acceptance
+    confirmation.acceptance.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and removes the form (killed 3)
+      ~ US-004 registration confirmation AC-004-01 confirms a student registration without options (covered 39)
+      ~ US-004 registration confirmation AC-004-02 shows backend field errors next to their fields and keeps the values (covered 39)
+      ✓ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without a request (killed 5)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (covered 39)
+      ~ US-004 registration confirmation AC-004-04 shows a general error when the backend cannot be reached (covered 39)
+    external-form.acceptance.test.tsx
+      ✘ US-001 external participant form AC-001-08 shows exactly the external fields (covered 0)
+      ✘ US-001 external participant form AC-001-08 groups the active options available to external participants by category (covered 0)
+      ✘ US-001 external participant form AC-001-08 shows every consent and option unchecked (covered 0)
+    student-form.acceptance.test.tsx
+      ✘ US-002 student form AC-002-07 shows exactly the student fields (covered 0)
+      ✘ US-002 student form AC-002-07 shows only the active options available to students, grouped by category (covered 0)
+      ✘ US-002 student form AC-002-07 shows every consent unchecked (covered 0)
+      ✘ US-002 student form AC-002-07 switching from external to student removes the external-only fields and options (covered 0)
+
+[Survived] Regex
+src/domain/validation.ts:5:3
+-     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+/;
+Ran all tests for this mutant.
+
+[Survived] Regex
+src/domain/validation.ts:5:3
+-     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
+Ran all tests for this mutant.
+
+[Survived] Regex
+src/domain/validation.ts:5:3
+-     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9]))+$/;
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/validation.ts:13:12
+-     tooLong: "This value is too long.",
++     tooLong: "",
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/validation.ts:14:12
+-     consent: "This consent is required.",
++     consent: "",
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/validation.ts:15:12
+-     captcha: "Please confirm that you are not a robot.",
++     captcha: "",
+Ran all tests for this mutant.
+
+Ran 8.05 tests per mutant on average.
+---------------|------------------|----------|-----------|------------|----------|----------|
+               | % Mutation score |          |           |            |          |          |
+File           |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+All files      |  90.16 |   90.16 |       55 |         0 |          6 |        0 |        0 |
+ validation.ts |  90.16 |   90.16 |       55 |         0 |          6 |        0 |        0 |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m15:25:06 (23736) INFO MutationTestExecutor[39m Done in 3 minutes and 11 seconds.

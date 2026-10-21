@@ -1,0 +1,384 @@
+[32m16:06:45 (26556) INFO ProjectReader[39m Found 7 of 49 file(s) to be mutated.
+[32m16:06:45 (26556) INFO Instrumenter[39m Instrumented 7 source file(s) with 438 mutant(s)
+[32m16:06:45 (26556) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m16:06:46 (26556) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m16:06:48 (26556) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m16:07:03 (26556) INFO DryRunExecutor[39m Initial test run succeeded. Ran 86 tests in 15 seconds (net 3863.835599999995 ms, overhead 11599.164400000005 ms).
+Mutation testing 0% (elapsed: <1m, remaining: ~18m) 4/438 tested (0 survived, 0 timed out)
+Mutation testing 2% (elapsed: <1m, remaining: ~12m) 16/438 tested (0 survived, 0 timed out)
+Mutation testing 3% (elapsed: <1m, remaining: ~14m) 22/438 tested (0 survived, 0 timed out)
+Mutation testing 4% (elapsed: <1m, remaining: ~15m) 29/438 tested (4 survived, 0 timed out)
+Mutation testing 6% (elapsed: <1m, remaining: ~11m) 43/438 tested (4 survived, 0 timed out)
+Mutation testing 8% (elapsed: ~1m, remaining: ~10m) 60/438 tested (4 survived, 0 timed out)
+Mutation testing 10% (elapsed: ~1m, remaining: ~9m) 73/438 tested (4 survived, 0 timed out)
+Mutation testing 11% (elapsed: ~1m, remaining: ~10m) 81/438 tested (4 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~1m, remaining: ~10m) 88/438 tested (7 survived, 0 timed out)
+Mutation testing 16% (elapsed: ~1m, remaining: ~8m) 103/438 tested (7 survived, 0 timed out)
+Mutation testing 18% (elapsed: ~1m, remaining: ~7m) 113/438 tested (7 survived, 0 timed out)
+Mutation testing 19% (elapsed: ~2m, remaining: ~8m) 123/438 tested (7 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~2m, remaining: ~8m) 138/438 tested (9 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~2m, remaining: ~9m) 155/438 tested (10 survived, 0 timed out)
+Mutation testing 23% (elapsed: ~2m, remaining: ~8m) 170/438 tested (10 survived, 0 timed out)
+Mutation testing 24% (elapsed: ~2m, remaining: ~8m) 177/438 tested (10 survived, 0 timed out)
+Mutation testing 26% (elapsed: ~2m, remaining: ~7m) 188/438 tested (10 survived, 0 timed out)
+Mutation testing 28% (elapsed: ~3m, remaining: ~7m) 195/438 tested (10 survived, 0 timed out)
+Mutation testing 28% (elapsed: ~3m, remaining: ~7m) 197/438 tested (12 survived, 0 timed out)
+Mutation testing 31% (elapsed: ~3m, remaining: ~7m) 204/438 tested (14 survived, 0 timed out)
+Mutation testing 34% (elapsed: ~3m, remaining: ~6m) 215/438 tested (14 survived, 0 timed out)
+Mutation testing 36% (elapsed: ~3m, remaining: ~6m) 226/438 tested (14 survived, 0 timed out)
+Mutation testing 38% (elapsed: ~3m, remaining: ~6m) 235/438 tested (14 survived, 0 timed out)
+Mutation testing 39% (elapsed: ~4m, remaining: ~6m) 247/438 tested (14 survived, 0 timed out)
+Mutation testing 43% (elapsed: ~4m, remaining: ~5m) 260/438 tested (14 survived, 0 timed out)
+Mutation testing 47% (elapsed: ~4m, remaining: ~4m) 274/438 tested (14 survived, 0 timed out)
+Mutation testing 49% (elapsed: ~4m, remaining: ~4m) 284/438 tested (14 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~4m, remaining: ~4m) 297/438 tested (14 survived, 0 timed out)
+Mutation testing 54% (elapsed: ~4m, remaining: ~4m) 303/438 tested (14 survived, 0 timed out)
+Mutation testing 59% (elapsed: ~5m, remaining: ~3m) 322/438 tested (14 survived, 0 timed out)
+Mutation testing 64% (elapsed: ~5m, remaining: ~2m) 341/438 tested (14 survived, 0 timed out)
+Mutation testing 68% (elapsed: ~5m, remaining: ~2m) 352/438 tested (14 survived, 0 timed out)
+Mutation testing 71% (elapsed: ~5m, remaining: ~2m) 360/438 tested (14 survived, 0 timed out)
+Mutation testing 74% (elapsed: ~5m, remaining: ~1m) 369/438 tested (14 survived, 0 timed out)
+Mutation testing 77% (elapsed: ~5m, remaining: ~1m) 376/438 tested (15 survived, 0 timed out)
+Mutation testing 79% (elapsed: ~6m, remaining: ~1m) 382/438 tested (16 survived, 0 timed out)
+Mutation testing 81% (elapsed: ~6m, remaining: ~1m) 386/438 tested (17 survived, 0 timed out)
+Mutation testing 83% (elapsed: ~6m, remaining: ~1m) 392/438 tested (18 survived, 0 timed out)
+Mutation testing 84% (elapsed: ~6m, remaining: ~1m) 396/438 tested (19 survived, 0 timed out)
+Mutation testing 85% (elapsed: ~6m, remaining: ~1m) 398/438 tested (20 survived, 0 timed out)
+Mutation testing 89% (elapsed: ~6m, remaining: <1m) 408/438 tested (20 survived, 0 timed out)
+Mutation testing 91% (elapsed: ~7m, remaining: <1m) 414/438 tested (20 survived, 0 timed out)
+Mutation testing 91% (elapsed: ~7m, remaining: <1m) 415/438 tested (21 survived, 0 timed out)
+Mutation testing 94% (elapsed: ~7m, remaining: <1m) 424/438 tested (23 survived, 0 timed out)
+Mutation testing 97% (elapsed: ~7m, remaining: <1m) 432/438 tested (23 survived, 0 timed out)
+
+All tests
+  src
+    api/client.test.ts
+      ✓ fetchFormConfig returns the configuration from the own origin (killed 3)
+      ✓ fetchFormConfig fails on any other status (killed 2)
+      ✓ submitRegistration posts JSON and returns the new id on 201 (killed 11)
+      ✓ submitRegistration returns an empty id when the 201 body has none (killed 1)
+      ✓ submitRegistration returns the field errors of a 400 (killed 14)
+      ✓ submitRegistration treats a 400 without usable field errors as a failure: {"errors":[]} (killed 6)
+      ✓ submitRegistration treats a 400 without usable field errors as a failure: {"errors":"x"} (killed 1)
+      ✓ submitRegistration treats a 400 without usable field errors as a failure: {"errors":[{"field":1,"message":"m"}]} (killed 6)
+      ✓ submitRegistration treats a 400 without usable field errors as a failure: {"errors":[{"field":"f","message":2}]} (killed 1)
+      ~ submitRegistration treats a 400 without usable field errors as a failure: {"errors":[null]} (covered 38)
+      ~ submitRegistration treats a 400 without usable field errors as a failure: {"message":"no list"} (covered 24)
+      ~ submitRegistration treats status 413 as a failure (covered 16)
+      ~ submitRegistration treats status 429 as a failure (covered 16)
+      ~ submitRegistration treats status 500 as a failure (covered 16)
+      ~ submitRegistration treats status 503 as a failure (covered 16)
+      ✓ submitRegistration treats a network error or an unreadable body as a failure (killed 3)
+      ✓ submitRegistration edge cases needs every entry of a 400 error list to be a field error (killed 1)
+      ✓ submitRegistration edge cases does not read field errors from other statuses (killed 1)
+    components
+      Captcha.test.tsx
+        ✓ Captcha in test mode yields the test token while checked and nothing otherwise (killed 3)
+        ✓ Captcha in test mode shows its error next to the check (killed 1)
+        ~ Captcha in test mode has no description without an error (covered 8)
+        ✓ Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on (killed 8)
+        ✓ Captcha with Google reCAPTCHA loads the script once and renders when it has loaded (killed 16)
+        ✓ Captcha with Google reCAPTCHA resets the widget and the token after a failed submission (killed 11)
+        ~ Captcha with Google reCAPTCHA does not reset before the widget exists (covered 30)
+        ~ Captcha reset before the widget was rendered does not reset while the script has loaded but not yet rendered (covered 30)
+      OptionGroups.test.tsx
+        ✓ OptionGroups renders no fieldset for a category without options (killed 1)
+      RegistrationForm.test.tsx
+        ✓ RegistrationForm starts with nothing chosen, no errors and nothing submitted (killed 13)
+        ✓ RegistrationForm marks the chosen type and starts with empty fields of the right input types (killed 23)
+        ✓ RegistrationForm reports untouched fields, the consent and the captcha with their messages and no alert (killed 33)
+        ✓ RegistrationForm removes only the unchecked option and confirms with trimmed names (killed 31)
+        ✓ RegistrationForm shows a backend error for type at its field without a general error (killed 18)
+        ✓ RegistrationForm shows a backend error for firstName at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for lastName at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for email at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for organization at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for options at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for consents at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for captchaToken at its field without a general error (killed 1)
+        ✓ RegistrationForm shows a backend error for the student field studyInstitution (killed 8)
+        ✓ RegistrationForm shows a backend error for the student field studyProgramme (killed 2)
+        ✓ RegistrationForm shows a backend error for the student field studentId (killed 2)
+        ✓ RegistrationForm resets the Google widget after every failed submission (killed 15)
+    domain/validation.test.ts
+      ✓ validate accepts a complete external form (killed 18)
+      ✓ validate asks for a type before anything else (killed 3)
+      ✓ validate requires every field of the type after trimming (killed 3)
+      ~ validate checks only the fields of the chosen type (covered 39)
+      ✓ validate limits text by characters, not UTF-16 units (killed 4)
+      ✓ validate limits the email to 254 characters (killed 3)
+      ✓ validate rejects the email ana (killed 2)
+      ~ validate rejects the email ana@ (covered 39)
+      ~ validate rejects the email @x.si (covered 39)
+      ~ validate rejects the email ana@x (covered 39)
+      ✓ validate rejects the email a b@x.si (killed 1)
+      ~ validate rejects the email ana@x..si (covered 39)
+      ~ validate rejects the email ana@-x.si (covered 39)
+      ✓ validate accepts a trimmed valid email (killed 1)
+      ✓ validate requires mandatory consents only (killed 4)
+      ✓ validate requires a captcha token (killed 2)
+      ✘ buildPayload and optionsFor sends trimmed fields of the type with options and consents in configuration order (covered 0)
+      ~ buildPayload and optionsFor offers each type only its options (covered 3)
+      ✓ email pattern boundaries accepts x@a.si (killed 1)
+      ✓ email pattern boundaries accepts a@b.c (killed 1)
+      ✘ email pattern boundaries accepts ana@example.org (covered 0)
+      ✓ email pattern boundaries rejects ana@example.org, (killed 1)
+      ✘ email pattern boundaries rejects ana@example.org x (covered 0)
+      ✘ email pattern boundaries rejects ana@example.org- (covered 0)
+    App.test.tsx
+      ✓ App shows loading until the configuration is there, then only the type chooser (killed 26)
+      ✓ App shows a general error when the configuration cannot be loaded (killed 8)
+      ✓ App keeps entered text, drops options the new type cannot have, and has no field errors yet (killed 31)
+      ✓ App shows backend errors of unknown fields as the general error and keeps known ones (killed 14)
+      ✓ App clears the general error on the next submission and shows no general error for known fields (killed 3)
+      ✓ App disables the button while the submission is in flight and sends it once (killed 3)
+  tests/acceptance
+    confirmation.acceptance.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and removes the form (killed 25)
+      ~ US-004 registration confirmation AC-004-01 confirms a student registration without options (covered 208)
+      ✓ US-004 registration confirmation AC-004-02 shows backend field errors next to their fields and keeps the values (killed 8)
+      ~ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without a request (covered 184)
+      ✓ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (killed 1)
+      ~ US-004 registration confirmation AC-004-04 shows a general error when the backend cannot be reached (covered 207)
+    external-form.acceptance.test.tsx
+      ~ US-001 external participant form AC-001-08 shows exactly the external fields (covered 117)
+      ✓ US-001 external participant form AC-001-08 groups the active options available to external participants by category (killed 3)
+      ~ US-001 external participant form AC-001-08 shows every consent and option unchecked (covered 117)
+    student-form.acceptance.test.tsx
+      ✓ US-002 student form AC-002-07 shows exactly the student fields (killed 3)
+      ✓ US-002 student form AC-002-07 shows only the active options available to students, grouped by category (killed 4)
+      ~ US-002 student form AC-002-07 shows every consent unchecked (covered 117)
+      ~ US-002 student form AC-002-07 switching from external to student removes the external-only fields and options (covered 117)
+
+[Survived] ConditionalExpression
+src/api/client.ts:19:9
+-           typeof e === "object" &&
+-           e !== null &&
++           true &&
+Tests ran:
+    RegistrationForm shows a backend error for type at its field without a general error
+    RegistrationForm shows a backend error for firstName at its field without a general error
+    RegistrationForm shows a backend error for lastName at its field without a general error
+  and 16 more tests!
+
+
+[Survived] LogicalOperator
+src/api/client.ts:19:9
+-           typeof e === "object" &&
+-           e !== null &&
++           typeof e === "object" || e !== null &&
+Tests ran:
+    RegistrationForm shows a backend error for type at its field without a general error
+    RegistrationForm shows a backend error for firstName at its field without a general error
+    RegistrationForm shows a backend error for lastName at its field without a general error
+  and 16 more tests!
+
+
+[Survived] ConditionalExpression
+src/api/client.ts:19:9
+-           typeof e === "object" &&
++           true &&
+Tests ran:
+    RegistrationForm shows a backend error for type at its field without a general error
+    RegistrationForm shows a backend error for firstName at its field without a general error
+    RegistrationForm shows a backend error for lastName at its field without a general error
+  and 16 more tests!
+
+
+[Survived] ConditionalExpression
+src/api/client.ts:20:9
+-           e !== null &&
++           true &&
+Tests ran:
+    RegistrationForm shows a backend error for type at its field without a general error
+    RegistrationForm shows a backend error for firstName at its field without a general error
+    RegistrationForm shows a backend error for lastName at its field without a general error
+  and 16 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/Captcha.tsx:74:11
+-         if (container.current && window.grecaptcha && widget.current === null) {
++         if (true && widget.current === null) {
+Tests ran:
+    RegistrationForm resets the Google widget after every failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA loads the script once and renders when it has loaded
+  and 1 more test!
+
+
+[Survived] LogicalOperator
+src/components/Captcha.tsx:74:11
+-         if (container.current && window.grecaptcha && widget.current === null) {
++         if (container.current || window.grecaptcha && widget.current === null) {
+Tests ran:
+    RegistrationForm resets the Google widget after every failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA loads the script once and renders when it has loaded
+  and 1 more test!
+
+
+[Survived] ArrayDeclaration
+src/components/Captcha.tsx:95:6
+-     }, [siteKey]);
++     }, []);
+Tests ran:
+    RegistrationForm resets the Google widget after every failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA loads the script once and renders when it has loaded
+  and 3 more tests!
+
+
+[Survived] BooleanLiteral
+src/components/RegistrationForm.tsx:70:52
+-     const [generalError, setGeneralError] = useState(false);
++     const [generalError, setGeneralError] = useState(true);
+Tests ran:
+    RegistrationForm starts with nothing chosen, no errors and nothing submitted
+    RegistrationForm marks the chosen type and starts with empty fields of the right input types
+    RegistrationForm reports untouched fields, the consent and the captcha with their messages and no alert
+  and 31 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/RegistrationForm.tsx:73:21
+-     const available = type === "" ? [] : optionsFor(config, type);
++     const available = false ? [] : optionsFor(config, type);
+Tests ran:
+    RegistrationForm starts with nothing chosen, no errors and nothing submitted
+    RegistrationForm marks the chosen type and starts with empty fields of the right input types
+    RegistrationForm reports untouched fields, the consent and the captcha with their messages and no alert
+  and 31 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:73:30
+-     const available = type === "" ? [] : optionsFor(config, type);
++     const available = type === "Stryker was here!" ? [] : optionsFor(config, type);
+Tests ran:
+    RegistrationForm starts with nothing chosen, no errors and nothing submitted
+    RegistrationForm marks the chosen type and starts with empty fields of the right input types
+    RegistrationForm reports untouched fields, the consent and the captcha with their messages and no alert
+  and 31 more tests!
+
+
+[Survived] ArrayDeclaration
+src/components/RegistrationForm.tsx:73:35
+-     const available = type === "" ? [] : optionsFor(config, type);
++     const available = type === "" ? ["Stryker was here"] : optionsFor(config, type);
+Tests ran:
+    RegistrationForm starts with nothing chosen, no errors and nothing submitted
+    RegistrationForm marks the chosen type and starts with empty fields of the right input types
+    RegistrationForm reports untouched fields, the consent and the captcha with their messages and no alert
+  and 31 more tests!
+
+
+[Survived] StringLiteral
+src/domain/types.ts:47:56
+-     { name: "firstName", label: "First name", inputType: "text" },
++     { name: "firstName", label: "First name", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:48:54
+-     { name: "lastName", label: "Last name", inputType: "text" },
++     { name: "lastName", label: "Last name", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:56:77
+-       { name: "organization", label: "Organization / institution", inputType: "text" },
++       { name: "organization", label: "Organization / institution", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:60:72
+-       { name: "studyInstitution", label: "Study institution", inputType: "text" },
++       { name: "studyInstitution", label: "Study institution", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:61:68
+-       { name: "studyProgramme", label: "Study programme", inputType: "text" },
++       { name: "studyProgramme", label: "Study programme", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:62:58
+-       { name: "studentId", label: "Student ID", inputType: "text" },
++       { name: "studentId", label: "Student ID", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/domain/types.ts:89:19
+-       organization: "",
++       organization: "Stryker was here!",
+Ran all tests for this mutant.
+
+[Survived] ArrayDeclaration
+src/domain/types.ts:94:12
+-     options: [],
++     options: ["Stryker was here"],
+Ran all tests for this mutant.
+
+[Survived] ArrayDeclaration
+src/domain/types.ts:95:13
+-     consents: [],
++     consents: ["Stryker was here"],
+Ran all tests for this mutant.
+
+[Survived] BlockStatement
+src/App.tsx:21:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and removes the form
+    US-004 registration confirmation AC-004-01 confirms a student registration without options
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields and keeps the values
+  and 16 more tests!
+
+
+[Survived] BooleanLiteral
+src/App.tsx:22:16
+-         active = false;
++         active = true;
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and removes the form
+    US-004 registration confirmation AC-004-01 confirms a student registration without options
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields and keeps the values
+  and 16 more tests!
+
+
+[Survived] ArrayDeclaration
+src/App.tsx:24:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and removes the form
+    US-004 registration confirmation AC-004-01 confirms a student registration without options
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields and keeps the values
+  and 16 more tests!
+
+
+Ran 6.44 tests per mutant on average.
+-----------------------|------------------|----------|-----------|------------|----------|----------|
+                       | % Mutation score |          |           |            |          |          |
+File                   |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files              |  94.75 |   94.75 |      415 |         0 |         23 |        0 |        0 |
+ api                   |  94.03 |   94.03 |       63 |         0 |          4 |        0 |        0 |
+  client.ts            |  94.03 |   94.03 |       63 |         0 |          4 |        0 |        0 |
+ components            |  96.62 |   96.62 |      200 |         0 |          7 |        0 |        0 |
+  Captcha.tsx          |  94.74 |   94.74 |       54 |         0 |          3 |        0 |        0 |
+  OptionGroups.tsx     | 100.00 |  100.00 |       16 |         0 |          0 |        0 |        0 |
+  RegistrationForm.tsx |  97.01 |   97.01 |      130 |         0 |          4 |        0 |        0 |
+ domain                |  92.62 |   92.62 |      113 |         0 |          9 |        0 |        0 |
+  types.ts             |  85.25 |   85.25 |       52 |         0 |          9 |        0 |        0 |
+  validation.ts        | 100.00 |  100.00 |       61 |         0 |          0 |        0 |        0 |
+ App.tsx               |  92.86 |   92.86 |       39 |         0 |          3 |        0 |        0 |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m16:14:40 (26556) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2/02_output/frontend/reports/mutation/mutation.json
+[32m16:14:40 (26556) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2/02_output/frontend/reports/mutation/mutation.html
+[32m16:14:40 (26556) INFO MutationTestExecutor[39m Done in 7 minutes and 56 seconds.
