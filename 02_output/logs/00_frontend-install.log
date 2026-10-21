@@ -1,0 +1,9 @@
+
+changed 1 package, and audited 442 packages in 4s
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
