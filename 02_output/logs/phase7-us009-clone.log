@@ -1,0 +1,19 @@
+clone 62fa74d docs: add release notes 1.1.0 with organizer search and manual tests
+== backend: ls -l mvnw: -rwxrwxr-x
+build exit 0
+check exit 0
+test exit 0 [INFO] Tests run: 281, Failures: 0, Errors: 0, Skipped: 0
+== frontend
+npm ci exit 0
+build exit 0
+check exit 0
+test exit 0       Tests  94 passed (94)
+== stack (root README; project name of the clone check)
+up exit 0
+backend: Up 10 seconds (healthy)
+frontend: Up 10 seconds (healthy)
+mailpit: Up 16 seconds (healthy)
+postgres: Up 16 seconds (healthy)
+organizer page: 200
+e2e exit 0   6 passed (9.7s) 
+down -v exit 0

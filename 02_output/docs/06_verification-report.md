@@ -17,8 +17,8 @@ Change run `tjan_single-agent_sdd_v001_run-1-search` (US-009 organizer search on
 | DoD-05 | met | No open Critical or High: Dependency-Check 0 open (2 pre-approved suppressions), `npm audit --omit=dev` 0, the High on `vite` lowered to Medium by the human (D-22), the Semgrep ERROR is PA-04 (F-01, D-28), Gitleaks hits are false positives (F-02, F-11, F-12). |
 | DoD-06 | met | Runtime demonstration below (`phase6-us009-runtime-demo.log`). |
 | DoD-07 | met | Traceability below: 48/48 criteria have a test and a commit. |
-| DoD-08 | phase 7 | Clean-clone check of the READMEs in phase 7. |
-| DoD-09 | phase 7 | `docs/release-notes.md` updated in phase 7. |
+| DoD-08 | met (phase 7) | Root, backend and frontend READMEs followed from a fresh `git clone` of `62fa74d` on Linux: `./mvnw` executable (D-23), backend build, check and 281 tests; frontend `npm ci`, build, check and 94 tests; `docker compose up --build` healthy, `/organizer` 200, e2e 6/6, `down -v` (`out/logs/phase7-us009-clone.log`). |
+| DoD-09 | met (phase 7) | `docs/release-notes.md` 1.1.0, "Must be tested manually by a human": reCAPTCHA with production keys, SMTP to a real mailbox, TLS and reverse proxy (export and search over HTTPS), production start guard, the organizer search page in the organizers' browsers. |
 | DoD-10 | met | Every decision D-01 … D-29 has a resolution or is pending review (D-08 … D-11, D-16, D-26, D-27, D-29); inputs unchanged during the run (input manifest 41/41). |
 | DoD-11 | met | Phase 3 of this run (`691bc5a`, `f5b3dba`, `70ebd5c`) adds only test files and no production code; the freeze commit `943abd7` adds only `03_acceptance-manifest-us-009.sha256`, and each of its 4 files was committed before it; the base freeze `083eb5f` and its manifest are untouched. Build commits name US-009 / AC ids. Every manifest hash matches. |
 | DoD-P01 | met | One external and one student registration through the frontend proxy: both 201; a rejected captcha token 400. |
