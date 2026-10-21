@@ -46,8 +46,16 @@ public final class RegistrationValidator {
     String lastName = text(errors, "lastName", input.lastName(), MAX_TEXT_LENGTH);
     String email = email(errors, input.email());
     String organization = null;
+    String studyInstitution = null;
+    String studyProgramme = null;
+    String studentId = null;
     if (type == RegistrationType.EXTERNAL) {
       organization = text(errors, "organization", input.organization(), MAX_TEXT_LENGTH);
+    } else {
+      studyInstitution =
+          text(errors, "studyInstitution", input.studyInstitution(), MAX_TEXT_LENGTH);
+      studyProgramme = text(errors, "studyProgramme", input.studyProgramme(), MAX_TEXT_LENGTH);
+      studentId = text(errors, "studentId", input.studentId(), MAX_TEXT_LENGTH);
     }
     List<String> options = options(errors, type, input.options());
     List<String> consents = consents(errors, input.consents());
@@ -59,7 +67,16 @@ public final class RegistrationValidator {
     }
     return ValidationResult.accepted(
         new ValidRegistration(
-            type, firstName, lastName, email, organization, null, null, null, options, consents));
+            type,
+            firstName,
+            lastName,
+            email,
+            organization,
+            studyInstitution,
+            studyProgramme,
+            studentId,
+            options,
+            consents));
   }
 
   private static Optional<RegistrationType> type(String value) {
