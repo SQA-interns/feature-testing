@@ -16,7 +16,7 @@ Participants register online for a conference, either as external participants o
 
 ## Quick start
 
-Prerequisites: Docker Engine with Compose, JDK 21 and Node.js 24.13.0 with npm 11.6.2 (exact versions: `01_input/01_project/00_setup/tech-stack.md`).
+Prerequisites: Docker Engine with Compose, JDK 21 and Node.js 24.13.0 with npm 11.6.2 (exact versions: `01_input/01_project/00_setup/tech-stack.md`). On Windows, clone into a short path or with `git -c core.longpaths=true clone …`: the Java package paths exceed 260 characters below a deep folder.
 
 1. Create the secrets file at the **repository root** (one level above `02_output/`): copy `01_input/01_project/00_setup/secrets.env.example` to `.env` and fill in `POSTGRES_PASSWORD`, `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` (at least 16 characters) and `ORGANIZER_EMAILS`. The reCAPTCHA and SMTP keys stay empty locally. `.env` is ignored by git.
 2. Build the backend jar (the container image packages it):
