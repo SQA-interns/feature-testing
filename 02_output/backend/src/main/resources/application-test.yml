@@ -1,0 +1,15 @@
+# Defaults allowed only in this profile (environments.md, docs/02_specification.md section 3)
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/registration}
+    username: ${DB_USERNAME:registration}
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    properties:
+      mail.smtp.starttls.enable: ${MAIL_TLS:false}
+      mail.smtp.starttls.required: ${MAIL_TLS:false}
+
+app:
+  conference:
+    config-location: ${CONFERENCE_CONFIG:classpath:conference-config.json}

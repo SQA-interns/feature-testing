@@ -1,0 +1,15 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "AI workshop", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ws-security", "name": "Secure coding workshop", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ev-reception", "name": "Welcome reception", "category": "EVENT", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ev-industry-tour", "name": "Industry tour", "category": "EVENT", "active": true, "availableTo": ["EXTERNAL"] },
+    { "id": "meal-lunch", "name": "Lunch", "category": "MEAL", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "meal-dinner", "name": "Conference dinner", "category": "MEAL", "active": true, "availableTo": ["EXTERNAL"] },
+    { "id": "other-certificate", "name": "Certificate of attendance", "category": "OTHER", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ws-legacy", "name": "Legacy systems workshop", "category": "WORKSHOP", "active": false, "availableTo": ["EXTERNAL", "STUDENT"] }
+  ],
+  "consents": [
+    { "id": "privacy", "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.", "mandatory": true }
+  ]
+}
