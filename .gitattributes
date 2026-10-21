@@ -1,2 +1,4 @@
 # Same line endings for everyone: the run tools parse these files line by line
 * text=auto eol=lf
+# Windows batch scripts need CRLF to run in cmd
+*.cmd text eol=crlf
