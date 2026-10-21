@@ -12,6 +12,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import si.konferenca.registration.application.JsonCopyStore;
+import si.konferenca.registration.domain.GivenConsent;
 import si.konferenca.registration.domain.Registration;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -74,11 +75,16 @@ public class FileJsonCopyStore implements JsonCopyStore {
     d.put("studentId", r.studentId());
     d.put("options", r.options());
     List<Map<String, String>> consents =
-        r.consents().stream()
-            .map(c -> Map.of("id", c.id(), "givenAt", c.givenAt().toString()))
-            .toList();
+        r.consents().stream().map(FileJsonCopyStore::consent).toList();
     d.put("consents", consents);
     d.put("registeredAt", r.registeredAt().toString());
     return d;
+  }
+
+  private static Map<String, String> consent(GivenConsent c) {
+    Map<String, String> entry = new LinkedHashMap<>();
+    entry.put("id", c.id());
+    entry.put("givenAt", c.givenAt().toString());
+    return entry;
   }
 }
