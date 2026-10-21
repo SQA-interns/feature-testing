@@ -55,7 +55,12 @@ export const FIELDS: Record<RegistrationType, FieldDefinition[]> = {
     ...common,
     { name: "organization", label: "Organization / institution", inputType: "text" },
   ],
-  STUDENT: [...common],
+  STUDENT: [
+    ...common,
+    { name: "studyInstitution", label: "Study institution", inputType: "text" },
+    { name: "studyProgramme", label: "Study programme", inputType: "text" },
+    { name: "studentId", label: "Student ID", inputType: "text" },
+  ],
 };
 
 /** Option groups in display order (BR-04). */
