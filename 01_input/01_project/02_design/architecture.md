@@ -60,7 +60,8 @@ Every interface between components or with external systems is defined as a cont
 | Interface | Between | Style (e.g. REST, gRPC, events, file, UI) |
 |---|---|---|
 | Registration form | participant and frontend | UI |
-| Options, registration, export | frontend or organizer and backend | REST (OpenAPI) |
+| Options, registration, export, search | frontend or organizer and backend | REST (OpenAPI) |
+| Organizer search page | organizer and frontend | UI |
 | Registration storage | backend and PostgreSQL | SQL (JPA) |
 | JSON copy | backend and persistent volume | file (JSON schema) |
 | Conference options | configuration and backend | file or configuration (schema defined in phase 2) |

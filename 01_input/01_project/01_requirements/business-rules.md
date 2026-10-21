@@ -14,6 +14,8 @@
 | BR-06 | The in-application confirmation is shown only after the registration was accepted. |
 | BR-07 | An accepted registration is stored in the database and as a raw JSON copy on persistent storage. |
 | BR-08 | Only organizers can obtain the registration list; it is not reachable without organizer access. |
+| BR-09 | Only organizers can search and list registrations; the same organizer access as the export (BR-08) applies. |
+| BR-10 | The search text matches, without regard to upper or lower case, any part of the first name, last name, email, organization or study institution; leading and trailing whitespace is ignored and an empty text matches every registration. Filters combine: a registration is listed only if it matches the text, the type filter and the option filter. Results are listed newest first, 20 per page, with the total number of matches. |
 
 ## Data
 

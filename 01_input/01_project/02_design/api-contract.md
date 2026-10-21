@@ -77,3 +77,21 @@ Response 200: an Excel workbook (`application/vnd.openxmlformats-officedocument.
 `id`, `type`, `firstName`, `lastName`, `email`, `organization`, `studyInstitution`, `studyProgramme`, `studentId`, `options`, `consents`, `registeredAt`
 
 `options` and `consents` are the ids separated by `, `; a cell that does not apply to the registration's type is empty. Response 401 without valid organizer credentials.
+
+### `GET /api/registrations` (organizer)
+
+Query parameters, all optional: `text` (search text, at most 100 characters), `type` (`EXTERNAL` or `STUDENT`), `option` (an option id), `page` (1 or more, default 1).
+
+Response 200:
+
+    {
+      "total": 25,
+      "page": 1,
+      "items": [
+        {"id": "…", "type": "EXTERNAL", "firstName": "Ana", "lastName": "Novak", "email": "ana@example.org",
+         "organization": "Example d.o.o.", "studyInstitution": null, "options": ["ws-ai"],
+         "registeredAt": "2026-10-20T10:15:00Z"}
+      ]
+    }
+
+`items` holds at most 20 registrations, newest first (BR-10). Response 400 with an error for the invalid parameter (`text`, `type`, `option` or `page`); 401 without valid organizer credentials.
