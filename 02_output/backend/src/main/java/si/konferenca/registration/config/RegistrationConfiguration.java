@@ -22,9 +22,12 @@ import si.konferenca.registration.application.ExportService;
 import si.konferenca.registration.application.JsonCopyStore;
 import si.konferenca.registration.application.RegistrationNotifier;
 import si.konferenca.registration.application.RegistrationRepository;
+import si.konferenca.registration.application.RegistrationSearch;
 import si.konferenca.registration.application.RegistrationService;
+import si.konferenca.registration.application.SearchService;
 import si.konferenca.registration.domain.ConferenceConfig;
 import si.konferenca.registration.domain.RegistrationValidator;
+import si.konferenca.registration.domain.SearchCriteriaParser;
 
 /** Wires the registration use case to its adapters. */
 @Configuration
@@ -74,6 +77,11 @@ public class RegistrationConfiguration {
   @Bean
   ExportService exportService(RegistrationRepository repository) {
     return new ExportService(repository, new ExcelRegistrationExporter());
+  }
+
+  @Bean
+  SearchService searchService(ConferenceConfig conference, RegistrationSearch registrations) {
+    return new SearchService(new SearchCriteriaParser(conference), registrations);
   }
 
   @Bean

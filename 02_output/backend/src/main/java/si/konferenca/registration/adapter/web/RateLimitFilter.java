@@ -12,8 +12,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * SR-03, SB-06: at most {@code perMinute} requests per client address and endpoint in each clock
- * minute; more are answered with 429. Runs before authentication, so failed logins count too.
+ * SR-03, SB-06: at most {@code perMinute} requests per client address and endpoint (method and
+ * path) in each clock minute; more are answered with 429. Runs before authentication, so failed
+ * logins count too.
  */
 public class RateLimitFilter extends OncePerRequestFilter {
 
@@ -43,7 +44,8 @@ public class RateLimitFilter extends OncePerRequestFilter {
     if (windows.size() > MAX_TRACKED_CLIENTS) {
       windows.values().removeIf(w -> w.minute != minute);
     }
-    String key = request.getRemoteAddr() + ' ' + request.getRequestURI();
+    String key =
+        request.getRemoteAddr() + ' ' + request.getMethod() + ' ' + request.getRequestURI();
     Window window =
         windows.compute(
             key, (k, old) -> old == null || old.minute != minute ? new Window(minute) : old);

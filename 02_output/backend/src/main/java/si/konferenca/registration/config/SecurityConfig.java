@@ -21,8 +21,8 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 /**
- * Access control (SB-02, BR-08) and security headers (SB-10). Participants are anonymous; the
- * single organizer authenticates with HTTP Basic. Stateless, no cookies, so CSRF is off.
+ * Access control (SB-02, BR-08, BR-09) and security headers (SB-10). Participants are anonymous;
+ * the single organizer authenticates with HTTP Basic. Stateless, no cookies, so CSRF is off.
  */
 @Configuration
 public class SecurityConfig {
@@ -45,7 +45,7 @@ public class SecurityConfig {
                     .permitAll()
                     .requestMatchers(HttpMethod.POST, "/api/registrations")
                     .permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/export")
+                    .requestMatchers(HttpMethod.GET, "/api/export", "/api/registrations")
                     .access(new OrganizerAccess(properties.organizer().httpsOnly()))
                     .requestMatchers("/actuator/health", "/actuator/health/**", "/error")
                     .permitAll()
