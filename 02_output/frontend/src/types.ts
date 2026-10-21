@@ -54,3 +54,35 @@ export type TextField =
   | "studentId";
 
 export type FieldErrors = Partial<Record<string, string>>;
+
+/** Organizer credentials, typed in on the organizer page and kept in memory only (US-009). */
+export interface Credentials {
+  username: string;
+  password: string;
+}
+
+/** Text and filters of an organizer search; an empty string means "not given". */
+export interface SearchQuery {
+  text: string;
+  type: RegistrationType | "";
+  option: string;
+}
+
+/** One registration in the search result (GET /api/registrations). */
+export interface SearchItem {
+  id: string;
+  type: RegistrationType;
+  firstName: string;
+  lastName: string;
+  email: string;
+  organization: string | null;
+  studyInstitution: string | null;
+  options: string[];
+  registeredAt: string;
+}
+
+export interface SearchResult {
+  total: number;
+  page: number;
+  items: SearchItem[];
+}

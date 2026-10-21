@@ -1,5 +1,12 @@
 // The only module that talks to the backend, and only under /api (AR-01).
-import type { FieldError, FormConfig, RegistrationRequest } from "./types";
+import type {
+  Credentials,
+  FieldError,
+  FormConfig,
+  RegistrationRequest,
+  SearchQuery,
+  SearchResult,
+} from "./types";
 
 export type SubmitResult =
   { kind: "created"; id: string } | { kind: "rejected"; errors: FieldError[] } | { kind: "failed" };
@@ -33,6 +40,65 @@ export async function submitRegistration(request: RegistrationRequest): Promise<
   } catch {
     return { kind: "failed" };
   }
+}
+
+export type SearchOutcome =
+  | { kind: "found"; result: SearchResult }
+  | { kind: "unauthorized" }
+  | { kind: "forbidden" }
+  | { kind: "rejected"; errors: FieldError[] }
+  | { kind: "failed" };
+
+/**
+ * The organizer's search (US-009): GET /api/registrations with HTTP Basic credentials. The
+ * X-Requested-With header keeps the browser from opening its own login dialog on a 401.
+ */
+export async function searchRegistrations(
+  credentials: Credentials,
+  query: SearchQuery,
+  page: number,
+): Promise<SearchOutcome> {
+  const params = new URLSearchParams();
+  if (query.text.trim() !== "") params.set("text", query.text.trim());
+  if (query.type !== "") params.set("type", query.type);
+  if (query.option !== "") params.set("option", query.option);
+  params.set("page", String(page));
+  try {
+    const response = await fetch(`/api/registrations?${params.toString()}`, {
+      headers: {
+        Accept: "application/json",
+        Authorization: basicAuthorization(credentials),
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
+    if (response.status === 200) {
+      const body = (await response.json()) as Partial<SearchResult>;
+      return typeof body.total === "number" && Array.isArray(body.items)
+        ? {
+            kind: "found",
+            result: { total: body.total, page: body.page ?? page, items: body.items },
+          }
+        : { kind: "failed" };
+    }
+    if (response.status === 401) return { kind: "unauthorized" };
+    if (response.status === 403) return { kind: "forbidden" };
+    if (response.status === 400) {
+      const body = (await response.json()) as { errors?: unknown };
+      const errors = Array.isArray(body.errors) ? body.errors.filter(isFieldError) : [];
+      return errors.length > 0 ? { kind: "rejected", errors } : { kind: "failed" };
+    }
+    return { kind: "failed" };
+  } catch {
+    return { kind: "failed" };
+  }
+}
+
+/** "Basic " + base64 of the UTF-8 bytes of "username:password". */
+export function basicAuthorization({ username, password }: Credentials): string {
+  const bytes = new TextEncoder().encode(`${username}:${password}`);
+  let binary = "";
+  bytes.forEach((b) => (binary += String.fromCharCode(b)));
+  return "Basic " + btoa(binary);
 }
 
 function isFieldError(value: unknown): value is FieldError {
