@@ -68,6 +68,16 @@ Nothing else is excluded; no generated code exists in either component.
 
 ## First complete run (before any fix)
 
+Phase 5, 2026-10-21, on the code of the phase 4 gate, before any test or code change (`out/logs/05_backend-first-run.log`, `out/logs/05_frontend-first-run.log`, `out/logs/04_frontend-e2e.log`).
+
+| Component | Level | Passed | Failed | Line coverage (non-unit) | Branch coverage (non-unit) |
+|---|---|---|---|---|---|
+| backend | acceptance | 96 | 0 | 87.2 % (681/781, JaCoCo 0.8.12) | 71.0 % (169/238) |
+| frontend | acceptance | 13 | 0 | 80.3 % (V8, Vitest 4.1.11) | 69.3 % |
+| both | e2e | 5 | 0 | not instrumented (browser against the built bundle) | — |
+
+No failure, so nothing to classify (`general/quality/test-strategy.md`, "First complete run").
+
 ## Final run (phase 6)
 
 ## Test measures (phase 5, updated in phase 6 only for a component that changed)
