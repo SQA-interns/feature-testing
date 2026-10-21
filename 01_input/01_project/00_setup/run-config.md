@@ -7,14 +7,14 @@ The only file a human fills before starting the agent; the agent checks everythi
 - Model: claude-opus-5-5
 - Effort: medium
 - Template version: 1.7-ft
-- Run label: tanej_single-agent_sdd_v001_run-1
-- Operator: tanej
-- Machine: tanejPC
+- Run label: tjan_single-agent_sdd_v001_run-1-search
+- Operator: tjan
+- Machine: tjanPC
 - Plan: PRO
 - Permission mode: auto
-- Run type: normal
-- Feature: none
-- Base run:
+- Run type: brownfield
+- Feature: search
+- Base run: tanej_single-agent_sdd_v001_run-1 @ 84f9bde9e6e192f5dd31df96a9657775b13d1e3a
 - Run ID:
 - Starting commit:
 

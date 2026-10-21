@@ -16,7 +16,7 @@ Level 1 is a deliberate choice: the only authentication is one organizer role fo
 ## Authentication and authorization
 
 - Participants are anonymous; there are no participant accounts.
-- One organizer role may export registrations (BR-08). The mechanism is decided in phase 2, using the organizer credentials from `secrets.env.example`; identity providers are out of scope.
+- One organizer role may export and search registrations (BR-08, BR-09). The mechanism is decided in phase 2, using the organizer credentials from `secrets.env.example`; identity providers are out of scope.
 - Everything else (options, registration) is public but protected by SR-01 and SR-03.
 
 ## Personal data
@@ -36,12 +36,13 @@ Level 1 is a deliberate choice: the only authentication is one organizer role fo
 |---|---|
 | SR-01 | Every registration is protected by Google reCAPTCHA v2 and verified on the backend; the frontend check alone is never enough. |
 | SR-02 | reCAPTCHA test mode is enabled only by environment configuration, never by default; production refuses to start with test mode on or with empty keys. |
-| SR-03 | Every public `/api` endpoint (form configuration, registration, export) is rate limited per client, and request bodies have a size limit. |
+| SR-03 | Every public `/api` endpoint (form configuration, registration, export, search) is rate limited per client, and request bodies have a size limit. |
 | SR-04 | Option identifiers are checked against the active configured set (BR-04). |
 | SR-05 | Email content is generated safely: user input cannot inject headers or markup. |
 | SR-06 | Organizer credentials are never accepted over plain HTTP, except on localhost. |
 | SR-07 | The export and the organizer email expose only registration data, never internal fields or other system data. |
 | SR-08 | The reverse proxy in front of the backend never forwards a client-supplied `Host` header; it sets the upstream host itself. |
+| SR-09 | Participant data shown on the organizer search page is encoded for its context; markup in stored data is never executed. |
 
 ## Overrides
 
