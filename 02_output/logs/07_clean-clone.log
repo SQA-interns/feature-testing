@@ -1,0 +1,23 @@
+## git clone with core.longpaths (HEAD 0bc8fc3); path length of the clone: 163
+cloned, status: 0 changes
+## step 2: ./mvnw -B -DskipTests package
+target/registration-backend-1.0.0.jar
+## backend check
+backend check ok
+## step 3: docker compose up
+up exit 0
+backend Up 11 seconds (healthy)
+frontend Up Less than a second (health: starting)
+mailpit Up 17 seconds (healthy)
+postgres Up 17 seconds (healthy)
+## step 4
+form 200
+api 200
+mailpit 200
+## step 5: npm ci && npm run test:e2e
+npm ci ok
+frontend check ok
+      Tests  86 passed (86)
+  5 passed (11.5s)
+## step 6: down
+ Network registration_default Removed 

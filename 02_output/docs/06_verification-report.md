@@ -17,8 +17,8 @@ Verified on 2026-10-21 at commit `79fd249` (code) and the documentation commits 
 | DoD-05 | met | Findings below: no Critical or High open (F-01 High fixed in loop 1). Dependency-Check online with `NVD_API_KEY`: 67 dependencies, BUILD SUCCESS at `failBuildOnCVSS=7`, only the PA-01 and PA-02 suppressions (`06_backend-dependency-check.log`); `npm audit --omit=dev`: 0; full `npm audit`: 2 Moderate via `@stryker-mutator/core` (PA-03); Gitleaks over history and working tree: F-02 (fixed) and F-03 (Low). |
 | DoD-06 | met | Runtime demonstration below (`06_runtime-demo.log`, `06_runtime-demo-2.log`). |
 | DoD-07 | met | Traceability below: every AC has at least one test and at least one commit. |
-| DoD-08 | phase 7 | READMEs are written and followed from a clean clone in phase 7. |
-| DoD-09 | phase 7 | Release notes with the manual-test list in phase 7. |
+| DoD-08 | met (phase 7) | Root, backend and frontend READMEs followed from a fresh `git clone` of `0bc8fc3` into the scratch area (`out/logs/07_clean-clone.log`): jar build, backend checks, `docker compose up` (4 healthy), form/API/Mailpit 200, `npm ci`, frontend check, 86 tests, 5/5 e2e, `down`. The first attempt failed on Windows path length; the quick start now names `core.longpaths`. |
+| DoD-09 | met (phase 7) | `docs/release-notes.md` "Must be tested manually by a human": production reCAPTCHA, real SMTP delivery, TLS proxy and routing, production start-up refusals, workbook in a spreadsheet program. |
 | DoD-10 | met | `docs/decisions-log.md`: D-01..D-16 each have a resolution; D-11, D-12, D-13 are "pending review" with the applied option. `00_input-manifest.sha256`: 41 files, 0 mismatches. |
 | DoD-11 | met | Phase 3 commits add only tests, test resources, documents, logs and one build change (`@types/node`, D-14), no production code; the freeze commit `3f9a505` adds only the manifest, and every file it lists was committed before it; phase 4 has commits naming US-001 to US-008; the manifest hashes match. |
 | DoD-P01 | met | `POST /api/registrations` against the running stack: external 201 (`4e553dda-…`) and student 201 (`3e6b4cd3-…`); also E2E-01 and E2E-02 through the browser. |
