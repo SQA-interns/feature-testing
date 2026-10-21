@@ -1,0 +1,53 @@
+== NFR-04 health and readiness
+/actuator/health -> {"groups":["liveness","readiness"],"status":"UP"} 200
+/actuator/health/liveness -> {"status":"UP"} 200
+/actuator/health/readiness -> {"status":"UP"} 200
+/actuator/env -> 401 (not exposed)
+backend Up 2 minutes (healthy)
+frontend Up 2 minutes (healthy)
+mailpit Up 2 hours (healthy)
+postgres Up 2 hours (healthy)
+== DoD-P01 one external and one student registration through the frontend proxy
+external -> {"id":"eeee2532-8f04-4eba-8fa9-4253d434c9a1"} 201
+student -> {"id":"0dc7dc55-07be-4280-a78b-c0c00743ba3a"} 201
+rejected token -> 400
+== DoD-P02 database rows and JSON copies
+eeee2532-8f04-4eba-8fa9-4253d434c9a1|EXTERNAL|Zunanji||2026-10-20 21:32:00.581749+00
+0dc7dc55-07be-4280-a78b-c0c00743ba3a|STUDENT|Študent|Računalništvo|2026-10-20 21:32:00.695802+00
+-rw------- 1 app app 399 Oct 20 21:32 /data/json-copies/0dc7dc55-07be-4280-a78b-c0c00743ba3a.json
+-rw------- 1 app app 379 Oct 20 21:32 /data/json-copies/eeee2532-8f04-4eba-8fa9-4253d434c9a1.json
+{"id":"0dc7dc55-07be-4280-a78b-c0c00743ba3a","type":"STUDENT","firstName":"Demo","lastName":"Študent","email":"demo.student@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Računalništvo","studentId":"63200099","options":["ws-research"],"consents":[{"id":"privacy","givenAt":"2026-10-20T21:32:00.695802Z"}],"registeredAt":"2026-10-20T21:32:00.695802Z"}
+== DoD-P03 Mailpit (participant and organizer mails, organizer with JSON attachment)
+organizer (address from .env, not shown) | New registration: Konferenca 2026 | attachments 1
+participant demo.student@example.org | Registration confirmed: Konferenca 2026 | attachments 0
+organizer (address from .env, not shown) | New registration: Konferenca 2026 | attachments 1
+participant demo.external@example.org | Registration confirmed: Konferenca 2026 | attachments 0
+participant demo.external@example.org | Registration confirmed: Konferenca 2026 | attachments 0
+== DoD-P04 export
+with credentials -> 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+valid workbook, parts: xl/sharedStrings.xml, xl/styles.xml, xl/workbook.xml, xl/_rels/workbook.xml.rels, xl/worksheets/sheet1.xml
+rows incl. header: 20 | contains Študent and Računalništvo: True
+database rows: 19
+without credentials -> 401, 0 bytes, application/json
+wrong password -> 401
+== SB-10 headers: frontend /
+Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+== SB-10 headers: API
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+== SR-08 a client Host header is not forwarded: Host evil.example via the frontend proxy -> 200 (nginx sets Host backend:8080)
+== SR-03 body limit: 20 KB -> 413
+== SB-11 non-root: backend uid 10001, frontend user nginx
+== NFR-02 recreate every container
+backend Up 17 seconds (healthy)
+frontend Up 17 seconds (healthy)
+mailpit Up 24 seconds (healthy)
+postgres Up 23 seconds (healthy)
+after recreate, rows: 2 of 2; JSON copies: 2 of 2
+== SR-03 rate limit (60 per minute per client and endpoint)
+62 requests ->      60 200       2 429 

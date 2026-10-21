@@ -1,0 +1,23 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 42,
+  "EndLine": 42,
+  "StartColumn": 24,
+  "EndColumn": 76,
+  "Match": "ORGANIZER_PASSWORD = \"REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "02_output/backend/src/test/java/si/konferenca/registration/acceptance/AcceptanceTestSupport.java",
+  "SymlinkFile": "",
+  "Commit": "7babf856636aa28f26718c3ec24c543861d358ea",
+  "Link": "https://github.com/SQA-interns/feature-testing/blob/7babf856636aa28f26718c3ec24c543861d358ea/02_output/backend/src/test/java/si/konferenca/registration/acceptance/AcceptanceTestSupport.java#L42",
+  "Entropy": 3.7395723,
+  "Author": "Tanejb",
+  "Email": "tanej.buhin@student.um.si",
+  "Date": "2026-10-20T19:41:11Z",
+  "Message": "test: add backend acceptance harness and test configurations\n\nCo-Authored-By: Claude Opus 5.5 \u003cnoreply@anthropic.com\u003e",
+  "Tags": [],
+  "Fingerprint": "7babf856636aa28f26718c3ec24c543861d358ea:02_output/backend/src/test/java/si/konferenca/registration/acceptance/AcceptanceTestSupport.java:generic-api-key:42"
+ }
+]

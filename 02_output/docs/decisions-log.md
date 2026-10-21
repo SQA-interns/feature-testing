@@ -136,3 +136,21 @@
 - Options: 1. backend PIT runs every JUnit test of the backend (unit, architecture and all 102 acceptance tests, 237 in total); frontend Stryker runs every Vitest test (unit and the 9 acceptance tests, 55 in total); the 5 e2e tests are excluded from mutation runs only (default); 2. narrow the scope (not allowed)
 - Human response: none
 - Resolution: option 1 (tests run are recorded with each score)
+
+## D-16: npm advisory GHSA-698v-4r3x-3vcv on vite 6.4.3 accepted for this run
+- Timestamp: 2026-10-20T21:31:00Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: the phase 6 `npm audit` reports a Moderate advisory (Medium) on the pinned `vite` 6.4.3: launch-editor does not escape `%` on Windows (F-07). It affects only the dev server; the built bundle served by nginx does not contain vite, and `npm audit --omit=dev` reports 0. Not covered by `pre-approved.md`. Medium does not block the release; the fix (vite 6.4.4) changes a `tech-stack.md` version, which needs human approval.
+- Options: 1. keep 6.4.3, accept as Medium, and ask the human in the release notes to approve 6.4.4 for the next run (default); 2. stop and ask for the version change now
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-17: Semgrep "basic authentication" on the organizer endpoint lowered to Low (PA-04)
+- Timestamp: 2026-10-20T21:31:00Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: Semgrep `use-of-basic-authentication` (ERROR, High by `severity-scale.md`) on the organizer HTTP Basic scheme (F-01). Evidence matches PA-04: HTTP Basic is required by `architecture.md` and `security-requirements.md`; organizer credentials are accepted only over HTTPS or from localhost (SR-06, AC-008-04); the password is kept only as a BCrypt hash; `/api/export` is rate limited before authentication.
+- Options: 1. apply PA-04: lower to Low and accept (default); 2. treat as High
+- Human response: none (pre-approved, PA-04)
+- Resolution: option 1
