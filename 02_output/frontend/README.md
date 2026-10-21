@@ -2,7 +2,7 @@
 
 > Written in: phase 7 · Source: `project/02_design/architecture.md`, ES-05, ES-06 · Agent: writes
 
-React 19 single page for the registration form (`docs/02_contracts/interfaces.md`, "Registration form"), built with Vite and served by nginx. It talks to the backend only through `/api` (AR-01) and holds no secret: the reCAPTCHA site key comes from `GET /api/form-config` (AR-07).
+React 19 single page for the registration form (`docs/02_contracts/interfaces.md`, "Registration form") at `/` and the organizer search page ("Organizer search page", US-009) at `/organizer`, built with Vite and served by nginx. It talks to the backend only through `/api` (AR-01) and holds no secret: the reCAPTCHA site key comes from `GET /api/form-config` (AR-07).
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ React 19 single page for the registration form (`docs/02_contracts/interfaces.md
 
 ## Configuration
 
-The frontend has no settings of its own. nginx (`nginx.conf`) forwards `/api/` to `backend:8080` with a fixed `Host` (SR-08), limits bodies to 16 KiB and adds the security headers. In production the external reverse proxy serves `/` from this container and forwards `/api` to the backend.
+The frontend has no settings of its own. On the organizer page the organizer types the `ORGANIZER_USERNAME` / `ORGANIZER_PASSWORD` login; it is kept in memory only, so reloading the page signs out. nginx (`nginx.conf`) forwards `/api/` to `backend:8080` with a fixed `Host` (SR-08), limits bodies to 16 KiB and adds the security headers. In production the external reverse proxy serves `/` from this container and forwards `/api` to the backend.
 
 ## Commands (ES-05)
 
@@ -30,7 +30,7 @@ The frontend has no settings of its own. nginx (`nginx.conf`) forwards `/api/` t
 
 ## End-to-end tests
 
-The five tests in `e2e/` (E2E-01 … E2E-05) need the running local stack. They read the database and the JSON copies through `docker compose exec`, so Compose must find `.env`, and the export check needs the organizer login. Set both from `.env` without printing them, from `02_output/frontend` in Git Bash:
+The six tests in `e2e/` (E2E-01 … E2E-06) need the running local stack. They read the database and the JSON copies through `docker compose exec`, so Compose must find `.env`, and the export and search checks need the organizer login. Set both from `.env` without printing them, from `02_output/frontend` in a POSIX shell (Git Bash on Windows); if the stack runs under another project name (root README), export the same `COMPOSE_PROJECT_NAME` too:
 
 ```sh
 export COMPOSE_ENV_FILES="$(cd ../.. && pwd)/.env"
@@ -41,6 +41,7 @@ npm run e2e
 
 ## Troubleshooting
 
+- Organizer page: "Wrong username or password." means the backend answered 401; "Organizer access requires HTTPS." means `ORGANIZER_HTTPS_ONLY=true` on plain HTTP from a non-local client.
 - "The registration form could not be loaded": the backend is not reachable through `/api` (check `docker compose ps`, or start the backend for `npm run dev`).
 - `npm ci` fails with an engine error: use Node 24.13.0 / npm 11.6.2.
 - e2e: `required variable … is missing a value`: `COMPOSE_ENV_FILES` is not set; `Set ORGANIZER_USERNAME and ORGANIZER_PASSWORD`: export them as shown above.
