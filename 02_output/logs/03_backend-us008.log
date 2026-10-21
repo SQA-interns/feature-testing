@@ -1,0 +1,561 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\tanej\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-2\\02_output\\backend\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 5 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 20 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.ExportAcceptanceTest
+13:49:58.319 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:49:58.319 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:49:58.399 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:49:59.231 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+13:49:59.895 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+13:49:59.895 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+13:49:59.923 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.8.2
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7612 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+13:50:00.434 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:50:00.778 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: ecef2a4dd4372a2027c64d434c3f104fae375183cfc7fe904e684642beee238e
+13:50:01.334 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.8997164S
+13:50:01.343 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:50:01.343 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:50:01.344 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+13:50:01.345 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+13:50:01.478 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: 6ed96d8d19cfbb01bf8c99ccb2dd7e90f6e21b775757ed9858d3d4078e382e90
+13:50:04.097 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT2.7521963S
+13:50:04.098 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:63721/registration?loggerLevel=OFF)
+13:50:04.099 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+13:50:04.227 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 7bb4227d78566af2cfd5d90fd5473624894fc4460c2f972f4997c01f5b0a5c9b
+13:50:04.591 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /cranky_ardinghelli: Waiting for 60 seconds for URL: http://localhost:63722/api/v1/info (where port 63722 maps to container port 8025)
+13:50:04.774 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.6751175S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-21T13:50:05.354+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.acceptance.ExportAcceptanceTest    : Starting ExportAcceptanceTest using Java 21.0.11 with PID 37540 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\backend)
+2026-10-21T13:50:05.357+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.acceptance.ExportAcceptanceTest    : The following 1 profile is active: "test"
+2026-10-21T13:50:06.736+02:00  INFO 37540 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-21T13:50:06.773+02:00  INFO 37540 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2026-10-21T13:50:07.889+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-21T13:50:08.137+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46e29b93
+2026-10-21T13:50:08.140+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-21T13:50:08.176+02:00  INFO 37540 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63721/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-21T13:50:08.257+02:00  INFO 37540 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-21T13:50:08.262+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.018s)
+2026-10-21T13:50:08.262+02:00  WARN 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-21T13:50:08.291+02:00  INFO 37540 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-21T13:50:08.368+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-21T13:50:08.378+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-21T13:50:08.552+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-21T13:50:08.682+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-21T13:50:09.530+02:00  INFO 37540 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T13:50:09.679+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63721/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-21T13:50:10.266+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-21T13:50:10.276+02:00  INFO 37540 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T13:50:10.382+02:00  WARN 37540 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-21T13:50:11.128+02:00  WARN 37540 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c7a958b7-ada1-4198-9ab4-513500933519
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-21T13:50:11.152+02:00  INFO 37540 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-21T13:50:11.365+02:00  INFO 37540 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-21T13:50:11.426+02:00  INFO 37540 --- [registration-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-21T13:50:11.426+02:00  INFO 37540 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-21T13:50:11.441+02:00  INFO 37540 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2026-10-21T13:50:11.605+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.acceptance.ExportAcceptanceTest    : Started ExportAcceptanceTest in 6.781 seconds (process running for 15.558)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\tanej\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"289"]
+             Body = {"type":"EXTERNAL","firstName":"Žiga ?eh","lastName":"Šuštarši?","email":"ana.410bed6a@example.org","organization":"Zavod ?ŠŽ, ?rnu?e","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@34d4425f}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.7a95d8b0@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@23b65ee5}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.107cf859@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@336e6e97}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.99f58a5b@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@2e5325e3}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.f342dc72@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1fd6c8c7}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 14.83 s <<< FAILURE! -- in si.konferenca.registration.acceptance.ExportAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInTheWorkbook -- Time elapsed: 0.609 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.register(ExportAcceptanceTest.java:156)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInTheWorkbook(ExportAcceptanceTest.java:131)
+
+[ERROR] si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithWrongUsernameIsRefusedWithoutData -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.register(ExportAcceptanceTest.java:156)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithWrongUsernameIsRefusedWithoutData(ExportAcceptanceTest.java:114)
+
+[ERROR] si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithWrongPasswordIsRefusedWithoutData -- Time elapsed: 0.010 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.register(ExportAcceptanceTest.java:156)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithWrongPasswordIsRefusedWithoutData(ExportAcceptanceTest.java:100)
+
+[ERROR] si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithoutCredentialsIsRefusedWithoutData -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.register(ExportAcceptanceTest.java:156)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_02_exportWithoutCredentialsIsRefusedWithoutData(ExportAcceptanceTest.java:86)
+
+[ERROR] si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_01_organizerExportsWorkbookWithOneRowPerRegistration -- Time elapsed: 0.010 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.register(ExportAcceptanceTest.java:156)
+	at si.konferenca.registration.acceptance.ExportAcceptanceTest.ac_008_01_organizerExportsWorkbookWithOneRowPerRegistration(ExportAcceptanceTest.java:42)
+
+[INFO] Running si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-21T13:50:12.409+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.a.OrganizerHttpsOnlyAcceptanceTest : Starting OrganizerHttpsOnlyAcceptanceTest using Java 21.0.11 with PID 37540 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\backend)
+2026-10-21T13:50:12.409+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.a.OrganizerHttpsOnlyAcceptanceTest : The following 1 profile is active: "test"
+2026-10-21T13:50:12.747+02:00  INFO 37540 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-21T13:50:12.752+02:00  INFO 37540 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2026-10-21T13:50:12.866+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-21T13:50:12.891+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5b6fbb7f
+2026-10-21T13:50:12.892+02:00  INFO 37540 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-21T13:50:12.894+02:00  INFO 37540 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63721/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-21T13:50:12.926+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.008s)
+2026-10-21T13:50:12.926+02:00  WARN 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-21T13:50:12.956+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-21T13:50:12.957+02:00  INFO 37540 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-21T13:50:12.973+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-21T13:50:13.007+02:00  INFO 37540 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T13:50:13.020+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63721/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-21T13:50:13.040+02:00  INFO 37540 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-21T13:50:13.046+02:00  INFO 37540 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T13:50:13.074+02:00  WARN 37540 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-21T13:50:13.220+02:00  WARN 37540 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: aae0077f-d432-440b-b39d-0e7d427d8f02
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-21T13:50:13.227+02:00  INFO 37540 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-21T13:50:13.260+02:00  INFO 37540 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-21T13:50:13.275+02:00  INFO 37540 --- [registration-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-21T13:50:13.275+02:00  INFO 37540 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-21T13:50:13.277+02:00  INFO 37540 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-21T13:50:13.308+02:00  INFO 37540 --- [registration-backend] [           main] s.k.r.a.OrganizerHttpsOnlyAcceptanceTest : Started OrganizerHttpsOnlyAcceptanceTest in 0.939 seconds (process running for 17.262)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/export
+       Parameters = {}
+          Headers = [Authorization:"Basic b3JnYW5pemVyOmFjY2VwdGFuY2Utb3JnYW5pemVyLXNlY3JldC0wMQ=="]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = Unauthorized
+          Headers = [WWW-Authenticate:"Basic realm="Realm", charset="UTF-8"", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.03f2dffb@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-gala"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@380dfc7a}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/export
+       Parameters = {}
+          Headers = [Authorization:"Basic b3JnYW5pemVyOmFjY2VwdGFuY2Utb3JnYW5pemVyLXNlY3JldC0wMQ=="]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = Unauthorized
+          Headers = [WWW-Authenticate:"Basic realm="Realm", charset="UTF-8"", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", Strict-Transport-Security:"max-age=31536000 ; includeSubDomains", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 1.243 s <<< FAILURE! -- in si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromLocalhostAreAccepted -- Time elapsed: 0.173 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromLocalhostAreAccepted(OrganizerHttpsOnlyAcceptanceTest.java:52)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromRemoteClientAreRefusedWithoutData -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromRemoteClientAreRefusedWithoutData(OrganizerHttpsOnlyAcceptanceTest.java:34)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverHttpsFromRemoteClientAreAccepted -- Time elapsed: 0.076 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverHttpsFromRemoteClientAreAccepted(OrganizerHttpsOnlyAcceptanceTest.java:47)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ExportAcceptanceTest.ac_008_01_organizerExportsWorkbookWithOneRowPerRegistration:42->register:156 Status expected:<201> but was:<403>
+[ERROR]   ExportAcceptanceTest.ac_008_02_exportWithWrongPasswordIsRefusedWithoutData:100->register:156 Status expected:<201> but was:<403>
+[ERROR]   ExportAcceptanceTest.ac_008_02_exportWithWrongUsernameIsRefusedWithoutData:114->register:156 Status expected:<201> but was:<403>
+[ERROR]   ExportAcceptanceTest.ac_008_02_exportWithoutCredentialsIsRefusedWithoutData:86->register:156 Status expected:<201> but was:<403>
+[ERROR]   ExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInTheWorkbook:131->register:156 Status expected:<201> but was:<403>
+[ERROR]   OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverHttpsFromRemoteClientAreAccepted:47 Status expected:<200> but was:<401>
+[ERROR]   OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromLocalhostAreAccepted:52 Status expected:<200> but was:<401>
+[ERROR]   OrganizerHttpsOnlyAcceptanceTest.ac_008_04_validCredentialsOverPlainHttpFromRemoteClientAreRefusedWithoutData:34 Status expected:<201> but was:<403>
+[INFO] 
+[ERROR] Tests run: 9, Failures: 8, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  23.802 s
+[INFO] Finished at: 2026-10-21T13:50:14+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\backend\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

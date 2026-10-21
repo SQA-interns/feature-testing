@@ -1,0 +1,1506 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\tanej\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-2\\02_output\\backend\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 5 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest
+13:42:33.317 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:42:33.324 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:42:33.385 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:42:33.931 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+13:42:34.566 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+13:42:34.568 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+13:42:34.597 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.8.2
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7612 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+13:42:35.071 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:42:35.408 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 4566ad2de72ecfc7fa0fb9c0ad541602f4dbc9352efe256dac2672a65894ea03
+13:42:35.977 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.9061276S
+13:42:35.986 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:42:35.987 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:42:35.988 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+13:42:35.988 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+13:42:36.132 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: 905890db17ecfc11daa6ff0ae6c78796c113b5e5853b6a2401d6d456b63fd26c
+13:42:38.915 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT2.9260656S
+13:42:38.915 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:64518/registration?loggerLevel=OFF)
+13:42:38.916 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+13:42:39.056 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 34ebd04783ed877db154710aaf1531a85b515256d03225340f584fd18eb0ec49
+13:42:39.463 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /intelligent_moser: Waiting for 60 seconds for URL: http://localhost:64520/api/v1/info (where port 64520 maps to container port 8025)
+13:42:39.656 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.7403158S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-21T13:42:40.661+02:00  INFO 44052 --- [registration-backend] [           main] .k.r.a.StudentRegistrationAcceptanceTest : Starting StudentRegistrationAcceptanceTest using Java 21.0.11 with PID 44052 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\backend)
+2026-10-21T13:42:40.664+02:00  INFO 44052 --- [registration-backend] [           main] .k.r.a.StudentRegistrationAcceptanceTest : The following 1 profile is active: "test"
+2026-10-21T13:42:41.867+02:00  INFO 44052 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-21T13:42:41.916+02:00  INFO 44052 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JPA repository interfaces.
+2026-10-21T13:42:43.062+02:00  INFO 44052 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-21T13:42:43.318+02:00  INFO 44052 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d8ec941
+2026-10-21T13:42:43.320+02:00  INFO 44052 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-21T13:42:43.357+02:00  INFO 44052 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:64518/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-21T13:42:43.439+02:00  INFO 44052 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-21T13:42:43.444+02:00  INFO 44052 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.018s)
+2026-10-21T13:42:43.445+02:00  WARN 44052 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-21T13:42:43.482+02:00  INFO 44052 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-21T13:42:43.587+02:00  INFO 44052 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-21T13:42:43.594+02:00  INFO 44052 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-21T13:42:43.752+02:00  INFO 44052 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-21T13:42:43.837+02:00  INFO 44052 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-21T13:42:44.515+02:00  INFO 44052 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T13:42:44.665+02:00  INFO 44052 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:64518/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-21T13:42:45.268+02:00  INFO 44052 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-21T13:42:45.278+02:00  INFO 44052 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T13:42:45.379+02:00  WARN 44052 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-21T13:42:46.129+02:00  WARN 44052 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: eb74cf61-e5fe-4d54-816c-d1d8808b2eea
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-21T13:42:46.156+02:00  INFO 44052 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-21T13:42:46.394+02:00  INFO 44052 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-21T13:42:46.474+02:00  INFO 44052 --- [registration-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-21T13:42:46.474+02:00  INFO 44052 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-21T13:42:46.476+02:00  INFO 44052 --- [registration-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-21T13:42:46.644+02:00  INFO 44052 --- [registration-backend] [           main] .k.r.a.StudentRegistrationAcceptanceTest : Started StudentRegistrationAcceptanceTest in 6.551 seconds (process running for 15.682)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\tanej\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"286"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.94d75c1a@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"]}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@289dcf23}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"306"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.7eaf062e@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"  "}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@8a15db6}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"322"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.519ad296@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"not-the-test-token"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@44239be3}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"308"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.33cb1959@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-ai","ev-tour"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@78757bdc}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"304"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.42fa064e@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":[],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@431ab85f}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"312"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.e3b4307c@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["photos"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@31105e07}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"294"]
+             Body = {"type":"STUDENT","lastName":"Kranjc","email":"luka.94fda0ee@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6395fb38}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"309"]
+             Body = {"type":"STUDENT","firstName":"","lastName":"Kranjc","email":"luka.889d0f2a@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1180a09d}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"312"]
+             Body = {"type":"STUDENT","firstName":"   ","lastName":"Kranjc","email":"luka.4fba94a1@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@17b9e65e}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"293"]
+             Body = {"type":"STUDENT","firstName":"Luka","email":"luka.fdd54a2a@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@5d2ef8eb}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"307"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"","email":"luka.19fb0824@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@28f52242}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"310"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"   ","email":"luka.e659f7e6@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6e609356}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"271"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.d75167ff@example.org","organization":null,"studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@9b9f11}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"293"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.734e719c@example.org","organization":null,"studyInstitution":"","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@13adcd6}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"296"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.69651896@example.org","organization":null,"studyInstitution":"   ","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@7d61dfa0}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"263"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.4c004fd7@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@5febb7f}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"283"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.e78e3e58@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@2e7020a}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"286"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.d5ddb3a7@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"   ","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@41710f71}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"290"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.dd9d3426@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@2573eff7}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"305"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.325e6e52@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@37d87fb1}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"308"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.2a78036b@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"   ","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@435eb4e9}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"292"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@5c438d8c}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"293"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka@","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1f657fe5}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"306"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"@student.uni-lj.si","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@7ad4e824}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"303"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka@@uni-lj.si","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@481f9953}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"300"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"lu ka@uni.si","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@4c8082b7}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"266"]
+             Body = {"type":"EXTERNAL","firstName":"Ana","lastName":"Novak","email":"ana.9bb99c2c@example.org","organization":"Example d.o.o.","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-tour"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@bdc8448}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"313"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.71ba390b@example.org","organization":null,"studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@297383fc}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/registrations
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/json", Content-Length:"335"]
+             Body = {"type":"STUDENT","firstName":"Luka","lastName":"Kranjc","email":"luka.b909b840@example.org","organization":"Should be ignored d.o.o.","studyInstitution":"Univerza v Ljubljani","studyProgramme":"Ra?unalništvo in informatika","studentId":"63210001","options":["ws-data","meal-lunch"],"consents":["privacy"],"captchaToken":"test-pass"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@6c6f54b7}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 32, Failures: 29, Errors: 3, Skipped: 0, Time elapsed: 15.28 s <<< FAILURE! -- in si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(String)[1] -- Time elapsed: 0.605 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(StudentRegistrationAcceptanceTest.java:157)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(String)[2] -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(StudentRegistrationAcceptanceTest.java:157)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(String)[3] -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected(StudentRegistrationAcceptanceTest.java:157)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_04_optionNotAvailableToStudentsIsRejected -- Time elapsed: 0.012 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_04_optionNotAvailableToStudentsIsRejected(StudentRegistrationAcceptanceTest.java:115)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected(List)[1] -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected(StudentRegistrationAcceptanceTest.java:136)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected(List)[2] -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected(StudentRegistrationAcceptanceTest.java:136)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[1] -- Time elapsed: 0.010 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[2] -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[3] -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[4] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[5] -- Time elapsed: 0.009 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[6] -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[7] -- Time elapsed: 0.033 s <<< ERROR!
+java.lang.IllegalStateException: Query failed: select count(*) from registration
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:127)
+	at si.konferenca.registration.acceptance.support.Database.count(Database.java:107)
+	at si.konferenca.registration.acceptance.support.Database.countAll(Database.java:45)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:84)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "registration" does not exist
+  Position: 22
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:140)
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:123)
+	... 3 more
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[8] -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Query failed: select count(*) from registration
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:127)
+	at si.konferenca.registration.acceptance.support.Database.count(Database.java:107)
+	at si.konferenca.registration.acceptance.support.Database.countAll(Database.java:45)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:84)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "registration" does not exist
+  Position: 22
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:140)
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:123)
+	... 3 more
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[9] -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Query failed: select count(*) from registration
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:127)
+	at si.konferenca.registration.acceptance.support.Database.count(Database.java:107)
+	at si.konferenca.registration.acceptance.support.Database.countAll(Database.java:45)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:84)
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "registration" does not exist
+  Position: 22
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:140)
+	at si.konferenca.registration.acceptance.support.Database.query(Database.java:123)
+	... 3 more
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[10] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[11] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[12] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[13] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[14] -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[15] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[16] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[17] -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[18] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected(StudentRegistrationAcceptanceTest.java:87)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(String)[1] -- Time elapsed: 0.006 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(StudentRegistrationAcceptanceTest.java:103)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(String)[2] -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(StudentRegistrationAcceptanceTest.java:103)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(String)[3] -- Time elapsed: 0.007 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(StudentRegistrationAcceptanceTest.java:103)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(String)[4] -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(StudentRegistrationAcceptanceTest.java:103)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(String)[5] -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected(StudentRegistrationAcceptanceTest.java:103)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_04_sameOptionIsAcceptedForExternalParticipant -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_04_sameOptionIsAcceptedForExternalParticipant(StudentRegistrationAcceptanceTest.java:126)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_01_validStudentSubmissionIsAcceptedWithNewId -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_01_validStudentSubmissionIsAcceptedWithNewId(StudentRegistrationAcceptanceTest.java:46)
+
+[ERROR] si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_01_organizationOfStudentSubmissionIsIgnored -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at si.konferenca.registration.acceptance.StudentRegistrationAcceptanceTest.ac_002_01_organizationOfStudentSubmissionIsIgnored(StudentRegistrationAcceptanceTest.java:61)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_01_organizationOfStudentSubmissionIsIgnored:61 Status expected:<201> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_01_validStudentSubmissionIsAcceptedWithNewId:46 Status expected:<201> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:87 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected:103 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected:103 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected:103 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected:103 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_03_invalidEmailFormatIsRejected:103 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_04_optionNotAvailableToStudentsIsRejected:115 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_04_sameOptionIsAcceptedForExternalParticipant:126 Status expected:<201> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected:136 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_05_missingMandatoryConsentIsRejected:136 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected:157 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected:157 Status expected:<400> but was:<403>
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_06_missingOrRejectedCaptchaTokenIsRejected:157 Status expected:<400> but was:<403>
+[ERROR] Errors: 
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:84 » IllegalState Query failed: select count(*) from registration
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:84 » IllegalState Query failed: select count(*) from registration
+[ERROR]   StudentRegistrationAcceptanceTest.ac_002_02_missingEmptyOrBlankRequiredFieldIsRejected:84 » IllegalState Query failed: select count(*) from registration
+[INFO] 
+[ERROR] Tests run: 32, Failures: 29, Errors: 3, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.709 s
+[INFO] Finished at: 2026-10-21T13:42:48+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\backend\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

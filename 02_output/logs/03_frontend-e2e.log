@@ -1,0 +1,158 @@
+
+Running 5 tests using 1 worker
+
+  x  1 [chromium] › e2e\external-registration.e2e.ts:22:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) (1.5m)
+  x  2 [chromium] › e2e\field-errors.e2e.ts:5:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (1.5m)
+  x  3 [chromium] › e2e\organizer-export.e2e.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (196ms)
+  x  4 [chromium] › e2e\slovenian-characters.e2e.ts:21:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (1.5m)
+  x  5 [chromium] › e2e\student-registration.e2e.ts:27:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (196ms)
+
+
+  1) [chromium] › e2e\external-registration.e2e.ts:22:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.check: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('radiogroup', { name: 'Registration type' }).getByRole('radio', { name: 'External participant' })
+
+
+       at support\form.ts:23
+
+      21 |     .getByRole("radiogroup", { name: "Registration type" })
+      22 |     .getByRole("radio", { name: type })
+    > 23 |     .check();
+         |      ^
+      24 | }
+      25 |
+      26 | export async function fillFields(page: Page, p: Participant): Promise<void> {
+        at openForm (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\support\form.ts:23:6)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\external-registration.e2e.ts:32:3
+
+    Error Context: test-results\e2e\external-registration.e2e.-8ee1c-006-01-AC-007-01-AC-007-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\e2e\external-registration.e2e.-8ee1c-006-01-AC-007-01-AC-007-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\e2e\external-registration.e2e.-8ee1c-006-01-AC-007-01-AC-007-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e\field-errors.e2e.ts:5:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.check: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('radiogroup', { name: 'Registration type' }).getByRole('radio', { name: 'Student' })
+
+
+       at support\form.ts:23
+
+      21 |     .getByRole("radiogroup", { name: "Registration type" })
+      22 |     .getByRole("radio", { name: type })
+    > 23 |     .check();
+         |      ^
+      24 | }
+      25 |
+      26 | export async function fillFields(page: Page, p: Participant): Promise<void> {
+        at openForm (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\support\form.ts:23:6)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\field-errors.e2e.ts:14:3
+
+    Error Context: test-results\e2e\field-errors.e2e.ts-E2E-03-89cbf-fields-AC-004-02-AC-004-03--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\e2e\field-errors.e2e.ts-E2E-03-89cbf-fields-AC-004-02-AC-004-03--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\e2e\field-errors.e2e.ts-E2E-03-89cbf-fields-AC-004-02-AC-004-03--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e\organizer-export.e2e.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+      23 |   });
+      24 |
+    > 25 |   expect(response.status()).toBe(200);
+         |                             ^
+      26 |   expect(response.headers()["content-type"]).toContain(XLSX);
+      27 |   const workbook = await response.body();
+      28 |   const { header, records } = readRecords(workbook);
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\organizer-export.e2e.ts:25:29
+
+    Error Context: test-results\e2e\organizer-export.e2e.ts-E2-03e58-ations-AC-008-01-AC-008-02--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\e2e\organizer-export.e2e.ts-E2-03e58-ations-AC-008-01-AC-008-02--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\e2e\organizer-export.e2e.ts-E2-03e58-ations-AC-008-01-AC-008-02--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e\slovenian-characters.e2e.ts:21:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.check: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('radiogroup', { name: 'Registration type' }).getByRole('radio', { name: 'External participant' })
+
+
+       at support\form.ts:23
+
+      21 |     .getByRole("radiogroup", { name: "Registration type" })
+      22 |     .getByRole("radio", { name: type })
+    > 23 |     .check();
+         |      ^
+      24 | }
+      25 |
+      26 | export async function fillFields(page: Page, p: Participant): Promise<void> {
+        at openForm (C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\support\form.ts:23:6)
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\slovenian-characters.e2e.ts:32:3
+
+    Error Context: test-results\e2e\slovenian-characters.e2e.t-b9251--chain-AC-005-04-AC-008-03--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\e2e\slovenian-characters.e2e.t-b9251--chain-AC-005-04-AC-008-03--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\e2e\slovenian-characters.e2e.t-b9251--chain-AC-005-04-AC-008-03--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › e2e\student-registration.e2e.ts:27:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+
+    SyntaxError: Unexpected end of JSON input
+
+      34 |     studentId: "63220002",
+      35 |   };
+    > 36 |   const config = (await (await request.get("/api/form-config")).json()) as {
+         |                   ^
+      37 |     options: { id: string; category: string; availableTo: string[] }[];
+      38 |   };
+      39 |   const expected: Record<string, string[]> = {};
+        at C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-2\02_output\frontend\e2e\student-registration.e2e.ts:36:19
+
+    Error Context: test-results\e2e\student-registration.e2e.t-e8e4f-002-01-AC-002-07-AC-004-01--chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\e2e\student-registration.e2e.t-e8e4f-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\e2e\student-registration.e2e.t-e8e4f-002-01-AC-002-07-AC-004-01--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › e2e\external-registration.e2e.ts:22:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 
+    [chromium] › e2e\field-errors.e2e.ts:5:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) 
+    [chromium] › e2e\organizer-export.e2e.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+    [chromium] › e2e\slovenian-characters.e2e.ts:21:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+    [chromium] › e2e\student-registration.e2e.ts:27:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
