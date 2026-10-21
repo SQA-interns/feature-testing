@@ -226,3 +226,21 @@
 - Options: 1. run the scan with `-DnvdApiResultsPerPage=500 -DnvdApiDelay=4000` on the command line (download paging only; analysers, suppressions and scope unchanged; `pom.xml` unchanged) (default); 2. ask the human to retry later
 - Human response: none
 - Resolution: option 1; the run completed: 0 open, 2 suppressed (`out/logs/phase0-change-dependency-check-report.json`)
+
+## D-26: The 100-character search text limit counts the trimmed text
+- Timestamp: 2026-10-21T20:50:00Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-6 in `docs/01_requirements-check.md`: AC-009-08 rejects a text longer than 100 characters; BR-10 ignores leading and trailing whitespace.
+- Options: 1. trim first, then reject more than 100 characters (Unicode code points) with a `text` error (proposed default: the limit applies to the text that is searched, consistent with BR-10 and D-08); 2. count the raw parameter
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-27: Strict values for the search parameters type, option and page
+- Timestamp: 2026-10-21T20:50:00Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-7 in `docs/01_requirements-check.md`: the handling of a present but blank `type`, `option` or `page`, of a lower-case type and of a non-numeric page is not specified.
+- Options: 1. strict (SB-01, conservative): `type` must be exactly `EXTERNAL` or `STUDENT`, `option` exactly a configured option id, `page` a whole number from 1 to 1 000 000 in decimal digits; any other present value, blank included, is rejected (HTTP 400, error for that parameter); an absent or blank `text` matches every registration (BR-10) (proposed default); 2. lenient: blank means absent, case-insensitive type
+- Human response: none
+- Resolution: pending review (option 1 applied)
