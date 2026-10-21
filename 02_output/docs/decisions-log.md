@@ -118,3 +118,12 @@
 - Options: 1. Reject with HTTP 400 and an error for `type`, nothing stored or sent (conservative, default); 2. Default to `EXTERNAL`.
 - Human response: none
 - Resolution: pending review (option 1 applied)
+
+## D-14: Add @types/node 24.13.6 as a dev dependency of the frontend
+- Timestamp: 2026-10-21T11:54:31Z
+- Phase: 3
+- Type: non-blocking
+- Trigger: the end-to-end helpers (`frontend/e2e/support`) use Node APIs (`child_process`, `zlib`, `process`) and the frontend type check (`tsc --noEmit`, ES-05) covers `e2e/`; no `@types/node` is listed in `tech-stack.md` or installed transitively.
+- Options: 1. Add `@types/node` 24.13.6 (exact, MIT, published 2026-09-19, matches the Node 24.13 runtime), dev scope only (default); 2. Exclude `e2e/` from the type check.
+- Human response: none
+- Resolution: option 1 (rule in `tech-stack.md`: an unlisted tool with an exact version and a non-blocking decision; scanned in phase 6; `npm audit --audit-level=high` passes)
