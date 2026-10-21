@@ -114,6 +114,18 @@ Backend full run (`out/logs/phase5-us009-pit-full.log`, `phase5-us009-pit-full-m
 
 Code size (cloc, image `aldanial/cloc:2.10` reporting 1.98, D-07): backend production 2 116, test 3 771 lines; frontend production 1 014, test 2 167 (unit 1 006, acceptance 516, e2e 645). Duplication: backend PMD CPD 0 violations; frontend jscpd 5.4.0: 1 clone of 12 lines (1.06 %) in `api.ts` (the 400 handling repeated in `searchRegistrations`), taken to phase 6 as a finding.
 
+### Phase 6 re-measure (frontend only, after fix F-10)
+
+`frontend/src/api.ts` changed in phase 6 (F-10), so the frontend was measured once more after the last fix; the backend did not change after phase 5 and was not re-measured. Final run: backend 281/281, frontend 94/94, e2e 6/6.
+
+| Component | Level | Tests passed / failed | Line coverage | Branch coverage | Mutation score (scope) | Tools |
+|---|---|---|---|---|---|---|
+| frontend | unit | 82 / 0 | 99.59 % (244/245) | 94.30 % (182/193) | — | Vitest 4.1.11, v8 |
+| frontend | non-unit (acceptance) | 12 / 0 | 78.36 % (192/245) | 66.32 % (128/193) | — | Vitest 4.1.11, v8 |
+| frontend | all levels | 94 / 0 | 100 % (245/245) | 94.81 % (183/193) | raw = adjusted 91.19 % (600 killed of 658 valid, 653 covered; 2 runtime-error mutants not valid; same scope and tests; one full run, `out/logs/phase6-us009-stryker-full.log`) | Stryker 10.0.0 + vitest-runner |
+
+Frontend code size after the fix (cloc 1.98): production 1 011 lines. Duplication: jscpd 0 clones.
+
 ## Measurement exclusions
 
 Fixed in phase 0 in the tool configuration (`backend/pom.xml` JaCoCo and PIT, `frontend/vite.config.ts` coverage), before any test was written; they equal the defaults of `quality-requirements.md` "Mutation scope".

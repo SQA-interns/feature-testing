@@ -1,0 +1,73 @@
+== start: docker compose --env-file ../.env up -d --build (project konferenca-us009)
+exit 0
+backend: Up 10 seconds (healthy)
+frontend: Up 10 seconds (healthy)
+mailpit: Up 3 hours (healthy)
+postgres: Up 3 hours (healthy)
+== NFR-04 health
+/actuator/health -> 200 {"groups":["liveness","readiness"],"stat
+/actuator/health/liveness -> 200 {"status":"UP"}
+/actuator/health/readiness -> 200 {"status":"UP"}
+/actuator/env -> 401 {"timestamp":"2026-10-21T22:08:10.496Z",
+== DoD-P01 registrations through the frontend proxy
+external: {"id":"95bd5013-6ff4-4a05-8817-46408704d124"}
+student: {"id":"414ed9e3-61f2-4e38-b512-5e00f6e1254b"}
+rejected captcha: 400
+== DoD-P02 database rows and JSON copies
+EXTERNAL|Zunanja1792620469
+STUDENT|Čebelar1792620469
+/data/json-copies/414ed9e3-61f2-4e38-b512-5e00f6e1254b.json
+/data/json-copies/95bd5013-6ff4-4a05-8817-46408704d124.json
+"studyProgramme":"Računalništvo"
+== DoD-P03 Mailpit (subjects and attachment counts only)
+4 messages mentioning the run stamp
+  New registration: Konferenca 2026 attachments 1
+  Registration confirmed: Konferenca 2026 attachments 0
+  New registration: Konferenca 2026 attachments 1
+  Registration confirmed: Konferenca 2026 attachments 0
+== DoD-P04 export
+with credentials: 200 cannot open `/tmp/claude-1000/demo-expor
+without credentials: 401
+wrong password: 401
+== DoD-P06 search (API) and organizer page
+by last name: total 1 [('Čebelar1792620469', 'STUDENT')]
+by type STUDENT + stamp: total 1 [('Čebelar1792620469', 'STUDENT')]
+by type EXTERNAL + stamp: total 1 [('Zunanja1792620469', 'EXTERNAL')]
+through the frontend proxy: 200
+without credentials: 401 body bytes 104
+wrong password: 401
+wrong password with X-Requested-With: 401, WWW-Authenticate: 0
+invalid parameters: {"errors":[{"field":"type","message":"The type must be EXTERNAL or STUDENT."},{"field":"page","message":"The page must be a whole number of 1 or more."}]}
+organizer page /organizer: 200 <div id="root">
+== security headers
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googl
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+client Host header via proxy: 200
+20 KB body: 413
+SB-11 users: backend 10001, frontend nginx
+== SR-03 rate limit on the search endpoint (62 requests in one minute)
+GET /api/registrations:      60 200       2 429 
+POST /api/registrations in the same minute (separate endpoint): 400
+== NFR-02 down and up
+down 0
+up 0
+2
+/data/json-copies/414ed9e3-61f2-4e38-b512-5e00f6e1254b.json
+/data/json-copies/95bd5013-6ff4-4a05-8817-46408704d124.json
+search after recreation: total 2
+backend: Up 11 seconds (healthy)
+frontend: Up 11 seconds (healthy)
+mailpit: Up 17 seconds (healthy)
+postgres: Up 17 seconds (healthy)
+== backend log: personal data of this run
+lines with the run's names or emails: 0
+OOXML parts ok: True
+rows incl. header: 15
+db rows: 14

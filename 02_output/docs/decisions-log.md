@@ -244,3 +244,21 @@
 - Options: 1. strict (SB-01, conservative): `type` must be exactly `EXTERNAL` or `STUDENT`, `option` exactly a configured option id, `page` a whole number from 1 to 1 000 000 in decimal digits; any other present value, blank included, is rejected (HTTP 400, error for that parameter); an absent or blank `text` matches every registration (BR-10) (proposed default); 2. lenient: blank means absent, case-insensitive type
 - Human response: none
 - Resolution: pending review (option 1 applied)
+
+## D-28: Semgrep "basic authentication" on the organizer scheme lowered to Low (PA-04), now covering the search
+- Timestamp: 2026-10-21T22:11:53Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: Semgrep `use-of-basic-authentication` (ERROR, High by `severity-scale.md`) on the `organizerBasic` scheme of `docs/02_contracts/openapi.yaml`, which now protects `GET /api/export` and `GET /api/registrations` (F-01). Evidence matches PA-04: HTTP Basic is required by `architecture.md` and `security-requirements.md` (BR-08, BR-09); organizer credentials are accepted only over HTTPS or from localhost (SR-06, AC-008-04, AC-009-10); the password is kept only as a BCrypt hash; both organizer endpoints are rate limited before authentication (runtime: 60 × 200, then 429).
+- Options: 1. apply PA-04: lower to Low and accept (default); 2. treat as High
+- Human response: none (pre-approved, PA-04)
+- Resolution: option 1
+
+## D-29: npm advisories on @vitest/mocker (pinned vitest 4.1.11) accepted as Medium
+- Timestamp: 2026-10-21T22:11:53Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: the phase 6 `npm audit` reports Moderate advisories GHSA-qxg6-89mg-rqv8 and GHSA-xp26-3454-mjgp on `@vitest/mocker` ≤ 4.1.11, pulled in by the pinned `vitest` and `@vitest/coverage-v8` 4.1.11 (F-13; `out/logs/phase6-us009-npm-audit.txt`). Test tooling only: not in the bundle, `npm audit --omit=dev` 0. Not covered by PA-03 (which names only `@stryker-mutator/core`). Medium does not block; the fix changes a `tech-stack.md` version (and vitest 4.1.11 is pinned on purpose for Stryker).
+- Options: 1. keep 4.1.11, accept as Medium, list the upgrade for the human in the release notes (default); 2. stop and ask for a version change
+- Human response: none
+- Resolution: pending review (option 1 applied)
