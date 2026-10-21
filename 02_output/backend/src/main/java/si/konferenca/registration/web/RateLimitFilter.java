@@ -33,6 +33,11 @@ public class RateLimitFilter extends OncePerRequestFilter {
     this.clock = clock;
   }
 
+  /** Number of client and endpoint windows currently kept. */
+  int trackedWindows() {
+    return windows.size();
+  }
+
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
     return !request.getRequestURI().startsWith(request.getContextPath() + "/api/");
