@@ -418,6 +418,10 @@ def feature_group(cfg):
 
 # ------------------------------------------------------------------ rate limit phase
 def phase_ratelimit(feature):
+    # start at the beginning of a minute, so a window that counts per clock minute cannot split the four requests
+    sec = time.time() % 60
+    if sec > 45:
+        time.sleep(61 - sec)
     codes = [http("GET", "/api/form-config")[0] for _ in range(4)]
     record("R15", codes[:3] == [200, 200, 200] and codes[3] == 429, f"statuses {codes} (expected 200, 200, 200, 429)")
 
@@ -431,7 +435,9 @@ def main():
     phase, feature = args[0], args[args.index("--feature") + 1]
     if feature not in ("none", "search", "group"):
         sys.exit("--feature must be none, search or group")
-    st, _, err = http("GET", "/api/form-config")
+    # reachability check on another endpoint: the rate limit counts per client and endpoint (api-contract.md),
+    # so this request must not use up the form-configuration budget that R15 measures
+    st, _, err = http("GET", "/api/export")
     if st == 0:
         sys.exit(f"backend not reachable at {BASE}: {err}")
     print(f"tag {TAG}, feature {feature}, phase {phase}")
