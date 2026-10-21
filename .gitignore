@@ -1,0 +1,29 @@
+# Local configuration and secrets (ES-02)
+.env
+.env.*
+!.env.example
+
+# Build output
+target/
+dist/
+build/
+coverage/
+reports/
+.stryker-tmp/
+test-results/
+playwright-report/
+blob-report/
+
+# Dependencies
+node_modules/
+.mvn/wrapper/maven-wrapper.jar
+
+# Editors and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local runtime data
+02_output/data/
