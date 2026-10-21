@@ -265,7 +265,8 @@ def regression():
            f"Slovenian characters: status {st}, unchanged in export {bool(rows) and rows[0].get('organization') == 'Čebelarstvo Ščurek'}")
 
     pad_last = letters(6)
-    st, js = register(external(cfg, "  " + pad_last + "  ", firstName="  Ana  ", organization=" Primer doo "))
+    # only the text fields get surrounding spaces; the email is built separately (an email with spaces is invalid)
+    st, js = register(external(cfg, "  " + pad_last + "  ", firstName="  Ana  ", organization=" Primer doo ", email=f"{pad_last}@example.org"))
     rows = export_rows_with(pad_last)
     record("R14", st == 201 and bool(rows) and rows[0].get("lastName") == pad_last and rows[0].get("firstName") == "Ana",
            f"surrounding spaces removed: status {st}, stored {rows[0].get('lastName') if rows else None!r}")
