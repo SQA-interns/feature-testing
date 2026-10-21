@@ -1,0 +1,22 @@
+
+> registration-frontend@1.0.0 coverage
+> vitest run --coverage
+
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  8 passed (8)
+      Tests  73 passed (73)
+   Start at  23:08:07
+   Duration  4.48s (transform 999ms, setup 0ms, import 3.25s, tests 6.83s, environment 6.67s)
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 96.02% ( 266/277 )
+Branches     : 90.35% ( 178/197 )
+Functions    : 95.34% ( 82/86 )
+Lines        : 96% ( 240/250 )
+================================================================================

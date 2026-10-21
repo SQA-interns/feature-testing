@@ -1,0 +1,18 @@
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  3 passed (3)
+      Tests  12 passed (12)
+   Start at  23:20:37
+   Duration  4.73s (transform 765ms, setup 0ms, import 1.72s, tests 5.14s, environment 2.29s)
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 76.89% ( 213/277 )
+Branches     : 64.97% ( 128/197 )
+Functions    : 80.23% ( 69/86 )
+Lines        : 77.2% ( 193/250 )
+================================================================================

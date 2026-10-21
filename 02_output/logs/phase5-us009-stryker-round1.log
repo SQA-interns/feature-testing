@@ -1,0 +1,302 @@
+[32m23:17:39 (389359) INFO ProjectReader[39m Found 2 of 70 file(s) to be mutated.
+[32m23:17:39 (389359) INFO Instrumenter[39m Instrumented 2 source file(s) with 182 mutant(s)
+[32m23:17:40 (389359) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m23:17:41 (389359) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m23:17:42 (389359) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m23:17:53 (389359) INFO DryRunExecutor[39m Initial test run succeeded. Ran 45 tests in 11 seconds (net 4997.586890000001 ms, overhead 6230.413109999999 ms).
+Mutation testing 8% (elapsed: <1m, remaining: ~1m) 9/182 tested (0 survived, 0 timed out)
+Mutation testing 12% (elapsed: <1m, remaining: ~2m) 17/182 tested (0 survived, 0 timed out)
+Mutation testing 17% (elapsed: <1m, remaining: ~2m) 23/182 tested (3 survived, 0 timed out)
+Mutation testing 28% (elapsed: <1m, remaining: ~1m) 36/182 tested (4 survived, 0 timed out)
+Mutation testing 34% (elapsed: <1m, remaining: ~1m) 54/182 tested (4 survived, 0 timed out)
+Mutation testing 44% (elapsed: ~1m, remaining: ~1m) 71/182 tested (8 survived, 0 timed out)
+Mutation testing 51% (elapsed: ~1m, remaining: ~1m) 89/182 tested (10 survived, 0 timed out)
+Mutation testing 56% (elapsed: ~1m, remaining: ~1m) 108/182 tested (16 survived, 0 timed out)
+Mutation testing 65% (elapsed: ~1m, remaining: <1m) 126/182 tested (17 survived, 0 timed out)
+Mutation testing 72% (elapsed: ~1m, remaining: <1m) 147/182 tested (17 survived, 0 timed out)
+Mutation testing 81% (elapsed: ~1m, remaining: <1m) 166/182 tested (17 survived, 0 timed out)
+Mutation testing 84% (elapsed: ~2m, remaining: <1m) 174/182 tested (17 survived, 0 timed out)
+Mutation testing 94% (elapsed: ~2m, remaining: <1m) 179/182 tested (21 survived, 0 timed out)
+
+All tests
+  acceptance
+    confirmation.acceptance.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form (killed 14)
+      ~ US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain (covered 37)
+      ~ US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears (covered 37)
+      ~ US-004 registration confirmation AC-004-03 an empty required field and an invalid email are shown and nothing is sent (covered 37)
+      ~ US-004 registration confirmation AC-004-04 a backend failure shows a general error without technical details (covered 37)
+      ~ US-004 registration confirmation AC-004-04 an unreachable backend shows a general error without technical details (covered 37)
+    organizer-search.acceptance.test.tsx
+      ✓ US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation (killed 4)
+      ✓ US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data (killed 2)
+      ~ US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed (covered 94)
+    registration-form.acceptance.test.tsx
+      ~ US-001 external participant form AC-001-08 shows exactly the external fields, grouped active options and unchecked consents (covered 37)
+      ~ US-002 student form AC-002-07 shows exactly the student fields and only student options, all unchecked (covered 37)
+      ~ US-002 student form AC-002-07 switching from external to student replaces the organization field (covered 37)
+  components
+    OrganizerPage.test.tsx
+      ✓ OrganizerPage sign-in starts with an empty sign-in form and no alert (killed 10)
+      ✓ OrganizerPage sign-in asks for page 1 without filters and shows no alert after success (killed 17)
+      ✓ OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form (killed 7)
+      ✓ OrganizerPage sign-in shows the message for HTTP 403 and stays on the sign-in form (killed 3)
+      ✓ OrganizerPage sign-in shows the message for HTTP 500 and stays on the sign-in form (killed 2)
+      ✓ OrganizerPage sign-in disables the sign-in button while the request runs (killed 2)
+      ✓ OrganizerPage results shows each registration with option names, type and institution (killed 24)
+      ✓ OrganizerPage results lists the configured options in the option filter (killed 1)
+      ~ OrganizerPage results shows option ids when the form configuration cannot be loaded (covered 85)
+      ✓ OrganizerPage results counts 1 match(es) (killed 6)
+      ✓ OrganizerPage results counts 2 match(es) (killed 2)
+      ✓ OrganizerPage results says that nothing was found and shows no table for a total of 0 (killed 15)
+      ✓ OrganizerPage paging moves between the pages of 20 and keeps the last search (killed 16)
+      ~ OrganizerPage paging enables both buttons on a middle page (covered 85)
+      ✓ OrganizerPage errors and sign-out shows field errors of a rejected search and clears them after a good search (killed 5)
+      ✓ OrganizerPage errors and sign-out returns to the sign-in form when a later search is refused (killed 3)
+      ~ OrganizerPage errors and sign-out keeps the results when a later search fails (covered 100)
+      ✓ OrganizerPage errors and sign-out forgets the password and the results on sign-out (killed 4)
+      ✓ OrganizerPage errors and sign-out starts with an empty search after signing in again (killed 1)
+      ✓ App routing shows the organizer page below /organizer (killed 1)
+      ~ App routing shows the registration form on any other path (covered 36)
+    RegistrationForm.test.tsx
+      ✘ RegistrationForm shows no fields before a type is chosen (covered 0)
+      ✘ RegistrationForm drops options the new type cannot select and clears errors (covered 0)
+      ✘ RegistrationForm sends a student request with trimmed names in the confirmation (covered 0)
+      ✘ RegistrationForm shows field errors it cannot place as a general message (covered 0)
+      ✘ RegistrationForm resets a Google captcha after a failed submission (covered 0)
+      ✘ RegistrationForm ignores a second submit while the first is running (covered 0)
+      ✓ App names the conference and shows the confirmation after registering (killed 14)
+      ✓ App explains when the form cannot be loaded (killed 8)
+      ~ App does not update after unmounting (covered 35)
+      ✘ small components TextInput links its error and marks the input invalid (covered 0)
+      ✘ small components OptionGroups hides empty groups and reports toggles (covered 0)
+      ✘ small components Confirmation lists options or says there are none (covered 0)
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:30:56
+-     const [options, setOptions] = useState<FormOption[]>([]);
++     const [options, setOptions] = useState<FormOption[]>(["Stryker was here"]);
+Tests ran:
+    OrganizerPage sign-in starts with an empty sign-in form and no alert
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+  and 20 more tests!
+
+
+[Survived] BlockStatement
+src/components/OrganizerPage.tsx:45:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    OrganizerPage sign-in starts with an empty sign-in form and no alert
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+  and 20 more tests!
+
+
+[Survived] BooleanLiteral
+src/components/OrganizerPage.tsx:46:16
+-         active = false;
++         active = true;
+Tests ran:
+    OrganizerPage sign-in starts with an empty sign-in form and no alert
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+  and 20 more tests!
+
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:48:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    OrganizerPage sign-in starts with an empty sign-in form and no alert
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+  and 20 more tests!
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:62:7
+-         setCredentials(null);
++         ;
+Tests ran:
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+    OrganizerPage sign-in disables the sign-in button while the request runs
+    OrganizerPage errors and sign-out returns to the sign-in form when a later search is refused
+  and 1 more test!
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:63:7
+-         setResult(null);
++         ;
+Tests ran:
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+    OrganizerPage sign-in disables the sign-in button while the request runs
+    OrganizerPage errors and sign-out returns to the sign-in form when a later search is refused
+  and 1 more test!
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:69:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+    OrganizerPage sign-in shows the message for HTTP 403 and stays on the sign-in form
+  and 18 more tests!
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:74:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage paging moves between the pages of 20 and keeps the last search
+    OrganizerPage errors and sign-out shows field errors of a rejected search and clears them after a good search
+    OrganizerPage errors and sign-out returns to the sign-in form when a later search is refused
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:75:9
+-       if (credentials) void load(credentials, draft, 1);
++       if (true) void load(credentials, draft, 1);
+Tests ran:
+    OrganizerPage paging moves between the pages of 20 and keeps the last search
+    OrganizerPage errors and sign-out shows field errors of a rejected search and clears them after a good search
+    OrganizerPage errors and sign-out returns to the sign-in form when a later search is refused
+  and 3 more tests!
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:83:5
+-       setCredentials(null);
++       ;
+Tests ran:
+    OrganizerPage errors and sign-out forgets the password and the results on sign-out
+    OrganizerPage errors and sign-out starts with an empty search after signing in again
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:79:9
+-       if (credentials) void load(credentials, query, page);
++       if (true) void load(credentials, query, page);
+Tests ran:
+    OrganizerPage paging moves between the pages of 20 and keeps the last search
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:84:5
+-       setResult(null);
++       ;
+Tests ran:
+    OrganizerPage errors and sign-out forgets the password and the results on sign-out
+    OrganizerPage errors and sign-out starts with an empty search after signing in again
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:98:7
+-     if (!credentials || !result) {
++     if (!credentials && !result) {
+Tests ran:
+    OrganizerPage sign-in starts with an empty sign-in form and no alert
+    OrganizerPage sign-in asks for page 1 without filters and shows no alert after success
+    OrganizerPage sign-in shows the message for HTTP 401 and stays on the sign-in form
+  and 20 more tests!
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:8:34
+-   export const WRONG_CREDENTIALS = "Wrong username or password.";
++   export const WRONG_CREDENTIALS = "";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:9:31
+-   export const HTTPS_REQUIRED = "Organizer access requires HTTPS.";
++   export const HTTPS_REQUIRED = "";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:10:28
+-   export const LOAD_FAILED = "Registrations could not be loaded. Please try again later.";
++   export const LOAD_FAILED = "";
+Ran all tests for this mutant.
+
+[Survived] BlockStatement
+src/App.tsx:29:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 10 more tests!
+
+
+[Survived] BooleanLiteral
+src/App.tsx:30:16
+-         active = false;
++         active = true;
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 10 more tests!
+
+
+[Survived] ArrayDeclaration
+src/App.tsx:32:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 10 more tests!
+
+
+[Survived] LogicalOperator
+src/App.tsx:41:8
+-         {loadFailed && (
+-           <p role="alert" className="error general">
+-             {LOAD_ERROR}
+-           </p>
+-         )}
++         {loadFailed || <p role="alert" className="error general">
++             {LOAD_ERROR}
++           </p>}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/App.tsx:8:27
+-   export const LOAD_ERROR = "The registration form could not be loaded. Please try again later.";
++   export const LOAD_ERROR = "";
+Ran all tests for this mutant.
+
+Ran 5.46 tests per mutant on average.
+--------------------|------------------|----------|-----------|------------|----------|----------|
+                    | % Mutation score |          |           |            |          |          |
+File                |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+--------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files           |  88.46 |   88.46 |      161 |         0 |         21 |        0 |        0 |
+ components         |  88.57 |   88.57 |      124 |         0 |         16 |        0 |        0 |
+  OrganizerPage.tsx |  88.57 |   88.57 |      124 |         0 |         16 |        0 |        0 |
+ App.tsx            |  88.10 |   88.10 |       37 |         0 |          5 |        0 |        0 |
+--------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m23:20:06 (389359) INFO JsonReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/mutation.json
+[32m23:20:06 (389359) INFO HtmlReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/index.html
+[32m23:20:06 (389359) INFO MutationTestExecutor[39m Done in 2 minutes and 27 seconds.

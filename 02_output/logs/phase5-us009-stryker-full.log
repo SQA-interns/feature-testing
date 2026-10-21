@@ -1,0 +1,1228 @@
+[33m23:08:21 (377499) WARN ProjectReader[39m Glob pattern "!src/**/*.d.ts" did not exclude any files.
+[33m23:08:21 (377499) WARN ProjectReader[39m Glob pattern "!src/test/**" did not exclude any files.
+[32m23:08:21 (377499) INFO ProjectReader[39m Found 10 of 69 file(s) to be mutated.
+[32m23:08:22 (377499) INFO Instrumenter[39m Instrumented 10 source file(s) with 671 mutant(s)
+[32m23:08:23 (377499) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m23:08:24 (377499) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m23:08:25 (377499) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m23:08:37 (377499) INFO DryRunExecutor[39m Initial test run succeeded. Ran 73 tests in 12 seconds (net 3903.1608310000097 ms, overhead 8367.83916899999 ms).
+Mutation testing 2% (elapsed: <1m, remaining: ~6m) 32/671 tested (1 survived, 0 timed out)
+Mutation testing 3% (elapsed: <1m, remaining: ~9m) 40/671 tested (1 survived, 0 timed out)
+Mutation testing 5% (elapsed: <1m, remaining: ~9m) 48/671 tested (5 survived, 0 timed out)
+Mutation testing 9% (elapsed: <1m, remaining: ~6m) 65/671 tested (5 survived, 0 timed out)
+Mutation testing 11% (elapsed: <1m, remaining: ~6m) 77/671 tested (5 survived, 0 timed out)
+Mutation testing 14% (elapsed: ~1m, remaining: ~5m) 102/671 tested (5 survived, 0 timed out)
+Mutation testing 15% (elapsed: ~1m, remaining: ~6m) 118/671 tested (6 survived, 0 timed out)
+Mutation testing 16% (elapsed: ~1m, remaining: ~6m) 145/671 tested (6 survived, 0 timed out)
+Mutation testing 16% (elapsed: ~1m, remaining: ~7m) 174/671 tested (7 survived, 0 timed out)
+Mutation testing 17% (elapsed: ~1m, remaining: ~7m) 199/671 tested (7 survived, 0 timed out)
+Mutation testing 18% (elapsed: ~1m, remaining: ~7m) 209/671 tested (8 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~2m, remaining: ~7m) 222/671 tested (8 survived, 0 timed out)
+Mutation testing 21% (elapsed: ~2m, remaining: ~8m) 231/671 tested (9 survived, 0 timed out)
+Mutation testing 21% (elapsed: ~2m, remaining: ~8m) 247/671 tested (12 survived, 0 timed out)
+Mutation testing 21% (elapsed: ~2m, remaining: ~9m) 267/671 tested (16 survived, 0 timed out)
+Mutation testing 25% (elapsed: ~2m, remaining: ~7m) 284/671 tested (17 survived, 0 timed out)
+Mutation testing 27% (elapsed: ~2m, remaining: ~7m) 298/671 tested (20 survived, 0 timed out)
+Mutation testing 28% (elapsed: ~3m, remaining: ~7m) 314/671 tested (27 survived, 0 timed out)
+Mutation testing 28% (elapsed: ~3m, remaining: ~7m) 334/671 tested (37 survived, 0 timed out)
+Mutation testing 29% (elapsed: ~3m, remaining: ~8m) 354/671 tested (44 survived, 0 timed out)
+Mutation testing 30% (elapsed: ~3m, remaining: ~8m) 371/671 tested (52 survived, 0 timed out)
+Mutation testing 30% (elapsed: ~3m, remaining: ~8m) 390/671 tested (66 survived, 0 timed out)
+Mutation testing 31% (elapsed: ~3m, remaining: ~8m) 409/671 tested (76 survived, 0 timed out)
+Mutation testing 34% (elapsed: ~4m, remaining: ~7m) 419/671 tested (78 survived, 0 timed out)
+Mutation testing 37% (elapsed: ~4m, remaining: ~6m) 435/671 tested (78 survived, 0 timed out)
+Mutation testing 40% (elapsed: ~4m, remaining: ~6m) 446/671 tested (80 survived, 0 timed out)
+Mutation testing 43% (elapsed: ~4m, remaining: ~5m) 458/671 tested (81 survived, 0 timed out)
+Mutation testing 45% (elapsed: ~4m, remaining: ~5m) 469/671 tested (81 survived, 0 timed out)
+Mutation testing 47% (elapsed: ~4m, remaining: ~5m) 483/671 tested (82 survived, 0 timed out)
+Mutation testing 48% (elapsed: ~5m, remaining: ~5m) 497/671 tested (82 survived, 0 timed out)
+Mutation testing 51% (elapsed: ~5m, remaining: ~4m) 512/671 tested (84 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~5m, remaining: ~4m) 517/671 tested (86 survived, 0 timed out)
+Mutation testing 56% (elapsed: ~5m, remaining: ~4m) 528/671 tested (90 survived, 0 timed out)
+Mutation testing 58% (elapsed: ~5m, remaining: ~3m) 536/671 tested (90 survived, 0 timed out)
+Mutation testing 63% (elapsed: ~5m, remaining: ~3m) 551/671 tested (90 survived, 0 timed out)
+Mutation testing 67% (elapsed: ~6m, remaining: ~2m) 572/671 tested (90 survived, 0 timed out)
+Mutation testing 71% (elapsed: ~6m, remaining: ~2m) 587/671 tested (90 survived, 0 timed out)
+Mutation testing 76% (elapsed: ~6m, remaining: ~1m) 612/671 tested (90 survived, 0 timed out)
+Mutation testing 79% (elapsed: ~6m, remaining: ~1m) 618/671 tested (92 survived, 0 timed out)
+Mutation testing 82% (elapsed: ~6m, remaining: ~1m) 627/671 tested (92 survived, 0 timed out)
+Mutation testing 83% (elapsed: ~6m, remaining: ~1m) 629/671 tested (93 survived, 0 timed out)
+Mutation testing 86% (elapsed: ~7m, remaining: ~1m) 637/671 tested (97 survived, 0 timed out)
+Mutation testing 90% (elapsed: ~7m, remaining: <1m) 647/671 tested (98 survived, 0 timed out)
+Mutation testing 96% (elapsed: ~7m, remaining: <1m) 661/671 tested (100 survived, 0 timed out)
+Mutation testing 99% (elapsed: ~7m, remaining: <1m) 669/671 tested (101 survived, 0 timed out)
+
+All tests
+  acceptance
+    confirmation.acceptance.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form (killed 65)
+      ✓ US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain (killed 3)
+      ~ US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears (covered 276)
+      ✓ US-004 registration confirmation AC-004-03 an empty required field and an invalid email are shown and nothing is sent (killed 5)
+      ✓ US-004 registration confirmation AC-004-04 a backend failure shows a general error without technical details (killed 1)
+      ✓ US-004 registration confirmation AC-004-04 an unreachable backend shows a general error without technical details (killed 1)
+    organizer-search.acceptance.test.tsx
+      ✓ US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation (killed 51)
+      ✓ US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data (killed 8)
+      ✓ US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed (killed 2)
+    registration-form.acceptance.test.tsx
+      ✓ US-001 external participant form AC-001-08 shows exactly the external fields, grouped active options and unchecked consents (killed 13)
+      ✓ US-002 student form AC-002-07 shows exactly the student fields and only student options, all unchecked (killed 5)
+      ~ US-002 student form AC-002-07 switching from external to student replaces the organization field (covered 144)
+  components
+    Captcha.test.tsx
+      ✓ Captcha in test mode yields the test token when ticked and nothing when unticked (killed 2)
+      ✓ Captcha in test mode shows its error linked to the checkbox (killed 3)
+      ✓ Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on (killed 4)
+      ✓ Captcha with Google reCAPTCHA resets the widget when the reset signal changes (killed 8)
+      ✓ Captcha with Google reCAPTCHA does not reset a widget that was never rendered (killed 6)
+      ✓ Captcha with Google reCAPTCHA loads the script once and renders after it loaded (killed 4)
+      ~ Captcha with Google reCAPTCHA ignores a load event without the reCAPTCHA API and after unmount (covered 39)
+      ~ Captcha with Google reCAPTCHA shows the error below the widget (covered 42)
+    RegistrationForm.test.tsx
+      ✓ RegistrationForm shows no fields before a type is chosen (killed 1)
+      ✓ RegistrationForm drops options the new type cannot select and clears errors (killed 41)
+      ✓ RegistrationForm sends a student request with trimmed names in the confirmation (killed 37)
+      ✓ RegistrationForm shows field errors it cannot place as a general message (killed 25)
+      ✓ RegistrationForm resets a Google captcha after a failed submission (killed 30)
+      ✓ RegistrationForm ignores a second submit while the first is running (killed 3)
+      ✓ App names the conference and shows the confirmation after registering (killed 21)
+      ✓ App explains when the form cannot be loaded (killed 8)
+      ~ App does not update after unmounting (covered 45)
+      ✓ small components TextInput links its error and marks the input invalid (killed 5)
+      ✓ small components OptionGroups hides empty groups and reports toggles (killed 4)
+      ✓ small components Confirmation lists options or says there are none (killed 2)
+  api.search.test.ts
+    ✓ basicAuthorization encodes username and password as UTF-8 base64 (killed 6)
+    ✓ searchRegistrations sends the trimmed text, the filters and the page with organizer headers (killed 15)
+    ✓ searchRegistrations leaves out an empty text and empty filters (killed 7)
+    ✓ searchRegistrations returns the result of a 200 answer (killed 9)
+    ✓ searchRegistrations uses the requested page when the answer has none (killed 1)
+    ✓ searchRegistrations treats a 200 answer with no total as failed (killed 5)
+    ~ searchRegistrations treats a 200 answer with no items as failed (covered 39)
+    ✓ searchRegistrations maps HTTP 401 to unauthorized (killed 5)
+    ✓ searchRegistrations maps HTTP 403 to forbidden (killed 5)
+    ✓ searchRegistrations maps HTTP 429 to failed (killed 3)
+    ~ searchRegistrations maps HTTP 500 to failed (covered 41)
+    ✓ searchRegistrations returns the field errors of a 400 answer (killed 16)
+    ✓ searchRegistrations treats a 400 answer without field errors as failed (killed 4)
+    ✓ searchRegistrations treats a 400 answer without an errors list as failed (killed 1)
+    ✓ searchRegistrations treats a network error as failed (killed 3)
+  api.test.ts
+    ✓ fetchFormConfig reads the form configuration from /api/form-config (killed 3)
+    ✓ fetchFormConfig fails when the backend does not answer 200 (killed 3)
+    ✓ submitRegistration posts the request as JSON and returns the new id (killed 16)
+    ✓ submitRegistration treats a 201 without an id as a failure (killed 3)
+    ✓ submitRegistration returns the valid field errors of a 400 (killed 19)
+    ✓ submitRegistration treats a 400 without field errors as a failure (killed 5)
+    ✓ submitRegistration treats other statuses and network errors as failures (killed 4)
+  validation.test.ts
+    ✓ fieldsOf lists the fixed fields of each type (killed 5)
+    ✓ validate accepts a complete form (killed 16)
+    ✓ validate requires every field of the type after trimming (killed 4)
+    ~ validate checks only the fields of the chosen type (covered 48)
+    ✓ validate limits text to 200 and email to 254 characters (killed 13)
+    ✓ validate rejects the email not-an-email (killed 3)
+    ~ validate rejects the email ana@ (covered 45)
+    ~ validate rejects the email @example.org (covered 45)
+    ~ validate rejects the email ana@example (covered 45)
+    ~ validate rejects the email ana@@example.org (covered 45)
+    ✓ validate rejects the email ana novak@example.org (killed 1)
+    ~ validate rejects the email .ana@example.org (covered 45)
+    ~ validate rejects the email ana@-example.org (covered 45)
+    ~ validate rejects the email ana@example-.org (covered 45)
+    ✓ validate accepts the email a@b.co (killed 1)
+    ✓ validate accepts the email first.last+tag@sub.example.org (killed 3)
+    ~ validate accepts the email  x_y@a-b.si (covered 44)
+    ✓ validate requires the mandatory consents only (killed 5)
+    ✓ validate requires a captcha token (killed 2)
+
+[Survived] ConditionalExpression
+src/components/Captcha.tsx:80:41
+-         if (!api || !container.current || widget.current !== null) return;
++         if (!api || !container.current || false) return;
+Tests ran:
+    RegistrationForm resets a Google captcha after a failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA resets the widget when the reset signal changes
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/Captcha.tsx:82:13
+-           if (container.current && widget.current === null) {
++           if (true) {
+Tests ran:
+    RegistrationForm resets a Google captcha after a failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA resets the widget when the reset signal changes
+  and 2 more tests!
+
+
+[Survived] LogicalOperator
+src/components/Captcha.tsx:82:13
+-           if (container.current && widget.current === null) {
++           if (container.current || widget.current === null) {
+Tests ran:
+    RegistrationForm resets a Google captcha after a failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA resets the widget when the reset signal changes
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/Captcha.tsx:96:9
+-       if (!script) {
++       if (true) {
+Tests ran:
+    Captcha with Google reCAPTCHA does not reset a widget that was never rendered
+    Captcha with Google reCAPTCHA loads the script once and renders after it loaded
+    Captcha with Google reCAPTCHA ignores a load event without the reCAPTCHA API and after unmount
+
+
+[Survived] ArrowFunction
+src/components/Captcha.tsx:103:12
+-       return () => script?.removeEventListener("load", render);
++       return () => undefined;
+Tests ran:
+    Captcha with Google reCAPTCHA does not reset a widget that was never rendered
+    Captcha with Google reCAPTCHA loads the script once and renders after it loaded
+    Captcha with Google reCAPTCHA ignores a load event without the reCAPTCHA API and after unmount
+
+
+[Survived] OptionalChaining
+src/components/Captcha.tsx:103:18
+-       return () => script?.removeEventListener("load", render);
++       return () => script.removeEventListener("load", render);
+Tests ran:
+    Captcha with Google reCAPTCHA does not reset a widget that was never rendered
+    Captcha with Google reCAPTCHA loads the script once and renders after it loaded
+    Captcha with Google reCAPTCHA ignores a load event without the reCAPTCHA API and after unmount
+
+
+[Survived] StringLiteral
+src/components/Captcha.tsx:103:46
+-       return () => script?.removeEventListener("load", render);
++       return () => script?.removeEventListener("", render);
+Tests ran:
+    Captcha with Google reCAPTCHA does not reset a widget that was never rendered
+    Captcha with Google reCAPTCHA loads the script once and renders after it loaded
+    Captcha with Google reCAPTCHA ignores a load event without the reCAPTCHA API and after unmount
+
+
+[Survived] ArrayDeclaration
+src/components/Captcha.tsx:104:6
+-     }, [siteKey]);
++     }, []);
+Tests ran:
+    RegistrationForm resets a Google captcha after a failed submission
+    Captcha with Google reCAPTCHA renders the widget with the site key and passes tokens on
+    Captcha with Google reCAPTCHA resets the widget when the reset signal changes
+  and 4 more tests!
+
+
+[Survived] OptionalChaining
+src/components/Captcha.tsx:108:7
+-         window.grecaptcha?.reset(widget.current);
++         window.grecaptcha.reset(widget.current);
+Tests ran:
+    RegistrationForm resets a Google captcha after a failed submission
+    Captcha with Google reCAPTCHA resets the widget when the reset signal changes
+
+
+[Survived] StringLiteral
+src/components/Captcha.tsx:4:33
+-   export const RECAPTCHA_SCRIPT = "https://www.google.com/recaptcha/api.js?render=explicit";
++   export const RECAPTCHA_SCRIPT = "";
+Ran all tests for this mutant.
+
+[NoCoverage] ConditionalExpression
+src/components/OrganizerPage.tsx:20:5
+-       case "forbidden":
+-         return [HTTPS_REQUIRED];
++       case "forbidden":
+
+[NoCoverage] StringLiteral
+src/components/OrganizerPage.tsx:20:10
+-       case "forbidden":
++       case "":
+
+[NoCoverage] ArrayDeclaration
+src/components/OrganizerPage.tsx:21:14
+-         return [HTTPS_REQUIRED];
++         return [];
+
+[NoCoverage] ConditionalExpression
+src/components/OrganizerPage.tsx:22:5
+-       case "rejected":
+-         return outcome.errors.map((e) => e.message);
++       case "rejected":
+
+[NoCoverage] StringLiteral
+src/components/OrganizerPage.tsx:22:10
+-       case "rejected":
++       case "":
+
+[NoCoverage] ArrowFunction
+src/components/OrganizerPage.tsx:23:33
+-         return outcome.errors.map((e) => e.message);
++         return outcome.errors.map(() => undefined);
+
+[NoCoverage] ConditionalExpression
+src/components/OrganizerPage.tsx:24:5
+-       default:
+-         return [LOAD_FAILED];
++       default:
+
+[NoCoverage] ArrayDeclaration
+src/components/OrganizerPage.tsx:25:14
+-         return [LOAD_FAILED];
++         return [];
+
+[NoCoverage] BlockStatement
+src/components/OrganizerPage.tsx:82:28
+-     function signOut(): void {
+-       setCredentials(null);
+-       setResult(null);
+-       setPassword("");
+-       setDraft(EMPTY_QUERY);
+-       setErrors([]);
+-     }
++     function signOut(): void {}
+
+[NoCoverage] CallExpression
+src/components/OrganizerPage.tsx:83:5
+-       setCredentials(null);
++       ;
+
+[NoCoverage] CallExpression
+src/components/OrganizerPage.tsx:84:5
+-       setResult(null);
++       ;
+
+[NoCoverage] StringLiteral
+src/components/OrganizerPage.tsx:85:17
+-       setPassword("");
++       setPassword("Stryker was here!");
+
+[NoCoverage] CallExpression
+src/components/OrganizerPage.tsx:86:5
+-       setDraft(EMPTY_QUERY);
++       ;
+
+[NoCoverage] ArrayDeclaration
+src/components/OrganizerPage.tsx:87:15
+-       setErrors([]);
++       setErrors(["Stryker was here"]);
+
+[NoCoverage] StringLiteral
+src/components/OrganizerPage.tsx:183:13
+-             ? "No registrations found."
++             ? ""
+
+[NoCoverage] ArithmeticOperator
+src/components/OrganizerPage.tsx:191:31
+-             onClick={() => goTo(result.page - 1)}
++             onClick={() => goTo(result.page + 1)}
+
+[NoCoverage] StringLiteral
+src/components/OrganizerPage.tsx:240:64
+-               <td>{item.organization ?? item.studyInstitution ?? ""}</td>
++               <td>{item.organization ?? item.studyInstitution ?? "Stryker was here!"}</td>
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:18:5
+-       case "unauthorized":
+-         return [WRONG_CREDENTIALS];
++       case "unauthorized":
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:18:10
+-       case "unauthorized":
++       case "":
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:30:56
+-     const [options, setOptions] = useState<FormOption[]>([]);
++     const [options, setOptions] = useState<FormOption[]>(["Stryker was here"]);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:32:44
+-     const [username, setUsername] = useState("");
++     const [username, setUsername] = useState("Stryker was here!");
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:37:50
+-     const [errors, setErrors] = useState<string[]>([]);
++     const [errors, setErrors] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:33:44
+-     const [password, setPassword] = useState("");
++     const [password, setPassword] = useState("Stryker was here!");
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] BlockStatement
+src/components/OrganizerPage.tsx:45:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] BooleanLiteral
+src/components/OrganizerPage.tsx:46:16
+-         active = false;
++         active = true;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:48:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] BooleanLiteral
+src/components/OrganizerPage.tsx:51:13
+-       setBusy(true);
++       setBusy(false);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:56:7
+-         setQuery(next);
++         ;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrayDeclaration
+src/components/OrganizerPage.tsx:58:17
+-         setErrors([]);
++         setErrors(["Stryker was here"]);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:61:9
+-       if (outcome.kind === "unauthorized") {
++       if (true) {
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:61:9
+-       if (outcome.kind === "unauthorized") {
++       if (false) {
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:61:9
+-       if (outcome.kind === "unauthorized") {
++       if (outcome.kind !== "unauthorized") {
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:61:26
+-       if (outcome.kind === "unauthorized") {
++       if (outcome.kind === "") {
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] BlockStatement
+src/components/OrganizerPage.tsx:61:42
+-       if (outcome.kind === "unauthorized") {
+-         setCredentials(null);
+-         setResult(null);
+-       }
++       if (outcome.kind === "unauthorized") {}
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:62:7
+-         setCredentials(null);
++         ;
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:63:7
+-         setResult(null);
++         ;
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:69:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] CallExpression
+src/components/OrganizerPage.tsx:74:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:75:9
+-       if (credentials) void load(credentials, draft, 1);
++       if (true) void load(credentials, draft, 1);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:79:9
+-       if (credentials) void load(credentials, query, page);
++       if (true) void load(credentials, query, page);
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:90:18
+-     const alerts = errors.length > 0 && (
++     const alerts = true && (
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:90:18
+-     const alerts = errors.length > 0 && (
++     const alerts = errors.length >= 0 && (
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrowFunction
+src/components/OrganizerPage.tsx:92:19
+-         {errors.map((message) => (
+-           <p key={message}>{message}</p>
+-         ))}
++         {errors.map(() => undefined)}
+Tests ran:
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:98:7
+-     if (!credentials || !result) {
++     if (!credentials && !result) {
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no registration data
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArithmeticOperator
+src/components/OrganizerPage.tsx:132:39
+-     const pages = Math.max(1, Math.ceil(result.total / PAGE_SIZE));
++     const pages = Math.max(1, Math.ceil(result.total * PAGE_SIZE));
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrowFunction
+src/components/OrganizerPage.tsx:133:22
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = () => undefined;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:133:38
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find(o => o.id === id)?.name && id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] OptionalChaining
+src/components/OrganizerPage.tsx:133:38
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find(o => o.id === id).name ?? id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrowFunction
+src/components/OrganizerPage.tsx:133:51
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find(() => undefined)?.name ?? id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:133:58
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find((o) => true)?.name ?? id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:133:58
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find((o) => false)?.name ?? id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:133:58
+-     const optionName = (id: string) => options.find((o) => o.id === id)?.name ?? id;
++     const optionName = (id: string) => options.find((o) => o.id !== id)?.name ?? id;
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:182:10
+-           {result.total === 0
++           {true
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:182:10
+-           {result.total === 0
++           {false
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:182:10
+-           {result.total === 0
++           {result.total !== 0
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:184:13
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : ``}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:184:32
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : `${result.total} ${true ? "registration" : "registrations"} found`}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:184:32
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : `${result.total} ${false ? "registration" : "registrations"} found`}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:184:32
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : `${result.total} ${result.total !== 1 ? "registration" : "registrations"} found`}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:184:53
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : `${result.total} ${result.total === 1 ? "" : "registrations"} found`}
+Tests ran:
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:184:70
+-             : `${result.total} ${result.total === 1 ? "registration" : "registrations"} found`}
++             : `${result.total} ${result.total === 1 ? "registration" : ""} found`}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:186:8
+-         {result.items.length > 0 && <ResultTable items={result.items} optionName={optionName} />}
++         {true && <ResultTable items={result.items} optionName={optionName} />}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:186:8
+-         {result.items.length > 0 && <ResultTable items={result.items} optionName={optionName} />}
++         {result.items.length >= 0 && <ResultTable items={result.items} optionName={optionName} />}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:190:21
+-             disabled={busy || result.page <= 1}
++             disabled={true}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:190:21
+-             disabled={busy || result.page <= 1}
++             disabled={false}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:190:21
+-             disabled={busy || result.page <= 1}
++             disabled={busy && result.page <= 1}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:190:29
+-             disabled={busy || result.page <= 1}
++             disabled={busy || false}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:190:29
+-             disabled={busy || result.page <= 1}
++             disabled={busy || result.page < 1}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:190:29
+-             disabled={busy || result.page <= 1}
++             disabled={busy || result.page > 1}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ArrowFunction
+src/components/OrganizerPage.tsx:191:20
+-             onClick={() => goTo(result.page - 1)}
++             onClick={() => undefined}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:200:21
+-             disabled={busy || result.page >= pages}
++             disabled={false}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:200:21
+-             disabled={busy || result.page >= pages}
++             disabled={busy && result.page >= pages}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] ConditionalExpression
+src/components/OrganizerPage.tsx:200:29
+-             disabled={busy || result.page >= pages}
++             disabled={busy || false}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] EqualityOperator
+src/components/OrganizerPage.tsx:200:29
+-             disabled={busy || result.page >= pages}
++             disabled={busy || result.page > pages}
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] LogicalOperator
+src/components/OrganizerPage.tsx:239:18
+-               <td>{TYPE_LABELS[item.type] ?? item.type}</td>
++               <td>{TYPE_LABELS[item.type] && item.type}</td>
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:241:52
+-               <td>{item.options.map(optionName).join(", ")}</td>
++               <td>{item.options.map(optionName).join("")}</td>
+Tests ran:
+    US-009 organizer search page AC-009-12 valid credentials show the list with search, filters and page navigation
+    US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed
+
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:8:34
+-   export const WRONG_CREDENTIALS = "Wrong username or password.";
++   export const WRONG_CREDENTIALS = "";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:10:28
+-   export const LOAD_FAILED = "Registrations could not be loaded. Please try again later.";
++   export const LOAD_FAILED = "";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:9:31
+-   export const HTTPS_REQUIRED = "Organizer access requires HTTPS.";
++   export const HTTPS_REQUIRED = "";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:13:42
+-   const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "" };
++   const EMPTY_QUERY: SearchQuery = { text: "Stryker was here!", type: "", option: "" };
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:13:52
+-   const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "" };
++   const EMPTY_QUERY: SearchQuery = { text: "", type: "Stryker was here!", option: "" };
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/components/OrganizerPage.tsx:13:64
+-   const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "" };
++   const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "Stryker was here!" };
+Ran all tests for this mutant.
+
+[NoCoverage] StringLiteral
+src/components/RegistrationForm.tsx:85:58
+-         fieldsOf(type).includes(field) ? (values[field] ?? "") : null;
++         fieldsOf(type).includes(field) ? (values[field] ?? "Stryker was here!") : null;
+
+[NoCoverage] StringLiteral
+src/components/RegistrationForm.tsx:88:38
+-         firstName: values.firstName ?? "",
++         firstName: values.firstName ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/components/RegistrationForm.tsx:89:36
+-         lastName: values.lastName ?? "",
++         lastName: values.lastName ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/components/RegistrationForm.tsx:90:30
+-         email: values.email ?? "",
++         email: values.email ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/components/RegistrationForm.tsx:97:37
+-         captchaToken: captchaToken ?? "",
++         captchaToken: captchaToken ?? "Stryker was here!",
+
+[Survived] ArrayDeclaration
+src/components/RegistrationForm.tsx:52:89
+-     const available = type ? config.options.filter((o) => o.availableTo.includes(type)) : [];
++     const available = type ? config.options.filter((o) => o.availableTo.includes(type)) : ["Stryker was here"];
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 13 more tests!
+
+
+[Survived] CallExpression
+src/components/RegistrationForm.tsx:57:5
+-       setGeneralError(null);
++       ;
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/RegistrationForm.tsx:70:9
+-       if (!next.delete(id)) {
++       if (true) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] CallExpression
+src/components/RegistrationForm.tsx:77:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] CallExpression
+src/components/RegistrationForm.tsx:81:5
+-       setGeneralError(null);
++       ;
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] MethodExpression
+src/components/RegistrationForm.tsx:105:19
+-           lastName: request.lastName.trim(),
++           lastName: request.lastName,
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    RegistrationForm sends a student request with trimmed names in the confirmation
+    RegistrationForm ignores a second submit while the first is running
+  and 1 more test!
+
+
+[Survived] ConditionalExpression
+src/components/RegistrationForm.tsx:125:23
+-         setGeneralError(other.length > 0 ? other.join(" ") : null);
++         setGeneralError(true ? other.join(" ") : null);
+Tests ran:
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+    RegistrationForm shows field errors it cannot place as a general message
+
+
+[Survived] EqualityOperator
+src/components/RegistrationForm.tsx:125:23
+-         setGeneralError(other.length > 0 ? other.join(" ") : null);
++         setGeneralError(other.length >= 0 ? other.join(" ") : null);
+Tests ran:
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+    RegistrationForm shows field errors it cannot place as a general message
+
+
+[Survived] ConditionalExpression
+src/components/RegistrationForm.tsx:146:24
+-                 checked={type === value}
++                 checked={false}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 13 more tests!
+
+
+[Survived] ConditionalExpression
+src/components/RegistrationForm.tsx:161:21
+-                 type={field === "email" ? "email" : "text"}
++                 type={false ? "email" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:161:31
+-                 type={field === "email" ? "email" : "text"}
++                 type={field === "" ? "email" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:161:41
+-                 type={field === "email" ? "email" : "text"}
++                 type={field === "email" ? "" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:161:51
+-                 type={field === "email" ? "email" : "text"}
++                 type={field === "email" ? "email" : ""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:162:39
+-                 value={values[field] ?? ""}
++                 value={values[field] ?? "Stryker was here!"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/components/RegistrationForm.tsx:30:3
+-     "options",
++     "",
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/api.ts:34:9
+-       if (response.status === 400) {
++       if (true) {
+Tests ran:
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+    US-004 registration confirmation AC-004-04 a backend failure shows a general error without technical details
+  and 5 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:85:9
+-       if (response.status === 400) {
++       if (true) {
+Tests ran:
+    searchRegistrations maps HTTP 429 to failed
+    searchRegistrations maps HTTP 500 to failed
+    searchRegistrations returns the field errors of a 400 answer
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:107:5
+-       typeof candidate === "object" &&
++       true &&
+Tests ran:
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+    RegistrationForm shows field errors it cannot place as a general message
+  and 2 more tests!
+
+
+[Survived] MethodExpression
+src/App.tsx:12:10
+-     return window.location.pathname.startsWith("/organizer") ? (
++     return window.location.pathname.endsWith("/organizer") ? (
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 12 more tests!
+
+
+[Survived] BlockStatement
+src/App.tsx:29:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] BooleanLiteral
+src/App.tsx:30:16
+-         active = false;
++         active = true;
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] ArrayDeclaration
+src/App.tsx:32:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] LogicalOperator
+src/App.tsx:41:8
+-         {loadFailed && (
+-           <p role="alert" className="error general">
+-             {LOAD_ERROR}
+-           </p>
+-         )}
++         {loadFailed || <p role="alert" className="error general">
++             {LOAD_ERROR}
++           </p>}
+Tests ran:
+    US-004 registration confirmation AC-004-01 an accepted registration shows the name and options and hides the form
+    US-004 registration confirmation AC-004-02 backend field errors appear next to their fields and the values remain
+    US-004 registration confirmation AC-004-02 a backend options error is shown and no confirmation appears
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+src/App.tsx:8:27
+-   export const LOAD_ERROR = "The registration form could not be loaded. Please try again later.";
++   export const LOAD_ERROR = "";
+Ran all tests for this mutant.
+
+[Survived] Regex
+src/validation.ts:9:3
+-     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+/;
+Ran all tests for this mutant.
+
+[Survived] Regex
+src/validation.ts:9:3
+-     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
++     /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9]))+$/;
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/validation.ts:15:12
+-     consent: "The required consent must be given.",
++     consent: "",
+Ran all tests for this mutant.
+
+Ran 3.24 tests per mutant on average.
+-----------------------|------------------|----------|-----------|------------|----------|----------|
+                       | % Mutation score |          |           |            |          |          |
+File                   |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files              |  81.44 |   84.21 |      544 |         0 |        102 |       22 |        3 |
+ components            |  72.00 |   76.19 |      288 |         0 |         90 |       22 |        3 |
+  Captcha.tsx          |  83.33 |   83.33 |       50 |         0 |         10 |        0 |        3 |
+  Confirmation.tsx     | 100.00 |  100.00 |        6 |         0 |          0 |        0 |        0 |
+  OptionGroups.tsx     | 100.00 |  100.00 |       31 |         0 |          0 |        0 |        0 |
+  OrganizerPage.tsx    |  41.43 |   47.15 |       58 |         0 |         65 |       17 |        0 |
+  RegistrationForm.tsx |  87.10 |   90.00 |      135 |         0 |         15 |        5 |        0 |
+  TextInput.tsx        | 100.00 |  100.00 |        8 |         0 |          0 |        0 |        0 |
+ api.ts                |  97.92 |   97.92 |      141 |         0 |          3 |        0 |        0 |
+ App.tsx               |  85.71 |   85.71 |       36 |         0 |          6 |        0 |        0 |
+ validation.ts         |  96.34 |   96.34 |       79 |         0 |          3 |        0 |        0 |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m23:16:10 (377499) INFO JsonReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/mutation.json
+[32m23:16:10 (377499) INFO HtmlReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/index.html
+[32m23:16:10 (377499) INFO MutationTestExecutor[39m Done in 7 minutes and 49 seconds.
+stryker exit 0

@@ -78,6 +78,42 @@ AC coverage: each of AC-009-01 … AC-009-13 is named by at least one acceptance
 
 No failure is a build, configuration or harness error; the base suites still pass (frontend acceptance 9/9 in the same run).
 
+## Phase 5 for the US-009 change (this run)
+
+First complete run = the phase 4 gate run on the same commit (no change in between): backend 281/281 (`out/logs/phase4-us009-backend-verify.log`), frontend 58/58, e2e 6/6 (`phase4-us009-e2e.log`); 345 passed, 0 failed, nothing to classify.
+
+Unit tests added (non-frozen): `frontend/src/api.search.test.ts` (15 tests, search API client), `frontend/src/components/OrganizerPage.test.tsx` (21 tests, organizer page and `/organizer` routing; written as survivor round 1). No backend unit test was added: the backend met both thresholds on the first measurement (stop rule).
+
+| Component | Level | Tests passed / failed | Line coverage | Branch coverage | Mutation score (scope) | Tools |
+|---|---|---|---|---|---|---|
+| backend | unit | 144 / 0 | 78.74 % (689/875) | 86.16 % (274/318) | — | JaCoCo 0.8.12 |
+| backend | non-unit (acceptance 132, architecture 5) | 137 / 0 | 87.66 % (767/875) | 70.44 % (224/318) | — | JaCoCo 0.8.12 |
+| backend | all levels | 281 / 0 | 99.20 % (868/875) | 98.11 % (312/318) | raw 96.99 %, adjusted 99.18 % (354 killed incl. 1 timed out, 8 equivalent, 365 total, all covered; scope `si.konferenca.registration.**` without `RegistrationApplication`; tests: all 281 JUnit tests; one full run, no rounds) | PIT 1.30.0 + junit5-plugin 1.2.3, default mutators |
+| frontend | unit | 82 / 0 | 99.60 % (249/250) | 94.41 % (186/197) | — | Vitest 4.1.11, v8 |
+| frontend | non-unit (acceptance) | 12 / 0 | 77.20 % (193/250) | 64.97 % (128/197) | — | Vitest 4.1.11, v8 |
+| frontend | all levels | 94 / 0 | 100 % (250/250) | 94.92 % (187/197) | raw = adjusted 91.47 % (611 killed of 668 valid, 663 covered; 3 runtime-error mutants in `Captcha.tsx` not valid; scope `src/**/*.{ts,tsx}` without tests, acceptance harness, `*.d.ts`, `main.tsx`; tests: all Vitest tests; full run + 1 survivor round) | Stryker 10.0.0 + vitest-runner |
+| frontend + backend | end-to-end | 6 / 0 | — | — | not run per mutant (D-15) | Playwright 1.63.0 |
+
+Backend coverage was measured in three separate runs, each after deleting `target/jacoco.exec` (JaCoCo appends to an existing file, which would merge the levels).
+
+### Quality gate (phase 5, US-009 change)
+
+| Component | Line (all) | Gate 95 % | Mutation adjusted | Gate 90 % | Rounds | Tests at first mutation run |
+|---|---|---|---|---|---|---|
+| backend | 99.20 % | met | 99.18 % (raw 96.99 %) | met | 0 | 281 |
+| frontend | 100 % | met (96.0 % before round 1) | 91.47 % | met | 1 | 73 |
+
+Frontend: the line threshold was met after the API client tests (96.0 %, 240/250); the full Stryker run (`out/logs/phase5-us009-stryker-full.log`) gave 544 killed of 668 (81.44 %), with 82 of the 124 survivors and uncovered mutants in the new `OrganizerPage.tsx`. Round 1 added `OrganizerPage.test.tsx` and re-ran only `OrganizerPage.tsx` and `App.tsx` (`phase5-us009-stryker-round1.log`). Recomputed = round-1 files + every other file from the full run: 611 / 668 = 91.47 %, more than 1 point above the gate, so no confirming full run.
+
+| File (round 1 set) | Full run killed / valid | Round 1 killed / valid |
+|---|---|---|
+| `components/OrganizerPage.tsx` | 58 / 140 | 124 / 140 |
+| `App.tsx` | 36 / 42 | 37 / 42 |
+
+Backend full run (`out/logs/phase5-us009-pit-full.log`, `phase5-us009-pit-full-mutations.xml`): 365 mutants, 354 killed (1 timed out), 11 survived, all in base classes: the 8 equivalent mutants listed above (same classes, methods, lines and mutators) and the 3 survivors already described there (`JpaRegistrationRepository.save` without `flush()`, `SecurityConfig.apiSecurity` returning `null`, `RegistrationValidator.email` line 124). Every mutant in the US-009 classes (`SearchCriteriaParser`, `SearchCriteria`, `SearchService`, `JpaRegistrationRepository.search`, `SearchController`, the changed `RateLimitFilter` key) was killed.
+
+Code size (cloc, image `aldanial/cloc:2.10` reporting 1.98, D-07): backend production 2 116, test 3 771 lines; frontend production 1 014, test 2 167 (unit 1 006, acceptance 516, e2e 645). Duplication: backend PMD CPD 0 violations; frontend jscpd 5.4.0: 1 clone of 12 lines (1.06 %) in `api.ts` (the 400 handling repeated in `searchRegistrations`), taken to phase 6 as a finding.
+
 ## Measurement exclusions
 
 Fixed in phase 0 in the tool configuration (`backend/pom.xml` JaCoCo and PIT, `frontend/vite.config.ts` coverage), before any test was written; they equal the defaults of `quality-requirements.md` "Mutation scope".
