@@ -136,3 +136,12 @@
 - Options: 1. Run PIT with every backend test (unit, integration, architecture, acceptance) and Stryker with every Vitest test (unit, component, acceptance); leave out only the e2e level, recorded in `docs/03_test-strategy.md` (default); 2. Rebuild and restart the stack per mutant.
 - Human response: none
 - Resolution: option 1
+
+## D-16: Accept the Semgrep npm minimum-release-age finding (F-04)
+- Timestamp: 2026-10-21T14:48:08Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: Semgrep `npm-missing-minimum-release-age` (WARNING, Medium) on `frontend/.npmrc`. The suggested `min-release-age` setting exists from npm 11.10; `tech-stack.md` pins npm 11.6.2, which ignores it.
+- Options: 1. Accept as Medium: every version is pinned exactly, `package-lock.json` is committed, images build with `npm ci`, versions change only through decision records, and new pins were at least two weeks old (default); 2. Upgrade npm (a tech-stack change, blocking).
+- Human response: none
+- Resolution: option 1 (accepted, listed in the release notes)
