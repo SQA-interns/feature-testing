@@ -1,0 +1,15 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "AI workshop", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ws-data", "name": "Data workshop", "category": "WORKSHOP", "active": false },
+    { "id": "ev-gala", "name": "Gala evening", "category": "EVENT", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ev-tour", "name": "Industry tour", "category": "EVENT", "active": true, "availableTo": ["EXTERNAL"] },
+    { "id": "meal-lunch", "name": "Lunch", "category": "MEAL", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "other-cert", "name": "Certificate of attendance", "category": "OTHER", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "other-hike", "name": "Morning hike", "category": "OTHER", "active": true, "availableTo": ["STUDENT"] },
+    { "id": "ws-old", "name": "Retired workshop", "category": "WORKSHOP", "active": false, "availableTo": ["EXTERNAL", "STUDENT"] }
+  ],
+  "consents": [
+    { "id": "privacy", "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.", "mandatory": true }
+  ]
+}

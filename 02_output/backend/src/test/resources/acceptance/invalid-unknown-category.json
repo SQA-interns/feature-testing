@@ -1,0 +1,7 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "AI workshop", "category": "WORKSHOP", "active": true },
+    { "id": "sp-yoga", "name": "Yoga", "category": "SPORT", "active": true }
+  ],
+  "consents": [{ "id": "privacy", "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.", "mandatory": true }]
+}
