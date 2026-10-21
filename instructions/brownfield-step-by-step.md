@@ -164,7 +164,7 @@ Open Claude Code in that window, choose **Opus 5.5**, **Medium** effort, permiss
 Read AGENTS.md and start. This is a change to a finished system: 02_output/ holds a complete, verified implementation of the inputs without US-009. The inputs now also contain US-009 and the lines added with it. Run every phase for the change: keep the existing frozen acceptance tests and their manifest unchanged, add acceptance and end-to-end tests only for the new criteria and freeze them in a separate manifest, and make the whole system, old and new, pass every gate.
 ```
 
-Use only this one session for the run.
+Use only this one new session for the run. Never continue or fork the normal run's chat (decision E-16): the run must start with an agent that knows only the files, and its statistics must contain this run only.
 
 ### C3. During the run
 
