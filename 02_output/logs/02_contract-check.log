@@ -1,0 +1,14 @@
+parse ok conference-config.schema.json
+parse ok database.json
+parse ok emails.json
+parse ok openapi.json
+parse ok recaptcha.json
+parse ok registration-copy.schema.json
+parse ok ui-registration-form.json
+openapi refs 14 paths /api/form-config /api/registrations /api/export
+AC 35 missing: none
+SR 8 missing: none
+SB 14 missing: none
+NFR 4 missing: none
+AR 8 missing: none
+ALL OK
