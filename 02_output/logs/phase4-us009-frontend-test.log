@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend
+
+
+ Test Files  7 passed (7)
+      Tests  58 passed (58)
+   Start at  23:04:18
+   Duration  2.90s (transform 835ms, setup 0ms, import 2.32s, tests 3.74s, environment 6.08s)
+
