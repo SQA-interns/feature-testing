@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
 import { fetchFormConfig } from "./api";
 import { Confirmation, type Confirmed } from "./components/Confirmation";
+import { OrganizerPage } from "./components/OrganizerPage";
 import { RegistrationForm } from "./components/RegistrationForm";
 import type { FormConfig } from "./types";
 
 export const LOAD_ERROR = "The registration form could not be loaded. Please try again later.";
 
+/** The organizer search page lives at /organizer (US-009); every other path is the form. */
 export default function App() {
+  return window.location.pathname.startsWith("/organizer") ? (
+    <OrganizerPage />
+  ) : (
+    <RegistrationPage />
+  );
+}
+
+function RegistrationPage() {
   const [config, setConfig] = useState<FormConfig | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
   const [confirmed, setConfirmed] = useState<Confirmed | null>(null);
