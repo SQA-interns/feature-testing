@@ -1,0 +1,39 @@
+{
+  "title": "Registration storage (backend to PostgreSQL)",
+  "description": "Created and changed only by Flyway migrations in backend/src/main/resources/db/migration (AR-06, ES-08). Text columns are UTF-8 (database encoding UTF8), so Slovenian characters are stored unchanged (NFR-01). Accessed through JPA with bound parameters only (SB-05).",
+  "migrations": ["V1__create_registration_tables.sql"],
+  "tables": {
+    "registration": {
+      "columns": {
+        "id": "uuid primary key",
+        "type": "varchar(16) not null check (type in ('EXTERNAL','STUDENT'))",
+        "first_name": "varchar(200) not null",
+        "last_name": "varchar(200) not null",
+        "email": "varchar(254) not null",
+        "organization": "varchar(200) null",
+        "study_institution": "varchar(200) null",
+        "study_programme": "varchar(200) null",
+        "student_id": "varchar(200) null",
+        "registered_at": "timestamp with time zone not null"
+      }
+    },
+    "registration_option": {
+      "columns": {
+        "registration_id": "uuid not null references registration(id) on delete cascade",
+        "position": "integer not null",
+        "option_id": "varchar(64) not null"
+      },
+      "primaryKey": ["registration_id", "position"],
+      "unique": [["registration_id", "option_id"]]
+    },
+    "registration_consent": {
+      "columns": {
+        "registration_id": "uuid not null references registration(id) on delete cascade",
+        "consent_id": "varchar(64) not null",
+        "given_at": "timestamp with time zone not null"
+      },
+      "primaryKey": ["registration_id", "consent_id"]
+    }
+  },
+  "localAccess": "docker compose exec -T postgres psql -U registration -d registration"
+}

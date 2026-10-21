@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "registration-copy.schema.json",
+  "title": "Raw JSON copy of an accepted registration",
+  "description": "One UTF-8 file per registration, named <id>.json, in JSON_COPY_DIR (a persistent volume) (BR-07, AC-005-02). Written inside the storage transaction before the success response (AR-05); the organizer notification attaches exactly these bytes (AC-007-02). Values are as accepted: trimmed, fields of the other type null.",
+  "type": "object",
+  "required": ["id", "type", "firstName", "lastName", "email", "organization", "studyInstitution", "studyProgramme", "studentId", "options", "consents", "registeredAt"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "type": { "enum": ["EXTERNAL", "STUDENT"] },
+    "firstName": { "type": "string" },
+    "lastName": { "type": "string" },
+    "email": { "type": "string" },
+    "organization": { "type": ["string", "null"] },
+    "studyInstitution": { "type": ["string", "null"] },
+    "studyProgramme": { "type": ["string", "null"] },
+    "studentId": { "type": ["string", "null"] },
+    "options": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "description": "selected option ids in submitted order" },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "givenAt"],
+        "additionalProperties": false,
+        "properties": { "id": { "type": "string" }, "givenAt": { "type": "string", "format": "date-time" } }
+      }
+    },
+    "registeredAt": { "type": "string", "format": "date-time", "description": "UTC, millisecond precision, e.g. 2026-10-21T11:30:00.123Z" }
+  }
+}

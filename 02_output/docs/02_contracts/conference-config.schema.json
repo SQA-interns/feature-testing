@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conference-config.schema.json",
+  "title": "Conference configuration (options and consents)",
+  "description": "Read once at backend start from CONFERENCE_CONFIG (a Spring resource location). Changing options or consents needs only a new file and a restart (AR-04); the participant fields are fixed in code (BR-01). The backend refuses to start when the file is missing, unreadable or invalid: duplicate option or consent id, unknown category or registration type, missing or blank id, name or text, empty availableTo (AC-003-03).",
+  "type": "object",
+  "required": ["options", "consents"],
+  "additionalProperties": false,
+  "properties": {
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$", "description": "stable identifier, unique among options" },
+          "name": { "type": "string", "minLength": 1, "description": "display name, not blank" },
+          "category": { "enum": ["WORKSHOP", "EVENT", "MEAL", "OTHER"] },
+          "active": { "type": "boolean", "default": true },
+          "availableTo": {
+            "type": "array",
+            "items": { "enum": ["EXTERNAL", "STUDENT"] },
+            "minItems": 1,
+            "uniqueItems": true,
+            "default": ["EXTERNAL", "STUDENT"],
+            "description": "OQ-01: registration types the option is offered to"
+          }
+        }
+      }
+    },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "mandatory"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$" },
+          "text": { "type": "string", "minLength": 1 },
+          "mandatory": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
