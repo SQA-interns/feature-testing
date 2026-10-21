@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -67,6 +68,9 @@ public class SecurityConfig {
       source.registerCorsConfiguration("/api/**", cors);
       http.cors(c -> c.configurationSource(source));
     }
+    http.addFilterAfter(
+        new OrganizerHttpsOnlyFilter(properties.organizer().httpsOnly()),
+        AuthorizationFilter.class);
     return http.build();
   }
 

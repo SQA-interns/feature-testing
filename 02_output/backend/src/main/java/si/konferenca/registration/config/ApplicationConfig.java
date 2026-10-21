@@ -7,15 +7,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import si.konferenca.registration.adapter.captcha.GoogleCaptchaVerifier;
 import si.konferenca.registration.adapter.captcha.TestModeCaptchaVerifier;
+import si.konferenca.registration.adapter.export.PoiWorkbookWriter;
 import si.konferenca.registration.adapter.jsoncopy.FileJsonCopyStore;
 import si.konferenca.registration.adapter.mail.SmtpRegistrationNotifier;
 import si.konferenca.registration.application.CaptchaVerifier;
+import si.konferenca.registration.application.ExportRegistrations;
 import si.konferenca.registration.application.FormConfiguration;
 import si.konferenca.registration.application.JsonCopyStore;
 import si.konferenca.registration.application.RegisterParticipant;
 import si.konferenca.registration.application.RegistrationNotifier;
 import si.konferenca.registration.application.RegistrationRepository;
 import si.konferenca.registration.application.RegistrationStorage;
+import si.konferenca.registration.application.WorkbookWriter;
 import si.konferenca.registration.domain.ConferenceCatalog;
 import si.konferenca.registration.domain.RegistrationValidator;
 
@@ -68,6 +71,17 @@ public class ApplicationConfig {
         properties.conference().name(),
         properties.organizer().emailList(),
         catalog);
+  }
+
+  @Bean
+  public WorkbookWriter workbookWriter() {
+    return new PoiWorkbookWriter();
+  }
+
+  @Bean
+  public ExportRegistrations exportRegistrations(
+      RegistrationRepository repository, WorkbookWriter workbookWriter) {
+    return new ExportRegistrations(repository, workbookWriter);
   }
 
   @Bean
