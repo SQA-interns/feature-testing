@@ -7,15 +7,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 import si.konferenca.registration.application.RegistrationRejectedException;
 import si.konferenca.registration.application.StorageFailedException;
 import si.konferenca.registration.domain.FieldError;
 
-/** Error bodies without internal details (SB-07, ES-07, {@code openapi.json}). */
+/**
+ * Error bodies without internal details (SB-07, ES-07, {@code openapi.json}). Unknown paths and
+ * methods never get here: Spring Security denies them first.
+ */
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
@@ -61,17 +62,6 @@ public class ApiExceptionHandler {
   public ResponseEntity<GeneralError> mediaType(HttpMediaTypeNotSupportedException e) {
     return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
         .body(new GeneralError("Send the request as application/json."));
-  }
-
-  @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-  public ResponseEntity<GeneralError> method(HttpRequestMethodNotSupportedException e) {
-    return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED)
-        .body(new GeneralError("Method not allowed."));
-  }
-
-  @ExceptionHandler(NoResourceFoundException.class)
-  public ResponseEntity<GeneralError> notFound(NoResourceFoundException e) {
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new GeneralError("Not found."));
   }
 
   @ExceptionHandler(Exception.class)
