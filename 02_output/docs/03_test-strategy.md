@@ -37,6 +37,47 @@ AC coverage: every one of the 35 criteria is named by at least one acceptance te
 - The AC-003-03 cases first start the same settings with a valid file, so a refusal cannot come from another cause; on the skeleton they fail on that control start.
 - Byte comparisons use `isEqualTo(byte[])` / `Buffer.equals` (whole content), never element-wise `doesNotContain`.
 
+## US-009 change (this run, D-18)
+
+The base frozen tests above stay unchanged and are still checked against `docs/03_acceptance-manifest.sha256`. The US-009 tests are frozen separately in `docs/03_acceptance-manifest-us-009.sha256`.
+
+| Level | Component | Location | Through | Criteria |
+|---|---|---|---|---|
+| Acceptance | backend | `backend/src/test/java/si/konferenca/registration/acceptance/SearchAcceptanceTest.java` (14 methods, 30 tests with parameters) | HTTP to the app (`DefaultContextAcceptanceTest`, the frozen base harness, used unchanged); registrations created through `POST /api/registrations`; `registered_at` read from PostgreSQL for AC-009-01 | AC-009-01 … AC-009-11 |
+| Acceptance | frontend | `frontend/src/acceptance/organizer-search.acceptance.test.tsx` (3 tests), harness `organizer-harness.tsx` (new; imports `formConfig` from the frozen `harness.tsx`) | `<App />` rendered at `/organizer`, `fetch` replaced at the `/api` boundary; the mock answers 401 unless the `Authorization` header carries the test organizer | AC-009-12, AC-009-13 |
+| End-to-end | all | `frontend/e2e/organizer-search.e2e.spec.ts` (1 test, E2E-06) | the browser at `/organizer` and the REST API (setup registrations) against the compose stack; credentials from the environment (H-9) | AC-009-01, 02, 03, 12, DoD-P06 |
+
+AC coverage: each of AC-009-01 … AC-009-13 is named by at least one acceptance test; E2E-06 is the only new e2e test.
+
+### Harness assumptions (US-009)
+
+| # | Assumption | Source |
+|---|---|---|
+| H-10 | The organizer page is shown at the path `/organizer`; field labels "Username", "Password", button "Sign in"; after sign-in a `table`, the textbox "Search", the selects (combobox) "Type" and "Option", the buttons "Search", "Previous", "Next"; errors are `role="alert"`. | interfaces "Organizer search page" |
+| H-11 | The "Type" choices are labelled "External" and "Student", the "Option" choices by option name; the tests select by label, not by value. | interfaces "Organizer search page" 3 |
+| H-12 | The result table's third column is "Type" with the text "External" or "Student" (E2E-06). | interfaces "Organizer search page" 4 |
+| H-13 | Query values are URL-encoded with `%20` for spaces; Slovenian characters as UTF-8 percent escapes. | api-contract (query parameters) |
+| H-14 | `registeredAt` of a search item is the stored `registered_at` (compared with 1 ms tolerance). | spec 3.4a step 6 |
+
+### Self-check before the US-009 freeze
+
+- Every text case of AC-009-02 was checked against all three fixture registrations by hand: each search text occurs in exactly the expected registration and only in a searched field (`computer` and `63210001` occur only in the study programme and student ID, which are not searched).
+- AC-009-05 uses four registrations, each missing exactly one of the three conditions, so a missing AND cannot pass.
+- AC-009-07 compares the exact id order of both pages; 26 registrations are created one after another over HTTP, so their times differ.
+- AC-009-08 checks one error per invalid parameter, a 100-character text as the accepted boundary, and that the rejection carries no registration data. Only behaviour stated in AC-009-08 is frozen; the D-26/D-27 choices (blank or lower-case values, non-numeric page) are left to non-frozen tests.
+- AC-009-13 checks the literal text, the absence of `img`, `script` and `b` elements in the table and that the injected handlers did not run.
+- E2E-06 runs on a shared database: it uses unique last names, checks that its two new registrations are on page 1 (newest first), and for the type filter checks that every listed row's "Type" cell is "External" instead of assuming one row.
+
+### First run of the US-009 tests (phase 3, before any production change)
+
+| Suite | Passed | Failed | Reason (one line per group) |
+|---|---|---|---|
+| backend `SearchAcceptanceTest` (`out/logs/phase3-us009-backend-first-run.log`) | 3 | 27 | the endpoint does not exist: `GET /api/registrations` falls to the deny-all rule, which answers an authenticated organizer with 403; the 3 passing tests are AC-009-09 (no or wrong credentials → 401 without data), which the base security configuration already provides for every non-public path |
+| frontend organizer acceptance (`phase3-us009-frontend-first-run.log`) | 0 | 3 | no organizer page: `/organizer` shows the registration form, so the "Username" field is not found |
+| E2E-06 (`phase3-us009-e2e-first-run.log`) | 0 | 1 | the setup registrations succeed; the organizer page has no "Username" field |
+
+No failure is a build, configuration or harness error; the base suites still pass (frontend acceptance 9/9 in the same run).
+
 ## Measurement exclusions
 
 Fixed in phase 0 in the tool configuration (`backend/pom.xml` JaCoCo and PIT, `frontend/vite.config.ts` coverage), before any test was written; they equal the defaults of `quality-requirements.md` "Mutation scope".
