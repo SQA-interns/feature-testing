@@ -82,3 +82,39 @@
 - Options: as listed in D-07 and D-08.
 - Human response: D-07: "vite 6.4.4"; D-08: "Approve 5.6.0" (2026-10-21T11:23:43Z)
 - Resolution: D-07 option 1 — `vite` 6.4.4 replaces the `tech-stack.md` entry 6.4.3 for this run; D-08 option 1 — Docker Compose 5.6.0 approved for this run. `tech-stack.md` is not edited.
+
+## D-10: Stray duplicate of the OQ answers in business-rules.md
+- Timestamp: 2026-10-21T11:27:28Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: `project/01_requirements/business-rules.md` ends, after the glossary entry "Raw JSON copy", with the answers to OQ-01..OQ-06 repeated without IDs (gap G-1 in `docs/01_requirements-check.md`). The text is identical to the answers in `scope.md`.
+- Options: 1. Use `scope.md` as the source for the answers and treat the stray text as an editorial duplicate (default); 2. Ask the product owner.
+- Human response: none
+- Resolution: option 1 (no behaviour depends on it)
+
+## D-11: Consent id not in the configuration
+- Timestamp: 2026-10-21T11:27:28Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: BR-05 and AC-001-06 / AC-002-05 cover a missing mandatory consent; an unknown consent id in `consents` is not specified (gap G-3).
+- Options: 1. Reject with HTTP 400 and an error for `consents` (conservative, default); 2. Ignore unknown ids.
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-12: Maximum lengths of text fields
+- Timestamp: 2026-10-21T11:27:28Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: no maximum length is stated for the participant text fields (gap G-4); unbounded input conflicts with SR-03 (request-size limit) and SB-01.
+- Options: 1. At most 200 characters per text field and 254 for the email, longer values rejected with a field error (conservative, default); 2. No per-field limit, only the request-size limit.
+- Human response: none
+- Resolution: pending review (option 1 applied)
+
+## D-13: Missing or unknown registration type
+- Timestamp: 2026-10-21T11:27:28Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: `api-contract.md` defines the types `EXTERNAL` and `STUDENT`; a missing or other value is not covered by an AC (gap G-5).
+- Options: 1. Reject with HTTP 400 and an error for `type`, nothing stored or sent (conservative, default); 2. Default to `EXTERNAL`.
+- Human response: none
+- Resolution: pending review (option 1 applied)
