@@ -84,6 +84,26 @@ Common terms used below:
 | AC-008-03 | Given a registration with Slovenian characters, when the organizer exports, then the workbook cell contains the text unchanged. | NFR-01 |
 | AC-008-04 | Given organizer HTTPS-only access is on, when the export is requested with valid credentials over plain HTTP from a client that is not on localhost, then it is refused and no registration data is returned. | SR-06 |
 
+## US-009 Organizer registration search
+
+*Search request*: an organizer request to list registrations with an optional text, an optional registration type (`EXTERNAL` or `STUDENT`), an optional option id and an optional page number (default 1).
+
+| ID | Criterion | Refs |
+|---|---|---|
+| AC-009-01 | Given stored registrations, when an organizer sends a search request with valid credentials and no text or filters, then the response lists the registrations newest first, at most 20, each with its id, type, first name, last name, email, organization or study institution, selected option ids and registration time, together with the total number of registrations. | BR-09, BR-10 |
+| AC-009-02 | Given stored registrations, when the search text is part of a registration's first name, last name, email, organization or study institution in any upper or lower case, then that registration is listed and registrations without such a match are not. | BR-10 |
+| AC-009-03 | Given stored external and student registrations, when the type filter is `STUDENT`, then only student registrations are listed. | BR-10 |
+| AC-009-04 | Given stored registrations, when the option filter names an option id, then only registrations that selected that option are listed. | BR-10 |
+| AC-009-05 | Given stored registrations, when a text, a type filter and an option filter are given together, then only registrations matching all three are listed. | BR-10 |
+| AC-009-06 | Given stored registrations, when no registration matches, then the response is successful with an empty list and a total of 0. | BR-10 |
+| AC-009-07 | Given 25 matching registrations, when page 1 and page 2 are requested, then page 1 lists the newest 20 and page 2 the remaining 5, and both report a total of 25. | BR-10 |
+| AC-009-08 | Given the search request, when the type is unknown, the option id is not a configured option, the page number is below 1 or the text is longer than 100 characters, then the request is rejected (HTTP 400) with an error for that parameter. | BR-10, SB-01 |
+| AC-009-09 | Given stored registrations, when the search is requested without credentials or with wrong credentials, then it is refused (HTTP 401) and no registration data is returned. | BR-09, SB-02 |
+| AC-009-10 | Given organizer HTTPS-only access is on, when the search is requested with valid credentials over plain HTTP from a client that is not on localhost, then it is refused and no registration data is returned. | SR-06 |
+| AC-009-11 | Given a registration with Slovenian characters (č, š, ž, Č, Š, Ž) in the last name, when an organizer searches for that last name, then the registration is listed and the text is unchanged. | BR-03, NFR-01 |
+| AC-009-12 | Given the organizer page, when the organizer enters valid credentials, then the page shows the registration list with a search field, a type filter, an option filter and page navigation; with wrong credentials it shows an error and no registration data. | BR-09, BR-10 |
+| AC-009-13 | Given a registration whose text fields contain HTML markup or script, when it is shown on the organizer page, then the markup appears only as literal text and is not executed. | SR-09 |
+
 ## Traceability
 
 | Story | Criteria |
@@ -96,7 +116,8 @@ Common terms used below:
 | US-006 | AC-006-01 … AC-006-03 |
 | US-007 | AC-007-01, AC-007-02 |
 | US-008 | AC-008-01 … AC-008-04 |
+| US-009 | AC-009-01 … AC-009-13 |
 
-Total: 35 criteria.
+Total: 48 criteria.
 
 Requirements without their own criterion, covered in the specification and verified in phase 6: SR-03 rate and size limits, NFR-02 persistence across container recreation, NFR-04 health and readiness (runtime demonstration).

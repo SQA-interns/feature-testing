@@ -10,6 +10,7 @@
 - Storage in the database plus a raw JSON copy (US-005)
 - Excel export for organizers (US-008)
 - Anti-automation protection of the registration form
+- Organizer search and filter page for registrations (US-009)
 
 ## Out of scope
 
@@ -17,7 +18,7 @@
 - Payment processing
 - Editing or cancelling a submitted registration
 - Verifying student status externally
-- An administration UI or dashboard, including option configuration
+- An administration UI or dashboard, including option configuration; the organizer search page of US-009 is the only organizer page
 - Integration with an identity provider
 
 ## Priorities

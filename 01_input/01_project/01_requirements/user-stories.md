@@ -46,3 +46,8 @@ As an organizer, I want an email when someone registers, containing the submitte
 ### US-008 Registration export
 
 As an organizer, I want to export the current registrations as an Excel workbook, so that I can process them outside the system (BR-08).
+
+### US-009 Organizer registration search
+
+As an organizer, I want to search and filter the registrations in the application, so that I can find a participant or a group of participants without exporting every registration (BR-09, BR-10).
+In scope: an organizer page and API that list registrations with a text search and filters by registration type and selected option, paged. Out of scope: editing or deleting registrations from the list, exporting the filtered list, saved searches.

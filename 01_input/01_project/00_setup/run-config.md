@@ -7,13 +7,13 @@ The only file a human fills before starting the agent; the agent checks everythi
 - Model: claude-opus-5-5
 - Effort: medium
 - Template version: 1.7-ft
-- Run label: kyuhi_single-agent_sdd_v007
-- Operator: kyuhi
-- Machine: kyuhiPC
+- Run label: tanej_single-agent_sdd_v001_run-1-search
+- Operator: tanej
+- Machine: tanejPC
 - Plan: PRO
 - Permission mode: auto
-- Run type: normal
-- Feature: none
+- Run type: greenfield
+- Feature: search
 - Base run:
 - Run ID:
 - Starting commit:

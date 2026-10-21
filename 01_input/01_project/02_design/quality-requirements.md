@@ -43,6 +43,7 @@ The scope is all production code of both components, so mutation scores are on t
 | DoD-P03 | The participant email and the organizer email (with the JSON attachment) arrive in Mailpit. | Mailpit API output |
 | DoD-P04 | The organizer downloads a valid Excel workbook; the same request without organizer access is refused. | response codes, opened workbook |
 | DoD-P05 | The production reCAPTCHA code path is tested against a mocked verification endpoint, including a rejected token. | test report |
+| DoD-P06 | Against the running local stack: the organizer finds a registration by last name and by type on the search page; the same search without organizer access is refused. | runtime demonstration log |
 
 ## Overrides
 
