@@ -1,0 +1,14 @@
+
+Running 5 tests using 1 worker
+
+
+  ✓  1 [chromium] › e2e/external-registration.e2e.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-006-01, AC-007-02) (2.3s)
+  ✓  2 [chromium] › e2e/field-errors.e2e.spec.ts:11:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (1.9s)
+
+  ✓  3 [chromium] › e2e/organizer-export.e2e.spec.ts:20:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (3.8s)
+
+  ✓  4 [chromium] › e2e/slovenian-characters.e2e.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (2.0s)
+
+  ✓  5 [chromium] › e2e/student-registration.e2e.spec.ts:24:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (1.2s)
+
+  5 passed (13.5s)

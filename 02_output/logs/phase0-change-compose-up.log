@@ -1,0 +1,162 @@
+ Image konferenca-us009-frontend Building 
+ Image konferenca-us009-backend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [backend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 917B done
+#2 DONE 0.0s
+
+#3 [frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 532B done
+#3 DONE 0.0s
+
+#4 [frontend internal] load metadata for docker.io/library/node:24.13.0-alpine
+#4 DONE 0.1s
+
+#5 [frontend internal] load metadata for docker.io/library/nginx:1.30.5-alpine
+#5 DONE 0.1s
+
+#6 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.10_7-jdk-alpine
+#6 DONE 0.1s
+
+#7 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine
+#7 DONE 0.1s
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 119B done
+#8 DONE 0.0s
+
+#9 [backend internal] load .dockerignore
+#9 transferring context: 59B done
+#9 DONE 0.0s
+
+#10 [backend internal] load build context
+#10 DONE 0.0s
+
+#11 [frontend internal] load build context
+#11 DONE 0.0s
+
+#12 [frontend build 1/6] FROM docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
+#12 resolve docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e 0.1s done
+#12 DONE 0.1s
+
+#13 [backend stage-1 1/3] FROM docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a
+#13 resolve docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a
+#13 resolve docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a 0.1s done
+#13 DONE 0.1s
+
+#14 [backend build 1/7] FROM docker.io/library/eclipse-temurin:21.0.10_7-jdk-alpine@sha256:bcc7ec7e8fef937ba9f01ee5f810361d722c6b5dbe19ac188ab7b25c1a4dd2c9
+#14 resolve docker.io/library/eclipse-temurin:21.0.10_7-jdk-alpine@sha256:bcc7ec7e8fef937ba9f01ee5f810361d722c6b5dbe19ac188ab7b25c1a4dd2c9 0.1s done
+#14 DONE 0.1s
+
+#15 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#15 resolve docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94 0.1s done
+#15 DONE 0.1s
+
+#11 [frontend internal] load build context
+#11 transferring context: 1.74kB done
+#11 DONE 0.0s
+
+#16 [frontend build 4/6] RUN npm ci --no-fund --no-audit
+#16 CACHED
+
+#17 [frontend build 3/6] COPY package.json package-lock.json .npmrc ./
+#17 CACHED
+
+#18 [frontend build 5/6] COPY . .
+#18 CACHED
+
+#19 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#19 CACHED
+
+#20 [frontend build 2/6] WORKDIR /app
+#20 CACHED
+
+#21 [frontend build 6/6] RUN npm run build
+#21 CACHED
+
+#22 [frontend stage-1 3/3] COPY --from=build /app/dist /usr/share/nginx/html
+#22 CACHED
+
+#10 [backend internal] load build context
+#10 transferring context: 9.80kB 0.0s done
+#10 DONE 0.0s
+
+#23 [backend build 5/7] RUN chmod +x mvnw && ./mvnw -B -q dependency:resolve
+#23 CACHED
+
+#24 [backend stage-1 2/3] RUN addgroup -S -g 10001 app && adduser -S -D -H -u 10001 -G app app     && mkdir -p /app /data/json-copies && chown app:app /data/json-copies
+#24 CACHED
+
+#25 [backend build 2/7] WORKDIR /src
+#25 CACHED
+
+#26 [backend build 7/7] RUN ./mvnw -B -q -DskipTests package && cp target/registration-backend-1.0.0.jar /app.jar
+#26 CACHED
+
+#27 [backend build 4/7] COPY mvnw pom.xml dependency-check-suppressions.xml spotbugs-exclude.xml ./
+#27 CACHED
+
+#28 [backend build 6/7] COPY src src
+#28 CACHED
+
+#29 [backend build 3/7] COPY .mvn .mvn
+#29 CACHED
+
+#30 [backend stage-1 3/3] COPY --from=build /app.jar /app/app.jar
+#30 CACHED
+
+#31 [backend] exporting to image
+#31 exporting layers done
+#31 exporting manifest sha256:8d74fdbf13179a73d960672c985800bb173fcf5d26926ee3adec18d946830245 0.0s done
+#31 exporting config sha256:3461c9d57a052924f9400a47db180cbc4a5731430c05edac101c0e19dd100672 0.0s done
+#31 exporting attestation manifest sha256:54770d925dbd2fa89767454ca0d1398101a0b56b703ba36ad42823be35d7a612
+#31 exporting attestation manifest sha256:54770d925dbd2fa89767454ca0d1398101a0b56b703ba36ad42823be35d7a612 0.1s done
+#31 exporting manifest list sha256:3ab77a371693e35f6848a24646a8ce9134bf2f532e8665dc038421bbc877bf78 0.0s done
+#31 naming to docker.io/library/konferenca-us009-backend:latest done
+#31 unpacking to docker.io/library/konferenca-us009-backend:latest 0.0s done
+#31 DONE 0.3s
+
+#32 [frontend] exporting to image
+#32 exporting layers done
+#32 exporting manifest sha256:928dd4a523c53680342796b04cd27c8aa7da4be5959020926cd76e0ef0d5398b 0.0s done
+#32 exporting config sha256:04161dbd373a00e8d2fc90808c575d806c957aabdc036d81a85107e79689d37e 0.0s done
+#32 exporting attestation manifest sha256:5ac5a989311d6bf8d10842a5f3cd3e24c677dd4b764bcadaeac349427e500fc5 0.1s done
+#32 exporting manifest list sha256:83a8daf15d05efc9e759a57362b6014e1a47581238bd9049f9048f2fd12e3cbb 0.0s done
+#32 naming to docker.io/library/konferenca-us009-frontend:latest 0.0s done
+#32 unpacking to docker.io/library/konferenca-us009-frontend:latest 0.0s done
+#32 DONE 0.3s
+
+#33 [frontend] resolving provenance for metadata file
+#33 DONE 0.0s
+
+#34 [backend] resolving provenance for metadata file
+#34 DONE 0.0s
+ Image konferenca-us009-backend Built 
+ Image konferenca-us009-frontend Built 
+ Network konferenca-us009_default Creating 
+ Network konferenca-us009_default Created 
+ Volume konferenca-us009_pgdata Creating 
+ Volume konferenca-us009_pgdata Created 
+ Volume konferenca-us009_jsoncopies Creating 
+ Volume konferenca-us009_jsoncopies Created 
+ Container konferenca-us009-mailpit-1 Creating 
+ Container konferenca-us009-postgres-1 Creating 
+ Container konferenca-us009-mailpit-1 Created 
+ Container konferenca-us009-postgres-1 Created 
+ Container konferenca-us009-backend-1 Creating 
+ Container konferenca-us009-backend-1 Created 
+ Container konferenca-us009-frontend-1 Creating 
+ Container konferenca-us009-frontend-1 Created 
+ Container konferenca-us009-mailpit-1 Starting 
+ Container konferenca-us009-postgres-1 Starting 
+ Container konferenca-us009-mailpit-1 Started 
+ Container konferenca-us009-postgres-1 Started 
+ Container konferenca-us009-postgres-1 Waiting 
+ Container konferenca-us009-postgres-1 Healthy 
+ Container konferenca-us009-backend-1 Starting 
+ Container konferenca-us009-backend-1 Started 
+ Container konferenca-us009-frontend-1 Starting 
+ Container konferenca-us009-frontend-1 Started 

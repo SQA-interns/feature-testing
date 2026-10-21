@@ -154,3 +154,75 @@
 - Options: 1. apply PA-04: lower to Low and accept (default); 2. treat as High
 - Human response: none (pre-approved, PA-04)
 - Resolution: option 1
+
+## D-18: Change run for US-009 on the finished base run
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: non-blocking
+- Trigger: `run-config.md` names run type `brownfield`, feature `search`, base run `tanej_single-agent_sdd_v001_run-1 @ 84f9bde`. The inputs now add US-009, BR-09, BR-10, AC-009-01 … 13, E2E-06, DoD-P06, SR-09 and the search endpoint in `api-contract.md`, so ten hashes of the base run's `00_input-manifest.sha256` no longer match. The human's instruction for this session: keep the frozen acceptance tests and `03_acceptance-manifest.sha256` unchanged, write acceptance and end-to-end tests only for the new criteria and freeze them in a separate manifest, and make the whole system pass every gate.
+- Options: 1. this run's phase 0 rewrites `00_preflight-report.md` and `00_input-manifest.sha256` for the changed inputs (the base run's versions stay in git history); the base acceptance manifest stays byte for byte; the new tests are frozen in `docs/03_acceptance-manifest-us-009.sha256` (a new file next to the base manifest, as the human asked; README section 3 does not list it by name); phases 1, 2 and 3 extend their documents for US-009 only (default); 2. start a new system from scratch (contradicts the instruction)
+- Human response: instruction at the start of the session (2026-10-21T19:07Z)
+- Resolution: option 1
+
+## D-19: Host JDK is Ubuntu OpenJDK 21.0.12.1, not Eclipse Temurin 21.0.10+7
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: blocking
+- Trigger: on this machine `java -version` reports OpenJDK 21.0.12.1+1-1-24.04.4-Ubuntu (vendor Ubuntu, `/usr/lib/jvm/java-21-openjdk-amd64`, no `JAVA_HOME`); `tech-stack.md` pins platform `java` = Eclipse Temurin JDK 21.0.10+7. PA-05 covers a patch difference but not another vendor (as D-02 in the base run). The Maven wrapper runs on it and the existing backend check passes (`out/logs/phase0-change-backend-check.log`). The shipped images keep the pinned Temurin base (the JRE image reports Temurin-21.0.10+7).
+- Options: 1. approve Ubuntu OpenJDK 21.0.12.1 on the host for building and testing in this run; images keep the pinned Temurin base; `tech-stack.md` unchanged (proposed default); 2. the human installs Eclipse Temurin JDK 21.0.10+7 and points `JAVA_HOME` at it
+- Human response: option 1 approved (2026-10-21T20:17Z)
+- Resolution: option 1
+
+## D-20: Docker Engine 29.3.1 installed instead of 29.8.1
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: blocking
+- Trigger: `docker version` and `docker info` report server 29.3.1 (Docker Desktop on Linux, client 29.5.0); `tech-stack.md` pins `docker` 29.8.1. This is an older minor version, so PA-05 (patch release of the pinned minor) does not apply. All nine pinned images pull and run (`out/logs/phase0-change-image-pull.txt`), and Testcontainers starts PostgreSQL and Mailpit.
+- Options: 1. approve Docker Engine 29.3.1 for this run; `tech-stack.md` unchanged (proposed default); 2. the human upgrades to 29.8.1
+- Human response: option 1 approved (2026-10-21T20:17Z)
+- Resolution: option 1
+
+## D-21: Docker Compose 5.1.1 installed instead of 5.5.1
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: blocking
+- Trigger: `docker compose version` reports v5.1.1; `tech-stack.md` pins `compose` 5.5.1 (older minor version, not covered by PA-05). The base run's `docker-compose.yml` uses only long-standing features (build, healthcheck conditions, named volumes, `${VAR:-default}`).
+- Options: 1. approve Compose 5.1.1 for this run; `tech-stack.md` unchanged (proposed default); 2. the human installs Compose 5.5.1
+- Human response: option 1 approved (2026-10-21T20:17Z)
+- Resolution: option 1
+
+## D-22: npm audit reports High on the pinned vite 6.4.3 (dev server only)
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: blocking
+- Trigger: `npm audit` now reports `vite <=6.4.3` as High (GHSA-698v-4r3x-3vcv, GHSA-r825-w8mm-5pxw, GHSA-587h-7wmj-h5pm via launch-editor; GHSA-9jrq-w75r-8gcw, GHSA-rq7h-c2jc-7f22 on the dev server) (`out/logs/phase0-change-frontend-audit.txt`). In the base run only the first advisory existed (Moderate, D-16). Evidence of no reachable path in what ships: every advisory concerns the Vite dev server or its editor launcher; the image serves the built static bundle from nginx, which contains no Vite code; `npm audit --omit=dev` reports 0. Lowering a High needs a human (severity-scale.md); the fix (vite 6.4.5) changes a `tech-stack.md` version.
+- Options: 1. lower to Medium (dependency vulnerability with no reachable exploit path in the shipped bundle), keep 6.4.3 for this run, and list the upgrade in the release notes (proposed default); 2. approve vite 6.4.5 for this run (dev dependency and lock file change, re-check of build, tests and Stryker)
+- Human response: option 1 approved: lower to Medium, keep 6.4.3 (2026-10-21T20:17Z)
+- Resolution: option 1 (Medium, accepted; upgrade listed in the release notes)
+
+## D-23: Maven wrapper is not executable in git
+- Timestamp: 2026-10-21T19:10:48Z
+- Phase: 0
+- Type: non-blocking
+- Trigger: `backend/mvnw` is stored with git mode 100644 (the base run was on Windows), so `./mvnw`, as the backend README and the backend Dockerfile's sibling commands say, fails with "permission denied" from a clean checkout on Linux (DoD-08, ES-05).
+- Options: 1. set the executable bit in git (`git update-index --chmod=+x`), a build-file change without content change (default); 2. tell Linux users to run `sh mvnw` in the README
+- Human response: none
+- Resolution: option 1
+
+## D-24: Stale local compose volumes from an earlier run; this run uses its own compose project name
+- Timestamp: 2026-10-21T19:40:00Z
+- Phase: 0
+- Type: non-blocking
+- Trigger: `docker compose up` with the default project name `konferenca-registration` reuses the volumes `konferenca-registration_pgdata` and `_jsoncopies`, created 2026-10-06 by an earlier run on this machine; PostgreSQL keeps the password it was initialised with, so the backend fails with "password authentication failed". The volumes are not this run's data, so the agent does not delete them.
+- Options: 1. run this session's stack with `COMPOSE_PROJECT_NAME=konferenca-us009` (fresh volumes, same compose file; the e2e helpers inherit the variable); leave the old volumes for the human to remove (default); 2. delete the old volumes (only with the human's approval)
+- Human response: leave the old volumes (2026-10-21T20:17Z)
+- Resolution: option 1 (all five base e2e tests pass on the new project, `out/logs/phase0-change-e2e-baseline.log`)
+
+## D-25: Dependency-Check NVD download with smaller pages
+- Timestamp: 2026-10-21T20:50:00Z
+- Phase: 0
+- Type: non-blocking
+- Trigger: two online `dependency-check-maven` runs stalled for more than 40 minutes while the NVD API kept failing on 2 000-record pages (`Retrying request … resultsPerPage=2000`). The scan must complete with at least one analyser (`general/skills/preflight` step 6).
+- Options: 1. run the scan with `-DnvdApiResultsPerPage=500 -DnvdApiDelay=4000` on the command line (download paging only; analysers, suppressions and scope unchanged; `pom.xml` unchanged) (default); 2. ask the human to retry later
+- Human response: none
+- Resolution: option 1; the run completed: 0 open, 2 suppressed (`out/logs/phase0-change-dependency-check-report.json`)
