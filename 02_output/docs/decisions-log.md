@@ -127,3 +127,12 @@
 - Options: 1. Add `@types/node` 24.13.6 (exact, MIT, published 2026-09-19, matches the Node 24.13 runtime), dev scope only (default); 2. Exclude `e2e/` from the type check.
 - Human response: none
 - Resolution: option 1 (rule in `tech-stack.md`: an unlisted tool with an exact version and a non-blocking decision; scanned in phase 6; `npm audit --audit-level=high` passes)
+
+## D-15: End-to-end tests are not part of the mutation runs
+- Timestamp: 2026-10-21T13:25:49Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: `general/quality/measurement-scope.md` ("Mutation score") asks for each component's full automated suite at every level, and a decision record when that is infeasible. The five e2e tests (`frontend/e2e`) drive both components through the browser against `docker compose up`; a mutant would need a rebuilt jar or bundle, new images and a restarted stack for each run.
+- Options: 1. Run PIT with every backend test (unit, integration, architecture, acceptance) and Stryker with every Vitest test (unit, component, acceptance); leave out only the e2e level, recorded in `docs/03_test-strategy.md` (default); 2. Rebuild and restart the stack per mutant.
+- Human response: none
+- Resolution: option 1

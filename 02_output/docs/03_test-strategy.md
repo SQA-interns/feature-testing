@@ -86,3 +86,51 @@ No failure, so nothing to classify (`general/quality/test-strategy.md`, "First c
 
 | Component | Level | Tests passed / failed | Line coverage | Branch coverage | Mutation score (scope) | Tools |
 |---|---|---|---|---|---|---|
+| backend | unit | 120 / 0 | 74.7 % (581/778) | 92.4 % (220/238) | — | JUnit 6, JaCoCo 0.8.12 |
+| backend | non-unit (96 acceptance, 7 integration, 7 architecture) | 110 / 0 | 90.9 % (707/778) | 75.6 % (180/238) | — | JUnit 6, Testcontainers, ArchUnit 1.3.2, JaCoCo |
+| backend | all levels | 230 / 0 | **99.5 %** (774/778) | 98.7 % (235/238) | raw **95.8 %** (297 killed incl. 1 timed out / 310), adjusted 95.8 % (0 equivalent counted), covered 95.8 %; scope `si.konferenca.registration.**` without `RegistrationApplication`; tests: all 230 backend tests | PIT 1.30.0 + junit5 plugin 1.2.3 |
+| frontend | unit (`src/**/*.test.*`) | 73 / 0 | 100 % (147/147) | 100 % (114/114) | — | Vitest 4.1.11, V8 |
+| frontend | non-unit (13 acceptance; 5 e2e not instrumented) | 13 / 0 | 80.3 % | 69.3 % | — | Vitest, Testing Library |
+| frontend | all levels | 86 / 0 | **100 %** (147/147) | 100 % (114/114) | raw **94.9 %** (431/454), adjusted **98.5 %** ((431+16)/454), covered 94.9 %; scope `src/**/*.{ts,tsx}` without `main.tsx`, `*.d.ts`, tests; tests: all 86 Vitest tests (D-15) | Stryker 10.0.0 + vitest-runner |
+| both | e2e | 5 / 0 | — | — | — | Playwright 1.63.0 |
+
+Code size (cloc 2.10 image, reports 1.98, D-02): backend production 1915 lines (Java and resources), test 3466; frontend production 645 (`src` without tests, `index.html`), test 1727 (`src/**/*.test.*`, `tests/`, `e2e/`). Duplication: PMD CPD (100 tokens) and jscpd 5.4.0 report 0 clones in production code.
+
+### Quality gate (phase 5)
+
+| Component | Line (>= 95 %) | Mutation adjusted (>= 90 %) | Survivor rounds | Tests at first mutation run |
+|---|---|---|---|---|
+| backend | 99.5 % met | 95.8 % met at the first full run | 0 | 230 |
+| frontend | 100 % met | 94.9 % raw / 98.5 % adjusted, met after round 1 | 1 | 60 |
+
+Backend survivors (13, none counted as equivalent; `out/logs/05_backend-pit-survivors.txt`): `RegistrationValidator.text/email` empty-string returns on rejected values (the result is discarded when errors exist), `setFrom` removal on organizer mail, `JsonConferenceCatalogLoader.bool` true return, `LimitedInputStream.isReady`, `ApplicationConfig.captchaVerifier` null return, timeouts of `GoogleCaptchaVerifier`, `CorsConfiguration.setAllowedOrigins`, filter order, `EntityManager.flush`, `ConsentEmbeddable.givenAt` null. The gate was met, so no further tests were added (stop rule).
+
+Frontend mutation, round 1 (`out/logs/05_frontend-stryker-full.log`, `..._round1.log`): the full run gave 398/454 = 87.7 %. Round 1 added tests aimed at the survivors (exact messages, email pattern boundaries, initial form state, per-field backend errors, captcha reset, default-prevented submit, empty category) and re-ran only the files with survivors.
+
+| File | Full run killed / total | Round 1 killed / total |
+|---|---|---|
+| api/client.ts | 61 / 67 | 63 / 67 |
+| App.tsx | 41 / 42 | 39 / 42 |
+| components/Captcha.tsx | 53 / 57 | 54 / 57 |
+| components/Confirmation.tsx | 6 / 6 | not re-run |
+| components/OptionGroups.tsx | 15 / 16 | 16 / 16 |
+| components/RegistrationForm.tsx | 114 / 134 | 130 / 134 |
+| domain/payload.ts | 10 / 10 | not re-run |
+| domain/types.ts | 43 / 61 | 52 / 61 |
+| domain/validation.ts | 55 / 61 | 61 / 61 |
+| **component** | **398 / 454** | **431 / 454 (94.9 %), 1 + 4 points above the threshold: no confirming full run** |
+
+(App.tsx: the full run counted 37 killed + 4 timed out; in round 1, 39 were killed and the 3 mutants in the `useEffect` cleanup survived, which the tests do not observe.)
+
+Equivalent mutants counted (frontend, 16): each cannot change behaviour.
+
+| File:line | Mutation | Why it cannot change behaviour |
+|---|---|---|
+| api/client.ts:19 (×2) | `typeof e === "object"` → `true`; `&&` → `\|\|` | a primitive has no string `field`, and `null.field` throws inside the `try`, which also yields `failed` |
+| api/client.ts:20 | `e !== null` → `true` | as above: `null.field` throws, caught as `failed` |
+| components/Captcha.tsx:74 (×2) | `container.current &&` → `true` / `\|\|` | the ref is attached before effects run, so `container.current` is always set |
+| components/RegistrationForm.tsx:73 (×3) | `type === "" ? [] : …` → `false`, `""` → other string, `[]` → `["…"]` | `available` is used only while a type is chosen (options shown, confirmation built) |
+| domain/types.ts:47, 48, 56, 60, 61, 62 | `inputType: "text"` → `""` | an `input` with an empty or missing `type` is a text input; role, value and events are the same |
+| domain/types.ts:94, 95 | initial `options`/`consents` `[]` → `["Stryker was here"]` | choosing a type drops options not offered; the payload and the checkboxes use only configured consent ids, and an unknown id never satisfies a mandatory consent |
+
+Not counted (survivors): `Captcha.tsx:95` (effect dependencies; the site key never changes while the page lives), `RegistrationForm.tsx:70` (initial general error, visible after choosing a type), `types.ts:89` (initial value of one field), `App.tsx:21–24` (effect cleanup).
