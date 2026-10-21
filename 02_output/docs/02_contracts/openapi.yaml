@@ -26,6 +26,62 @@ paths:
         "429":
           $ref: "#/components/responses/TooManyRequests"
   /api/registrations:
+    get:
+      operationId: searchRegistrations
+      summary: Search and list registrations, organizer only (US-009, BR-09, BR-10)
+      security:
+        - organizerBasic: []
+      parameters:
+        - name: text
+          in: query
+          required: false
+          description: >
+            Search text, at most 100 characters after trimming (D-26); matches any part of the first
+            name, last name, email, organization or study institution regardless of case; empty
+            matches every registration
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/RegistrationType"
+        - name: option
+          in: query
+          required: false
+          description: A configured option id; only registrations that selected it are listed
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          description: Page number, 20 registrations per page
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 999999
+            default: 1
+      responses:
+        "200":
+          description: Matching registrations, newest first, at most 20, with the total number of matches
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegistrationSearchResult"
+        "400":
+          $ref: "#/components/responses/ValidationFailed"
+        "401":
+          description: Missing or wrong organizer credentials; no registration data
+        "403":
+          description: >
+            Organizer HTTPS-only access is on and the request came over plain HTTP from a client that
+            is not on localhost (SR-06, AC-009-10); no registration data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
     post:
       operationId: createRegistration
       summary: Submit a registration (US-001, US-002, US-005)
@@ -244,6 +300,65 @@ components:
           minItems: 1
           items:
             $ref: "#/components/schemas/FieldError"
+    RegistrationSummary:
+      type: object
+      required:
+        [id, type, firstName, lastName, email, organization, studyInstitution, options, registeredAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          $ref: "#/components/schemas/RegistrationType"
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        organization:
+          type: [string, "null"]
+          description: null for STUDENT
+        studyInstitution:
+          type: [string, "null"]
+          description: null for EXTERNAL
+        options:
+          type: array
+          items:
+            type: string
+          description: Selected option ids, sorted
+        registeredAt:
+          type: string
+          format: date-time
+    RegistrationSearchResult:
+      type: object
+      required: [total, page, items]
+      properties:
+        total:
+          type: integer
+          minimum: 0
+          description: Number of registrations matching the text and every filter
+        page:
+          type: integer
+          minimum: 1
+        items:
+          type: array
+          maxItems: 20
+          items:
+            $ref: "#/components/schemas/RegistrationSummary"
+      examples:
+        - total: 25
+          page: 1
+          items:
+            - id: 3f1c9a52-0000-4000-8000-000000000001
+              type: EXTERNAL
+              firstName: Ana
+              lastName: Novak
+              email: ana@example.org
+              organization: Example d.o.o.
+              studyInstitution: null
+              options: [ws-ai]
+              registeredAt: "2026-10-20T10:15:00Z"
     ErrorResponse:
       type: object
       required: [message]

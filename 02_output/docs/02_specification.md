@@ -18,9 +18,9 @@ Ports and adapters with three layers under `si.konferenca.registration`. Chosen 
 
 | Package | Contents | May depend on |
 |---|---|---|
-| `domain` | `Registration`, `RegistrationType`, `ConferenceOption`, `OptionCategory`, `Consent`, `ConferenceConfig`, `RegistrationSubmission`, `RegistrationValidator`, `FieldError`, `ValidationException` | JDK only (no Spring, Jakarta, Jackson, POI) |
-| `application` | `RegistrationService` (use case), `ExportService`, ports `RegistrationRepository`, `JsonCopyStore`, `CaptchaVerifier`, `RegistrationNotifier`, `RegistrationExporter`, `Clock` use | `domain`, Spring transaction annotations |
-| `adapter.web` | controllers, request/response DTOs, `ApiExceptionHandler`, `RateLimitFilter`, `BodySizeLimitFilter`, `OrganizerTransportFilter` | `application`, `domain` |
+| `domain` | `Registration`, `RegistrationType`, `ConferenceOption`, `OptionCategory`, `Consent`, `ConferenceConfig`, `RegistrationSubmission`, `RegistrationValidator`, `FieldError`, `ValidationException`; for US-009 `SearchCriteria`, `SearchCriteriaParser`, `RegistrationPage` | JDK only (no Spring, Jakarta, Jackson, POI) |
+| `application` | `RegistrationService` (use case), `ExportService`, `SearchService` (US-009), ports `RegistrationRepository`, `JsonCopyStore`, `CaptchaVerifier`, `RegistrationNotifier`, `RegistrationExporter`, `Clock` use | `domain`, Spring transaction annotations |
+| `adapter.web` | controllers (incl. `SearchController`, US-009), request/response DTOs, `ApiExceptionHandler`, `RateLimitFilter`, `BodySizeLimitFilter`, `OrganizerTransportFilter` | `application`, `domain` |
 | `adapter.persistence` | JPA entities, Spring Data repositories, `JpaRegistrationRepository` | `application`, `domain` |
 | `adapter.jsoncopy` | `FileJsonCopyStore` | `application`, `domain` |
 | `adapter.mail` | `MailRegistrationNotifier` | `application`, `domain` |
@@ -68,19 +68,37 @@ As `02_contracts/interfaces.md`, "Emails". SMTP connection and read timeouts 5 s
 
 Workbook: one sheet `registrations`, row 1 the 12 headers of `api-contract.md` in order, then one row per registration ordered by `registeredAt`, `id`; every cell a string cell (no formulas, so no formula injection); `options` and `consents` ids joined by `, `; cells of the other type empty (AC-008-01, AC-008-03). Content type `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, `Content-Disposition: attachment; filename="registrations.xlsx"`. Only registration fields are exported (SR-07).
 
+### 3.4a Organizer search (US-009)
+
+`GET /api/registrations` with the organizer's HTTP Basic credentials. Access exactly as the export (BR-09, 3.4): the same in-memory organizer, `OrganizerAccess` with `ORGANIZER_HTTPS_ONLY` (SR-06, AC-009-10: 403, no data); no or wrong credentials → 401 without registration data (AC-009-09). A request carrying `X-Requested-With: XMLHttpRequest` (sent by the frontend) gets its 401 without `WWW-Authenticate`, so the browser shows no native login dialog over the organizer page (Spring Security's HTTP Basic default for such requests); every other client still receives `WWW-Authenticate: Basic`.
+
+1. `SearchController` reads the query parameters `text`, `type`, `option`, `page` (first value of each; other parameters are ignored) and passes them as nullable strings to `SearchCriteriaParser.parse(text, type, option, page, conferenceConfig)`.
+2. Parsing (SB-01, AC-009-08, D-26, D-27), collecting one error per invalid parameter, each with the parameter name as `field`:
+   - `text`: absent → empty; trimmed (BR-10); more than 100 code points after trimming → error `text`.
+   - `type`: absent → no filter; otherwise exactly `EXTERNAL` or `STUDENT`, else error `type` (blank and lower case included).
+   - `option`: absent → no filter; otherwise the id of a configured option (active or inactive, G-8), else error `option`.
+   - `page`: absent → 1; otherwise 1 to 6 decimal digits with value ≥ 1, else error `page`.
+   Errors → 400 `{"errors":[…]}` as the registration endpoint.
+3. `SearchService.search(criteria)` asks the port `RegistrationRepository.search(criteria, offset, limit)` with `limit` = 20 and `offset` = (page − 1) × 20, and returns `RegistrationPage(total, page, items)`.
+4. Matching in PostgreSQL (`JpaRegistrationRepository`, one JPQL count and one JPQL page query, all values bound as parameters, SB-05): the text matches when `lower(column) LIKE lower('%' || escaped text || '%') ESCAPE '\'` for any of `first_name`, `last_name`, `email`, `organization`, `study_institution` (`%`, `_` and `\` in the text are escaped, so they match literally); an empty text skips the condition. The database is UTF-8 and `lower()` folds Č/č, Š/š, Ž/ž (AC-009-11, NFR-01). Type filter: `type = :type`. Option filter: an `EXISTS` over `registration_option` with `option_id = :option`. All conditions are combined with AND (BR-10, AC-009-05).
+5. Order: `registered_at` descending, then `id` descending (stable paging). Page beyond the last: empty `items`, real `total` (G-9).
+6. Response 200 (AR-09): `{"total": n, "page": p, "items": [...]}`; each item `id`, `type`, `firstName`, `lastName`, `email`, `organization` (null for students), `studyInstitution` (null for externals), `options` (selected option ids, sorted), `registeredAt` (ISO 8601 UTC with `Z`). Only these registration fields leave the backend (SR-07): no study programme, student ID or consents. Values are returned unchanged; encoding for display is the frontend's job (SR-09).
+
+Rate limiting applies as for every `/api` endpoint; the window key is client address, method and path, so `GET` and `POST /api/registrations` are separate endpoints (G-10, SR-03).
+
 ### 3.5 Errors, limits and headers
 
 - `ApiExceptionHandler`: validation → 400 with field errors; unreadable body → 400 field `body`; body too large → 413; anything else → 500 `{"message":"The request could not be processed."}`. No stack traces, exception messages or personal data in responses or logs (SB-07, ES-07); the log line carries the registration id or the exception class only.
-- Rate limit (SR-03, SB-06): `RateLimitFilter` on every `/api/**` request, fixed one-minute window per client address and endpoint path, limit `RATE_LIMIT_PER_MINUTE` (default 60, D-10); over the limit → 429 `{"message":"Too many requests. Please try again later."}` with `Retry-After`. It runs before authentication, so failed logins are limited too.
+- Rate limit (SR-03, SB-06): `RateLimitFilter` on every `/api/**` request, fixed one-minute window per client address and endpoint (method and path, US-009), limit `RATE_LIMIT_PER_MINUTE` (default 60, D-10); over the limit → 429 `{"message":"Too many requests. Please try again later."}` with `Retry-After`. It runs before authentication, so failed logins are limited too.
 - Body size (SR-03): `BodySizeLimitFilter` rejects a body over 16 KiB (`REQUEST_MAX_BYTES`, default 16384) with 413, by `Content-Length` and by counting streamed bytes.
 - Headers (SB-10): Spring Security defaults (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Cache-Control: no-store`) plus `Content-Security-Policy: default-src 'none'; frame-ancestors 'none'` and `Referrer-Policy: no-referrer` on the API. nginx adds for the frontend: CSP `default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`.
-- CSRF is disabled and sessions are stateless: the API uses no cookies; the only credential is HTTP Basic on one GET.
-- CORS: only `ALLOWED_ORIGIN` (unset by default, set only in local development with the Vite dev server).
+- CSRF is disabled and sessions are stateless: the API uses no cookies; the only credential is HTTP Basic on the two organizer GETs (export, search).
+- CORS: only `ALLOWED_ORIGIN` (unset by default, set only in local development with the Vite dev server); allowed request headers `Content-Type`, `Authorization`, `X-Requested-With`.
 - Health (NFR-04, ES-09): `/actuator/health`, `/actuator/health/liveness`, `/actuator/health/readiness` public, no details; every other actuator endpoint off. Readiness includes the database. Compose health checks use readiness.
 
 ### 3.6 Frontend
 
-As `02_contracts/interfaces.md`, "Registration form". Modules: `api.ts` (fetch wrappers, the only place that knows URLs), `validation.ts` (client rules mirroring 3.2 step 3), `RegistrationForm.tsx`, `OptionGroups.tsx`, `Captcha.tsx`, `Confirmation.tsx`, `App.tsx`. The frontend holds no secret; the site key comes from `/api/form-config` (AR-07). All text is rendered through React (escaped, SB-05).
+As `02_contracts/interfaces.md`, "Registration form" and "Organizer search page". Modules: `api.ts` (fetch wrappers, the only place that knows URLs, incl. `searchRegistrations`), `validation.ts` (client rules mirroring 3.2 step 3), `RegistrationForm.tsx`, `OptionGroups.tsx`, `Captcha.tsx`, `Confirmation.tsx`, `OrganizerPage.tsx` (US-009: sign-in, search form, result table, paging), `App.tsx` (path `/organizer` shows the organizer page, every other path the registration form). The frontend holds no secret; the site key comes from `/api/form-config` (AR-07); organizer credentials are typed in by the organizer, kept only in component memory (no storage, no cookie, no URL) and sent only as the `Authorization` header to `/api/registrations`. All text, including stored participant data on the organizer page, is rendered through React as text nodes; no `dangerouslySetInnerHTML`, no URL or attribute built from participant data (SB-05, SR-09).
 
 ## 4. Configuration (ES-01)
 
@@ -135,6 +153,13 @@ As `02_contracts/interfaces.md`, "Registration form". Modules: `api.ts` (fetch w
 | AC-003-01 | 3.1 | AC-008-03 | 3.4 |
 | AC-003-02 | 3.1 | AC-008-04 | 3.4 (`OrganizerTransportFilter`) |
 | AC-003-03 | 3.1 | | |
+| AC-009-01 | 3.4a steps 3, 5, 6 | AC-009-08 | 3.4a step 2 (D-26, D-27) |
+| AC-009-02 | 3.4a step 4 (text) | AC-009-09 | 3.4a (401) |
+| AC-009-03 | 3.4a step 4 (type) | AC-009-10 | 3.4a (`OrganizerAccess`, 403) |
+| AC-009-04 | 3.4a step 4 (option) | AC-009-11 | 3.4a step 4 (UTF-8, `lower()`) |
+| AC-009-05 | 3.4a step 4 (AND) | AC-009-12 | 3.6, interfaces "Organizer search page" |
+| AC-009-06 | 3.4a steps 5, 6 | AC-009-13 | 3.6 (React text nodes), interfaces "Organizer search page" |
+| AC-009-07 | 3.4a steps 3, 5 | | |
 
 ### Security requirements and baseline
 
@@ -142,21 +167,22 @@ As `02_contracts/interfaces.md`, "Registration form". Modules: `api.ts` (fetch w
 |---|---|---|---|
 | SR-01 | 3.2 step 4, interfaces "reCAPTCHA" | SB-04 | 5 (TLS at the external proxy) |
 | SR-02 | 4 `ProductionGuard` | SB-05 | 3.4 string cells, 3.6 React escaping, JPA parameters |
-| SR-03 | 3.5 rate limit and body size | SB-06 | 3.5 rate limit |
+| SR-03 | 3.5 rate limit and body size; 3.4a (search endpoint) | SB-06 | 3.5 rate limit |
 | SR-04 | 3.2 step 3 | SB-07 | 3.5 errors |
 | SR-05 | interfaces "Emails" (safety) | SB-08 | Dependency-Check, `npm audit` (phases 0 and 6) |
-| SR-06 | 3.4 `OrganizerTransportFilter` | SB-09 | Semgrep, Gitleaks, SpotBugs, PMD (phase 6) |
-| SR-07 | 3.4, interfaces "Emails" | SB-10 | 3.5 headers |
+| SR-06 | 3.4 `OrganizerTransportFilter`; 3.4a (search) | SB-09 | Semgrep, Gitleaks, SpotBugs, PMD (phase 6) |
+| SR-07 | 3.4, 3.4a step 6, interfaces "Emails" | SB-10 | 3.5 headers |
 | SR-08 | 5 (nginx upstream `Host`) | SB-11 | 5 (non-root images) |
+| SR-09 | 3.6 (React text nodes), 3.4a step 6 | | |
 | SB-01 | 3.2 (server-side validation) | SB-12 | data collected = `business-rules.md` Data only |
-| SB-02 | 3.4 (only export is non-public) | SB-13 | `security-requirements.md` table; retention OQ-06 in release notes |
+| SB-02 | 3.4, 3.4a (export and search are the only non-public operations) | SB-13 | `security-requirements.md` table; retention OQ-06 in release notes |
 | SB-03 | 3.4 BCrypt; 4 secrets without defaults | SB-14 | interfaces "Registration form" 5 |
 
 ### Non-functional requirements and architecture
 
 | ID | Spec |
 |---|---|
-| NFR-01 | 3.2 (UTF-8), 3.3, 3.4; E2E-04 |
+| NFR-01 | 3.2 (UTF-8), 3.3, 3.4, 3.4a step 4; E2E-04 |
 | NFR-02 | 1 (named volumes); phase 6 demonstration |
 | NFR-03 | 3.6, interfaces "Registration form" 7, 9 |
 | NFR-04 | 3.5 health; 5 health checks |
@@ -166,4 +192,6 @@ As `02_contracts/interfaces.md`, "Registration form". Modules: `api.ts` (fetch w
 | AR-05 | 3.2 step 5 |
 | AR-06 | 5 |
 | AR-07 | 3.6 |
-| AR-09 | `openapi.yaml` |
+| AR-09 | `openapi.yaml` (incl. `GET /api/registrations`) |
+| BR-09, BR-10 | 3.4a |
+| DoD-P06 | 3.4a, interfaces "Organizer search page"; E2E-06 and the phase 6 demonstration |

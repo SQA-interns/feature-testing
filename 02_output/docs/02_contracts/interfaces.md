@@ -4,13 +4,14 @@
 
 | Interface | Contract |
 |---|---|
-| Options, registration, export (REST) | `openapi.yaml` |
+| Options, registration, export, search (REST) | `openapi.yaml` |
 | Registration storage (SQL) | `database-schema.sql` (Flyway `V1__registration.sql`) |
 | JSON copy (file) | `registration-copy.schema.json` |
 | Conference options (configuration) | `conference-config.schema.json` |
 | Emails (SMTP) | section "Emails" below |
 | Anti-automation (reCAPTCHA) | section "reCAPTCHA" below |
 | Registration form (UI) | section "Registration form" below |
+| Organizer search page (UI, US-009) | section "Organizer search page" below |
 
 ## Emails
 
@@ -48,3 +49,17 @@ Single page at `/` served by the frontend; it calls only `/api/*` (AR-01).
 10. Any other status or a network error: a general message "Registration could not be completed. Please try again later." with no technical detail; values stay (AC-004-04).
 
 Accessible names (used by the tests): field labels "First name", "Last name", "Email", "Organization / institution", "Study institution", "Study programme", "Student ID"; group headings "Workshops", "Events", "Meals", "Other activities"; button "Register"; error elements have `role="alert"` and are linked with `aria-describedby`.
+
+## Organizer search page
+
+Page at `/organizer` of the frontend (nginx serves `index.html` for every path; the app chooses the page by `location.pathname`). The only organizer page (`scope.md`); it calls only `/api/form-config` and `GET /api/registrations` (AR-01).
+
+1. Sign-in form: heading "Organizer sign-in", fields "Username" and "Password" (type password), button "Sign in". No registration data is shown before a successful sign-in.
+2. Sign in = `GET /api/registrations` (no filters, page 1) with `Authorization: Basic …` and `X-Requested-With: XMLHttpRequest`. 401: the alert "Wrong username or password." and no data; 403: the alert "Organizer access requires HTTPS."; any other error: "Registrations could not be loaded. Please try again later." Credentials stay in component memory only (never in storage, cookies or the URL) and are dropped on "Sign out".
+3. After sign-in: heading "Registrations"; a search form with the text field "Search" (max 100 characters), the select "Type" (choices "All types", "External", "Student"), the select "Option" (choice "All options" plus every option of `GET /api/form-config` by name, value = option id) and the button "Search". A search (button or Enter) sends the current text, type and option with page 1; empty choices are not sent.
+4. Result: the text "<total> registrations found" (or "1 registration found"), then a table with the columns "Name" (first and last name), "Email", "Type" ("External" / "Student"), "Organization / study institution", "Options" (option names, the id when the option is not in the form configuration), "Registered" (the ISO time as received); one row per item, in the order received. No match: "No registrations found." and no rows.
+5. Page navigation: "Page <page> of <pages>" (pages = ceil(total / 20), at least 1), buttons "Previous" (disabled on page 1) and "Next" (disabled on the last page); they repeat the last search with the other page.
+6. A 400 answer shows each `errors[].message` as an alert; a 401 later (for example a changed password) returns to the sign-in form with the "Wrong username or password." alert.
+7. Every value from the API is rendered as React text (SR-09); markup in stored data appears literally and is never executed.
+
+Accessible names (used by the tests): headings "Organizer sign-in", "Registrations"; fields "Username", "Password", "Search"; selects "Type", "Option"; buttons "Sign in", "Search", "Previous", "Next", "Sign out"; the result table is a `table` with column headers as listed; alerts have `role="alert"`.
