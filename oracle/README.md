@@ -73,7 +73,7 @@ The oracle results are added **after** the run is finished and committed, so the
 The transcript backup (`03_statistics/data/*.jsonl`) is committed with the run and contains everything the session printed. If the agent ever printed a value from `.env` (it happened once, in tanej run-1, with the organizer address), it would be published. Before every statistics or oracle commit, in the run folder (Git Bash), list the files that contain a `.env` value of 6 or more characters; it prints names only, never values:
 
 ```bash
-for k in $(sed -n 's/^\([A-Z_]*\)=.*//p' .env); do v="$(sed -n "s/^$k=//p" .env | tr -d '')"; [ ${#v} -ge 6 ] || continue; for f in $(git ls-files -co --exclude-standard); do grep -qF -- "$v" "$f" && echo "$f contains $k"; done; done
+for k in $(sed -n 's/^\([A-Z_]*\)=.*/\1/p' .env); do v="$(sed -n "s/^$k=//p" .env | tr -d '\r')"; [ ${#v} -ge 6 ] || continue; for f in $(git ls-files -co --exclude-standard); do grep -qF -- "$v" "$f" && echo "$f contains $k"; done; done
 ```
 
 No output: commit. A file listed: replace the value in that committed copy with `[REDACTED]` (never in the original session file under `~/.claude`), check the file is still valid, note it in the commit message and the run notes. Closing the run's session later rebuilds the report and copies the original transcript back into `data/`; do not commit that change, discard it.
