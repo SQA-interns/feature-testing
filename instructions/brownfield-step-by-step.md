@@ -172,7 +172,7 @@ Answer exactly as `Run_Guide.md` (section 3) says, the same as every other run: 
 
 ### C4. After the agent's final message
 
-Wait about 30 seconds: the hook builds `03_statistics\results\run-report.html`. Then commit the statistics:
+Wait about 30 seconds: the hook builds `03_statistics\results\run-report.html`. Run the privacy check from `oracle/README.md` (section "Privacy check before committing statistics"). Then commit the statistics:
 
 ```powershell
 git add -A

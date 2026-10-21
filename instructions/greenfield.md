@@ -21,6 +21,6 @@ Follow `Run_Guide.md` on `main` exactly, with these differences:
    Check: `git status` lists only files under `01_input/01_project/` (9 files), and `git diff --stat` matches the package (`feature-package.md`). Nothing else is changed by hand.
 4. **`run-config.md`**: Run label `<user>_single-agent_sdd_v001_run-<n>-<feature>`; Run type `greenfield`; Feature `<feature>`; Base run empty.
 5. Commit ("inputs <feature>"), push the branch, and start with `Read AGENTS.md and start.` as in the run guide. Answer questions with the run guide's standard answers; never add information about the feature beyond the package.
-6. **After the run**: commit the statistics as the run guide says, then run the oracle with `--feature <feature>` (`oracle/README.md`) and follow "Oracle results into the statistics" there.
+6. **After the run**: run the privacy check from `oracle/README.md`, commit the statistics as the run guide says, then run the oracle with `--feature <feature>` (`oracle/README.md`) and follow "Oracle results into the statistics" there.
 
 What makes a greenfield run comparable: the inputs differ from a normal run only by the generated feature files, which are identical to the brownfield change request.

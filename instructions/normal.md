@@ -12,5 +12,5 @@ Follow `Run_Guide.md` on `main` exactly, with these differences:
    ```
 2. **`run-config.md`**: Run label `<user>_single-agent_sdd_v001_run-<n>`; Run type `normal`; Feature `none`; Base run empty.
 3. Do **not** copy any feature files. Start with `Read AGENTS.md and start.` as in the run guide.
-4. **After the run**: commit the statistics as the run guide says, then run the oracle with `--feature none` (`oracle/README.md`) and follow "Oracle results into the statistics" there.
+4. **After the run**: run the privacy check from `oracle/README.md`, commit the statistics as the run guide says, then run the oracle with `--feature none` (`oracle/README.md`) and follow "Oracle results into the statistics" there.
 5. Push the branch. Its final commit is a possible starting point for a brownfield run; note the SHA.
