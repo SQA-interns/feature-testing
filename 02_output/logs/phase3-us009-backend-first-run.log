@@ -1,0 +1,431 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 29 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.SearchAcceptanceTest
+22:51:42.807 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+22:51:42.813 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+22:51:42.821 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+22:51:43.667 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/tjan-kazar/.docker/desktop/docker.sock)
+22:51:43.669 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+22:51:43.696 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.3.1
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 31283 MB
+  Labels: 
+    com.docker.desktop.address=unix:///home/tjan-kazar/.docker/desktop/docker-cli.sock
+22:51:44.377 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+22:51:44.556 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: bf33c650fe22e3cfff49721a7c6af20e2321ebb84e7a3bc01cf63fbfd0f2e144
+22:51:45.116 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.738716221S
+22:51:45.125 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+22:51:45.126 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+22:51:45.126 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+22:51:45.127 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+22:51:45.232 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: f4162ae56768ad358c7a1bcbc229c09c5b4b8e471d4ed222717ce2c049296817
+22:51:47.430 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT2.303211571S
+22:51:47.431 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:44621/registration?loggerLevel=OFF)
+22:51:47.432 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+22:51:47.552 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 8ff29a44bd48adbf7b3af332544af4a34e1009f80b0fbe070b86bc262c31728c
+22:51:47.933 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /compassionate_goldberg: Waiting for 60 seconds for URL: http://localhost:41979/api/v1/info (where port 41979 maps to container port 8025)
+22:51:48.234 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.801958844S
+2026-10-21T22:51:48.755+02:00  INFO 358578 --- [registration-backend] [           main] s.k.r.acceptance.SearchAcceptanceTest    : Starting SearchAcceptanceTest using Java 21.0.12.1 with PID 358578 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/backend)
+2026-10-21T22:51:48.757+02:00  INFO 358578 --- [registration-backend] [           main] s.k.r.acceptance.SearchAcceptanceTest    : No active profile set, falling back to 1 default profile: "default"
+2026-10-21T22:51:49.669+02:00  INFO 358578 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-21T22:51:49.746+02:00  INFO 358578 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interface.
+2026-10-21T22:51:50.544+02:00  INFO 358578 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-21T22:51:50.578+02:00  INFO 358578 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-21T22:51:50.579+02:00  INFO 358578 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-21T22:51:50.627+02:00  INFO 358578 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1845 ms
+2026-10-21T22:51:51.082+02:00  INFO 358578 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-21T22:51:51.290+02:00  INFO 358578 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@40ecead5
+2026-10-21T22:51:51.291+02:00  INFO 358578 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-21T22:51:51.317+02:00  INFO 358578 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:44621/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-21T22:51:51.393+02:00  INFO 358578 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-21T22:51:51.397+02:00  INFO 358578 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.020s)
+2026-10-21T22:51:51.425+02:00  INFO 358578 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-21T22:51:51.494+02:00  INFO 358578 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-21T22:51:51.508+02:00  INFO 358578 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - registration"
+2026-10-21T22:51:51.567+02:00  INFO 358578 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.034s)
+2026-10-21T22:51:51.683+02:00  INFO 358578 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-21T22:51:51.739+02:00  INFO 358578 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-21T22:51:52.150+02:00  INFO 358578 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T22:51:52.229+02:00  INFO 358578 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:44621/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-21T22:51:53.069+02:00  INFO 358578 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-21T22:51:53.141+02:00  INFO 358578 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T22:51:53.227+02:00  INFO 358578 --- [registration-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-21T22:51:53.782+02:00  INFO 358578 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizerAccount
+2026-10-21T22:51:54.484+02:00  INFO 358578 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-21T22:51:54.554+02:00  INFO 358578 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 37385 (http) with context path '/'
+2026-10-21T22:51:54.568+02:00  INFO 358578 --- [registration-backend] [           main] s.k.r.acceptance.SearchAcceptanceTest    : Started SearchAcceptanceTest in 6.1 seconds (process running for 13.154)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/home/tjan-kazar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-10-21T22:51:55.306+02:00  INFO 358578 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-21T22:51:55.306+02:00  INFO 358578 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-21T22:51:55.308+02:00  INFO 358578 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-21T22:52:01.113+02:00  WARN 358578 --- [registration-backend] [o-auto-1-exec-6] s.k.r.application.RegistrationService    : organizer mail failed for registration 44229e00-f70a-4a92-92c2-8f84ea9dbc1b (MailSendException)
+2026-10-21T22:52:07.594+02:00  WARN 358578 --- [registration-backend] [o-auto-1-exec-7] s.k.r.application.RegistrationService    : organizer mail failed for registration 472074e4-c88c-4fad-9778-c7c5a0155891 (MailSendException)
+[ERROR] Tests run: 30, Failures: 27, Errors: 0, Skipped: 0, Time elapsed: 33.95 s <<< FAILURE! -- in si.konferenca.registration.acceptance.SearchAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(String, String)[1] -- Time elapsed: 1.242 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(SearchAcceptanceTest.java:298)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(String, String)[2] -- Time elapsed: 5.368 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(SearchAcceptanceTest.java:298)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(String, String)[3] -- Time elapsed: 0.290 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(SearchAcceptanceTest.java:298)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(String, String)[4] -- Time elapsed: 0.278 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(SearchAcceptanceTest.java:298)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(String, String)[5] -- Time elapsed: 0.266 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected(SearchAcceptanceTest.java:298)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_01_listsAllNewestFirstWithFields -- Time elapsed: 0.257 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_01_listsAllNewestFirstWithFields(SearchAcceptanceTest.java:125)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_hundredCharactersAreAccepted -- Time elapsed: 0.117 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_hundredCharactersAreAccepted(SearchAcceptanceTest.java:314)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(String)[1] -- Time elapsed: 5.335 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(SearchAcceptanceTest.java:384)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(String)[2] -- Time elapsed: 0.316 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(SearchAcceptanceTest.java:384)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(String)[3] -- Time elapsed: 0.328 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(SearchAcceptanceTest.java:384)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(String)[4] -- Time elapsed: 0.301 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged(SearchAcceptanceTest.java:384)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_04_optionFilterListsOnlyThoseWithTheOption -- Time elapsed: 0.251 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_04_optionFilterListsOnlyThoseWithTheOption(SearchAcceptanceTest.java:220)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[1] -- Time elapsed: 0.266 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[2] -- Time elapsed: 0.256 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[3] -- Time elapsed: 0.237 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[4] -- Time elapsed: 0.251 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[5] -- Time elapsed: 0.236 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[6] -- Time elapsed: 0.281 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[7] -- Time elapsed: 0.301 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(String, String)[8] -- Time elapsed: 0.370 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase(SearchAcceptanceTest.java:194)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_07_pagesOfTwenty -- Time elapsed: 1.379 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_07_pagesOfTwenty(SearchAcceptanceTest.java:271)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_06_noMatchGivesEmptyList -- Time elapsed: 0.258 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_06_noMatchGivesEmptyList(SearchAcceptanceTest.java:250)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_01_listsAtMostTwenty -- Time elapsed: 1.342 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_01_listsAtMostTwenty(SearchAcceptanceTest.java:169)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_allInvalidParametersAreReported -- Time elapsed: 0.121 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.AcceptanceTestSupport.errorFields(AcceptanceTestSupport.java:209)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_08_allInvalidParametersAreReported(SearchAcceptanceTest.java:308)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_10_plainHttpFromRemoteClientIsRefused -- Time elapsed: 0.362 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_10_plainHttpFromRemoteClientIsRefused(SearchAcceptanceTest.java:373)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_03_typeFilterListsOnlyThatType -- Time elapsed: 0.312 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_03_typeFilterListsOnlyThatType(SearchAcceptanceTest.java:206)
+
+[ERROR] si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_05_filtersCombine -- Time elapsed: 0.444 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ok(SearchAcceptanceTest.java:41)
+	at si.konferenca.registration.acceptance.SearchAcceptanceTest.ac_009_05_filtersCombine(SearchAcceptanceTest.java:239)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   SearchAcceptanceTest.ac_009_01_listsAllNewestFirstWithFields:125->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_01_listsAtMostTwenty:169->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_02_textMatchesListedFieldsInAnyCase:194->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_03_typeFilterListsOnlyThatType:206->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_04_optionFilterListsOnlyThoseWithTheOption:220->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_05_filtersCombine:239->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_06_noMatchGivesEmptyList:250->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_07_pagesOfTwenty:271->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_allInvalidParametersAreReported:308->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_hundredCharactersAreAccepted:314->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected:298->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected:298->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected:298->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected:298->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_08_invalidParameterIsRejected:298->AcceptanceTestSupport.errorFields:209 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 400
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_10_plainHttpFromRemoteClientIsRefused:373->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged:384->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged:384->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged:384->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[ERROR]   SearchAcceptanceTest.ac_009_11_slovenianLastNameIsFoundUnchanged:384->ok:41 [status, body: {"message":"Organizer access requires HTTPS."}] 
+expected: 200
+ but was: 403
+[INFO] 
+[ERROR] Tests run: 30, Failures: 27, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  41.468 s
+[INFO] Finished at: 2026-10-21T22:52:16+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

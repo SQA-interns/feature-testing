@@ -1,0 +1,349 @@
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/frontend
+
+ ❯ src/acceptance/organizer-search.acceptance.test.tsx (3 tests | 3 failed) 3079ms
+     × AC-009-12 valid credentials show the list with search, filters and page navigation 1062ms
+     × AC-009-12 wrong credentials show an error and no registration data 1007ms
+     × AC-009-13 markup in registration data is shown as literal text and not executed 1008ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/acceptance/organizer-search.acceptance.test.tsx > US-009 organizer search page > AC-009-12 valid credentials show the list with search, filters and page navigation
+TestingLibraryElementError: Unable to find a label with the text of: /^Username/
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ signIn src/acceptance/organizer-harness.tsx:103:33
+    101|
+    102| export async function signIn(username: string, password: string): Prom…
+    103|   fireEvent.change(await screen.findByLabelText(/^Username/), { target…
+       |                                 ^
+    104|   fireEvent.change(screen.getByLabelText(/^Password/), { target: { val…
+    105|   fireEvent.click(screen.getByRole("button", { name: "Sign in" }));
+ ❯ src/acceptance/organizer-search.acceptance.test.tsx:20:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/acceptance/organizer-search.acceptance.test.tsx > US-009 organizer search page > AC-009-12 wrong credentials show an error and no registration data
+TestingLibraryElementError: Unable to find a label with the text of: /^Username/
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ signIn src/acceptance/organizer-harness.tsx:103:33
+    101|
+    102| export async function signIn(username: string, password: string): Prom…
+    103|   fireEvent.change(await screen.findByLabelText(/^Username/), { target…
+       |                                 ^
+    104|   fireEvent.change(screen.getByLabelText(/^Password/), { target: { val…
+    105|   fireEvent.click(screen.getByRole("button", { name: "Sign in" }));
+ ❯ src/acceptance/organizer-search.acceptance.test.tsx:60:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/acceptance/organizer-search.acceptance.test.tsx > US-009 organizer search page > AC-009-13 markup in registration data is shown as literal text and not executed
+TestingLibraryElementError: Unable to find a label with the text of: /^Username/
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mKonferenca Test 2026: registration[0m
+      [36m</h1>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0mRegistration type[0m
+          [36m</legend>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-EXTERNAL"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-EXTERNAL"[39m
+            [36m>[39m
+              [0mExternal participant[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"choice"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mid[39m=[32m"type-STUDENT"[39m
+              [33mname[39m=[32m"type"[39m
+              [33mtype[39m=[32m"radio"[39m
+            [36m/>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"type-STUDENT"[39m
+            [36m>[39m
+              [0mStudent[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</fieldset>[39m
+      [36m</form>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ signIn src/acceptance/organizer-harness.tsx:103:33
+    101|
+    102| export async function signIn(username: string, password: string): Prom…
+    103|   fireEvent.change(await screen.findByLabelText(/^Username/), { target…
+       |                                 ^
+    104|   fireEvent.change(screen.getByLabelText(/^Password/), { target: { val…
+    105|   fireEvent.click(screen.getByRole("button", { name: "Sign in" }));
+ ❯ src/acceptance/organizer-search.acceptance.test.tsx:80:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  3 failed | 9 passed (12)
+   Start at  22:51:24
+   Duration  4.15s (transform 335ms, setup 0ms, import 1.07s, tests 4.95s, environment 1.57s)
+
