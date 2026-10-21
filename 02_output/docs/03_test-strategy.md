@@ -10,6 +10,12 @@
 
 | Path | Reason |
 |---|---|
+| `backend/src/main/java/si/konferenca/registration/RegistrationApplication.java` | `@SpringBootApplication` entry point, no logic (`quality-requirements.md` mutation scope) |
+| `frontend/src/main.tsx` | bootstrap file that only mounts the app |
+| `frontend/src/**/*.d.ts` | type declarations, no runtime code |
+| `frontend/src/**/*.test.{ts,tsx}` | test files colocated with the source (phase 5) |
+
+Nothing else is excluded; no generated code exists in either component.
 
 ## First complete run (before any fix)
 
