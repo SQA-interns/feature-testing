@@ -229,6 +229,12 @@
         <version>${dependency-check.version}</version>
         <configuration>
           <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
+          <!-- OSS Index needs credentials that secrets.env.example does not list (D-03) -->
+          <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+          <failBuildOnCVSS>7</failBuildOnCVSS>
+          <suppressionFiles>
+            <suppressionFile>dependency-check-suppressions.xml</suppressionFile>
+          </suppressionFiles>
           <formats>
             <format>HTML</format>
             <format>JSON</format>
