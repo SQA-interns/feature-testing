@@ -5,6 +5,7 @@ import {
   EMPTY_VALUES,
   FIELDS,
   optionsFor,
+  type FieldError,
   type FormConfig,
   type FormValues,
   type RegistrationType,
@@ -31,6 +32,31 @@ const TYPES: { value: RegistrationType; label: string }[] = [
   { value: "STUDENT", label: "Student" },
 ];
 
+const ERROR_FIELDS = new Set([
+  "type",
+  "firstName",
+  "lastName",
+  "email",
+  "organization",
+  "studyInstitution",
+  "studyProgramme",
+  "studentId",
+  "options",
+  "consents",
+  "captchaToken",
+]);
+
+export const GENERAL_ERROR = "The registration could not be completed. Please try again later.";
+
+/** The backend's field errors that belong to a form field, first message per field. */
+function fieldErrors(list: FieldError[]): Record<string, string> {
+  const shown: Record<string, string> = {};
+  for (const { field, message } of list) {
+    if (ERROR_FIELDS.has(field) && !(field in shown)) shown[field] = message;
+  }
+  return shown;
+}
+
 function toggle(list: string[], id: string): string[] {
   return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
 }
@@ -41,6 +67,7 @@ export function RegistrationForm({ config, onRegistered }: Props) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [captchaResets, setCaptchaResets] = useState(0);
+  const [generalError, setGeneralError] = useState(false);
 
   const type = values.type;
   const available = type === "" ? [] : optionsFor(config, type);
@@ -62,6 +89,7 @@ export function RegistrationForm({ config, onRegistered }: Props) {
     if (type === "" || submitting) return;
     const found = validate(values, config);
     setErrors(found);
+    setGeneralError(false);
     if (Object.keys(found).length > 0) return;
     setSubmitting(true);
     const result = await submitRegistration(buildPayload({ ...values, type }, config));
@@ -73,6 +101,13 @@ export function RegistrationForm({ config, onRegistered }: Props) {
         optionNames: available.filter((o) => values.options.includes(o.id)).map((o) => o.name),
       });
       return;
+    }
+    if (result.kind === "invalid") {
+      const shown = fieldErrors(result.errors);
+      setErrors(shown);
+      setGeneralError(Object.keys(shown).length < result.errors.length);
+    } else {
+      setGeneralError(true);
     }
     setCaptchaResets((n) => n + 1);
   };
@@ -95,6 +130,11 @@ export function RegistrationForm({ config, onRegistered }: Props) {
             {t.label}
           </label>
         ))}
+        {errors.type && (
+          <span id="type-error" className="error">
+            {errors.type}
+          </span>
+        )}
       </div>
 
       {type !== "" && (
@@ -164,6 +204,11 @@ export function RegistrationForm({ config, onRegistered }: Props) {
           <button type="submit" disabled={submitting}>
             Register
           </button>
+          {generalError && (
+            <p role="alert" id="general-error" className="general-error">
+              {GENERAL_ERROR}
+            </p>
+          )}
         </>
       )}
     </form>
