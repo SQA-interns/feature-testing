@@ -1,0 +1,4 @@
+a13bb1ceb1bbe80d96f38fe2a4e0ea4cac6210eb561dac90c4698e096f0c48e1  backend/src/test/java/si/konferenca/registration/acceptance/SearchAcceptanceTest.java
+3fc52230d6392ad826cef8e7c80bedcfbe0a2933360ec9a11480ef17a6c2a305  frontend/e2e/organizer-search.e2e.spec.ts
+e2a88f1075245f244359529155582cb623928be3f1195927388589a82c83e560  frontend/src/acceptance/organizer-harness.tsx
+e987aef37548ee57bb6fa67db8b90b713223d65fdff8f70588edfb468752e375  frontend/src/acceptance/organizer-search.acceptance.test.tsx
