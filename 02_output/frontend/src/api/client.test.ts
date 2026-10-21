@@ -106,3 +106,23 @@ describe("submitRegistration", () => {
     await expect(submitRegistration({})).resolves.toEqual({ kind: "failed" });
   });
 });
+
+describe("submitRegistration edge cases", () => {
+  it("needs every entry of a 400 error list to be a field error", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => answer(400, { errors: [{ field: "a", message: "m" }, { field: "b" }] })),
+    );
+
+    await expect(submitRegistration({})).resolves.toEqual({ kind: "failed" });
+  });
+
+  it("does not read field errors from other statuses", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => answer(422, { errors: [{ field: "a", message: "m" }] })),
+    );
+
+    await expect(submitRegistration({})).resolves.toEqual({ kind: "failed" });
+  });
+});

@@ -55,6 +55,7 @@ describe("App", () => {
     render(<App />);
 
     expect(screen.getByText("Loading…")).toBeInTheDocument();
+    expect(screen.queryByRole("radiogroup")).not.toBeInTheDocument();
     expect(
       await screen.findByRole("radiogroup", { name: "Registration type" }),
     ).toBeInTheDocument();

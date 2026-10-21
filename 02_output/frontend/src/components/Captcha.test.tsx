@@ -130,3 +130,19 @@ describe("Captcha with Google reCAPTCHA", () => {
     expect(onToken).not.toHaveBeenCalled();
   });
 });
+
+describe("Captcha reset before the widget was rendered", () => {
+  it("does not reset while the script has loaded but not yet rendered", () => {
+    const onToken = vi.fn();
+    const { rerender } = render(
+      <Captcha testMode={false} siteKey="k" token="" resetCount={0} onToken={onToken} />,
+    );
+    const { api } = fakeGrecaptcha();
+    window.grecaptcha = api;
+
+    rerender(<Captcha testMode={false} siteKey="k" token="" resetCount={1} onToken={onToken} />);
+
+    expect(api.reset).not.toHaveBeenCalled();
+    expect(onToken).not.toHaveBeenCalled();
+  });
+});

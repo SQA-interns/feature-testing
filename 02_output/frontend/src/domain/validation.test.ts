@@ -131,3 +131,13 @@ describe("buildPayload and optionsFor", () => {
     expect(optionsFor(config, "STUDENT").map((o) => o.id)).toEqual(["b", "a"]);
   });
 });
+
+describe("email pattern boundaries", () => {
+  it.each(["x@a.si", "a@b.c", "ana@example.org"])("accepts %s", (email) => {
+    expect(EMAIL_PATTERN.test(email)).toBe(true);
+  });
+
+  it.each(["ana@example.org,", "ana@example.org x", "ana@example.org-"])("rejects %s", (email) => {
+    expect(EMAIL_PATTERN.test(email)).toBe(false);
+  });
+});
