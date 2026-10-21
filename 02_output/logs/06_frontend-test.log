@@ -1,0 +1,13 @@
+
+> registration-frontend@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2/02_output/frontend
+
+
+ Test Files  9 passed (9)
+      Tests  86 passed (86)
+   Start at  16:25:16
+   Duration  7.94s (transform 1.97s, setup 0ms, import 9.43s, tests 10.82s, environment 23.40s)
+

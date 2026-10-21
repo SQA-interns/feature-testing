@@ -100,7 +100,7 @@
 2026-10-21T13:50:10.382+02:00  WARN 37540 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T13:50:11.128+02:00  WARN 37540 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: c7a958b7-ada1-4198-9ab4-513500933519
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -384,7 +384,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T13:50:13.074+02:00  WARN 37540 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T13:50:13.220+02:00  WARN 37540 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: aae0077f-d432-440b-b39d-0e7d427d8f02
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 

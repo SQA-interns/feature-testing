@@ -102,7 +102,7 @@
 2026-10-21T14:10:58.056+02:00  INFO 39152 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2026-10-21T14:10:58.697+02:00  WARN 39152 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 80502469-779a-499e-bb3c-370f364ce15b
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 

@@ -99,7 +99,7 @@
 2026-10-21T14:04:50.416+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:51.222+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: efd931d8-492b-4661-b7ee-efa0b44638b0
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -379,7 +379,7 @@ java.lang.AssertionError: Status expected:<400> but was:<403>
 2026-10-21T14:04:53.369+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:53.511+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 0d340bee-8fca-40c4-8f6a-2f773fb697ce
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -477,7 +477,7 @@ java.lang.AssertionError: Status expected:<200> but was:<401>
 2026-10-21T14:04:54.184+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:54.313+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 56054ea0-da0f-452e-b73d-2beac8516f78
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -755,7 +755,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:04:55.248+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:55.374+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 84feb902-b5b3-493b-8e87-21056a71b277
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2050,7 +2050,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:04:56.503+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:56.609+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: e35d1bdf-1d67-45fb-90d8-4f72cc331965
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2242,7 +2242,7 @@ java.lang.AssertionError: Status expected:<200> but was:<401>
 2026-10-21T14:04:57.723+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:57.827+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 55f29769-2257-4ebc-9117-7f32f566ec15
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2301,7 +2301,7 @@ This generated password is for development use only. Your security configuration
 2026-10-21T14:04:58.571+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:58.650+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 4d86243e-e6a6-474d-abef-aad2e226d4b8
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2360,7 +2360,7 @@ This generated password is for development use only. Your security configuration
 2026-10-21T14:04:59.235+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:04:59.311+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: d5408877-3f3c-4df9-b862-ac70fbd7712d
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2419,7 +2419,7 @@ This generated password is for development use only. Your security configuration
 2026-10-21T14:05:00.067+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:00.135+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 90c5c161-61a6-4fd4-869e-9d2be73d4213
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2494,7 +2494,7 @@ Expecting code to raise a throwable.
 2026-10-21T14:05:00.564+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:00.639+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 5dd13bea-2dad-473d-ac85-6ffac08bef93
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2591,7 +2591,7 @@ java.lang.AssertionError: Range for response status value 403 expected:<SERVER_E
 2026-10-21T14:05:01.229+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:01.315+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 29dd006b-e847-41f4-af75-d50f487d0d66
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2688,7 +2688,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:05:01.799+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:01.893+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 25a1be82-ea37-4203-a85f-a6fee2752c3d
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -2873,7 +2873,7 @@ java.lang.AssertionError: Status expected:<200> but was:<401>
 2026-10-21T14:05:02.576+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:02.658+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 2125ac53-2c90-441d-b7a0-1b3f56916e8b
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -3061,7 +3061,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:05:03.148+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:03.220+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: baa492d9-9a52-444c-9f2e-38fc15d01af7
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -3202,7 +3202,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:05:03.633+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:03.703+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: f1c7639b-e10e-4755-a4b3-d98dbbe970fe
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -3480,7 +3480,7 @@ java.lang.AssertionError: Status expected:<201> but was:<403>
 2026-10-21T14:05:04.273+02:00  WARN 37996 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T14:05:04.367+02:00  WARN 37996 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 2a54b7fa-c4ca-4f85-83da-834406dd50f1
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 

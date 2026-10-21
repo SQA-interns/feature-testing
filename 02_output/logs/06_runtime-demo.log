@@ -1,0 +1,74 @@
+## health
+{"groups":["liveness","readiness"],"status":"UP"}
+{"status":"UP"}
+{"status":"UP"}
+## frontend
+GET / 200
+GET /api/form-config via nginx 200
+## form-config
+{"options":[{"id":"ws-ai","name":"AI workshop","category":"WORKSHOP","availableTo":["EXTERNAL","STUDENT"]},{"id":"ws-security","name":"Secure coding workshop","category":"WORKSHOP","availableTo":["EXTERNAL","STUDENT"]},{"id":"ev-reception","name":"Welcome reception","category":"EVENT","availableTo":
+## registrations
+external: {"errors":[{"field":"body","message":"Request body is not valid JSON."}]} 400
+student: {"errors":[{"field":"body","message":"Request body is not valid JSON."}]} 400
+{"errors":[{"field":"firstName","message":"This field is required."},{"field":"lastName","message":"This field is required."},{"field":"email","message":"Enter a valid email address."},{"field":"organization","message":"This field is required."},{"field":"options","message":"Option 'ev-nope' is not available."},{"field":"consents","message":"Consent 'privacy' is required."}]} 400
+{"errors":[{"field":"options","message":"Option 'ev-industry-tour' is not available."}]} 400
+## database
+3
+## json copies
+-rw------- 1 app app 425 Oct 21 14:27 37ea4f4e-92aa-41d2-ae43-cf306a09b545.json
+-rw------- 1 app app 404 Oct 21 14:27 49174984-f78e-4edf-b02f-4be8a8eb5d04.json
+-rw------- 1 app app 441 Oct 21 14:27 536ac0f1-74a2-46dd-9ddc-0c270bf34ab6.json
+cat: '/data/json-copies/{"errors":[{"field":"body","message":"Request': No such file or directory
+cat: body: No such file or directory
+cat: is: No such file or directory
+cat: not: No such file or directory
+cat: valid: No such file or directory
+cat: 'JSON."}]}': No such file or directory
+cat: 400.json: No such file or directory
+
+## mailpit
+messages mentioning demo.ext: 0
+## export
+with credentials 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8 3993 bytes
+without credentials 401
+wrong password 401
+workbook header: id,type,firstName,lastName,email,organization,studyInstitution,studyProgramme,studentId,options,consents,registeredAt
+rows: 3
+## headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Content-Type: application/json;charset=UTF-8
+Server: nginx
+Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+X-Frame-Options: DENY
+## host header
+spoofed Host via nginx 200
+## size limit
+20 kB body 413
+## rate limit
+31st failed login: 404429
+## registrations (UTF-8 bodies from files)
+external: {"id":"4e553dda-4bbe-4bd8-9f49-929f330afd88"} 201
+student: {"id":"3e6b4cd3-5a5b-44e1-a060-0e6eee38757e"} 201
+## database (DoD-P02)
+4e553dda-4bbe-4bd8-9f49-929f330afd88|EXTERNAL|Demo Ana|Žagar|Demo d.o.o. Črnuče
+3e6b4cd3-5a5b-44e1-a060-0e6eee38757e|STUDENT|Demo Luka|Čuk|Univerza v Ljubljani
+
+## json copies (DoD-P02)
+3e6b4cd3-5a5b-44e1-a060-0e6eee38757e.json
+4e553dda-4bbe-4bd8-9f49-929f330afd88.json
+{"id":"4e553dda-4bbe-4bd8-9f49-929f330afd88","type":"EXTERNAL","firstName":"Demo Ana","lastName":"Žagar","email":"demo.ext@example.org","organization":"Demo d.o.o. Črnuče","studyInstitution":null,"studyProgramme":null,"studentId":null,"options":["ws-ai","ev-reception"],"consents":[{"id":"privacy","givenAt":"2026-10-21T14:29:03.936Z"}],"registeredAt":"2026-10-21T14:29:03.936Z"}
+## mailpit (DoD-P03)
+demo.ext: messages 2
+ - 1 recipient(s) | New registration: Konferenca 2026 | attachments 1
+ - 1 recipient(s) | Registration confirmed: Konferenca 2026 | attachments 0
+demo.stu: messages 2
+ - 1 recipient(s) | New registration: Konferenca 2026 | attachments 1
+ - 1 recipient(s) | Registration confirmed: Konferenca 2026 | attachments 0
+## export (DoD-P04)
+with credentials 200 4253 bytes
+rows: 5
+  EXTERNAL Demo Ana Žagar | Demo d.o.o. Črnuče | ws-ai, ev-reception | privacy
+  STUDENT Demo Luka Čuk | Univerza v Ljubljani | ws-security, meal-lunch | privacy

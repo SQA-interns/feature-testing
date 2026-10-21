@@ -100,7 +100,7 @@
 2026-10-21T13:45:29.664+02:00  WARN 32548 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T13:45:30.394+02:00  WARN 32548 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 92784595-1270-474b-92dc-3a9b64c47dce
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
@@ -203,7 +203,7 @@ java.lang.AssertionError: Range for response status value 403 expected:<SERVER_E
 2026-10-21T13:45:32.226+02:00  WARN 32548 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2026-10-21T13:45:32.364+02:00  WARN 32548 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: b75fa6c4-b34a-4c30-b504-70a310630e9b
+Using generated security password: <redacted>
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 

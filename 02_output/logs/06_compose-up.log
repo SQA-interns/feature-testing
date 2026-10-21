@@ -1,0 +1,185 @@
+ Image registration-backend Building 
+ Image registration-frontend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.20kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 681B 0.0s done
+#2 DONE 0.1s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 687B 0.0s done
+#3 DONE 0.1s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine
+#4 DONE 0.1s
+
+#5 [frontend internal] load metadata for docker.io/library/node:24.13.0-alpine
+#5 DONE 0.1s
+
+#6 [frontend internal] load metadata for docker.io/library/nginx:1.30.5-alpine
+#6 DONE 0.2s
+
+#7 [backend internal] load .dockerignore
+#7 transferring context: 122B 0.0s done
+#7 DONE 0.1s
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 129B 0.0s done
+#8 DONE 0.1s
+
+#9 [frontend internal] load build context
+#9 DONE 0.0s
+
+#10 [backend 1/4] FROM docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a
+#10 resolve docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a 0.1s done
+#10 DONE 0.1s
+
+#11 [backend internal] load build context
+#11 ...
+
+#12 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#12 resolve docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94 0.1s done
+#12 DONE 0.1s
+
+#13 [frontend build 1/7] FROM docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
+#13 resolve docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e 0.1s done
+#13 DONE 0.1s
+
+#9 [frontend internal] load build context
+#9 transferring context: 32.73kB 0.0s done
+#9 DONE 0.0s
+
+#14 [frontend build 2/7] WORKDIR /app
+#14 CACHED
+
+#11 [backend internal] load build context
+#11 ...
+
+#15 [frontend build 3/7] COPY package.json package-lock.json .npmrc ./
+#15 DONE 0.2s
+
+#11 [backend internal] load build context
+#11 transferring context: 47.07MB 5.2s
+#11 transferring context: 80.24MB 8.2s done
+#11 DONE 8.2s
+
+#16 [backend 2/4] RUN addgroup -S -g 10001 app     && adduser -S -D -H -u 10001 -G app app     && mkdir -p /app /data/json-copies     && chown -R app:app /data
+#16 CACHED
+
+#17 [backend 3/4] WORKDIR /app
+#17 CACHED
+
+#18 [backend 4/4] COPY --chown=app:app target/registration-backend-1.0.0.jar app.jar
+#18 DONE 0.8s
+
+#19 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#19 ...
+
+#20 [backend] exporting to image
+#20 exporting layers
+#20 exporting layers 7.0s done
+#20 exporting manifest sha256:ccb28983d6dba9a8c0c5021cf9b9ee38dabf2f10eed21b9182dd4978e6c7e790 0.1s done
+#20 exporting config sha256:24fc471e9648b9a7c80331378ff4b534ad40df49580e72fbfbdcd88ac5e0a387 0.1s done
+#20 exporting attestation manifest sha256:a62621584d1f83a0e7a7006572cbcbdef2fe762727bd7e100a8d0347b88d85cd 0.0s done
+#20 exporting manifest list sha256:949959a8e9e72608f9be4a679135d35b439aa144eb860355719aa305e100ef45
+#20 exporting manifest list sha256:949959a8e9e72608f9be4a679135d35b439aa144eb860355719aa305e100ef45 0.1s done
+#20 naming to docker.io/library/registration-backend:latest 0.0s done
+#20 unpacking to docker.io/library/registration-backend:latest
+#20 unpacking to docker.io/library/registration-backend:latest 1.1s done
+#20 DONE 8.4s
+
+#19 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#19 12.71 npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+#19 ...
+
+#21 [backend] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#19 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#19 30.37 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#19 38.23 
+#19 38.23 added 445 packages in 35s
+#19 38.24 npm notice
+#19 38.24 npm notice New minor version of npm available! 11.6.2 -> 11.21.1
+#19 38.24 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.1
+#19 38.24 npm notice To update run: npm install -g npm@11.21.1
+#19 38.24 npm notice
+#19 DONE 40.4s
+
+#22 [frontend build 5/7] COPY index.html tsconfig.json vite.config.ts ./
+#22 DONE 0.8s
+
+#23 [frontend build 6/7] COPY src ./src
+#23 DONE 0.1s
+
+#24 [frontend build 7/7] RUN npm run build
+#24 1.413 
+#24 1.413 > registration-frontend@1.0.0 build
+#24 1.413 > tsc --noEmit && vite build
+#24 1.413 
+#24 9.441 vite v6.4.4 building for production...
+#24 9.702 transforming...
+#24 12.86 ✓ 37 modules transformed.
+#24 13.31 rendering chunks...
+#24 13.35 computing gzip size...
+#24 13.39 dist/index.html                   0.41 kB │ gzip:  0.27 kB
+#24 13.39 dist/assets/index-B6XoJsdS.css    0.78 kB │ gzip:  0.43 kB
+#24 13.39 dist/assets/index-CWP13lHF.js   232.59 kB │ gzip: 72.67 kB
+#24 13.39 ✓ built in 3.85s
+#24 DONE 13.7s
+
+#25 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#25 CACHED
+
+#26 [frontend stage-1 3/3] COPY --from=build /app/dist /usr/share/nginx/html
+#26 CACHED
+
+#27 [frontend] exporting to image
+#27 exporting layers 0.0s done
+#27 exporting manifest sha256:06a81e366cc59e3da1238349992f54dff4d0affb4e79bd26e31e582c040f28f9 done
+#27 exporting config sha256:2bfb11e491b1fcac1da87cef7efb19a7dfbc89a4fb10025af4865da6c2c528d2 done
+#27 exporting attestation manifest sha256:9dc52ddf2c312bf8c647908b40b4c00f3209bbb1fff25b56ce600fbaa140f86b
+#27 exporting attestation manifest sha256:9dc52ddf2c312bf8c647908b40b4c00f3209bbb1fff25b56ce600fbaa140f86b 0.0s done
+#27 exporting manifest list sha256:0c031bfb7bf048383e81712eafafa8cc2ad9c1d03269cf294dc4e9fdcafaf72d 0.0s done
+#27 naming to docker.io/library/registration-frontend:latest done
+#27 unpacking to docker.io/library/registration-frontend:latest 0.1s done
+#27 DONE 0.4s
+
+#28 [frontend] resolving provenance for metadata file
+#28 DONE 0.0s
+ Image registration-backend Built 
+ Image registration-frontend Built 
+ Volume registration_pgdata Creating 
+ Network registration_default Creating 
+ Volume registration_json-copies Creating 
+ Volume registration_pgdata Creating 
+ Network registration_default Creating 
+ Volume registration_json-copies Creating 
+ Volume registration_json-copies Created 
+ Volume registration_json-copies Created 
+ Volume registration_pgdata Created 
+ Volume registration_pgdata Created 
+ Network registration_default Created 
+ Network registration_default Created 
+ Container registration-mailpit-1 Creating 
+ Container registration-postgres-1 Creating 
+ Container registration-mailpit-1 Created 
+ Container registration-postgres-1 Created 
+ Container registration-backend-1 Creating 
+ Container registration-backend-1 Created 
+ Container registration-frontend-1 Creating 
+ Container registration-frontend-1 Created 
+ Container registration-mailpit-1 Starting 
+ Container registration-postgres-1 Starting 
+ Container registration-mailpit-1 Started 
+ Container registration-postgres-1 Started 
+ Container registration-postgres-1 Waiting 
+ Container registration-postgres-1 Healthy 
+ Container registration-backend-1 Starting 
+ Container registration-backend-1 Started 
+ Container registration-backend-1 Waiting 
+ Container registration-backend-1 Healthy 
+ Container registration-frontend-1 Starting 
+ Container registration-frontend-1 Started 

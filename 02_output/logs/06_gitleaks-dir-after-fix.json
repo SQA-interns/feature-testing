@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 23,
+  "EndLine": 23,
+  "StartColumn": 31,
+  "EndColumn": 83,
+  "Match": "ORGANIZER_PASSWORD = \"REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "/src/02_output/backend/src/test/java/si/konferenca/registration/acceptance/support/TestStack.java",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.644414,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "/src/02_output/backend/src/test/java/si/konferenca/registration/acceptance/support/TestStack.java:generic-api-key:23"
+ }
+]
