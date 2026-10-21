@@ -1,0 +1,44 @@
+{
+  "title": "Emails (backend to SMTP server)",
+  "description": "Sent only after the registration transaction committed (database row and JSON copy exist, OQ-03). A sending failure is logged with the registration id only and never changes the HTTP 201 response (AC-006-03). Every message is text/plain; charset=UTF-8 (no HTML part), so markup in user input appears only as literal text; the subject contains no user input; recipients come only from the validated email field or ORGANIZER_EMAILS; user text is never placed in a header (SR-05, AC-006-02).",
+  "from": "MAIL_FROM",
+  "participantConfirmation": {
+    "to": ["the registration's email"],
+    "subject": "Registration confirmed: <CONFERENCE_NAME>",
+    "body": [
+      "Dear <firstName> <lastName>,",
+      "",
+      "thank you for registering for <CONFERENCE_NAME>.",
+      "Registration type: External participant | Student",
+      "Selected options:",
+      "- <option display name> (one line per selected option; 'none' when there is none)",
+      "",
+      "Registration id: <id>"
+    ],
+    "attachments": []
+  },
+  "organizerNotification": {
+    "to": ["one message per address in ORGANIZER_EMAILS (comma separated, trimmed)"],
+    "subject": "New registration: <CONFERENCE_NAME>",
+    "body": [
+      "A new registration was received.",
+      "",
+      "Id: <id>",
+      "Type: <EXTERNAL|STUDENT>",
+      "First name: <firstName>",
+      "Last name: <lastName>",
+      "Email: <email>",
+      "Organization: <organization> (EXTERNAL only)",
+      "Study institution: <studyInstitution> (STUDENT only)",
+      "Study programme: <studyProgramme> (STUDENT only)",
+      "Student ID: <studentId> (STUDENT only)",
+      "Options: <option ids joined by ', '>",
+      "Consents: <consent ids joined by ', '>",
+      "Registered at: <registeredAt>"
+    ],
+    "attachments": [
+      { "filename": "registration-<id>.json", "contentType": "application/json", "content": "exactly the bytes of the stored JSON copy (AC-007-02)" }
+    ],
+    "rule": "only registration data, no internal fields or system data (SR-07)"
+  }
+}

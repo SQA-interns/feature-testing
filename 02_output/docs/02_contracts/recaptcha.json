@@ -1,0 +1,20 @@
+{
+  "title": "Anti-automation (frontend, backend and Google reCAPTCHA v2)",
+  "description": "The frontend obtains a token; the backend always verifies it before anything is stored (SR-01). The frontend check alone is never enough.",
+  "frontend": {
+    "production": "loads https://www.google.com/recaptcha/api.js?render=explicit and renders the v2 checkbox with captchaSiteKey from GET /api/form-config (AR-07: the site key is the frontend's only key and comes from configuration)",
+    "testMode": "when captchaTestMode is true, a checkbox 'I am not a robot (test mode)' yields the token 'test-pass'; no request to Google"
+  },
+  "backend": {
+    "testMode": { "setting": "CAPTCHA_TEST_MODE=true", "rule": "the token 'test-pass' is accepted, every other token is rejected; no network call" },
+    "production": {
+      "request": { "method": "POST", "url": "RECAPTCHA_VERIFY_URL (default https://www.google.com/recaptcha/api/siteverify)", "contentType": "application/x-www-form-urlencoded", "fields": { "secret": "RECAPTCHA_SECRET_KEY", "response": "<captchaToken>" } },
+      "response": { "contentType": "application/json", "accepted": "{\"success\": true}", "rejected": "{\"success\": false, \"error-codes\": [...]}" },
+      "timeouts": "connect 5 s, read 5 s",
+      "rule": "accepted only when the response is HTTP 200 with success = true; any other status, body or I/O error counts as rejected"
+    },
+    "missingToken": "HTTP 400, field captchaToken",
+    "rejectedToken": "HTTP 400, field captchaToken; nothing stored, no email (AC-001-07, AC-002-06)",
+    "startupGuard": "the backend refuses to start when CAPTCHA_TEST_MODE=true outside the Spring profiles local and test, or when CAPTCHA_TEST_MODE is false and RECAPTCHA_SITE_KEY or RECAPTCHA_SECRET_KEY is empty (SR-02)"
+  }
+}
