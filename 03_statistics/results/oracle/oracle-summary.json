@@ -1,0 +1,28 @@
+{
+  "feature": "none",
+  "regression": {
+    "passed": 15,
+    "total": 15,
+    "rate": 1.0,
+    "failed": [],
+    "harness": []
+  },
+  "featureScenarios": null,
+  "scenarios": {
+    "R01": "pass",
+    "R02": "pass",
+    "R03": "pass",
+    "R04": "pass",
+    "R05": "pass",
+    "R06": "pass",
+    "R07": "pass",
+    "R08": "pass",
+    "R09": "pass",
+    "R10": "pass",
+    "R11": "pass",
+    "R12": "pass",
+    "R13": "pass",
+    "R14": "pass",
+    "R15": "pass"
+  }
+}

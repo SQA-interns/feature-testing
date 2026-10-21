@@ -1,0 +1,64 @@
+{
+  "phase": "main",
+  "feature": "none",
+  "tag": "igycee",
+  "base_url": "http://127.0.0.1:8080",
+  "results": {
+    "R01": {
+      "result": "pass",
+      "detail": "status 200, 9 options, mandatory consents ['privacy']"
+    },
+    "R02": {
+      "result": "pass",
+      "detail": "external: status 201, id 45800031-6806-4e22-9c71-86d9c32c3e81"
+    },
+    "R03": {
+      "result": "pass",
+      "detail": "student: status 201, id fe9ba8a3-1423-4881-b741-03f1aaa7e50a"
+    },
+    "R04": {
+      "result": "pass",
+      "detail": "whitespace-only first name: status 400, error fields ['firstName'], stored False"
+    },
+    "R05": {
+      "result": "pass",
+      "detail": "invalid email: status 400, error fields ['email'], stored False"
+    },
+    "R06": {
+      "result": "pass",
+      "detail": "unknown option: status 400, error fields ['options'], stored False"
+    },
+    "R07": {
+      "result": "pass",
+      "detail": "mandatory consent missing: status 400, error fields ['consents'], stored False"
+    },
+    "R08": {
+      "result": "pass",
+      "detail": "rejected captcha token: status 400, stored False"
+    },
+    "R09": {
+      "result": "pass",
+      "detail": "participant confirmations 1, names participant True"
+    },
+    "R10": {
+      "result": "pass",
+      "detail": "organizer notifications 1, JSON attachment with the registration True"
+    },
+    "R11": {
+      "result": "pass",
+      "detail": "status 200, header True, row found True"
+    },
+    "R12": {
+      "result": "pass",
+      "detail": "export without credentials: status 401"
+    },
+    "R13": {
+      "result": "pass",
+      "detail": "Slovenian characters: status 201, unchanged in export True"
+    },
+    "R14": {
+      "result": "pass",
+      "detail": "surrounding spaces removed: status 201, stored 'igyceeshknkv'"
+    }
+  }
+}
