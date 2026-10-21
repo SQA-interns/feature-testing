@@ -31,12 +31,7 @@ export async function submitRegistration(request: RegistrationRequest): Promise<
       const body = (await response.json()) as { id?: unknown };
       return typeof body.id === "string" ? { kind: "created", id: body.id } : { kind: "failed" };
     }
-    if (response.status === 400) {
-      const body = (await response.json()) as { errors?: unknown };
-      const errors = Array.isArray(body.errors) ? body.errors.filter(isFieldError) : [];
-      return errors.length > 0 ? { kind: "rejected", errors } : { kind: "failed" };
-    }
-    return { kind: "failed" };
+    return response.status === 400 ? await rejection(response) : { kind: "failed" };
   } catch {
     return { kind: "failed" };
   }
@@ -82,12 +77,7 @@ export async function searchRegistrations(
     }
     if (response.status === 401) return { kind: "unauthorized" };
     if (response.status === 403) return { kind: "forbidden" };
-    if (response.status === 400) {
-      const body = (await response.json()) as { errors?: unknown };
-      const errors = Array.isArray(body.errors) ? body.errors.filter(isFieldError) : [];
-      return errors.length > 0 ? { kind: "rejected", errors } : { kind: "failed" };
-    }
-    return { kind: "failed" };
+    return response.status === 400 ? await rejection(response) : { kind: "failed" };
   } catch {
     return { kind: "failed" };
   }
@@ -99,6 +89,15 @@ export function basicAuthorization({ username, password }: Credentials): string 
   let binary = "";
   bytes.forEach((b) => (binary += String.fromCharCode(b)));
   return "Basic " + btoa(binary);
+}
+
+/** A 400 answer with field errors is "rejected"; without them it is "failed". */
+async function rejection(
+  response: Response,
+): Promise<{ kind: "rejected"; errors: FieldError[] } | { kind: "failed" }> {
+  const body = (await response.json()) as { errors?: unknown };
+  const errors = Array.isArray(body.errors) ? body.errors.filter(isFieldError) : [];
+  return errors.length > 0 ? { kind: "rejected", errors } : { kind: "failed" };
 }
 
 function isFieldError(value: unknown): value is FieldError {
