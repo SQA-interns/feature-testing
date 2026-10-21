@@ -21,9 +21,11 @@ if (existsSync(envFile)) {
   console.warn(`No ${envFile}; using the current environment only`);
 }
 
+// Playwright's CLI runs in a plain node process: no shell parses the arguments.
+const cli = resolve(here, "../node_modules/@playwright/test/cli.js");
 const result = spawnSync(
-  "npx",
-  ["playwright", "test", "-c", "e2e/playwright.config.ts", ...process.argv.slice(2)],
-  { cwd: resolve(here, ".."), env, stdio: "inherit", shell: process.platform === "win32" },
+  process.execPath,
+  [cli, "test", "-c", "e2e/playwright.config.ts", ...process.argv.slice(2)],
+  { cwd: resolve(here, ".."), env, stdio: "inherit" },
 );
 process.exit(result.status ?? 1);
