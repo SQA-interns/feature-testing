@@ -19,7 +19,7 @@ Ports and adapters with three layers under `si.konferenca.registration`. Chosen 
 | Package | Contents | May depend on |
 |---|---|---|
 | `domain` | `Registration`, `RegistrationType`, `ConferenceOption`, `OptionCategory`, `Consent`, `ConferenceConfig`, `RegistrationSubmission`, `RegistrationValidator`, `FieldError`, `ValidationException`; for US-009 `SearchCriteria`, `SearchCriteriaParser`, `RegistrationPage` | JDK only (no Spring, Jakarta, Jackson, POI) |
-| `application` | `RegistrationService` (use case), `ExportService`, `SearchService` (US-009), ports `RegistrationRepository`, `JsonCopyStore`, `CaptchaVerifier`, `RegistrationNotifier`, `RegistrationExporter`, `Clock` use | `domain`, Spring transaction annotations |
+| `application` | `RegistrationService` (use case), `ExportService`, `SearchService` (US-009), ports `RegistrationRepository`, `RegistrationSearch` (US-009), `JsonCopyStore`, `CaptchaVerifier`, `RegistrationNotifier`, `RegistrationExporter`, `Clock` use | `domain`, Spring transaction annotations |
 | `adapter.web` | controllers (incl. `SearchController`, US-009), request/response DTOs, `ApiExceptionHandler`, `RateLimitFilter`, `BodySizeLimitFilter`, `OrganizerTransportFilter` | `application`, `domain` |
 | `adapter.persistence` | JPA entities, Spring Data repositories, `JpaRegistrationRepository` | `application`, `domain` |
 | `adapter.jsoncopy` | `FileJsonCopyStore` | `application`, `domain` |
@@ -79,7 +79,7 @@ Workbook: one sheet `registrations`, row 1 the 12 headers of `api-contract.md` i
    - `option`: absent → no filter; otherwise the id of a configured option (active or inactive, G-8), else error `option`.
    - `page`: absent → 1; otherwise 1 to 6 decimal digits with value ≥ 1, else error `page`.
    Errors → 400 `{"errors":[…]}` as the registration endpoint.
-3. `SearchService.search(criteria)` asks the port `RegistrationRepository.search(criteria, offset, limit)` with `limit` = 20 and `offset` = (page − 1) × 20, and returns `RegistrationPage(total, page, items)`.
+3. `SearchService.search(…)` passes the criteria to the port `RegistrationSearch.search(criteria)` (a port of its own, implemented by `JpaRegistrationRepository`), which reads 20 rows from offset (page − 1) × 20 and returns `RegistrationPage(total, page, items)`.
 4. Matching in PostgreSQL (`JpaRegistrationRepository`, one JPQL count and one JPQL page query, all values bound as parameters, SB-05): the text matches when `lower(column) LIKE lower('%' || escaped text || '%') ESCAPE '\'` for any of `first_name`, `last_name`, `email`, `organization`, `study_institution` (`%`, `_` and `\` in the text are escaped, so they match literally); an empty text skips the condition. The database is UTF-8 and `lower()` folds Č/č, Š/š, Ž/ž (AC-009-11, NFR-01). Type filter: `type = :type`. Option filter: an `EXISTS` over `registration_option` with `option_id = :option`. All conditions are combined with AND (BR-10, AC-009-05).
 5. Order: `registered_at` descending, then `id` descending (stable paging). Page beyond the last: empty `items`, real `total` (G-9).
 6. Response 200 (AR-09): `{"total": n, "page": p, "items": [...]}`; each item `id`, `type`, `firstName`, `lastName`, `email`, `organization` (null for students), `studyInstitution` (null for externals), `options` (selected option ids, sorted), `registeredAt` (ISO 8601 UTC with `Z`). Only these registration fields leave the backend (SR-07): no study programme, student ID or consents. Values are returned unchanged; encoding for display is the frontend's job (SR-09).
@@ -93,7 +93,7 @@ Rate limiting applies as for every `/api` endpoint; the window key is client add
 - Body size (SR-03): `BodySizeLimitFilter` rejects a body over 16 KiB (`REQUEST_MAX_BYTES`, default 16384) with 413, by `Content-Length` and by counting streamed bytes.
 - Headers (SB-10): Spring Security defaults (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Cache-Control: no-store`) plus `Content-Security-Policy: default-src 'none'; frame-ancestors 'none'` and `Referrer-Policy: no-referrer` on the API. nginx adds for the frontend: CSP `default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`.
 - CSRF is disabled and sessions are stateless: the API uses no cookies; the only credential is HTTP Basic on the two organizer GETs (export, search).
-- CORS: only `ALLOWED_ORIGIN` (unset by default, set only in local development with the Vite dev server); allowed request headers `Content-Type`, `Authorization`, `X-Requested-With`.
+- CORS: only `ALLOWED_ORIGIN` (unset by default, set only in local development with the Vite dev server); allowed request headers `Content-Type`, `Authorization` (the Vite dev server proxies `/api`, so the organizer page needs no CORS).
 - Health (NFR-04, ES-09): `/actuator/health`, `/actuator/health/liveness`, `/actuator/health/readiness` public, no details; every other actuator endpoint off. Readiness includes the database. Compose health checks use readiness.
 
 ### 3.6 Frontend
