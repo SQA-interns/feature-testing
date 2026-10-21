@@ -227,6 +227,9 @@
             <format>XML</format>
           </outputFormats>
           <timestampedReports>false</timestampedReports>
+          <threads>4</threads>
+          <timeoutConstant>10000</timeoutConstant>
+          <exportLineCoverage>true</exportLineCoverage>
         </configuration>
       </plugin>
       <plugin>
