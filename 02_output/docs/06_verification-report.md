@@ -17,8 +17,8 @@ Verified on 2026-10-20 at commit `3a020a3` (no code or test changed afterwards);
 | DoD-05 | met | No open Critical or High: Dependency-Check 0 open (2 pre-approved suppressions), `npm audit --omit=dev` 0, the one Semgrep ERROR is PA-04 (F-01), the one Gitleaks hit is a test constant (F-02). |
 | DoD-06 | met | Runtime demonstration below (`phase6-runtime-demo.log`). |
 | DoD-07 | met | Traceability table below: 35/35 criteria have a test and a commit. |
-| DoD-08 | phase 7 | READMEs are written in phase 7 and followed from a clean clone (`out/logs/phase7-clone.log`). |
-| DoD-09 | phase 7 | `docs/release-notes.md` (phase 7) lists the manual tests of `environments.md`. |
+| DoD-08 | met (phase 7) | Root, backend and frontend READMEs followed from a fresh `git clone` of `31025cc`: backend build, check and 251 tests, frontend `npm ci`, build, check and 55 tests, `docker compose up --build` healthy, e2e 5/5 (`out/logs/phase7-clone.log`). A clone below a deep Windows folder needs `core.longpaths` (README note added). |
+| DoD-09 | met (phase 7) | `docs/release-notes.md`, "Must be tested manually by a human": reCAPTCHA with production keys, SMTP to a real mailbox, TLS and reverse proxy, production start guard. |
 | DoD-10 | met | Every decision D-01 … D-17 has a resolution or is pending review (D-08 … D-11, D-16); inputs unchanged (input manifest matches). |
 | DoD-11 | met | Phase 3 commits add only tests, test harnesses and the compose/Docker files, no production source beyond the skeleton; the freeze commit `083eb5f` adds only the manifest, and every listed file was committed before it. Build commits name US/AC ids for all 8 stories. Every manifest hash matches. |
 | DoD-P01 | met | One external and one student registration through the frontend proxy: both 201. |

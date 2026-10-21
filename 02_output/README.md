@@ -37,6 +37,8 @@ Stop with `docker compose --env-file ../.env down`; registrations and JSON copie
 
 The end-to-end tests run against this stack: see [frontend/README.md](frontend/README.md#end-to-end-tests).
 
+On Windows, clone into a short path or with `git clone -c core.longpaths=true …`: some Java test paths exceed 260 characters below a deep folder.
+
 ## Documentation
 
 | Document | Content |

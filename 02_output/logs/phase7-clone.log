@@ -1,0 +1,24 @@
+== git clone of 31025cc into a short temporary path (core.longpaths for this clone)
+files changed after checkout: 0
+== backend: build
+target/registration-backend-1.0.0.jar
+== backend: check
+exit 0
+== backend: test
+[INFO] Tests run: 251, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+== frontend: npm ci, build, check, test
+ci exit 0
+build exit 0
+check exit 0
+      Tests  55 passed (55)
+== local stack from the clone
+up exit 0
+backend Up 11 seconds (healthy)
+frontend Up 10 seconds (healthy)
+mailpit Up 17 seconds (healthy)
+postgres Up 16 seconds (healthy)
+page -> 200; readiness -> {"status":"UP"}
+== frontend: e2e from the clone
+  5 passed (10.2s)
+down exit 0
