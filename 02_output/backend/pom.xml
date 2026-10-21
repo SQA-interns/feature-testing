@@ -179,6 +179,12 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
+        <configuration>
+          <!-- Measurement exclusion of docs/03_test-strategy.md: the entry point -->
+          <excludes>
+            <exclude>si/konferenca/registration/RegistrationApplication.class</exclude>
+          </excludes>
+        </configuration>
         <executions>
           <execution>
             <id>prepare-agent</id>
