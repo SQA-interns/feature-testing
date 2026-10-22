@@ -1,0 +1,40 @@
+== clean clone of e24b670 docs: add release notes with manual tests (DoD-09) (core.longpaths=true); .env copied from the run folder
+== root README: docker compose --env-file ../.env up -d --build (project regclone for fresh volumes)
+ Container regclone-frontend-1 Started 
+  backend=healthy frontend=healthy mailpit=healthy postgres=healthy 
+  frontend 200, organizer 200, mailpit 200, form-config 200, health {"groups":["liveness","readiness"],"status":"UP"}
+== frontend README: npm ci
+added 443 packages in 39s
+== frontend README: npm run check
+  FAILED
+== frontend README: npm test
+      Tests  109 passed (109)
+== frontend README: npm run build
+  built
+== frontend README: npm run e2e (against the clone's stack)
+    Error: Command failed: docker compose --env-file C:\Users\tanej\AppData\Local\Temp\claude\c--Users-tanej-Documents-LAB-tanej-single-agent-sdd-v001-run-2-search\c8192a07-6da6-4fe3-8366-c82721a19890\scratchpad\clone\.env exec -T -e PGCLIENTENCODING=UTF8 postgres psql -U registration -d registration -t -A -F | -c select id from registration where email = 'ana.e2eruciveltfu@example.org'
+    Error: Command failed: docker compose --env-file C:\Users\tanej\AppData\Local\Temp\claude\c--Users-tanej-Documents-LAB-tanej-single-agent-sdd-v001-run-2-search\c8192a07-6da6-4fe3-8366-c82721a19890\scratchpad\clone\.env exec -T -e PGCLIENTENCODING=UTF8 postgres psql -U registration -d registration -t -A -F | -c select id from registration where email = 'luka.e2egezdcorobg@student.example'
+    Error: Command failed: docker compose --env-file C:\Users\tanej\AppData\Local\Temp\claude\c--Users-tanej-Documents-LAB-tanej-single-agent-sdd-v001-run-2-search\c8192a07-6da6-4fe3-8366-c82721a19890\scratchpad\clone\.env exec -T -e PGCLIENTENCODING=UTF8 postgres psql -U registration -d registration -t -A -F | -c select id from registration where email = 'cedomir.e2emhzeauuhjs@example.org'
+    Error: Command failed: docker compose --env-file C:\Users\tanej\AppData\Local\Temp\claude\c--Users-tanej-Documents-LAB-tanej-single-agent-sdd-v001-run-2-search\c8192a07-6da6-4fe3-8366-c82721a19890\scratchpad\clone\.env exec -T -e PGCLIENTENCODING=UTF8 postgres psql -U registration -d registration -t -A -F | -c select count(*) from registration
+  4 failed
+  2 passed (16.2s)
+== backend README: build
+target/registration-backend-1.0.0.jar
+== backend README: check
+  clean
+== backend README: test
+[INFO] Tests run: 288, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+ Network regclone_internal Removed 
+
+== second pass after bfbcf85 (frontend README formatted), commands exactly as in the READMEs
+bfbcf85 docs: format frontend README so the check command passes
+== frontend README: npm run check
+  clean
+== root README: docker compose --env-file ../.env up -d --build
+ Container registration-frontend-1 Started 
+  backend=healthy frontend=healthy mailpit=healthy postgres=healthy 
+== frontend README: npm run e2e
+  6 passed (14.6s)
+== root README: docker compose --env-file ../.env down
+ Network registration_internal Removed 
