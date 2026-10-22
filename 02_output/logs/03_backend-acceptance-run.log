@@ -1,0 +1,1689 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\tanej\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\backend\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+11:29:26.176 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest]: Us001CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:29:26.635 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+11:29:26.993 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest]: Us001CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:29:26.995 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.CaptchaVerifierStubAcceptanceTest]: CaptchaVerifierStubAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:29:26.997 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:29:27.002 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+11:29:27.985 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+11:29:27.993 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+11:29:28.029 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+11:29:29.346 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+11:29:30.681 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+11:29:30.684 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+11:29:30.772 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.8.2
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7612 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+11:29:31.971 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+11:29:33.122 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 40665b7f73f938bff0e9c3295875e55ff4fac861899253ab5cc6d57f001404d0
+11:29:35.047 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT3.0756315S
+11:29:35.070 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+11:29:35.071 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+11:29:35.073 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+11:29:35.074 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+11:29:35.410 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: 12f7c25c306cc34ffebb849181a09f0e3fdbe8665c48579a2c493db201087a24
+11:29:43.612 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT8.5382954S
+11:29:43.613 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF)
+11:29:43.615 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+11:29:43.932 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: bc27bf413c34effc7013d332868ee56a16142cb0ed97eca22716299a0bbd853d
+11:29:44.780 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /heuristic_pike: Waiting for 60 seconds for URL: http://localhost:55243/readyz (where port 55243 maps to container port 8025)
+11:29:45.826 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT2.2113021S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T11:29:46.941+02:00  INFO 53836 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : Starting Us001CaptchaVerificationAcceptanceTest using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:29:46.944+02:00  INFO 53836 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:29:49.334+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:29:49.425+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:29:51.772+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:29:51.824+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:29:51.825+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:29:52.012+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5002 ms
+2026-10-22T11:29:53.229+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-22T11:29:53.800+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@24d6ee26
+2026-10-22T11:29:53.805+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-22T11:29:53.877+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:29:54.060+02:00  INFO 53836 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-22T11:29:54.070+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.036s)
+2026-10-22T11:29:54.071+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:29:54.128+02:00  INFO 53836 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-22T11:29:54.289+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:29:54.306+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:29:54.629+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:29:54.848+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-22T11:29:56.418+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:29:56.755+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:29:58.095+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:29:58.121+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:29:58.241+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:29:59.441+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c82354cd-a777-4e55-9bd5-db65482bf70a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:29:59.513+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:00.050+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:00.327+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55258 (http) with context path '/'
+2026-10-22T11:30:00.345+02:00  INFO 53836 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : Started Us001CaptchaVerificationAcceptanceTest in 14.279 seconds (process running for 38.603)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\tanej\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-22T11:30:02.477+02:00  INFO 53836 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:02.478+02:00  INFO 53836 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:02.481+02:00  INFO 53836 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 37.82 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenAcceptedByVerifierIsAccepted -- Time elapsed: 2.522 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenAcceptedByVerifierIsAccepted(Us001CaptchaVerificationAcceptanceTest.java:42)
+
+[ERROR] si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenRejectedByVerifierIsRejected -- Time elapsed: 0.122 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenRejectedByVerifierIsRejected(Us001CaptchaVerificationAcceptanceTest.java:23)
+
+[ERROR] si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_testTokenIsRejectedWithoutTestMode -- Time elapsed: 0.127 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest.ac001_07_testTokenIsRejectedWithoutTestMode(Us001CaptchaVerificationAcceptanceTest.java:36)
+
+[INFO] Running si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+2026-10-22T11:30:03.355+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest]: Us001ExternalRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:03.359+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+2026-10-22T11:30:03.361+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest]: Us001ExternalRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:03.363+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:03.364+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:03.367+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T11:30:03.534+02:00  INFO 53836 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : Starting Us001ExternalRegistrationAcceptanceTest using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:03.534+02:00  INFO 53836 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:04.650+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:04.669+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:04.909+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:04.911+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:04.911+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:04.985+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1444 ms
+2026-10-22T11:30:05.146+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-22T11:30:05.222+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@eba36e5
+2026-10-22T11:30:05.223+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-22T11:30:05.228+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:05.300+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.020s)
+2026-10-22T11:30:05.301+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:05.374+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:05.377+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:05.423+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:05.480+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:05.580+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:05.650+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:05.653+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:05.676+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:05.904+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2dc17490-af04-40bb-bc8f-9a2b7f66e220
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:05.920+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:05.986+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:06.038+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55279 (http) with context path '/'
+2026-10-22T11:30:06.044+02:00  INFO 53836 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : Started Us001ExternalRegistrationAcceptanceTest in 2.562 seconds (process running for 44.303)
+2026-10-22T11:30:06.230+02:00  INFO 53836 --- [registration-backend] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:06.230+02:00  INFO 53836 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:06.232+02:00  INFO 53836 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[ERROR] Tests run: 26, Failures: 26, Errors: 0, Skipped: 0, Time elapsed: 5.824 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[1] -- Time elapsed: 0.190 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[2] -- Time elapsed: 0.112 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[3] -- Time elapsed: 0.116 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[4] -- Time elapsed: 0.143 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[5] -- Time elapsed: 0.106 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(String)[6] -- Time elapsed: 0.111 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected(Us001ExternalRegistrationAcceptanceTest.java:92)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_07_missingCaptchaTokenIsRejected -- Time elapsed: 0.110 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_07_missingCaptchaTokenIsRejected(Us001ExternalRegistrationAcceptanceTest.java:120)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[1] -- Time elapsed: 0.127 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[2] -- Time elapsed: 0.107 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[3] -- Time elapsed: 0.105 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[4] -- Time elapsed: 0.108 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[5] -- Time elapsed: 0.103 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[6] -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[7] -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[8] -- Time elapsed: 0.106 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[9] -- Time elapsed: 0.115 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[10] -- Time elapsed: 0.109 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[11] -- Time elapsed: 0.106 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[12] -- Time elapsed: 0.109 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected(Us001ExternalRegistrationAcceptanceTest.java:55)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_03_storedValuesAreTrimmed -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_03_storedValuesAreTrimmed(Us001ExternalRegistrationAcceptanceTest.java:62)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_07_rejectedCaptchaTokenIsRejected -- Time elapsed: 0.105 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_07_rejectedCaptchaTokenIsRejected(Us001ExternalRegistrationAcceptanceTest.java:128)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_01_validExternalSubmissionIsAccepted -- Time elapsed: 0.104 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_01_validExternalSubmissionIsAccepted(Us001ExternalRegistrationAcceptanceTest.java:29)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(List)[1] -- Time elapsed: 0.114 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(Us001ExternalRegistrationAcceptanceTest.java:98)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(List)[2] -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(Us001ExternalRegistrationAcceptanceTest.java:98)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(List)[3] -- Time elapsed: 0.108 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected(Us001ExternalRegistrationAcceptanceTest.java:98)
+
+[ERROR] si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_06_missingMandatoryConsentIsRejected -- Time elapsed: 0.113 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest.ac001_06_missingMandatoryConsentIsRejected(Us001ExternalRegistrationAcceptanceTest.java:111)
+
+[INFO] Running si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+2026-10-22T11:30:09.183+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest]: Us002CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.183+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+2026-10-22T11:30:09.190+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest]: Us002CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.191+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.CaptchaVerifierStubAcceptanceTest]: CaptchaVerifierStubAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.191+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.193+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.237 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenAcceptedByVerifierIsAccepted -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenAcceptedByVerifierIsAccepted(Us002CaptchaVerificationAcceptanceTest.java:32)
+
+[ERROR] si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenRejectedByVerifierIsRejected -- Time elapsed: 0.104 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenRejectedByVerifierIsRejected(Us002CaptchaVerificationAcceptanceTest.java:23)
+
+[INFO] Running si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+2026-10-22T11:30:09.423+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest]: Us002StudentRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.423+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+2026-10-22T11:30:09.423+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest]: Us002StudentRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.429+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.429+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:09.432+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+[ERROR] Tests run: 26, Failures: 26, Errors: 0, Skipped: 0, Time elapsed: 3.057 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_01_validStudentSubmissionIsAccepted -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_01_validStudentSubmissionIsAccepted(Us002StudentRegistrationAcceptanceTest.java:29)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(String)[1] -- Time elapsed: 0.092 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(Us002StudentRegistrationAcceptanceTest.java:66)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(String)[2] -- Time elapsed: 0.097 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(Us002StudentRegistrationAcceptanceTest.java:66)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(String)[3] -- Time elapsed: 0.115 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(Us002StudentRegistrationAcceptanceTest.java:66)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(String)[4] -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected(Us002StudentRegistrationAcceptanceTest.java:66)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[1] -- Time elapsed: 0.110 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[2] -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[3] -- Time elapsed: 0.142 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[4] -- Time elapsed: 0.106 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[5] -- Time elapsed: 0.107 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[6] -- Time elapsed: 0.103 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[7] -- Time elapsed: 0.105 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[8] -- Time elapsed: 0.127 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[9] -- Time elapsed: 0.119 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[10] -- Time elapsed: 0.131 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[11] -- Time elapsed: 0.117 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[12] -- Time elapsed: 0.113 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[13] -- Time elapsed: 0.110 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[14] -- Time elapsed: 0.108 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[15] -- Time elapsed: 0.111 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[16] -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[17] -- Time elapsed: 0.099 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[18] -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected(Us002StudentRegistrationAcceptanceTest.java:60)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_04_optionNotAvailableToStudentsIsRejected -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_04_optionNotAvailableToStudentsIsRejected(Us002StudentRegistrationAcceptanceTest.java:72)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_05_missingMandatoryConsentIsRejected -- Time elapsed: 0.125 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_05_missingMandatoryConsentIsRejected(Us002StudentRegistrationAcceptanceTest.java:79)
+
+[ERROR] si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_06_missingOrRejectedCaptchaTokenIsRejected -- Time elapsed: 0.103 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:52)
+	at si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest.ac002_06_missingOrRejectedCaptchaTokenIsRejected(Us002StudentRegistrationAcceptanceTest.java:87)
+
+[INFO] Running si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest
+2026-10-22T11:30:12.482+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest]: Us003ConferenceOptionsAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:12.483+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest
+2026-10-22T11:30:12.486+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest]: Us003ConferenceOptionsAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:12.486+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:12.487+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:12.489+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest
+2026-10-22T11:30:12.754+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:12.755+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:13.108+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:13.119+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:13.351+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:13.353+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:13.354+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:13.447+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 689 ms
+2026-10-22T11:30:13.606+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-22T11:30:13.685+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@11508adc
+2026-10-22T11:30:13.686+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-22T11:30:13.690+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:13.758+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.021s)
+2026-10-22T11:30:13.758+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:13.836+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:13.839+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:13.878+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:13.930+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:13.956+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:14.003+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:14.006+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:14.027+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:14.182+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2f17ed4c-ef33-4d5e-912d-10712871558a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:14.194+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:14.250+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:14.295+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55458 (http) with context path '/'
+2026-10-22T11:30:14.301+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 1.599 seconds (process running for 52.559)
+2026-10-22T11:30:14.311+02:00  INFO 53836 --- [registration-backend] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:14.311+02:00  INFO 53836 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:14.314+02:00  INFO 53836 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-22T11:30:14.332+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T11:30:14.349+02:00  INFO 53836 --- [registration-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-22T11:30:14.358+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:14.365+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-10-22T11:30:14.438+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-10-22T11:30:14.612+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:14.613+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:14.983+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:14.997+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:15.167+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:15.169+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:15.170+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:15.241+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 624 ms
+2026-10-22T11:30:15.366+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-10-22T11:30:15.415+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@6953ec1e
+2026-10-22T11:30:15.415+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-10-22T11:30:15.420+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:15.494+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.023s)
+2026-10-22T11:30:15.495+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:15.574+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:15.577+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:15.623+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:15.673+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:15.702+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:15.758+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:15.760+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:15.787+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:16.004+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3d8c2094-5aaa-4d6f-a33a-8e69cea9d493
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:16.016+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:16.072+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:16.119+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55474 (http) with context path '/'
+2026-10-22T11:30:16.124+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 1.556 seconds (process running for 54.383)
+2026-10-22T11:30:16.136+02:00  INFO 53836 --- [registration-backend] [o-auto-4-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:16.136+02:00  INFO 53836 --- [registration-backend] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:16.139+02:00  INFO 53836 --- [registration-backend] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-22T11:30:16.154+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T11:30:16.169+02:00  INFO 53836 --- [registration-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-22T11:30:16.175+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:16.176+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-10-22T11:30:16.182+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-10-22T11:30:16.352+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:16.352+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:16.677+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:16.691+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:16.853+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:16.854+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:16.855+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:16.916+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 561 ms
+2026-10-22T11:30:17.023+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-10-22T11:30:17.058+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@7c036881
+2026-10-22T11:30:17.058+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-10-22T11:30:17.062+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:17.127+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.019s)
+2026-10-22T11:30:17.127+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:17.198+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:17.200+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:17.236+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:17.285+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:17.309+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:17.352+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:17.354+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:17.373+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:17.550+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7f45b39f-3eac-400c-b7f2-62641402d8e8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:17.561+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:17.615+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:17.652+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55489 (http) with context path '/'
+2026-10-22T11:30:17.657+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 1.343 seconds (process running for 55.916)
+2026-10-22T11:30:17.676+02:00  INFO 53836 --- [registration-backend] [o-auto-5-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:17.677+02:00  INFO 53836 --- [registration-backend] [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:17.679+02:00  INFO 53836 --- [registration-backend] [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-22T11:30:17.700+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T11:30:17.786+02:00  INFO 53836 --- [registration-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-22T11:30:17.800+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:17.801+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-10-22T11:30:17.837+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-10-22T11:30:17.987+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:17.988+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:18.257+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:18.265+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:18.390+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:18.391+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:18.392+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:18.451+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 461 ms
+2026-10-22T11:30:18.562+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-10-22T11:30:18.593+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@71d2ad2a
+2026-10-22T11:30:18.594+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-10-22T11:30:18.597+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:18.659+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.018s)
+2026-10-22T11:30:18.659+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:18.771+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:18.774+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:18.811+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:18.858+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:18.883+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:18.927+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:18.931+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:18.950+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:19.123+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ecb71615-f44d-4f53-80e3-aae8297350b1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:19.135+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:19.188+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:19.224+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55504 (http) with context path '/'
+2026-10-22T11:30:19.228+02:00  INFO 53836 --- [registration-backend] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 1.274 seconds (process running for 57.487)
+2026-10-22T11:30:19.240+02:00  INFO 53836 --- [registration-backend] [o-auto-6-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:19.241+02:00  INFO 53836 --- [registration-backend] [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:19.242+02:00  INFO 53836 --- [registration-backend] [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-22T11:30:19.258+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T11:30:19.272+02:00  INFO 53836 --- [registration-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-22T11:30:19.277+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:19.278+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-10-22T11:30:19.292+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+[ERROR] Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 6.830 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_01_formConfigurationListsOnlyActiveOptions -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 200
+ but was: 401
+	at si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_01_formConfigurationListsOnlyActiveOptions(Us003ConferenceOptionsAcceptanceTest.java:37)
+
+[ERROR] si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(String)[1] -- Time elapsed: 1.864 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+	at si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(Us003ConferenceOptionsAcceptanceTest.java:117)
+
+[ERROR] si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(String)[2] -- Time elapsed: 1.730 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+	at si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(Us003ConferenceOptionsAcceptanceTest.java:117)
+
+[ERROR] si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(String)[3] -- Time elapsed: 1.644 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+	at si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart(Us003ConferenceOptionsAcceptanceTest.java:117)
+
+[ERROR] si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_02_differentConfigurationIsReflected -- Time elapsed: 1.446 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 200
+ but was: 401
+	at si.konferenca.registration.acceptance.Us003ConferenceOptionsAcceptanceTest.ac003_02_differentConfigurationIsReflected(Us003ConferenceOptionsAcceptanceTest.java:78)
+
+[INFO] Running si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+2026-10-22T11:30:19.314+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest]: Us005JsonCopyFailureAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:19.317+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+2026-10-22T11:30:19.320+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest]: Us005JsonCopyFailureAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:19.321+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.JsonCopyUnwritableAcceptanceTest]: JsonCopyUnwritableAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:19.321+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:19.323+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T11:30:19.370+02:00  INFO 53836 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : Starting Us005JsonCopyFailureAcceptanceTest using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:19.370+02:00  INFO 53836 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:19.683+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:19.693+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:19.867+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:19.870+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:19.870+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:19.946+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 572 ms
+2026-10-22T11:30:20.049+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-10-22T11:30:20.081+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@1dfd414e
+2026-10-22T11:30:20.083+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-10-22T11:30:20.086+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:20.148+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.018s)
+2026-10-22T11:30:20.149+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:20.215+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:20.217+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:20.257+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:20.327+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:20.353+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:20.435+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:20.438+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:20.464+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:20.610+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3bad7132-f606-464b-bdb2-21eb86adf935
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:20.627+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:20.685+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:20.729+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55518 (http) with context path '/'
+2026-10-22T11:30:20.735+02:00  INFO 53836 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : Started Us005JsonCopyFailureAcceptanceTest in 1.402 seconds (process running for 58.994)
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.578 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest.ac005_03_unwritableJsonCopyLeavesNoRegistration -- Time elapsed: 0.148 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[the backend created its schema] 
+Expecting value to be true but was false
+	at si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest.ac005_03_unwritableJsonCopyLeavesNoRegistration(Us005JsonCopyFailureAcceptanceTest.java:17)
+
+[INFO] Running si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+2026-10-22T11:30:20.895+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005StorageAcceptanceTest]: Us005StorageAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:20.899+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+2026-10-22T11:30:20.901+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005StorageAcceptanceTest]: Us005StorageAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:20.903+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:20.904+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:20.905+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.425 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_04_slovenianCharactersAreStoredUnchanged -- Time elapsed: 0.122 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_04_slovenianCharactersAreStoredUnchanged(Us005StorageAcceptanceTest.java:100)
+
+[ERROR] si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_02_jsonCopyHoldsTheAcceptedRegistration -- Time elapsed: 0.125 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_02_jsonCopyHoldsTheAcceptedRegistration(Us005StorageAcceptanceTest.java:73)
+
+[ERROR] si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_01_databaseHoldsTheWholeRegistration -- Time elapsed: 0.137 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us005StorageAcceptanceTest.ac005_01_databaseHoldsTheWholeRegistration(Us005StorageAcceptanceTest.java:32)
+
+[INFO] Running si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+2026-10-22T11:30:21.322+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest]: Us006MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:21.326+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+2026-10-22T11:30:21.328+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest]: Us006MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:21.330+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.MailServerDownAcceptanceTest]: MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:21.330+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:21.332+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T11:30:21.389+02:00  INFO 53836 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : Starting Us006MailServerDownAcceptanceTest using Java 21.0.11 with PID 53836 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T11:30:21.389+02:00  INFO 53836 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T11:30:21.677+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T11:30:21.687+02:00  INFO 53836 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2026-10-22T11:30:21.824+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T11:30:21.826+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T11:30:21.827+02:00  INFO 53836 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T11:30:21.908+02:00  INFO 53836 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 516 ms
+2026-10-22T11:30:22.064+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-10-22T11:30:22.100+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@53062126
+2026-10-22T11:30:22.100+02:00  INFO 53836 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-10-22T11:30:22.105+02:00  INFO 53836 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55241/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T11:30:22.168+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.019s)
+2026-10-22T11:30:22.168+02:00  WARN 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-22T11:30:22.252+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T11:30:22.256+02:00  INFO 53836 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T11:30:22.289+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T11:30:22.329+02:00  INFO 53836 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T11:30:22.352+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55241/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T11:30:22.404+02:00  INFO 53836 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T11:30:22.407+02:00  INFO 53836 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T11:30:22.426+02:00  WARN 53836 --- [registration-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22T11:30:22.595+02:00  WARN 53836 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 11b87079-cdba-4516-a0aa-37e47ef497e9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-22T11:30:22.606+02:00  INFO 53836 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-22T11:30:22.660+02:00  INFO 53836 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T11:30:22.695+02:00  INFO 53836 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55541 (http) with context path '/'
+2026-10-22T11:30:22.698+02:00  INFO 53836 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : Started Us006MailServerDownAcceptanceTest in 1.354 seconds (process running for 60.957)
+2026-10-22T11:30:22.801+02:00  INFO 53836 --- [registration-backend] [o-auto-8-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T11:30:22.801+02:00  INFO 53836 --- [registration-backend] [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T11:30:22.804+02:00  INFO 53836 --- [registration-backend] [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.500 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest.ac006_03_registrationIsAcceptedWhenMailFails -- Time elapsed: 0.118 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest.ac006_03_registrationIsAcceptedWhenMailFails(Us006MailServerDownAcceptanceTest.java:20)
+
+[INFO] Running si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+2026-10-22T11:30:22.824+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest]: Us006ParticipantEmailAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:22.826+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+2026-10-22T11:30:22.827+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest]: Us006ParticipantEmailAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:22.829+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:22.829+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:22.831+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.228 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest.ac006_01_participantReceivesOneConfirmation -- Time elapsed: 0.104 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest.ac006_01_participantReceivesOneConfirmation(Us006ParticipantEmailAcceptanceTest.java:25)
+
+[ERROR] si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest.ac006_02_userInputCannotInjectHeadersOrMarkup -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest.ac006_02_userInputCannotInjectHeadersOrMarkup(Us006ParticipantEmailAcceptanceTest.java:50)
+
+[INFO] Running si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+2026-10-22T11:30:23.052+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest]: Us007OrganizerNotificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.056+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+2026-10-22T11:30:23.057+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest]: Us007OrganizerNotificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.058+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.058+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.060+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.332 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_02_attachmentEqualsTheJsonCopy -- Time elapsed: 0.099 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_02_attachmentEqualsTheJsonCopy(Us007OrganizerNotificationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_01_studentDataIsInTheNotification -- Time elapsed: 0.113 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_01_studentDataIsInTheNotification(Us007OrganizerNotificationAcceptanceTest.java:39)
+
+[ERROR] si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_01_everyOrganizerIsNotified -- Time elapsed: 0.093 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest.ac007_01_everyOrganizerIsNotified(Us007OrganizerNotificationAcceptanceTest.java:24)
+
+[INFO] Running si.konferenca.registration.acceptance.Us008ExportAcceptanceTest
+2026-10-22T11:30:23.387+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us008ExportAcceptanceTest]: Us008ExportAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.388+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us008ExportAcceptanceTest
+2026-10-22T11:30:23.390+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us008ExportAcceptanceTest]: Us008ExportAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.390+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.391+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.392+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us008ExportAcceptanceTest
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.433 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us008ExportAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_02_exportWithoutValidCredentialsIsRefused -- Time elapsed: 0.098 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_02_exportWithoutValidCredentialsIsRefused(Us008ExportAcceptanceTest.java:98)
+
+[ERROR] si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_01_exportIsAWorkbookWithOneRowPerRegistration -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_01_exportIsAWorkbookWithOneRowPerRegistration(Us008ExportAcceptanceTest.java:51)
+
+[ERROR] si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_04_plainHttpFromRemoteClientIsRefused -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_04_plainHttpFromRemoteClientIsRefused(Us008ExportAcceptanceTest.java:138)
+
+[ERROR] si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_03_slovenianCharactersAreUnchanged -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us008ExportAcceptanceTest.ac008_03_slovenianCharactersAreUnchanged(Us008ExportAcceptanceTest.java:126)
+
+[INFO] Running si.konferenca.registration.acceptance.Us009SearchAcceptanceTest
+2026-10-22T11:30:23.822+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us009SearchAcceptanceTest]: Us009SearchAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.823+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us009SearchAcceptanceTest
+2026-10-22T11:30:23.824+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us009SearchAcceptanceTest]: Us009SearchAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.825+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.825+02:00  INFO 53836 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T11:30:23.828+02:00  INFO 53836 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us009SearchAcceptanceTest
+[ERROR] Tests run: 22, Failures: 22, Errors: 0, Skipped: 0, Time elapsed: 3.323 s <<< FAILURE! -- in si.konferenca.registration.acceptance.Us009SearchAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_06_noMatchGivesEmptyList -- Time elapsed: 0.138 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_06_noMatchGivesEmptyList(Us009SearchAcceptanceTest.java:154)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_01_listsRegistrationsNewestFirst -- Time elapsed: 0.105 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_01_listsRegistrationsNewestFirst(Us009SearchAcceptanceTest.java:72)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(String, String)[1] -- Time elapsed: 0.432 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(Us009SearchAcceptanceTest.java:202)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(String, String)[2] -- Time elapsed: 0.264 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(Us009SearchAcceptanceTest.java:202)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(String, String)[3] -- Time elapsed: 0.234 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(Us009SearchAcceptanceTest.java:202)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(String, String)[4] -- Time elapsed: 0.257 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected(Us009SearchAcceptanceTest.java:202)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_09_searchWithoutValidCredentialsIsRefused -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_09_searchWithoutValidCredentialsIsRefused(Us009SearchAcceptanceTest.java:222)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_07_resultsArePagedByTwenty -- Time elapsed: 0.095 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_07_resultsArePagedByTwenty(Us009SearchAcceptanceTest.java:169)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_11_slovenianLastNameIsFoundUnchanged -- Time elapsed: 0.122 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_11_slovenianLastNameIsFoundUnchanged(Us009SearchAcceptanceTest.java:259)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_04_optionFilterListsOnlyRegistrationsWithTheOption -- Time elapsed: 0.095 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_04_optionFilterListsOnlyRegistrationsWithTheOption(Us009SearchAcceptanceTest.java:132)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_05_filtersCombine -- Time elapsed: 0.099 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_05_filtersCombine(Us009SearchAcceptanceTest.java:142)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_03_typeFilterListsOnlyThatType -- Time elapsed: 0.093 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_03_typeFilterListsOnlyThatType(Us009SearchAcceptanceTest.java:123)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_textLongerThan100IsRejected -- Time elapsed: 0.232 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[response 401 ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_08_textLongerThan100IsRejected(Us009SearchAcceptanceTest.java:210)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_10_plainHttpFromRemoteClientIsRefused -- Time elapsed: 0.098 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_10_plainHttpFromRemoteClientIsRefused(Us009SearchAcceptanceTest.java:244)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[1] -- Time elapsed: 0.099 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[2] -- Time elapsed: 0.097 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[3] -- Time elapsed: 0.095 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[4] -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[5] -- Time elapsed: 0.100 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[6] -- Time elapsed: 0.101 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[7] -- Time elapsed: 0.098 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[ERROR] si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(String, String)[8] -- Time elapsed: 0.099 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[registration response 401 ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.registerAccepted(AcceptanceTestBase.java:46)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.registerThree(Us009SearchAcceptanceTest.java:37)
+	at si.konferenca.registration.acceptance.Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields(Us009SearchAcceptanceTest.java:106)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   Us001CaptchaVerificationAcceptanceTest.ac001_07_testTokenIsRejectedWithoutTestMode:36->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenAcceptedByVerifierIsAccepted:42->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us001CaptchaVerificationAcceptanceTest.ac001_07_tokenRejectedByVerifierIsRejected:23->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_01_validExternalSubmissionIsAccepted:29 [response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_02_missingEmptyOrBlankRequiredFieldIsRejected:55->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_03_storedValuesAreTrimmed:62->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_04_invalidEmailIsRejected:92->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected:98->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected:98->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_05_unknownInactiveOrDuplicateOptionIsRejected:98->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_06_missingMandatoryConsentIsRejected:111->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_07_missingCaptchaTokenIsRejected:120->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us001ExternalRegistrationAcceptanceTest.ac001_07_rejectedCaptchaTokenIsRejected:128->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenAcceptedByVerifierIsAccepted:32->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us002CaptchaVerificationAcceptanceTest.ac002_06_tokenRejectedByVerifierIsRejected:23->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_01_validStudentSubmissionIsAccepted:29 [response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_02_missingEmptyOrBlankRequiredFieldIsRejected:60->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected:66->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected:66->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected:66->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_03_invalidEmailIsRejected:66->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_04_optionNotAvailableToStudentsIsRejected:72->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_05_missingMandatoryConsentIsRejected:79->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us002StudentRegistrationAcceptanceTest.ac002_06_missingOrRejectedCaptchaTokenIsRejected:87->AcceptanceTestBase.assertRejected:52 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us003ConferenceOptionsAcceptanceTest.ac003_01_formConfigurationListsOnlyActiveOptions:37 [response 401 ] 
+expected: 200
+ but was: 401
+[ERROR]   Us003ConferenceOptionsAcceptanceTest.ac003_02_differentConfigurationIsReflected:78 [response 401 ] 
+expected: 200
+ but was: 401
+[ERROR]   Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart:117 [the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+[ERROR]   Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart:117 [the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+[ERROR]   Us003ConferenceOptionsAcceptanceTest.ac003_03_invalidConfigurationPreventsStart:117 [the same settings with a valid file start and serve the configuration] 
+expected: 200
+ but was: 401
+[ERROR]   Us005JsonCopyFailureAcceptanceTest.ac005_03_unwritableJsonCopyLeavesNoRegistration:17 [the backend created its schema] 
+Expecting value to be true but was false
+[ERROR]   Us005StorageAcceptanceTest.ac005_01_databaseHoldsTheWholeRegistration:32->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us005StorageAcceptanceTest.ac005_02_jsonCopyHoldsTheAcceptedRegistration:73->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us005StorageAcceptanceTest.ac005_04_slovenianCharactersAreStoredUnchanged:100->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us006MailServerDownAcceptanceTest.ac006_03_registrationIsAcceptedWhenMailFails:20 [response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us006ParticipantEmailAcceptanceTest.ac006_01_participantReceivesOneConfirmation:25->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us006ParticipantEmailAcceptanceTest.ac006_02_userInputCannotInjectHeadersOrMarkup:50->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us007OrganizerNotificationAcceptanceTest.ac007_01_everyOrganizerIsNotified:24->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us007OrganizerNotificationAcceptanceTest.ac007_01_studentDataIsInTheNotification:39->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us007OrganizerNotificationAcceptanceTest.ac007_02_attachmentEqualsTheJsonCopy:54->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us008ExportAcceptanceTest.ac008_01_exportIsAWorkbookWithOneRowPerRegistration:51->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us008ExportAcceptanceTest.ac008_02_exportWithoutValidCredentialsIsRefused:98->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us008ExportAcceptanceTest.ac008_03_slovenianCharactersAreUnchanged:126->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us008ExportAcceptanceTest.ac008_04_plainHttpFromRemoteClientIsRefused:138->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_01_listsRegistrationsNewestFirst:72->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_02_textMatchesAnyPartOfTheSearchedFields:106->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_03_typeFilterListsOnlyThatType:123->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_04_optionFilterListsOnlyRegistrationsWithTheOption:132->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_05_filtersCombine:142->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_06_noMatchGivesEmptyList:154->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_07_resultsArePagedByTwenty:169->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected:202 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected:202 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected:202 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_08_invalidParameterIsRejected:202 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_08_textLongerThan100IsRejected:210 [response 401 ] 
+expected: 400
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_09_searchWithoutValidCredentialsIsRefused:222->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_10_plainHttpFromRemoteClientIsRefused:244->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[ERROR]   Us009SearchAcceptanceTest.ac009_11_slovenianLastNameIsFoundUnchanged:259->registerThree:37->AcceptanceTestBase.registerAccepted:46 [registration response 401 ] 
+expected: 201
+ but was: 401
+[INFO] 
+[ERROR] Tests run: 98, Failures: 98, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:12 min
+[INFO] Finished at: 2026-10-22T11:30:28+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+exit=1
