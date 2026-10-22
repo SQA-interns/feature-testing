@@ -1,0 +1,1275 @@
+{
+  "generatedAt": "2026-10-22T07:55:25.662Z",
+  "runId": "tjan-single-agent-sdd-v001-run-1-search-opus-5-5-t1.7-ft-20261021T1907Z-36e8",
+  "time": {
+    "wallMin": 195,
+    "agentMin": 124.3,
+    "humanWaitMin": 70.6,
+    "betweenPhasesMin": 0,
+    "modelMin": 26.8,
+    "toolMin": 98.4,
+    "humanReplyMin": 0.4,
+    "waitsOver60Min": 0,
+    "byPhase": [
+      {
+        "phase": 0,
+        "name": "preflight-and-bootstrap",
+        "wallMin": 98.1,
+        "waitMin": 70.6,
+        "agentMin": 27.4,
+        "modelMin": 5.8,
+        "toolMin": 22.4
+      },
+      {
+        "phase": 1,
+        "name": "requirements",
+        "wallMin": 0.5,
+        "waitMin": 0,
+        "agentMin": 0.5,
+        "modelMin": 0.5,
+        "toolMin": 0
+      },
+      {
+        "phase": 2,
+        "name": "design",
+        "wallMin": 1.6,
+        "waitMin": 0,
+        "agentMin": 1.6,
+        "modelMin": 1.5,
+        "toolMin": 0.1
+      },
+      {
+        "phase": 3,
+        "name": "test-design",
+        "wallMin": 9.3,
+        "waitMin": 0,
+        "agentMin": 9.3,
+        "modelMin": 4.1,
+        "toolMin": 5.2
+      },
+      {
+        "phase": 4,
+        "name": "build",
+        "wallMin": 9.5,
+        "waitMin": 0,
+        "agentMin": 9.5,
+        "modelMin": 3.5,
+        "toolMin": 5.9
+      },
+      {
+        "phase": 5,
+        "name": "unit-tests",
+        "wallMin": 56.6,
+        "waitMin": 0,
+        "agentMin": 56.6,
+        "modelMin": 4.3,
+        "toolMin": 52.3
+      },
+      {
+        "phase": 6,
+        "name": "verify",
+        "wallMin": 14,
+        "waitMin": 0,
+        "agentMin": 14,
+        "modelMin": 4.1,
+        "toolMin": 9.8
+      },
+      {
+        "phase": 7,
+        "name": "release",
+        "wallMin": 5.4,
+        "waitMin": 0,
+        "agentMin": 5.4,
+        "modelMin": 2.9,
+        "toolMin": 2.7
+      }
+    ],
+    "idleGaps": [
+      {
+        "start": "2026-10-21T19:15:20.508Z",
+        "end": "2026-10-21T19:25:21.022Z",
+        "min": 10,
+        "phase": 0
+      },
+      {
+        "start": "2026-10-21T19:26:30.691Z",
+        "end": "2026-10-21T19:36:31.106Z",
+        "min": 10,
+        "phase": 0
+      },
+      {
+        "start": "2026-10-21T19:36:52.040Z",
+        "end": "2026-10-21T20:17:12.799Z",
+        "min": 40.3,
+        "phase": 0
+      },
+      {
+        "start": "2026-10-21T20:18:23.242Z",
+        "end": "2026-10-21T20:28:23.688Z",
+        "min": 10,
+        "phase": 0
+      }
+    ],
+    "longWaits": [],
+    "unrecordedIdleMin": 30,
+    "phaseChecks": {
+      "viaHelper": 15,
+      "manual": 1,
+      "issues": [],
+      "boundaries": [
+        {
+          "phase": 0,
+          "which": "start",
+          "time": "2026-10-21T19:07:55Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 0,
+          "which": "end",
+          "time": "2026-10-21T20:46:00Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 1,
+          "which": "start",
+          "time": "2026-10-21T20:46:00Z",
+          "via": "manual"
+        },
+        {
+          "phase": 1,
+          "which": "end",
+          "time": "2026-10-21T20:46:32Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 2,
+          "which": "start",
+          "time": "2026-10-21T20:46:32Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 2,
+          "which": "end",
+          "time": "2026-10-21T20:48:09Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 3,
+          "which": "start",
+          "time": "2026-10-21T20:48:09Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 3,
+          "which": "end",
+          "time": "2026-10-21T20:57:24Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 4,
+          "which": "start",
+          "time": "2026-10-21T20:57:24Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 4,
+          "which": "end",
+          "time": "2026-10-21T21:06:53Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 5,
+          "which": "start",
+          "time": "2026-10-21T21:06:53Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 5,
+          "which": "end",
+          "time": "2026-10-21T22:03:27Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 6,
+          "which": "start",
+          "time": "2026-10-21T22:03:27Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 6,
+          "which": "end",
+          "time": "2026-10-21T22:17:28Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 7,
+          "which": "start",
+          "time": "2026-10-21T22:17:28Z",
+          "via": "stat.mjs"
+        },
+        {
+          "phase": 7,
+          "which": "end",
+          "time": "2026-10-21T22:22:51Z",
+          "via": "stat.mjs"
+        }
+      ]
+    }
+  },
+  "usage": {
+    "inputTokens": 390,
+    "outputTokens": 174460,
+    "thinkingTokens": 43862,
+    "cacheReadTokens": 48364556,
+    "cacheWriteTokens": 392998,
+    "modelCalls": 195,
+    "toolCalls": {
+      "total": 210,
+      "errors": 4,
+      "byTool": {
+        "Bash": 195,
+        "ToolSearch": 1,
+        "AskUserQuestion": 1,
+        "Write": 11,
+        "Monitor": 1,
+        "Edit": 1
+      }
+    },
+    "costUsd": 16.31,
+    "costUsdExclWaits": 16.31,
+    "priceTableDate": null,
+    "unpricedModels": [],
+    "models": {
+      "claude-opus-5-5": {
+        "calls": 195,
+        "inputTokens": 390,
+        "outputTokens": 174460,
+        "thinkingTokens": 43862,
+        "cacheReadTokens": 48364556,
+        "cacheWriteTokens": 392998,
+        "costUsd": 16.31
+      }
+    },
+    "subagents": {
+      "used": 0,
+      "transcripts": 0,
+      "modelCalls": 0,
+      "costUsd": 0,
+      "outputTokens": 0
+    },
+    "cacheRebuilds": [],
+    "byPhase": [
+      {
+        "phase": 0,
+        "calls": 71,
+        "outputTokens": 34519,
+        "cacheReadTokens": 9252535,
+        "cacheWriteTokens": 173624,
+        "costUsd": 3.93,
+        "avgContextTokens": 132765,
+        "startContextTokens": 39360
+      },
+      {
+        "phase": 1,
+        "calls": 2,
+        "outputTokens": 3411,
+        "cacheReadTokens": 397843,
+        "cacheWriteTokens": 4357,
+        "costUsd": 0.18,
+        "avgContextTokens": 201102,
+        "startContextTokens": 199541
+      },
+      {
+        "phase": 2,
+        "calls": 7,
+        "outputTokens": 10591,
+        "cacheReadTokens": 1479788,
+        "cacheWriteTokens": 19903,
+        "costUsd": 0.67,
+        "avgContextTokens": 214244,
+        "startContextTokens": 204133
+      },
+      {
+        "phase": 3,
+        "calls": 14,
+        "outputTokens": 27860,
+        "cacheReadTokens": 3403955,
+        "cacheWriteTokens": 34455,
+        "costUsd": 1.51,
+        "avgContextTokens": 245603,
+        "startContextTokens": 223410
+      },
+      {
+        "phase": 4,
+        "calls": 24,
+        "outputTokens": 24441,
+        "cacheReadTokens": 6656473,
+        "cacheWriteTokens": 38555,
+        "costUsd": 2.13,
+        "avgContextTokens": 278962,
+        "startContextTokens": 258065
+      },
+      {
+        "phase": 5,
+        "calls": 34,
+        "outputTokens": 28210,
+        "cacheReadTokens": 10831818,
+        "cacheWriteTokens": 46654,
+        "costUsd": 3.1,
+        "avgContextTokens": 319957,
+        "startContextTokens": 296522
+      },
+      {
+        "phase": 6,
+        "calls": 26,
+        "outputTokens": 27375,
+        "cacheReadTokens": 9469709,
+        "cacheWriteTokens": 46605,
+        "costUsd": 2.81,
+        "avgContextTokens": 366014,
+        "startContextTokens": 344035
+      },
+      {
+        "phase": 7,
+        "calls": 17,
+        "outputTokens": 18053,
+        "cacheReadTokens": 6872435,
+        "cacheWriteTokens": 28845,
+        "costUsd": 1.97,
+        "avgContextTokens": 405960,
+        "startContextTokens": 389612
+      }
+    ],
+    "context": {
+      "peakTokens": 417680,
+      "avgTokens": 250041,
+      "pctCallsOver150k": 77.4,
+      "costPctOver150k": 85.9
+    },
+    "toolTimeByCategory": {
+      "Shell and file inspection": {
+        "calls": 57,
+        "minutes": 2.3
+      },
+      "git": {
+        "calls": 19,
+        "minutes": 0.2
+      },
+      "Docker build/run": {
+        "calls": 9,
+        "minutes": 4.3
+      },
+      "Mutation testing": {
+        "calls": 26,
+        "minutes": 49.3
+      },
+      "Backend build and test": {
+        "calls": 15,
+        "minutes": 8.2
+      },
+      "Frontend build and test": {
+        "calls": 10,
+        "minutes": 1.5
+      },
+      "Dependency scan (CVE)": {
+        "calls": 18,
+        "minutes": 22.7
+      },
+      "curl/sleep": {
+        "calls": 7,
+        "minutes": 22.6
+      },
+      "End-to-end tests": {
+        "calls": 25,
+        "minutes": 17.5
+      },
+      "Other analysis tools": {
+        "calls": 9,
+        "minutes": 0.1
+      }
+    }
+  },
+  "environment": {
+    "operator": "tjan",
+    "machine": "tjanPC",
+    "plan": "PRO",
+    "permissionMode": "auto",
+    "os": {
+      "platform": "linux",
+      "release": "7.0.0-38-generic",
+      "arch": "x64"
+    },
+    "shell": "/usr/bin/zsh",
+    "timezone": "Europe/Ljubljana",
+    "utcOffsetMin": 120,
+    "tools": {
+      "node": "v24.13.0",
+      "npm": "11.6.2",
+      "git": "git version 2.43.0",
+      "docker": "Docker version 29.5.0, build 98f1464",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18",
+      "maven": null,
+      "python": "Python 3.12.3"
+    },
+    "capturedAt": "2026-10-22T07:55:25.597Z",
+    "host": {
+      "hostname": "tk",
+      "account": "tjan-kazar",
+      "cpuModel": "Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz",
+      "cpus": 8,
+      "memoryGb": 31,
+      "workingDir": "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search"
+    },
+    "harness": {
+      "name": "claude-code",
+      "versions": [
+        "2.1.306"
+      ],
+      "entrypoints": [
+        "cli"
+      ]
+    },
+    "models": [
+      "claude-opus-5-5"
+    ],
+    "effort": [
+      "medium"
+    ],
+    "perTurnEffort": [
+      "medium"
+    ],
+    "advisorModels": [
+      "claude-opus-5-5"
+    ],
+    "permissionModes": [
+      "auto"
+    ],
+    "gitBranches": [
+      "tjan/single-agent/sdd/v001/run-1-search"
+    ],
+    "workingDirs": [
+      "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search",
+      "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/01_input/00_general",
+      "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/01_input/01_project/00_setup",
+      "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/docs",
+      "/home/tjan-kazar/storage/Work/lab/tjan_single-agent_sdd_v001_run-1-search/02_output/backend"
+    ],
+    "userTypes": [
+      "external"
+    ],
+    "permissionDecisions": {
+      "total": 210,
+      "byHuman": 1,
+      "rejected": 0
+    },
+    "postRunHost": {
+      "platform": "linux",
+      "release": "7.0.0-38-generic",
+      "arch": "x64",
+      "cpus": 8,
+      "memoryGb": 31,
+      "nodeVersion": "v24.13.0",
+      "timezone": "Europe/Ljubljana"
+    }
+  },
+  "commits": [
+    {
+      "hash": "7275c19",
+      "time": "2026-10-21T21:11:14+02:00",
+      "phase": 0,
+      "subject": "build: make the Maven wrapper executable on Linux (D-23, ES-05)",
+      "type": "build",
+      "files": 1,
+      "lines": 0,
+      "linesAll": 0,
+      "categories": {
+        "build": 0
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": true,
+      "messageOk": true,
+      "ids": [
+        "D-23",
+        "ES-05"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 3.3,
+      "activeMinutesSincePrev": 3.3,
+      "modelCalls": 23,
+      "outputTokens": 11355,
+      "costUsdSincePrev": 1.21
+    },
+    {
+      "hash": "321a75d",
+      "time": "2026-10-21T22:46:00+02:00",
+      "phase": 1,
+      "subject": "docs: add US-009 preflight report, input manifest and progress (D-18..25)",
+      "type": "docs",
+      "files": 4,
+      "lines": 166,
+      "linesAll": 2010,
+      "categories": {
+        "docs": 166
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": false,
+      "ids": [
+        "US-009",
+        "D-18"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 94.8,
+      "activeMinutesSincePrev": 24.1,
+      "modelCalls": 40,
+      "outputTokens": 20914,
+      "costUsdSincePrev": 2.19
+    },
+    {
+      "hash": "27bec6c",
+      "time": "2026-10-21T22:46:32+02:00",
+      "phase": 2,
+      "subject": "docs: add US-009 to the requirements check (D-26, D-27)",
+      "type": "docs",
+      "files": 3,
+      "lines": 34,
+      "linesAll": 34,
+      "categories": {
+        "docs": 34
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "D-26",
+        "D-27"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.5,
+      "activeMinutesSincePrev": 0.5,
+      "modelCalls": 2,
+      "outputTokens": 3411,
+      "costUsdSincePrev": 0.18
+    },
+    {
+      "hash": "dd36d01",
+      "time": "2026-10-21T22:48:09+02:00",
+      "phase": 3,
+      "subject": "docs: add US-009 search to specification and contracts (AR-09)",
+      "type": "docs",
+      "files": 4,
+      "lines": 192,
+      "linesAll": 192,
+      "categories": {
+        "docs": 192
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AR-09"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 1.6,
+      "activeMinutesSincePrev": 1.6,
+      "modelCalls": 7,
+      "outputTokens": 10591,
+      "costUsdSincePrev": 0.67
+    },
+    {
+      "hash": "691bc5a",
+      "time": "2026-10-21T22:54:40+02:00",
+      "phase": 3,
+      "subject": "test: add US-009 search API acceptance tests (AC-009-01..11)",
+      "type": "test",
+      "files": 1,
+      "lines": 392,
+      "linesAll": 392,
+      "categories": {
+        "test": 392
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-01"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 6.5,
+      "activeMinutesSincePrev": 6.5,
+      "modelCalls": 9,
+      "outputTokens": 23180,
+      "costUsdSincePrev": 1.12
+    },
+    {
+      "hash": "f5b3dba",
+      "time": "2026-10-21T22:55:41+02:00",
+      "phase": 3,
+      "subject": "test: add US-009 organizer page acceptance tests (AC-009-12, AC-009-13)",
+      "type": "test",
+      "files": 2,
+      "lines": 208,
+      "linesAll": 208,
+      "categories": {
+        "test": 208
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-12",
+        "AC-009-13"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1,
+      "activeMinutesSincePrev": 1,
+      "modelCalls": 1,
+      "outputTokens": 496,
+      "costUsdSincePrev": 0.07
+    },
+    {
+      "hash": "70ebd5c",
+      "time": "2026-10-21T22:56:42+02:00",
+      "phase": 3,
+      "subject": "test: add E2E-06 organizer search scenario (US-009, AC-009-12)",
+      "type": "test",
+      "files": 1,
+      "lines": 109,
+      "linesAll": 109,
+      "categories": {
+        "test": 109
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-12"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1,
+      "activeMinutesSincePrev": 1,
+      "modelCalls": 0,
+      "outputTokens": 0,
+      "costUsdSincePrev": 0
+    },
+    {
+      "hash": "0da6261",
+      "time": "2026-10-21T22:57:05+02:00",
+      "phase": 3,
+      "subject": "docs: add US-009 test design and first run to test strategy",
+      "type": "docs",
+      "files": 1,
+      "lines": 41,
+      "linesAll": 41,
+      "categories": {
+        "docs": 41
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.4,
+      "activeMinutesSincePrev": 0.4,
+      "modelCalls": 1,
+      "outputTokens": 2355,
+      "costUsdSincePrev": 0.1
+    },
+    {
+      "hash": "943abd7",
+      "time": "2026-10-21T22:57:11+02:00",
+      "phase": 3,
+      "subject": "test: freeze US-009 acceptance and end-to-end tests (US-009)",
+      "type": "test",
+      "files": 1,
+      "lines": 4,
+      "linesAll": 4,
+      "categories": {
+        "docs": 4
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": true,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": true,
+      "burst": true,
+      "minutesSincePrev": 0.1,
+      "activeMinutesSincePrev": 0.1,
+      "modelCalls": 1,
+      "outputTokens": 639,
+      "costUsdSincePrev": 0.08
+    },
+    {
+      "hash": "d7cc070",
+      "time": "2026-10-21T22:57:24+02:00",
+      "phase": 4,
+      "subject": "docs: add phase 3 US-009 run logs and progress",
+      "type": "docs",
+      "files": 1,
+      "lines": 6,
+      "linesAll": 823,
+      "categories": {
+        "docs": 6
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.2,
+      "activeMinutesSincePrev": 0.2,
+      "modelCalls": 2,
+      "outputTokens": 1190,
+      "costUsdSincePrev": 0.14
+    },
+    {
+      "hash": "9f31cfc",
+      "time": "2026-10-21T22:58:41+02:00",
+      "phase": 4,
+      "subject": "feat: parse and validate organizer search criteria (US-009, AC-009-08)",
+      "type": "feat",
+      "files": 3,
+      "lines": 95,
+      "linesAll": 95,
+      "categories": {
+        "code": 95
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-08"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1.3,
+      "activeMinutesSincePrev": 1.3,
+      "modelCalls": 4,
+      "outputTokens": 5278,
+      "costUsdSincePrev": 0.4
+    },
+    {
+      "hash": "e94a927",
+      "time": "2026-10-21T22:59:56+02:00",
+      "phase": 4,
+      "subject": "feat: search stored registrations in PostgreSQL (US-009, AC-009-01..07)",
+      "type": "feat",
+      "files": 3,
+      "lines": 103,
+      "linesAll": 103,
+      "categories": {
+        "code": 103
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-01"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1.3,
+      "activeMinutesSincePrev": 1.3,
+      "modelCalls": 4,
+      "outputTokens": 3983,
+      "costUsdSincePrev": 0.34
+    },
+    {
+      "hash": "c1d191f",
+      "time": "2026-10-21T23:03:07+02:00",
+      "phase": 4,
+      "subject": "feat: serve organizer search at GET /api/registrations (US-009)",
+      "type": "feat",
+      "files": 4,
+      "lines": 84,
+      "linesAll": 84,
+      "categories": {
+        "code": 84
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 3.2,
+      "activeMinutesSincePrev": 3.2,
+      "modelCalls": 6,
+      "outputTokens": 4994,
+      "costUsdSincePrev": 0.49
+    },
+    {
+      "hash": "321ac30",
+      "time": "2026-10-21T23:03:07+02:00",
+      "phase": 4,
+      "subject": "docs: name the search port and drop the CORS header change (US-009)",
+      "type": "docs",
+      "files": 1,
+      "lines": 6,
+      "linesAll": 6,
+      "categories": {
+        "docs": 6
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0,
+      "activeMinutesSincePrev": 0,
+      "modelCalls": 0,
+      "outputTokens": 0,
+      "costUsdSincePrev": 0
+    },
+    {
+      "hash": "c876636",
+      "time": "2026-10-21T23:04:26+02:00",
+      "phase": 4,
+      "subject": "feat: add organizer search API client (US-009, AC-009-12)",
+      "type": "feat",
+      "files": 2,
+      "lines": 100,
+      "linesAll": 100,
+      "categories": {
+        "code": 100
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "AC-009-12"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1.3,
+      "activeMinutesSincePrev": 1.3,
+      "modelCalls": 6,
+      "outputTokens": 7976,
+      "costUsdSincePrev": 0.59
+    },
+    {
+      "hash": "9b4bc4b",
+      "time": "2026-10-21T23:04:26+02:00",
+      "phase": 4,
+      "subject": "feat: add organizer search page at /organizer (US-009, AC-009-12, AC-009-13)",
+      "type": "feat",
+      "files": 3,
+      "lines": 310,
+      "linesAll": 310,
+      "categories": {
+        "code": 310
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": false,
+      "ids": [
+        "US-009",
+        "AC-009-12",
+        "AC-009-13"
+      ],
+      "idsExpected": true,
+      "burst": true,
+      "minutesSincePrev": 0,
+      "activeMinutesSincePrev": 0,
+      "modelCalls": 0,
+      "outputTokens": 0,
+      "costUsdSincePrev": 0
+    },
+    {
+      "hash": "1e1946b",
+      "time": "2026-10-21T23:06:53+02:00",
+      "phase": 5,
+      "subject": "docs: record phase 4 US-009 build results and logs",
+      "type": "docs",
+      "files": 1,
+      "lines": 6,
+      "linesAll": 2722,
+      "categories": {
+        "docs": 6
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 2.5,
+      "activeMinutesSincePrev": 2.5,
+      "modelCalls": 4,
+      "outputTokens": 2210,
+      "costUsdSincePrev": 0.31
+    },
+    {
+      "hash": "8872af5",
+      "time": "2026-10-21T23:08:07+02:00",
+      "phase": 5,
+      "subject": "test: add organizer search API client unit tests (US-009)",
+      "type": "test",
+      "files": 1,
+      "lines": 153,
+      "linesAll": 153,
+      "categories": {
+        "test": 153
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 1.2,
+      "activeMinutesSincePrev": 1.2,
+      "modelCalls": 8,
+      "outputTokens": 6265,
+      "costUsdSincePrev": 0.7
+    },
+    {
+      "hash": "3c3a6ab",
+      "time": "2026-10-21T23:17:37+02:00",
+      "phase": 5,
+      "subject": "test: add organizer page unit tests, survivor round 1 (US-009)",
+      "type": "test",
+      "files": 1,
+      "lines": 337,
+      "linesAll": 337,
+      "categories": {
+        "test": 337
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 9.5,
+      "activeMinutesSincePrev": 9.5,
+      "modelCalls": 7,
+      "outputTokens": 9170,
+      "costUsdSincePrev": 0.73
+    },
+    {
+      "hash": "9924bf6",
+      "time": "2026-10-22T00:03:27+02:00",
+      "phase": 6,
+      "subject": "docs: record phase 5 US-009 coverage, mutation scores and gate",
+      "type": "docs",
+      "files": 2,
+      "lines": 42,
+      "linesAll": 4884,
+      "categories": {
+        "docs": 42
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 45.8,
+      "activeMinutesSincePrev": 45.8,
+      "modelCalls": 19,
+      "outputTokens": 12775,
+      "costUsdSincePrev": 1.68
+    },
+    {
+      "hash": "5f1cc90",
+      "time": "2026-10-22T00:07:10+02:00",
+      "phase": 6,
+      "subject": "fix: share the 400 handling of the frontend API client (F-10)",
+      "type": "fix",
+      "files": 1,
+      "lines": 23,
+      "linesAll": 23,
+      "categories": {
+        "code": 23
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "F-10"
+      ],
+      "idsExpected": true,
+      "burst": false,
+      "minutesSincePrev": 3.7,
+      "activeMinutesSincePrev": 3.7,
+      "modelCalls": 14,
+      "outputTokens": 7640,
+      "costUsdSincePrev": 1.31
+    },
+    {
+      "hash": "1418a06",
+      "time": "2026-10-22T00:17:28+02:00",
+      "phase": 7,
+      "subject": "docs: add phase 6 US-009 evidence, re-measure and decisions D-28, D-29",
+      "type": "docs",
+      "files": 2,
+      "lines": 30,
+      "linesAll": 6333,
+      "categories": {
+        "docs": 30
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "D-28",
+        "D-29"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 10.3,
+      "activeMinutesSincePrev": 10.3,
+      "modelCalls": 12,
+      "outputTokens": 19735,
+      "costUsdSincePrev": 1.5
+    },
+    {
+      "hash": "3590f69",
+      "time": "2026-10-22T00:17:28+02:00",
+      "phase": 7,
+      "subject": "docs: add phase 6 verification report for US-009 (F-10..F-13)",
+      "type": "docs",
+      "files": 2,
+      "lines": 143,
+      "linesAll": 143,
+      "categories": {
+        "docs": 143
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "F-10",
+        "F-13"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0,
+      "activeMinutesSincePrev": 0,
+      "modelCalls": 0,
+      "outputTokens": 0,
+      "costUsdSincePrev": 0
+    },
+    {
+      "hash": "fd8e69d",
+      "time": "2026-10-22T00:18:21+02:00",
+      "phase": 7,
+      "subject": "docs: describe the organizer search in the READMEs (US-009, ES-06)",
+      "type": "docs",
+      "files": 3,
+      "lines": 27,
+      "linesAll": 27,
+      "categories": {
+        "docs": 27
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009",
+        "ES-06"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.9,
+      "activeMinutesSincePrev": 0.9,
+      "modelCalls": 5,
+      "outputTokens": 4761,
+      "costUsdSincePrev": 0.59
+    },
+    {
+      "hash": "62fa74d",
+      "time": "2026-10-22T00:18:46+02:00",
+      "phase": 7,
+      "subject": "docs: add release notes 1.1.0 with organizer search and manual tests",
+      "type": "docs",
+      "files": 1,
+      "lines": 45,
+      "linesAll": 45,
+      "categories": {
+        "docs": 45
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.4,
+      "activeMinutesSincePrev": 0.4,
+      "modelCalls": 1,
+      "outputTokens": 3024,
+      "costUsdSincePrev": 0.14
+    },
+    {
+      "hash": "b1454f2",
+      "time": "2026-10-22T00:22:42+02:00",
+      "phase": 7,
+      "subject": "docs: record clean-clone check and release notes (DoD-08, DoD-09)",
+      "type": "docs",
+      "files": 1,
+      "lines": 4,
+      "linesAll": 23,
+      "categories": {
+        "docs": 4
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": true,
+      "messageOk": true,
+      "ids": [
+        "DoD-08",
+        "DoD-09"
+      ],
+      "idsExpected": false,
+      "burst": false,
+      "minutesSincePrev": 3.9,
+      "activeMinutesSincePrev": 3.9,
+      "modelCalls": 9,
+      "outputTokens": 8213,
+      "costUsdSincePrev": 1.01
+    },
+    {
+      "hash": "c0b8ce4",
+      "time": "2026-10-22T00:22:50+02:00",
+      "phase": 7,
+      "subject": "docs: add run summary and close progress for release (US-009)",
+      "type": "docs",
+      "files": 1,
+      "lines": 6,
+      "linesAll": 66,
+      "categories": {
+        "docs": 6
+      },
+      "mixed": false,
+      "oversize": false,
+      "tiny": false,
+      "messageOk": true,
+      "ids": [
+        "US-009"
+      ],
+      "idsExpected": false,
+      "burst": true,
+      "minutesSincePrev": 0.1,
+      "activeMinutesSincePrev": 0.1,
+      "modelCalls": 1,
+      "outputTokens": 928,
+      "costUsdSincePrev": 0.11
+    }
+  ],
+  "commitSummary": {
+    "count": 27,
+    "byPhase": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 6,
+      "4": 7,
+      "5": 3,
+      "6": 2,
+      "7": 6
+    },
+    "byType": {
+      "build": 1,
+      "docs": 14,
+      "test": 6,
+      "feat": 5,
+      "fix": 1
+    },
+    "linesMedian": 45,
+    "linesP90": 310,
+    "linesMax": 392,
+    "filesMedian": 1,
+    "pctOversize": 0,
+    "pctMixed": 0,
+    "pctTiny": 11.1,
+    "pctBurst": 37,
+    "pctMessageOk": 92.6,
+    "pctWithIds": 100,
+    "costPerCommitMedian": 0.4,
+    "costPerCommitMean": 0.58,
+    "activeMinPerCommitMedian": 1.3,
+    "activeMinPerCommitMean": 4.6,
+    "longestActiveGapMin": 45.8,
+    "costPer100Lines": 0.59,
+    "costAfterLastCommitUsd": 0.11,
+    "statsOnlyCommitsLeftOut": 0,
+    "range": "06619d7aa63cc6754ba579a848cba2393ab1ee6a..c0b8ce4f987d184816cb12329a056f6e0b4bf98b"
+  },
+  "notes": [
+    "11 model call(s) after the run's end (the session went on) cost $4.19: not part of the run"
+  ],
+  "transcripts": {
+    "main": [
+      "/home/tjan-kazar/.claude/projects/-home-tjan-kazar-storage-Work-lab-tjan-single-agent-sdd-v001-run-1-search/8c026f27-6ee8-44ce-81f1-6e619abfdb63.jsonl"
+    ],
+    "subagents": [],
+    "backup": [
+      "data/8c026f27-6ee8-44ce-81f1-6e619abfdb63.jsonl"
+    ]
+  }
+}
