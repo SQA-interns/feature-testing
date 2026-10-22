@@ -231,6 +231,11 @@
           <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
           <!-- OSS Index needs credentials that secrets.env.example does not list -->
           <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+          <!-- NVD times out on 2000-row pages; 100 answers within seconds -->
+          <nvdApiResultsPerPage>100</nvdApiResultsPerPage>
+          <suppressionFiles>
+            <suppressionFile>dependency-check-suppressions.xml</suppressionFile>
+          </suppressionFiles>
           <formats>
             <format>HTML</format>
             <format>JSON</format>
