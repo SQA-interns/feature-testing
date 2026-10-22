@@ -17,8 +17,8 @@ Verified on 2026-10-22 at commit state after phase 5 (no production code or test
 | DoD-05 | met | No Critical or High finding (Findings below). |
 | DoD-06 | met | Runtime demonstration below (`out/logs/06_runtime-demo.log`). |
 | DoD-07 | met | Traceability table below: 48 criteria, none without a test or a commit. |
-| DoD-08 | phase 7 | The READMEs are a phase 7 deliverable; their clean-checkout check is recorded in phase 7 (`docs/release-notes.md`). |
-| DoD-09 | phase 7 | Manual-test list in `docs/release-notes.md` (phase 7). |
+| DoD-08 | met (phase 7) | Clean clone of `cf35702`: every README command run as written; backend build, check, 227 tests; frontend install, check, 62 tests, build; compose stack healthy; 6 e2e tests pass (`out/logs/07_clean-checkout.log`, `docs/release-notes.md`). The Windows long-path note was added to the root README. |
+| DoD-09 | met (phase 7) | `docs/release-notes.md`, "Must be tested manually by a human": M-01 … M-07 (real reCAPTCHA, real SMTP, TLS and proxy routing, proxy headers and HTTPS-only access, production start-up guards, retention, Excel). |
 | DoD-10 | met | Decisions D-01 … D-16 all resolved except D-11 (pending review, option applied); `docs/00_input-manifest.sha256` (41 files) matches; `git diff 0d62004 -- 01_input AGENTS.md README.md Run_Guide.md 03_statistics/metrics.md 03_statistics/run-log.template.json 03_statistics/tools 03_statistics/usage.md` is empty. |
 | DoD-11 | met | Phase 3 commits (`6dfdae7` … `5938486`) change no file under `backend/src/main` or `frontend/src` except tests; the freeze commit `5938486` adds only the manifest; all 37 listed files were committed before it; build commits name their US/AC IDs (trace table); every manifest hash matches. |
 | DoD-P01 | met | Runtime demo: one external and one student registration through the frontend proxy, both HTTP 201; E2E-01 and E2E-02 pass. |

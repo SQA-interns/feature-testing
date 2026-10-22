@@ -16,7 +16,7 @@ Online registration for a conference: external participants and students registe
 
 ## Quick start (local stack)
 
-Prerequisites: JDK 21, Docker Engine with Compose, Node.js 24 with npm 11 (only for the frontend tools and the end-to-end tests).
+Prerequisites: JDK 21, Docker Engine with Compose, Node.js 24 with npm 11 (only for the frontend tools and the end-to-end tests). On Windows, clone into a short path or with `git clone -c core.longpaths=true …`: some Java test paths exceed 260 characters below a deep folder.
 
 1. At the repository root, copy `01_input/01_project/00_setup/secrets.env.example` to `.env` and fill `POSTGRES_PASSWORD`, `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` (at least 16 characters) and `ORGANIZER_EMAILS`. reCAPTCHA keys are not needed locally (test mode).
 2. Build the backend jar (the backend image copies it):
