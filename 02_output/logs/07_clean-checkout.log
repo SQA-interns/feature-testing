@@ -1,0 +1,30 @@
+== clone (git -c core.longpaths=true clone)
+cf35702 docs: add root and component READMEs (ES-05, ES-06)
+49
+== backend: ./mvnw -B package -DskipTests
+exit=0
+target/registration-backend-0.1.0.jar
+== backend: ./mvnw -B spotless:check compile pmd:check pmd:cpd-check spotbugs:check
+exit=0
+== backend: ./mvnw -B verify
+exit=0
+[INFO] Tests run: 227, Failures: 0, Errors: 0, Skipped: 0
+== frontend: npm ci
+exit=0
+== frontend: npm run check
+exit=0
+== frontend: npm test
+      Tests  62 passed (62)
+== frontend: npm run build
+exit=0
+== stop the working copy's stack
+exit=0
+== clone: docker compose --env-file <repo>/.env up -d --build
+exit=0
+backend=healthy db=healthy frontend=healthy mailpit=healthy 
+registration page 200
+{"status":"UP"} readiness
+== clone: npm run test:e2e (credentials exported from .env)
+  6 passed (11.9s)
+== clone: docker compose down
+exit=0
