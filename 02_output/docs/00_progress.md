@@ -5,7 +5,7 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: spec-driven, acceptance tests first (`general/phases.md`)
-- Current phase: 4 (build)
-- Last gate result: phase 3 passed 2026-10-22: 116 frozen tests (98 backend acceptance, 12 frontend acceptance, 6 e2e) all failing for behavioural reasons; freeze commit `5938486` (`docs/03_acceptance-manifest.sha256`).
-- Next step: phase 4, build story by story in layers (domain/use case, persistence/adapters, web, UI), then compose stack; make every frozen test pass.
+- Current phase: 5 (unit tests)
+- Last gate result: phase 4 passed 2026-10-22: all 116 frozen tests pass (98 backend acceptance, 12 frontend acceptance, 6 e2e on the compose stack); spotless, PMD, CPD, SpotBugs, prettier, ESLint, tsc clean; every story has build commits.
+- Next step: phase 5, first full run recorded, then unit/integration and ArchUnit tests area by area until line coverage >= 95 %, then one mutation run per component (PIT, Stryker).
 - Waiting for the human on: nothing
