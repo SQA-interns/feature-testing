@@ -1,0 +1,18 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "AI workshop", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "ws-leadership", "name": "Leadership workshop", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL"] },
+    { "id": "ws-retired", "name": "Retired workshop", "category": "WORKSHOP", "active": false },
+    { "id": "ev-dinner", "name": "Conference dinner", "category": "EVENT", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] },
+    { "id": "meal-lunch", "name": "Lunch", "category": "MEAL", "active": true },
+    { "id": "other-tour", "name": "City tour", "category": "OTHER", "active": true, "availableTo": ["EXTERNAL", "STUDENT"] }
+  ],
+  "consents": [
+    {
+      "id": "privacy",
+      "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.",
+      "mandatory": true
+    },
+    { "id": "photos", "text": "I agree to be photographed at the conference.", "mandatory": false }
+  ]
+}
