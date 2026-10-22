@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: registration-backend
+server:
+  port: 8080
