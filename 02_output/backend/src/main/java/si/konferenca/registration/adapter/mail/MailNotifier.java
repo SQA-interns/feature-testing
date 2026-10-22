@@ -1,12 +1,15 @@
 package si.konferenca.registration.adapter.mail;
 
+import jakarta.activation.DataHandler;
 import jakarta.mail.MessagingException;
+import jakarta.mail.Part;
 import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.util.ByteArrayDataSource;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -115,9 +118,20 @@ public class MailNotifier implements Notifier {
     helper.setSubject(subject);
     helper.setText(body.toString(), false);
     if (attachment != null) {
-      helper.addAttachment(attachmentName, new ByteArrayResource(attachment), "application/json");
+      helper.getRootMimeMultipart().addBodyPart(jsonAttachment(attachmentName, attachment));
     }
     return message;
+  }
+
+  /** Base64 transfer encoding keeps the attachment byte-identical to the JSON copy. */
+  private static MimeBodyPart jsonAttachment(String name, byte[] content)
+      throws MessagingException {
+    MimeBodyPart part = new MimeBodyPart();
+    part.setDataHandler(new DataHandler(new ByteArrayDataSource(content, "application/json")));
+    part.setFileName(name);
+    part.setDisposition(Part.ATTACHMENT);
+    part.setHeader("Content-Transfer-Encoding", "base64");
+    return part;
   }
 
   private static void line(StringBuilder body, String label, String value) {

@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 import si.konferenca.registration.application.JsonCopyStore;
 import si.konferenca.registration.domain.Participant;
 import si.konferenca.registration.domain.Registration;
-import tools.jackson.databind.SerializationFeature;
 import tools.jackson.databind.json.JsonMapper;
 
 /**
@@ -28,8 +27,9 @@ import tools.jackson.databind.json.JsonMapper;
 public class FileJsonCopyStore implements JsonCopyStore {
 
   private static final Logger LOG = LoggerFactory.getLogger(FileJsonCopyStore.class);
-  private static final JsonMapper JSON =
-      JsonMapper.builder().enable(SerializationFeature.INDENT_OUTPUT).build();
+
+  /** Compact output: the same bytes on every operating system (no line separators). */
+  private static final JsonMapper JSON = JsonMapper.builder().build();
 
   private final Path directory;
 
