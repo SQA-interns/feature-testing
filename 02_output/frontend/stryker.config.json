@@ -9,6 +9,6 @@
     "!src/test-setup.ts"
   ],
   "reporters": ["clear-text", "progress", "html", "json"],
-  "coverageAnalysis": "all",
+  "coverageAnalysis": "perTest",
   "tempDirName": ".stryker-tmp"
 }
