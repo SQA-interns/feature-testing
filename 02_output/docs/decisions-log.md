@@ -118,3 +118,21 @@
 - Options: 1. (default) Exclude exactly these patterns for exactly these classes in `backend/spotbugs-exclude.xml`; every other finding still fails the check; 2. copy or wrap injected collaborators (no effect on behaviour, hides the dependency).
 - Human response: none
 - Resolution: option 1
+
+## D-14: End-to-end tests are not part of the mutation runs
+- Timestamp: 2026-10-22T15:14:51Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: `general/quality/measurement-scope.md` (Mutation score, Tests) asks for each component's full automated suite. The six e2e tests run in a browser against the compose stack built from the images; PIT and Stryker mutate classes in their own test process and cannot rebuild and redeploy the stack per mutant.
+- Options: 1. (default) Mutation runs use every other level: backend unit, architecture and all 98 acceptance tests (Testcontainers PostgreSQL and Mailpit); frontend unit and all 12 acceptance tests. Record the tests run with the score; 2. rebuild images per mutant (thousands of builds; infeasible).
+- Human response: none
+- Resolution: option 1
+
+## D-15: Stryker per-test coverage misses tests; frontend mutation run repeated with coverage analysis "all"
+- Timestamp: 2026-10-22T15:45:15Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: the first full Stryker run (`coverageAnalysis: "perTest"`, `out/logs/05_stryker-full.log`) reported 80.69 % (443/549) with survivors that existing tests kill: applying the "always add" mutant of `toggle` (`RegistrationPage.tsx` line 105) by hand makes `RegistrationPage.test.tsx` fail, yet Stryker listed it as Survived with one covering test. The per-test attribution of the Vitest runner under-reports covering tests, so the figure is not a valid measurement (`measurement-scope.md`: a tool that does not activate mutants correctly is a decision, not a figure).
+- Options: 1. (default) Set `coverageAnalysis` to `all` (every mutant runs the full suite; same mutate scope, same tests, no exclusion) and repeat the full run once as the measurement; 2. keep `perTest` and accept false survivors.
+- Human response: none
+- Resolution: option 1
