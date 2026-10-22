@@ -1,0 +1,23 @@
+# Local configuration and secrets (ES-02)
+.env
+.env.*
+!.env.example
+
+# Build output
+target/
+dist/
+coverage/
+reports/
+.stryker-tmp/
+test-results/
+playwright-report/
+
+# Dependencies
+node_modules/
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
