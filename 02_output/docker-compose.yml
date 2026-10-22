@@ -1,0 +1,83 @@
+# Local stack: docker compose --env-file ../.env up --build   (build the backend jar first)
+name: registration
+
+services:
+  db:
+    image: postgres:16.15-alpine
+    environment:
+      POSTGRES_DB: registration
+      POSTGRES_USER: registration
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U registration -d registration"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mailpit:
+    image: axllent/mailpit:v1.31.1
+    ports:
+      - "127.0.0.1:8025:8025"
+      - "127.0.0.1:1025:1025"
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build: ./backend
+    environment:
+      APP_ENVIRONMENT: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/registration
+      SPRING_DATASOURCE_USERNAME: registration
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_TLS: "false"
+      MAIL_FROM: ${MAIL_FROM:-registration@konferenca.si}
+      CONFERENCE_NAME: ${CONFERENCE_NAME:-Konferenca 2026}
+      CONFERENCE_CONFIG: ${CONFERENCE_CONFIG:-classpath:conference.json}
+      JSON_COPY_DIR: /data/json-copies
+      CAPTCHA_TEST_MODE: ${CAPTCHA_TEST_MODE:-true}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY:-}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY:-}
+      ORGANIZER_USERNAME: ${ORGANIZER_USERNAME:?set ORGANIZER_USERNAME in .env}
+      ORGANIZER_PASSWORD: ${ORGANIZER_PASSWORD:?set ORGANIZER_PASSWORD in .env}
+      ORGANIZER_EMAILS: ${ORGANIZER_EMAILS:?set ORGANIZER_EMAILS in .env}
+      ORGANIZER_HTTPS_ONLY: ${ORGANIZER_HTTPS_ONLY:-false}
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-60}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - json-copies:/data/json-copies
+    depends_on:
+      db:
+        condition: service_healthy
+      mailpit:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/actuator/health/readiness"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:8081:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  pgdata:
+  json-copies:
