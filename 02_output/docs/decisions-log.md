@@ -136,3 +136,12 @@
 - Options: 1. (default) Set `coverageAnalysis` to `all` (every mutant runs the full suite; same mutate scope, same tests, no exclusion) and repeat the full run once as the measurement; 2. keep `perTest` and accept false survivors.
 - Human response: none
 - Resolution: option 1
+
+## D-16: Correction of D-15: the per-test Stryker run was valid
+- Timestamp: 2026-10-22T16:00:14Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: a single-line Stryker probe (`out/logs/05_stryker-probe.log`) shows that the survivors on `RegistrationPage.tsx` line 105 are `list.filter(() => undefined)` and `list.filter((x) => false)` (unchecking one option clears every selected option), which no test detects; the mutant applied by hand for D-15 was a different one (the ternary forced to `false`), which Stryker reports as killed. The per-test attribution was therefore not shown to be wrong; D-15 rested on a misreading.
+- Options: 1. (default) Restore `coverageAnalysis: "perTest"`; the first full run (`out/logs/05_stryker-full.log`, 443 of 549 killed, 80.69 %) stays the measurement; the extra run with `all` (`out/logs/05_stryker-full-all-extra.log`, 440 of 549) is kept as evidence only; 2. use the extra run as the measurement.
+- Human response: none
+- Resolution: option 1
