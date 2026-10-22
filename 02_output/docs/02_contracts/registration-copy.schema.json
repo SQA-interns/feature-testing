@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "registration-copy.schema.json",
+  "title": "Raw JSON copy of an accepted registration (BR-07), file <id>.json, UTF-8",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "firstName",
+    "lastName",
+    "email",
+    "organization",
+    "studyInstitution",
+    "studyProgramme",
+    "studentId",
+    "options",
+    "consents",
+    "registeredAt"
+  ],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "type": { "type": "string", "enum": ["EXTERNAL", "STUDENT"] },
+    "firstName": { "type": "string", "minLength": 1 },
+    "lastName": { "type": "string", "minLength": 1 },
+    "email": { "type": "string", "minLength": 3 },
+    "organization": { "type": ["string", "null"], "description": "set for EXTERNAL, null for STUDENT" },
+    "studyInstitution": { "type": ["string", "null"], "description": "set for STUDENT, null for EXTERNAL" },
+    "studyProgramme": { "type": ["string", "null"] },
+    "studentId": { "type": ["string", "null"] },
+    "options": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "givenAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "givenAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "registeredAt": { "type": "string", "format": "date-time" }
+  }
+}
