@@ -1548,7 +1548,7 @@
       "maven": null,
       "python": "Python 3.12.3"
     },
-    "capturedAt": "2026-10-22T07:55:25.597Z",
+    "capturedAt": "2026-10-22T22:29:43.898Z",
     "host": {
       "hostname": "tk",
       "account": "tjan-kazar",
@@ -1609,7 +1609,7 @@
       "timezone": "Europe/Ljubljana"
     }
   },
-  "measuredAt": "2026-10-22T07:55:25.662Z",
+  "measuredAt": "2026-10-22T22:29:43.951Z",
   "experiment": {
     "runType": "brownfield",
     "feature": "search",

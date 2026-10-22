@@ -1,0 +1,12 @@
+{
+  "feature": "none",
+  "regression": {
+    "passed": 0,
+    "total": 0,
+    "rate": null,
+    "failed": [],
+    "harness": []
+  },
+  "featureScenarios": null,
+  "scenarios": {}
+}

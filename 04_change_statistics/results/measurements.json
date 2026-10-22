@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:55:25.662Z",
+  "generatedAt": "2026-10-22T22:29:43.952Z",
   "runId": "tjan-single-agent-sdd-v001-run-1-search-opus-5-5-t1.7-ft-20261021T1907Z-36e8",
   "time": {
     "wallMin": 195,
@@ -411,7 +411,7 @@
       "maven": null,
       "python": "Python 3.12.3"
     },
-    "capturedAt": "2026-10-22T07:55:25.597Z",
+    "capturedAt": "2026-10-22T22:29:43.898Z",
     "host": {
       "hostname": "tk",
       "account": "tjan-kazar",
@@ -1261,7 +1261,7 @@
     "range": "06619d7aa63cc6754ba579a848cba2393ab1ee6a..c0b8ce4f987d184816cb12329a056f6e0b4bf98b"
   },
   "notes": [
-    "11 model call(s) after the run's end (the session went on) cost $4.19: not part of the run"
+    "14 model call(s) after the run's end (the session went on) cost $4.53: not part of the run"
   ],
   "transcripts": {
     "main": [
