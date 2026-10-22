@@ -1,5 +1,6 @@
 package si.konferenca.registration.adapter.web;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,11 @@ public class ApiExceptionHandler {
   private static final Logger LOG = LoggerFactory.getLogger(ApiExceptionHandler.class);
 
   @ExceptionHandler(HttpMessageNotReadableException.class)
-  ResponseEntity<ErrorBody> unreadable(HttpMessageNotReadableException e) {
+  ResponseEntity<ErrorBody> unreadable(
+      HttpMessageNotReadableException e, HttpServletRequest request) {
+    if (request.getAttribute(RequestSizeFilter.TOO_LARGE) != null) {
+      return error(HttpStatus.CONTENT_TOO_LARGE, "body", "The request is too large.");
+    }
     return error(HttpStatus.BAD_REQUEST, "body", "The request body is not valid JSON.");
   }
 
