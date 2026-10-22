@@ -53,6 +53,14 @@ No failure to classify. Defects found earlier, while building in phase 4 (frozen
 
 ## Final run (phase 6)
 
+2026-10-22, no production code or test changed since phase 5, so coverage and mutation were not re-measured.
+
+| Suite | Passed | Failed | Log |
+|---|---|---|---|
+| backend (`./mvnw verify`): 123 unit, 6 architecture, 98 acceptance | 227 | 0 | `out/logs/06_backend-verify.log` |
+| frontend (`npx vitest run`): 50 unit, 12 acceptance | 62 | 0 | `out/logs/06_frontend-test.log` |
+| end-to-end (`npx playwright test`, local compose stack) | 6 | 0 | `out/logs/06_e2e-run.log` |
+
 ## Test measures (phase 5, updated in phase 6 only for a component that changed)
 
 <!-- Filled in phase 5 from the runners and tools; copied into the run summary in phase 7. Definitions: general/quality/measurement-scope.md. Level rows: tests passed / failed. unit = coverage of the unit tests only; non-unit = integration, acceptance, architecture and end-to-end tests under the coverage tool; all levels = one merged report. Mutation score only on the all levels row, with scope, tool, killed of total and the tests run. -->
