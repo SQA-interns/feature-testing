@@ -17,6 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import si.konferenca.registration.adapter.captcha.RecaptchaVerifier;
 import si.konferenca.registration.adapter.captcha.TestModeCaptchaVerifier;
 import si.konferenca.registration.adapter.jsoncopy.FileJsonCopyStore;
+import si.konferenca.registration.adapter.jsoncopy.JsonCopyHealthIndicator;
 import si.konferenca.registration.adapter.mail.MailNotifier;
 import si.konferenca.registration.adapter.persistence.JpaRegistrationStore;
 import si.konferenca.registration.adapter.persistence.RegistrationJpaRepository;
@@ -49,6 +50,11 @@ public class RegistrationConfiguration {
   @Bean
   FileJsonCopyStore jsonCopyStore(AppSettings settings) {
     return new FileJsonCopyStore(Path.of(settings.jsonCopyDir()));
+  }
+
+  @Bean
+  JsonCopyHealthIndicator jsonCopyHealthIndicator(FileJsonCopyStore store) {
+    return new JsonCopyHealthIndicator(store.directory());
   }
 
   @Bean
