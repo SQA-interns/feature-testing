@@ -14,7 +14,7 @@ The accessible names below are the interface the frontend acceptance tests and t
 | Student fields | text inputs "First name", "Last name", "Email", "Study institution", "Study programme", "Student ID" | exactly these for `STUDENT` |
 | Option groups | groups (fieldset/legend) "Workshops", "Events", "Meals", "Other activities", in this order | a group without options for the type is not shown |
 | Option | checkbox named by the option's display name | unchecked initially |
-| Consent | checkbox named by the consent text | never preselected (BR-05) |
+| Consents | group "Consents" holding one checkbox per consent, named by the consent text | never preselected (BR-05) |
 | Captcha | test mode: text "reCAPTCHA test mode"; otherwise the Google widget | |
 | Submit | button "Register" | disabled while a request is in flight |
 | Field error | text in an element with id `<field>-error`, referenced by the input's `aria-describedby`; the input has `aria-invalid="true"` | option and consent errors sit under their group, id `options-error` / `consents-error` |
@@ -34,7 +34,7 @@ Client validation messages: "This field is required.", "Enter a valid email addr
 | Search | search input "Search", button "Search" | applies on submit (Enter or button) |
 | Type filter | select "Type": "All types", "External", "Student" | applies on change |
 | Option filter | select "Option": "All options" then every configured option name | applies on change |
-| Results | table "Registrations" with columns "Registered at", "Type", "First name", "Last name", "Email", "Organization / study institution", "Options" | one row per item; all values rendered as text (SR-09) |
+| Results | table "Registrations" with columns "Registered at", "Type", "First name", "Last name", "Email", "Organization / study institution", "Options" | one row per item; "Type" shows "External" or "Student"; "Options" the option ids joined by ", "; all values rendered as text (SR-09) |
 | Total | text "<n> registrations found" | |
 | Paging | buttons "Previous", "Next"; text "Page <p> of <m>" | Previous disabled on page 1, Next on the last page |
 | Load failure | role `alert`: "Registrations could not be loaded." | |

@@ -100,3 +100,21 @@
 - Options: 1. Check the raw parameter length: more than 100 characters is rejected even if trimming would shorten it (proposed default, stricter). 2. Check the trimmed length.
 - Human response: none
 - Resolution: option 1, pending review
+
+## D-12: Temurin JDK image added as the backend build stage
+- Timestamp: 2026-10-22T19:22:13Z
+- Phase: 3
+- Type: non-blocking
+- Trigger: `tech-stack.md` pins only the JRE image `eclipse-temurin:21.0.10_7-jre-alpine`; building the backend jar inside `docker compose up --build` (a clean checkout needs no host build first) needs a JDK.
+- Options: 1. Add `eclipse-temurin:21.0.10_7-jdk-alpine` (same release, GPL-2.0-with-classpath-exception, build stage only, not shipped) under the `tech-stack.md` rule (proposed default). 2. Build the jar on the host and copy it into the JRE image.
+- Human response: none
+- Resolution: option 1
+
+## D-13: Local stack files written in phase 3 as end-to-end harness
+- Timestamp: 2026-10-22T19:22:13Z
+- Phase: 3
+- Type: non-blocking
+- Trigger: The phase 3 gate needs every end-to-end test to fail for a behavioural reason, which needs the real local stack (`e2e-scenarios.md`) running the bootstrap skeleton. The stack needs `docker-compose.yml`, both Dockerfiles and the frontend `nginx.conf`. These are deployment files, not production source code (`phases.md` phase 3 constraint).
+- Options: 1. Write them in phase 3 in their own `build` commit and complete them in phase 4 if needed (proposed default). 2. Write them in phase 4 and accept e2e tests failing with a setup error in phase 3.
+- Human response: none
+- Resolution: option 1

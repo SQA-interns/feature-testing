@@ -13,7 +13,7 @@ Conference registration: a public registration form (external participants and s
 | postgres | image | `postgres` 16 with named volume `pgdata` | – |
 | mailpit | image | local SMTP catcher (SMTP 1025, web/API 8025) | – |
 
-Local stack: `02_output/docker-compose.yml`. Published on 127.0.0.1 only: backend `8080`, frontend `8081`, Mailpit `8025`. Named volumes `pgdata` and `jsoncopies` keep data across container recreation (NFR-02). Production: the same two images behind an external nginx that terminates TLS, serves `/` from the frontend and forwards `/api` to the backend with a fixed upstream `Host` (SR-08); a sample is in the backend README.
+Local stack: `02_output/docker-compose.yml`, started with `docker compose --env-file ../.env up -d --build`. Published on 127.0.0.1 only: backend `8080`, frontend `8081`, Mailpit `8025`. The compose network has a fixed subnet; the frontend nginx has the fixed address `172.28.0.10`, the backend's only trusted proxy (`TRUSTED_PROXIES`). The backend image is built in a `eclipse-temurin` JDK stage (D-12). Named volumes `pgdata` and `jsoncopies` keep data across container recreation (NFR-02). Production: the same two images behind an external nginx that terminates TLS, serves `/` from the frontend and forwards `/api` to the backend with a fixed upstream `Host` (SR-08); a sample is in the backend README.
 
 ## 2. Backend architecture (AR-02, AR-03)
 
@@ -109,7 +109,7 @@ Sent synchronously after the commit through `Notifier` (Spring `JavaMailSender`;
 - Organizer: one message per address in `ORGANIZER_EMAILS`; subject `New registration <id>`; plain-text body with every submitted field, options, consents and time; attachment `registration-<id>.json` (`application/json`) whose bytes are exactly the JSON copy's bytes (AC-007-02). Only registration data (SR-07).
 - Injection safety (AC-006-02): no user input in any header except the participant's validated address (no whitespace or control characters possible); plain-text bodies only, so markup stays literal.
 
-Settings: `SMTP_HOST`, `SMTP_PORT`, `SMTP_STARTTLS`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `MAIL_FROM`, `CONFERENCE_NAME`, `ORGANIZER_EMAILS`.
+Settings: `SPRING_MAIL_HOST`, `SPRING_MAIL_PORT`, `SPRING_MAIL_USERNAME`, `SPRING_MAIL_PASSWORD`, `SMTP_STARTTLS`, `MAIL_FROM`, `CONFERENCE_NAME`, `ORGANIZER_EMAILS` (§13).
 
 ## 9. Search (US-009, BR-09, BR-10)
 
@@ -143,7 +143,7 @@ Settings: `SMTP_HOST`, `SMTP_PORT`, `SMTP_STARTTLS`, `SMTP_USERNAME`, `SMTP_PASS
 UI contract: [`02_contracts/ui-contract.md`](02_contracts/ui-contract.md). Routes by path: `/` registration, `/organizer` organizer search page (nginx falls back to `index.html`).
 
 - Registration page: loads `/api/form-config`; a choice "External participant" / "Student"; after the choice exactly that type's fields, the options available to the type grouped under Workshops, Events, Meals, Other activities (empty groups hidden), unchecked consent checkboxes, the captcha, a "Register" button.
-- Client validation before any request (AC-004-03): required fields non-blank, email format, mandatory consents; errors next to their fields, nothing sent.
+- Client validation before any request (AC-004-03): the form has `noValidate` (no browser bubbles) and its own check on submit: required fields non-blank, email format, mandatory consents; errors next to their fields, nothing sent.
 - Backend 400: each error next to its field; values kept (AC-004-02); errors for fields without an input (`type`, `captchaToken`, `body`) in the form's error area.
 - 201: a confirmation with the participant's name and selected option names replaces the form (AC-004-01, BR-06).
 - Any other status or network failure: a general message without technical details; no confirmation (AC-004-04).
@@ -154,8 +154,8 @@ UI contract: [`02_contracts/ui-contract.md`](02_contracts/ui-contract.md). Route
 | Setting | Default | Notes |
 |---|---|---|
 | `APP_ENVIRONMENT` | `local` | `production` enables the start-up refusals above |
-| `DATABASE_URL`, `DATABASE_USERNAME` | `jdbc:postgresql://localhost:5432/registration`, `registration` | defaults for local/test only; secret `POSTGRES_PASSWORD` has no default |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_STARTTLS` | `localhost`, `1025`, `false` | local Mailpit defaults |
+| `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` | `jdbc:postgresql://localhost:5432/registration`, `registration`, none | Spring Boot's standard settings; defaults for local/test only; compose passes the secret `POSTGRES_PASSWORD` as `SPRING_DATASOURCE_PASSWORD` |
+| `SPRING_MAIL_HOST`, `SPRING_MAIL_PORT`, `SPRING_MAIL_USERNAME`, `SPRING_MAIL_PASSWORD`, `SMTP_STARTTLS` | `localhost`, `1025`, empty, empty, `false` | Spring Boot's standard mail settings (local Mailpit defaults); compose passes `SMTP_USERNAME`/`SMTP_PASSWORD` in production |
 | `MAIL_FROM`, `CONFERENCE_NAME` | `registration@konferenca.si`, `Conference` | |
 | `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD`, `ORGANIZER_EMAILS` | none | from `.env` |
 | `CONFERENCE_CONFIG_FILE` | empty (shipped file) | required in production |
