@@ -1,0 +1,8 @@
+dist
+coverage
+reports
+.stryker-tmp
+test-results
+playwright-report
+node_modules
+package-lock.json
