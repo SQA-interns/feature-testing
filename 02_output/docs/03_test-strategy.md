@@ -39,6 +39,16 @@ No test passes on bootstrap code. Acceptance criteria: 48; every criterion has a
 
 ## First complete run (before any fix)
 
+Phase 5 start, 2026-10-22, on the phase 4 code (commit `7d22f72`), before any unit test was written:
+
+| Suite | Passed | Failed | Log |
+|---|---|---|---|
+| backend acceptance (`./mvnw test`) | 98 | 0 | `out/logs/04_gate-backend.log` |
+| frontend acceptance (`npx vitest run`) | 12 | 0 | phase 4 gate |
+| end-to-end (`npx playwright test`, local stack) | 6 | 0 | `out/logs/04_e2e-run.log` |
+
+No failure to classify. Defects found earlier, while building in phase 4 (frozen tests failing on new code, fixed in the code): JSON attachment not byte-identical on the Linux container (E2E-01, fixed in `ea12aac`).
+
 ## Final run (phase 6)
 
 ## Test measures (phase 5, updated in phase 6 only for a component that changed)
