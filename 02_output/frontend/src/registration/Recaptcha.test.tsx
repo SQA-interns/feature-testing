@@ -74,4 +74,37 @@ describe("Recaptcha widget", () => {
 
     expect(onToken).not.toHaveBeenCalled();
   });
+
+  it("resets only after a rejected submission, not when the parent re-renders", async () => {
+    const { grecaptcha } = fakeGrecaptcha();
+    const { rerender } = render(<Recaptcha siteKey="k" onToken={vi.fn()} resetCount={0} />);
+    await vi.waitFor(() => expect(grecaptcha.render).toHaveBeenCalled());
+
+    rerender(<Recaptcha siteKey="k" onToken={vi.fn()} resetCount={0} />);
+
+    expect(grecaptcha.reset).not.toHaveBeenCalled();
+  });
+
+  it("does not reset while the widget is still being rendered", () => {
+    const { grecaptcha } = fakeGrecaptcha();
+
+    render(<Recaptcha siteKey="k" onToken={vi.fn()} resetCount={1} />);
+
+    expect(grecaptcha.reset).not.toHaveBeenCalled();
+  });
+
+  it("does not render when removed before the script has loaded", async () => {
+    const { loadRecaptcha } = await import("./recaptchaLoader");
+    const { unmount } = render(<Recaptcha siteKey="k" onToken={vi.fn()} resetCount={0} />);
+    unmount();
+    const { grecaptcha } = fakeGrecaptcha();
+
+    await act(async () => {
+      window.onRecaptchaLoad?.();
+      await loadRecaptcha();
+      await Promise.resolve();
+    });
+
+    expect(grecaptcha.render).not.toHaveBeenCalled();
+  });
 });

@@ -36,8 +36,15 @@ afterEach(() => {
 
 describe("api", () => {
   it("loads the form configuration and fails on an error status", async () => {
-    respond(200, JSON.stringify({ options: [], consents: [], captchaSiteKey: "k" }));
-    await expect(fetchFormConfig()).resolves.toEqual({
+    const fetchMock = respond(
+      200,
+      JSON.stringify({ options: [], consents: [], captchaSiteKey: "k" }),
+    );
+    const loaded = fetchFormConfig();
+    expect(fetchMock).toHaveBeenCalledWith("/api/form-config", {
+      headers: { Accept: "application/json" },
+    });
+    await expect(loaded).resolves.toEqual({
       options: [],
       consents: [],
       captchaSiteKey: "k",

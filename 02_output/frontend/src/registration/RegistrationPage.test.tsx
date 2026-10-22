@@ -186,4 +186,155 @@ describe("RegistrationPage", () => {
     );
     expect(screen.getByText("This consent is required.")).toBeVisible();
   });
+
+  it("marks the chosen type, starts with empty fields and hides empty option groups", async () => {
+    backend(() => Response.json({ id: "1" }, { status: 201 }));
+    render(<RegistrationPage />);
+    const external = await screen.findByRole("radio", { name: "External participant" });
+    const student = screen.getByRole("radio", { name: "Student" });
+
+    fireEvent.click(external);
+    expect(external).toBeChecked();
+    expect(student).not.toBeChecked();
+    expect(screen.getByLabelText("First name")).toHaveValue("");
+    expect(screen.queryByRole("group", { name: "Meals" })).toBeNull();
+    expect(screen.getByRole("checkbox", { name: "I agree. (required)" })).toBeInTheDocument();
+    fireEvent.click(student);
+    expect(student).toBeChecked();
+    expect(external).not.toBeChecked();
+  });
+
+  it("marks only mandatory consents as required", async () => {
+    backend(() => Response.json({ id: "1" }, { status: 201 }), {
+      ...config,
+      consents: [...config.consents, { id: "photos", text: "Photos.", mandatory: false }],
+    });
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "Student" }));
+
+    expect(screen.getByRole("checkbox", { name: "Photos." })).toBeInTheDocument();
+  });
+
+  it("sends the study fields of a student and nulls for the organization", async () => {
+    const posts = backend(() => Response.json({ id: "1" }, { status: 201 }));
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "Student" }));
+    fireEvent.change(screen.getByLabelText("First name"), { target: { value: "Luka" } });
+    fireEvent.change(screen.getByLabelText("Last name"), { target: { value: "Horvat" } });
+    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "l@u.si" } });
+    fireEvent.change(screen.getByLabelText("Study institution"), { target: { value: "Uni" } });
+    fireEvent.change(screen.getByLabelText("Study programme"), { target: { value: "CS" } });
+    fireEvent.change(screen.getByLabelText("Student ID"), { target: { value: "63" } });
+    fireEvent.click(screen.getByRole("checkbox", { name: /I agree/ }));
+
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+
+    await screen.findByRole("heading", { name: "Registration received" });
+    expect(posts[0]).toMatchObject({
+      type: "STUDENT",
+      organization: null,
+      studyInstitution: "Uni",
+      studyProgramme: "CS",
+      studentId: "63",
+      captchaToken: "",
+    });
+  });
+
+  it("keeps the other selected options when one is unchecked", async () => {
+    const posts = backend(() => Response.json({ id: "1" }, { status: 201 }));
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "External participant" }));
+    fireEvent.click(screen.getByRole("checkbox", { name: "Workshop" }));
+    fireEvent.click(screen.getByRole("checkbox", { name: "Dinner" }));
+    fireEvent.click(screen.getByRole("checkbox", { name: "Dinner" }));
+    fill();
+
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+
+    await screen.findByRole("heading", { name: "Registration received" });
+    expect(posts[0].options).toEqual(["ws"]);
+  });
+
+  it("places option and consent errors next to their checkboxes", async () => {
+    backend(() =>
+      Response.json(
+        {
+          errors: [
+            { field: "options", message: "Option gone." },
+            { field: "consents", message: "Consent invalid." },
+          ],
+        },
+        { status: 400 },
+      ),
+    );
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "External participant" }));
+    fill();
+
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+
+    await screen.findByText("Option gone.");
+    expect(screen.getByRole("checkbox", { name: "Workshop" })).toHaveAccessibleDescription(
+      "Option gone.",
+    );
+    expect(screen.getByRole("checkbox", { name: /I agree/ })).toHaveAccessibleDescription(
+      "Consent invalid.",
+    );
+    expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("joins several unplaced messages with spaces", async () => {
+    backend(() =>
+      Response.json(
+        {
+          errors: [
+            { field: "type", message: "One." },
+            { field: "body", message: "Two." },
+          ],
+        },
+        { status: 400 },
+      ),
+    );
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "External participant" }));
+    fill();
+
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(/^One\. Two\.$/);
+  });
+
+  it("clears errors when the type changes and the general error on the next submit", async () => {
+    backend(() => Response.json({}, { status: 503 }));
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "External participant" }));
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+    expect(screen.getByText("This consent is required.")).toBeVisible();
+    fireEvent.click(screen.getByRole("radio", { name: "Student" }));
+    expect(screen.queryByText("This consent is required.")).toBeNull();
+
+    fireEvent.click(screen.getByRole("radio", { name: "External participant" }));
+    fill();
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+    await screen.findByRole("alert");
+    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "" } });
+    fireEvent.click(screen.getByRole("button", { name: "Register" }));
+
+    expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("disables Register while the submission is under way and prevents the page submit", async () => {
+    let answer: (r: Response) => void = () => {};
+    backend(() => new Promise<Response>((resolve) => (answer = resolve)) as unknown as Response);
+    render(<RegistrationPage />);
+    fireEvent.click(await screen.findByRole("radio", { name: "External participant" }));
+    fill();
+    const form = screen.getByRole("form", { name: "Registration" });
+
+    expect(fireEvent.submit(form)).toBe(false);
+
+    await vi.waitFor(() => expect(screen.getByRole("button", { name: "Register" })).toBeDisabled());
+    act(() => answer(Response.json({ id: "1" }, { status: 201 })));
+    expect(await screen.findByRole("heading", { name: "Registration received" })).toBeVisible();
+  });
 });

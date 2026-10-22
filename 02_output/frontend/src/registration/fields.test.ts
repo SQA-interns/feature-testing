@@ -22,6 +22,14 @@ describe("form field rules", () => {
       "studyProgramme",
       "studentId",
     ]);
+    expect(FIELDS.STUDENT.map((f) => f.label)).toEqual([
+      "First name",
+      "Last name",
+      "Email",
+      "Study institution",
+      "Study programme",
+      "Student ID",
+    ]);
     expect(FIELDS.EXTERNAL.find((f) => f.name === "email")?.inputType).toBe("email");
     expect(FIELDS.STUDENT.find((f) => f.name === "studentId")?.inputType).toBe("text");
   });
@@ -52,7 +60,7 @@ describe("form field rules", () => {
 
   it("checks the email format", () => {
     const base = { firstName: "A", lastName: "B", organization: "O" };
-    for (const email of ["a@b", "a b@c.si", "a@b@c.si", "@b.si", "a@b."]) {
+    for (const email of ["a@b", "a b@c.si", "a@b@c.si", "@b.si", "a@b.", "a@b.si x", "x a@b.si"]) {
       expect(validate("EXTERNAL", { ...base, email }, ["privacy"], consents)).toEqual({
         email: MESSAGES.email,
       });
