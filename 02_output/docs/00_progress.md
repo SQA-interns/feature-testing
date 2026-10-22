@@ -5,7 +5,7 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: spec-driven, acceptance tests first (`general/phases.md`)
-- Current phase: 3 (test design)
-- Last gate result: phase 2 passed 2026-10-22: every AC, SR, SB, NFR and AR mapped in `docs/02_specification.md`; contracts valid (`node 02_output/docs/02_contracts/validate-contracts.mjs`).
-- Next step: phase 3, acceptance and e2e tests per story, then `docs/03_test-strategy.md` and the freeze commit.
+- Current phase: 4 (build)
+- Last gate result: phase 3 passed 2026-10-22: 116 frozen tests (98 backend acceptance, 12 frontend acceptance, 6 e2e) all failing for behavioural reasons; freeze commit `5938486` (`docs/03_acceptance-manifest.sha256`).
+- Next step: phase 4, build story by story in layers (domain/use case, persistence/adapters, web, UI), then compose stack; make every frozen test pass.
 - Waiting for the human on: nothing
