@@ -6,7 +6,7 @@ public class ExportRegistrations {
   private final RegistrationQueries store;
   private final WorkbookWriter writer;
 
-  public ExportRegistrations(RegistrationStore store, WorkbookWriter writer) {
+  public ExportRegistrations(RegistrationQueries store, WorkbookWriter writer) {
     this.store = store;
     this.writer = writer;
   }
