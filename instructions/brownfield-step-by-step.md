@@ -168,7 +168,7 @@ Use only this one new session for the run. Never continue or fork the normal run
 
 ### C3. During the run
 
-Answer exactly as `Run_Guide.md` (section 3) says, plus the standard answers of `DECISIONS.md` (E-17: vite 6.4.4, Compose 5.6.0 approved), the same as every other run: tooling questions with the standard answers, anything else with *"Choose the proposed default option and record it as a decision."*, and never add information about the feature beyond the inputs. Do not leave a question unanswered for more than an hour.
+Answer exactly as `Run_Guide.md` (section 3) says, plus the standard answers of `DECISIONS.md` (E-17 and E-18: vite 6.4.4 even if a later patch is proposed, Compose 5.6.0 approved, vitest 4.1.11 kept with its Moderate advisories accepted), the same as every other run: tooling questions with the standard answers, anything else with *"Choose the proposed default option and record it as a decision."*, and never add information about the feature beyond the inputs. Do not leave a question unanswered for more than an hour.
 
 ### C4. After the agent's final message
 
