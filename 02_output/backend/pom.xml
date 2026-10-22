@@ -180,6 +180,12 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
+        <configuration>
+          <!-- Measurement exclusion: the entry point (docs/03_test-strategy.md) -->
+          <excludes>
+            <exclude>si/konferenca/registration/RegistrationApplication.class</exclude>
+          </excludes>
+        </configuration>
         <executions>
           <execution>
             <id>prepare-agent</id>
@@ -222,6 +228,8 @@
             <param>HTML</param>
           </outputFormats>
           <timestampedReports>false</timestampedReports>
+          <threads>4</threads>
+          <timeoutConstant>8000</timeoutConstant>
         </configuration>
       </plugin>
       <plugin>
