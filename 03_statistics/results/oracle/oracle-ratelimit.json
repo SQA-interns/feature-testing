@@ -1,0 +1,12 @@
+{
+  "phase": "ratelimit",
+  "feature": "search",
+  "tag": "lhsvjd",
+  "base_url": "http://127.0.0.1:8080",
+  "results": {
+    "R15": {
+      "result": "pass",
+      "detail": "statuses [200, 200, 200, 429] (expected 200, 200, 200, 429)"
+    }
+  }
+}
