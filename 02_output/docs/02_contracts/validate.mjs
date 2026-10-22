@@ -25,7 +25,12 @@ function checkRefs(name, doc) {
           if (!v.startsWith("#/")) errors.push(`${name}${path}: non-local $ref ${v}`);
           else {
             let target = doc;
-            for (const part of v.slice(2).split("/")) target = target?.[part];
+            // own properties only: a $ref can never reach __proto__ or constructor (F-01)
+            for (const part of v.slice(2).split("/"))
+              target =
+                target !== null && typeof target === "object" && Object.hasOwn(target, part)
+                  ? target[part]
+                  : undefined;
             if (target === undefined) errors.push(`${name}${path}: unresolved $ref ${v}`);
           }
         } else walk(v, `${path}/${k}`);
