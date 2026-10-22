@@ -23,7 +23,8 @@ public class JpaRegistrationStore implements RegistrationStore {
   public List<Registration> findAllOldestFirst() {
     return entityManager
         .createQuery("select r from RegistrationEntity r order by r.seq", RegistrationEntity.class)
-        .getResultStream()
+        .getResultList()
+        .stream()
         .map(RegistrationEntity::toRegistration)
         .toList();
   }
