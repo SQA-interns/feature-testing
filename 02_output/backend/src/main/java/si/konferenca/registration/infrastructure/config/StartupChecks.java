@@ -1,14 +1,20 @@
 package si.konferenca.registration.infrastructure.config;
 
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
 /** Refuses to start with settings that are unsafe or incomplete (SR-02, SR-06, ES-01). */
-@Configuration
-@EnableConfigurationProperties(AppSettings.class)
+@Component
 public class StartupChecks {
 
+  private final AppSettings settings;
+
   public StartupChecks(AppSettings settings) {
+    this.settings = settings;
+  }
+
+  @PostConstruct
+  void verify() {
     check(settings);
   }
 

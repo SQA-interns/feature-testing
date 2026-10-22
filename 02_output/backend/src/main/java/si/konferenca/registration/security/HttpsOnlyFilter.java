@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
@@ -41,10 +43,15 @@ public class HttpsOnlyFilter extends OncePerRequestFilter {
         && ("/api/export".equals(path) || "/api/registrations".equals(path));
   }
 
+  /** Whether the client address (always an IP literal, so no DNS lookup) is a loopback one. */
   static boolean isLoopback(String address) {
-    return address != null
-        && (address.startsWith("127.")
-            || "::1".equals(address)
-            || "0:0:0:0:0:0:0:1".equals(address));
+    if (address == null || address.isEmpty()) {
+      return false;
+    }
+    try {
+      return InetAddress.getByName(address).isLoopbackAddress();
+    } catch (UnknownHostException e) {
+      return false;
+    }
   }
 }
