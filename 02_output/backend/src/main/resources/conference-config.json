@@ -1,0 +1,32 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "Workshop: Applied AI", "category": "WORKSHOP" },
+    { "id": "ws-research", "name": "Workshop: Research methods", "category": "WORKSHOP" },
+    {
+      "id": "ws-cloud",
+      "name": "Workshop: Cloud architecture for practitioners",
+      "category": "WORKSHOP",
+      "availableTo": ["EXTERNAL"]
+    },
+    { "id": "ev-opening", "name": "Opening reception", "category": "EVENT" },
+    { "id": "ev-gala", "name": "Gala dinner", "category": "EVENT", "availableTo": ["EXTERNAL"] },
+    {
+      "id": "ev-students",
+      "name": "Student networking evening",
+      "category": "EVENT",
+      "availableTo": ["STUDENT"]
+    },
+    { "id": "meal-lunch-1", "name": "Lunch, day 1", "category": "MEAL" },
+    { "id": "meal-lunch-2", "name": "Lunch, day 2", "category": "MEAL" },
+    { "id": "meal-vegetarian", "name": "Vegetarian menu", "category": "MEAL" },
+    { "id": "other-tour", "name": "Guided city tour", "category": "OTHER" },
+    { "id": "other-boat", "name": "Boat trip", "category": "OTHER", "active": false }
+  ],
+  "consents": [
+    {
+      "id": "privacy",
+      "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.",
+      "mandatory": true
+    }
+  ]
+}
