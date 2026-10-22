@@ -5,7 +5,7 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: spec-driven, acceptance tests first (`general/phases.md`)
-- Current phase: 3 (test design)
-- Last gate result: phase 2 passed (2026-10-22): every AC, SR, SB, NFR maps to `02_specification.md` §15; contracts validate (`node 02_output/docs/02_contracts/validate.mjs`)
-- Next step: phase 3: decide measurement exclusions, write acceptance and e2e tests per story, then the freeze commit
+- Current phase: 4 (build)
+- Last gate result: phase 3 passed (2026-10-22): 48 AC covered by 123 acceptance tests (105 backend, 18 frontend) and 6 e2e tests, all failing on the skeleton for behavioural reasons; frozen by 1ddcadd (`docs/03_acceptance-manifest.sha256`, 28 files)
+- Next step: phase 4: implement per story and layer until all frozen tests pass; local stack: `docker compose --env-file ../.env up -d --build` in 02_output
 - Waiting for the human on: nothing
