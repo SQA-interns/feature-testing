@@ -118,3 +118,12 @@
 - Options: 1. Write them in phase 3 in their own `build` commit and complete them in phase 4 if needed (proposed default). 2. Write them in phase 4 and accept e2e tests failing with a setup error in phase 3.
 - Human response: none
 - Resolution: option 1
+
+## D-14: SpotBugs exposure patterns excluded
+- Timestamp: 2026-10-22T20:03:27Z
+- Phase: 4
+- Type: non-blocking
+- Trigger: SpotBugs 4.10.4.1 (effort Max, threshold Medium) reports EI_EXPOSE_REP/EI_EXPOSE_REP2 (35 times) on records whose collections are immutable copies (`List.copyOf`, `Set.copyOf`) and on constructor-injected Spring beans. No other pattern remains after fixing CT_CONSTRUCTOR_THROW in `StartupChecks`.
+- Options: 1. Exclude only these two patterns in `backend/spotbugs-exclude.xml` (proposed default; every other pattern stays enabled). 2. Wrap every injected bean and record component in defensive copies.
+- Human response: none
+- Resolution: option 1

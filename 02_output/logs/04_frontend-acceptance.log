@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2-search/02_output/frontend
+
+
+ Test Files  4 passed (4)
+      Tests  18 passed (18)
+   Start at  21:56:33
+   Duration  8.08s (transform 1.35s, setup 3.42s, import 3.89s, tests 4.98s, environment 13.57s)
+

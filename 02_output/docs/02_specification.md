@@ -24,8 +24,8 @@ Ports-and-adapters with four layers under `si.konferenca.registration`:
 | `domain` | registration model, types, option and consent definitions, conference configuration model, validation rules, search criteria, field errors | `java.*` only |
 | `application` | use cases (`RegistrationService`, `SearchService`, `ExportService`) and the ports they need (`RegistrationStore`, `JsonCopyStore`, `CaptchaVerifier`, `Notifier`, `WorkbookWriter`) | `domain`, Spring stereotypes and transactions |
 | `infrastructure.*` | adapters implementing the ports: `persistence` (JPA), `jsoncopy` (files), `mail` (SMTP), `captcha` (reCAPTCHA), `excel` (POI), `config` (options file loading, settings, startup checks) | `application`, `domain`, frameworks |
-| `web` | REST controllers, request/response DTOs, error mapping, rate limit and body size filters | `application`, `domain` |
-| `security` | Spring Security configuration, organizer authentication, HTTPS-only filter, headers, CORS | `domain`, `infrastructure.config` (settings), frameworks |
+| `web` | REST controllers, request/response DTOs, error mapping | `application`, `domain` |
+| `security` | Spring Security configuration, organizer authentication, HTTPS-only, rate limit and body size filters (servlet filters ahead of Spring Security), headers, CORS | `domain`, `infrastructure.config` (settings), frameworks |
 
 Justification: the business rules (validation, option availability, search semantics) are the code that must be mutation-tested most and change least; keeping them framework-free in `domain` makes them unit-testable and keeps the frameworks replaceable at the edges. `application` holds the one place where the storage order of BR-07/AR-05 is decided.
 
