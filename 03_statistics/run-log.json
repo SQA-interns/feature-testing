@@ -3244,7 +3244,7 @@
       "maven": null,
       "python": "Python 3.14.0"
     },
-    "capturedAt": "2026-10-22T16:46:06.519Z",
+    "capturedAt": "2026-10-22T16:53:56.575Z",
     "host": {
       "hostname": "HP-Tanej",
       "account": "tanej",
@@ -3305,7 +3305,7 @@
       "timezone": "Europe/Ljubljana"
     }
   },
-  "measuredAt": "2026-10-22T16:46:06.809Z",
+  "measuredAt": "2026-10-22T16:53:56.946Z",
   "experiment": {
     "runType": "greenfield",
     "feature": "search",

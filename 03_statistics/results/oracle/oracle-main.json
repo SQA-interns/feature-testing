@@ -1,0 +1,104 @@
+{
+  "phase": "main",
+  "feature": "search",
+  "tag": "msbabo",
+  "base_url": "http://127.0.0.1:8080",
+  "results": {
+    "R01": {
+      "result": "pass",
+      "detail": "status 200, 9 options, mandatory consents ['privacy']"
+    },
+    "R02": {
+      "result": "pass",
+      "detail": "external: status 201, id 8a778657-efe9-41ce-988e-49192438e7a0"
+    },
+    "R03": {
+      "result": "pass",
+      "detail": "student: status 201, id 6b32347a-8c62-4685-a4b0-db5852b14be8"
+    },
+    "R04": {
+      "result": "pass",
+      "detail": "whitespace-only first name: status 400, error fields ['firstName'], stored False"
+    },
+    "R05": {
+      "result": "pass",
+      "detail": "invalid email: status 400, error fields ['email'], stored False"
+    },
+    "R06": {
+      "result": "pass",
+      "detail": "unknown option: status 400, error fields ['options'], stored False"
+    },
+    "R07": {
+      "result": "pass",
+      "detail": "mandatory consent missing: status 400, error fields ['consents'], stored False"
+    },
+    "R08": {
+      "result": "pass",
+      "detail": "rejected captcha token: status 400, stored False"
+    },
+    "R09": {
+      "result": "pass",
+      "detail": "participant confirmations 1, names participant True"
+    },
+    "R10": {
+      "result": "pass",
+      "detail": "organizer notifications 1, JSON attachment with the registration True"
+    },
+    "R11": {
+      "result": "pass",
+      "detail": "status 200, header True, row found True"
+    },
+    "R12": {
+      "result": "pass",
+      "detail": "export without credentials: status 401"
+    },
+    "R13": {
+      "result": "pass",
+      "detail": "Slovenian characters: status 201, unchanged in export True"
+    },
+    "R14": {
+      "result": "pass",
+      "detail": "surrounding spaces removed: status 201, stored 'msbabonzabcu'"
+    },
+    "S01": {
+      "result": "pass",
+      "detail": "status 200, 20 items, total 34, newest first True"
+    },
+    "S02": {
+      "result": "pass",
+      "detail": "upper-case last name -> ['msbabotdqtjwr']; organization/institution text -> ['msbaboodfrenw', 'msbabotdqtjwr']"
+    },
+    "S03": {
+      "result": "pass",
+      "detail": "type STUDENT -> ['msbaboodfrenw']"
+    },
+    "S04": {
+      "result": "pass",
+      "detail": "option ws-data -> ['msbabotdqtjwr']"
+    },
+    "S05": {
+      "result": "pass",
+      "detail": "text + type + option -> ['msbabotdqtjwr']"
+    },
+    "S06": {
+      "result": "pass",
+      "detail": "no match: status 200, items [], total 0"
+    },
+    "S07": {
+      "result": "pass",
+      "detail": "page 1 20, page 2 5, totals 25/25"
+    },
+    "S08": {
+      "result": "pass",
+      "detail": "type: 400 ['type'], option: 400 ['option'], page: 400 ['page'], text: 400 ['text']"
+    },
+    "S09": {
+      "result": "pass",
+      "detail": "without credentials: status 401"
+    },
+    "S10": {
+      "result": "pass",
+      "detail": "Slovenian last name -> ['Šušteršičmsbabojipe']"
+    }
+  }
+}
