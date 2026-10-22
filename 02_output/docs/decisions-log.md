@@ -82,3 +82,21 @@
 - Options: 1. Add `@types/node` 24.13.6 (MIT, published 2026-09-19, matches the Node 24.13 line), exact, dev-only, under the `tech-stack.md` rule (proposed default).
 - Human response: none
 - Resolution: option 1
+
+## D-10: Status code for organizer requests refused over plain HTTP
+- Timestamp: 2026-10-22T18:43:41Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: AC-008-04 and AC-009-10 (SR-06) require a valid-credential organizer request over plain HTTP from a non-localhost client to be refused, without a status code; `api-contract.md` fixes HTTP 401 only for missing or wrong credentials.
+- Options: 1. Answer HTTP 403 with a body without registration data, before the credentials are evaluated, so a refused request never reveals whether the credentials were valid (proposed default, conservative). 2. Answer HTTP 401 as for wrong credentials.
+- Human response: none
+- Resolution: option 1, pending review
+
+## D-11: Search text length limit is checked before trimming
+- Timestamp: 2026-10-22T18:43:41Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: AC-009-08 rejects a search text longer than 100 characters; BR-10 ignores leading and trailing whitespace. Whether the limit applies to the raw or the trimmed text is not stated.
+- Options: 1. Check the raw parameter length: more than 100 characters is rejected even if trimming would shorten it (proposed default, stricter). 2. Check the trimmed length.
+- Human response: none
+- Resolution: option 1, pending review
