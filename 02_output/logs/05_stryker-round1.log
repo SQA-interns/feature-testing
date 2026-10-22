@@ -1,0 +1,473 @@
+[32m18:05:39 (32016) INFO ProjectReader[39m Found 5 of 65 file(s) to be mutated.
+[32m18:05:40 (32016) INFO Instrumenter[39m Instrumented 5 source file(s) with 526 mutant(s)
+[32m18:05:41 (32016) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m18:05:44 (32016) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m18:05:46 (32016) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m18:06:20 (32016) INFO DryRunExecutor[39m Initial test run succeeded. Ran 60 tests in 34 seconds (net 6126.973699999998 ms, overhead 27926.0263 ms).
+Mutation testing 0% (elapsed: <1m, remaining: ~18m) 6/526 tested (0 survived, 0 timed out)
+Mutation testing 1% (elapsed: <1m, remaining: ~18m) 8/526 tested (0 survived, 0 timed out)
+Mutation testing 1% (elapsed: <1m, remaining: ~28m) 8/526 tested (0 survived, 0 timed out)
+Mutation testing 2% (elapsed: <1m, remaining: ~23m) 14/526 tested (0 survived, 0 timed out)
+Mutation testing 5% (elapsed: <1m, remaining: ~15m) 27/526 tested (0 survived, 0 timed out)
+Mutation testing 6% (elapsed: ~1m, remaining: ~14m) 40/526 tested (0 survived, 0 timed out)
+Mutation testing 7% (elapsed: ~1m, remaining: ~13m) 55/526 tested (0 survived, 0 timed out)
+Mutation testing 9% (elapsed: ~1m, remaining: ~13m) 68/526 tested (0 survived, 0 timed out)
+Mutation testing 10% (elapsed: ~1m, remaining: ~12m) 83/526 tested (0 survived, 0 timed out)
+Mutation testing 10% (elapsed: ~1m, remaining: ~13m) 96/526 tested (0 survived, 0 timed out)
+Mutation testing 11% (elapsed: ~1m, remaining: ~13m) 104/526 tested (0 survived, 0 timed out)
+Mutation testing 12% (elapsed: ~2m, remaining: ~13m) 111/526 tested (2 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~2m, remaining: ~14m) 117/526 tested (2 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~2m, remaining: ~14m) 124/526 tested (4 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~2m, remaining: ~15m) 130/526 tested (4 survived, 0 timed out)
+Mutation testing 14% (elapsed: ~2m, remaining: ~16m) 140/526 tested (6 survived, 0 timed out)
+Mutation testing 14% (elapsed: ~2m, remaining: ~16m) 148/526 tested (7 survived, 0 timed out)
+Mutation testing 15% (elapsed: ~3m, remaining: ~16m) 157/526 tested (8 survived, 0 timed out)
+Mutation testing 15% (elapsed: ~3m, remaining: ~16m) 163/526 tested (9 survived, 0 timed out)
+Mutation testing 16% (elapsed: ~3m, remaining: ~16m) 173/526 tested (9 survived, 0 timed out)
+Mutation testing 17% (elapsed: ~3m, remaining: ~16m) 180/526 tested (9 survived, 0 timed out)
+Mutation testing 18% (elapsed: ~3m, remaining: ~16m) 190/526 tested (9 survived, 0 timed out)
+Mutation testing 19% (elapsed: ~3m, remaining: ~16m) 196/526 tested (9 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~4m, remaining: ~15m) 204/526 tested (9 survived, 0 timed out)
+Mutation testing 21% (elapsed: ~4m, remaining: ~15m) 211/526 tested (9 survived, 0 timed out)
+Mutation testing 23% (elapsed: ~4m, remaining: ~14m) 219/526 tested (9 survived, 0 timed out)
+Mutation testing 24% (elapsed: ~4m, remaining: ~13m) 226/526 tested (9 survived, 0 timed out)
+Mutation testing 25% (elapsed: ~4m, remaining: ~13m) 231/526 tested (9 survived, 0 timed out)
+Mutation testing 26% (elapsed: ~4m, remaining: ~13m) 239/526 tested (10 survived, 0 timed out)
+Mutation testing 26% (elapsed: ~5m, remaining: ~13m) 246/526 tested (11 survived, 0 timed out)
+Mutation testing 27% (elapsed: ~5m, remaining: ~13m) 254/526 tested (14 survived, 0 timed out)
+Mutation testing 29% (elapsed: ~5m, remaining: ~12m) 265/526 tested (14 survived, 0 timed out)
+Mutation testing 30% (elapsed: ~5m, remaining: ~12m) 270/526 tested (14 survived, 0 timed out)
+Mutation testing 31% (elapsed: ~5m, remaining: ~12m) 273/526 tested (15 survived, 0 timed out)
+Mutation testing 32% (elapsed: ~5m, remaining: ~11m) 280/526 tested (17 survived, 0 timed out)
+Mutation testing 34% (elapsed: ~6m, remaining: ~11m) 288/526 tested (18 survived, 0 timed out)
+Mutation testing 37% (elapsed: ~6m, remaining: ~10m) 297/526 tested (18 survived, 0 timed out)
+Mutation testing 39% (elapsed: ~6m, remaining: ~9m) 304/526 tested (18 survived, 0 timed out)
+Mutation testing 40% (elapsed: ~6m, remaining: ~9m) 315/526 tested (20 survived, 0 timed out)
+Mutation testing 41% (elapsed: ~6m, remaining: ~9m) 326/526 tested (20 survived, 0 timed out)
+Mutation testing 43% (elapsed: ~6m, remaining: ~9m) 332/526 tested (20 survived, 0 timed out)
+Mutation testing 44% (elapsed: ~7m, remaining: ~8m) 341/526 tested (22 survived, 0 timed out)
+Mutation testing 46% (elapsed: ~7m, remaining: ~8m) 352/526 tested (22 survived, 0 timed out)
+Mutation testing 48% (elapsed: ~7m, remaining: ~7m) 361/526 tested (22 survived, 0 timed out)
+Mutation testing 50% (elapsed: ~7m, remaining: ~7m) 370/526 tested (22 survived, 0 timed out)
+Mutation testing 51% (elapsed: ~7m, remaining: ~7m) 380/526 tested (22 survived, 0 timed out)
+Mutation testing 52% (elapsed: ~7m, remaining: ~7m) 389/526 tested (23 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~8m, remaining: ~6m) 398/526 tested (23 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~8m, remaining: ~6m) 407/526 tested (24 survived, 0 timed out)
+Mutation testing 56% (elapsed: ~8m, remaining: ~6m) 416/526 tested (24 survived, 0 timed out)
+Mutation testing 58% (elapsed: ~8m, remaining: ~5m) 426/526 tested (24 survived, 0 timed out)
+Mutation testing 60% (elapsed: ~8m, remaining: ~5m) 434/526 tested (24 survived, 0 timed out)
+Mutation testing 63% (elapsed: ~8m, remaining: ~5m) 444/526 tested (24 survived, 0 timed out)
+Mutation testing 66% (elapsed: ~9m, remaining: ~4m) 454/526 tested (24 survived, 0 timed out)
+Mutation testing 68% (elapsed: ~9m, remaining: ~4m) 460/526 tested (24 survived, 0 timed out)
+Mutation testing 72% (elapsed: ~9m, remaining: ~3m) 469/526 tested (24 survived, 0 timed out)
+Mutation testing 75% (elapsed: ~9m, remaining: ~3m) 474/526 tested (24 survived, 0 timed out)
+Mutation testing 76% (elapsed: ~9m, remaining: ~2m) 477/526 tested (24 survived, 0 timed out)
+Mutation testing 79% (elapsed: ~9m, remaining: ~2m) 482/526 tested (26 survived, 0 timed out)
+Mutation testing 81% (elapsed: ~10m, remaining: ~2m) 487/526 tested (26 survived, 0 timed out)
+Mutation testing 82% (elapsed: ~10m, remaining: ~2m) 490/526 tested (26 survived, 0 timed out)
+Mutation testing 85% (elapsed: ~10m, remaining: ~1m) 495/526 tested (28 survived, 0 timed out)
+Mutation testing 87% (elapsed: ~10m, remaining: ~1m) 500/526 tested (29 survived, 0 timed out)
+Mutation testing 89% (elapsed: ~10m, remaining: ~1m) 504/526 tested (29 survived, 0 timed out)
+Mutation testing 91% (elapsed: ~10m, remaining: ~1m) 508/526 tested (29 survived, 0 timed out)
+Mutation testing 95% (elapsed: ~11m, remaining: <1m) 516/526 tested (29 survived, 0 timed out)
+Mutation testing 96% (elapsed: ~11m, remaining: <1m) 519/526 tested (29 survived, 0 timed out)
+Mutation testing 98% (elapsed: ~11m, remaining: <1m) 523/526 tested (29 survived, 0 timed out)
+Mutation testing 99% (elapsed: ~11m, remaining: <1m) 525/526 tested (29 survived, 0 timed out)
+
+All tests
+  src
+    organizer/OrganizerPage.test.tsx
+      ✓ OrganizerPage starts with empty credentials and sends the first search without filters (killed 22)
+      ✓ OrganizerPage prevents the browser from submitting the forms (killed 2)
+      ✓ OrganizerPage shows types, institutions and option names in the table (killed 18)
+      ✓ OrganizerPage offers only the filter defaults when the options cannot be loaded (killed 1)
+      ✓ OrganizerPage offers only the filter defaults while the options are loading (killed 1)
+      ✓ OrganizerPage shows rejected search parameters and keeps the list (killed 16)
+      ✓ OrganizerPage returns to the sign-in when the credentials stop working (killed 8)
+      ✓ OrganizerPage pages back and forth with the current filters (killed 13)
+    registration
+      fields.test.ts
+        ✓ form field rules lists the fixed fields of each type (killed 2)
+        ~ form field rules accepts a complete form (covered 23)
+        ~ form field rules requires every field of the type, blank counts as empty (covered 18)
+        ✓ form field rules checks the email format (killed 2)
+        ✓ form field rules requires only the mandatory consents (killed 1)
+      Recaptcha.test.tsx
+        ✓ Recaptcha widget renders the widget with the site key and passes tokens on (killed 8)
+        ✓ Recaptcha widget resets the widget and clears the token when asked (killed 7)
+        ✓ Recaptcha widget does not render after it was removed (killed 6)
+        ~ Recaptcha widget does not reset before the widget exists (covered 18)
+        ✓ Recaptcha widget resets only after a rejected submission, not when the parent re-renders (killed 3)
+        ✓ Recaptcha widget does not reset while the widget is still being rendered (killed 1)
+        ~ Recaptcha widget does not render when removed before the script has loaded (covered 25)
+      RegistrationPage.test.tsx
+        ✓ RegistrationPage says so when the form configuration cannot be loaded (killed 11)
+        ✓ RegistrationPage shows a loading text first (killed 2)
+        ✓ RegistrationPage sends the widget token, trimmed values and nulls for the other type (killed 101)
+        ✓ RegistrationPage resets the widget and shows unplaced errors as a general message (killed 26)
+        ✓ RegistrationPage clears the general error when the backend rejects only known fields (killed 4)
+        ✓ RegistrationPage drops options the new type cannot select and lets options be unchecked (killed 42)
+        ✓ RegistrationPage clears a field's error when the field changes (killed 18)
+        ✓ RegistrationPage marks the chosen type, starts with empty fields and hides empty option groups (killed 7)
+        ✓ RegistrationPage marks only mandatory consents as required (killed 1)
+        ✓ RegistrationPage sends the study fields of a student and nulls for the organization (killed 13)
+        ✓ RegistrationPage keeps the other selected options when one is unchecked (killed 2)
+        ✓ RegistrationPage places option and consent errors next to their checkboxes (killed 4)
+        ✓ RegistrationPage joins several unplaced messages with spaces (killed 1)
+        ✓ RegistrationPage clears errors when the type changes and the general error on the next submit (killed 2)
+        ✓ RegistrationPage disables Register while the submission is under way and prevents the page submit (killed 2)
+    api.test.ts
+      ✓ api loads the form configuration and fails on an error status (killed 6)
+      ✓ api posts the registration as JSON and reads the new id (killed 13)
+      ✓ api returns the field errors of a rejected registration (killed 11)
+      ✓ api reports other answers and network errors as failed (killed 6)
+      ✓ api encodes UTF-8 credentials for HTTP Basic (killed 6)
+      ✓ api sends only the given search parameters with the organizer headers (killed 29)
+      ✓ api maps the search answers (killed 18)
+    App.test.tsx
+      ~ App routing shows the organizer page at /organizer (covered 24)
+      ~ App routing shows the organizer page at /organizer/ (covered 24)
+      ~ App routing shows the organizer page at /organizer// (covered 24)
+      ~ App routing shows the registration page at / (covered 24)
+      ~ App routing shows the registration page at /organizers (covered 24)
+      ~ App routing shows the registration page at /x/organizer (covered 24)
+  tests/acceptance
+    us001-external-form.test.tsx
+      ~ US-001 external participant form AC-001-08 shows exactly the external fields, the grouped active options and unchecked consents (covered 83)
+    us002-student-form.test.tsx
+      ✓ US-002 student form AC-002-07 shows exactly the student fields and only the options available to students (killed 6)
+      ~ US-002 student form AC-002-07 switching from external to student replaces the fields (covered 84)
+    us004-confirmation.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with the name and the selected options once the backend accepts (killed 19)
+      ✓ US-004 registration confirmation AC-004-02 shows the backend's field errors next to the fields and keeps the entered values (killed 3)
+      ✓ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email and sends nothing (killed 6)
+      ✓ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (killed 2)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend cannot be reached (covered 180)
+    us009-organizer-page.test.tsx
+      ✓ US-009 organizer search page AC-009-12 wrong credentials show an error and no data; valid credentials show the list and controls (killed 8)
+      ✓ US-009 organizer search page AC-009-12 the search field and filters are sent as query parameters (killed 10)
+      ✓ US-009 organizer search page AC-009-12 page navigation requests the next page (killed 2)
+      ~ US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed (covered 107)
+
+[Survived] ArrowFunction
+src/organizer/OrganizerPage.tsx:36:14
+-         .catch(() => setOptions([]));
++         .catch(() => undefined);
+Tests ran:
+    App routing shows the organizer page at /organizer
+    App routing shows the organizer page at /organizer/
+    App routing shows the organizer page at /organizer//
+  and 12 more tests!
+
+
+[Survived] ArrayDeclaration
+src/organizer/OrganizerPage.tsx:37:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    App routing shows the organizer page at /organizer
+    App routing shows the organizer page at /organizer/
+    App routing shows the organizer page at /organizer//
+  and 12 more tests!
+
+
+[Survived] CallExpression
+src/organizer/OrganizerPage.tsx:47:7
+-         setCredentials(null);
++         ;
+Tests ran:
+    OrganizerPage returns to the sign-in when the credentials stop working
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no data; valid credentials show the list and controls
+
+
+[Survived] CallExpression
+src/organizer/OrganizerPage.tsx:48:7
+-         setResult(null);
++         ;
+Tests ran:
+    OrganizerPage returns to the sign-in when the credentials stop working
+    US-009 organizer search page AC-009-12 wrong credentials show an error and no data; valid credentials show the list and controls
+
+
+[Survived] BlockStatement
+src/organizer/OrganizerPage.tsx:52:12
+-       } else {
+-         setError(LOAD_ERROR);
+-       }
++       } else {}
+Tests ran:
+    OrganizerPage shows rejected search parameters and keeps the list
+
+
+[Survived] CallExpression
+src/organizer/OrganizerPage.tsx:53:7
+-         setError(LOAD_ERROR);
++         ;
+Tests ran:
+    OrganizerPage shows rejected search parameters and keeps the list
+
+
+[Survived] ConditionalExpression
+src/organizer/OrganizerPage.tsx:64:9
+-       if (credentials) void load(credentials, { ...draft, page: 1 });
++       if (true) void load(credentials, { ...draft, page: 1 });
+Tests ran:
+    OrganizerPage prevents the browser from submitting the forms
+    OrganizerPage shows rejected search parameters and keeps the list
+    OrganizerPage returns to the sign-in when the credentials stop working
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+src/organizer/OrganizerPage.tsx:68:9
+-       if (credentials) void load(credentials, { ...query, page });
++       if (true) void load(credentials, { ...query, page });
+Tests ran:
+    OrganizerPage pages back and forth with the current filters
+    US-009 organizer search page AC-009-12 page navigation requests the next page
+
+
+[Survived] LogicalOperator
+src/organizer/OrganizerPage.tsx:73:7
+-     if (!credentials || !result) {
++     if (!credentials && !result) {
+Tests ran:
+    App routing shows the organizer page at /organizer
+    App routing shows the organizer page at /organizer/
+    App routing shows the organizer page at /organizer//
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+src/registration/fields.ts:21:56
+-     { name: "firstName", label: "First name", inputType: "text" },
++     { name: "firstName", label: "First name", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/registration/fields.ts:22:54
+-     { name: "lastName", label: "Last name", inputType: "text" },
++     { name: "lastName", label: "Last name", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/registration/fields.ts:29:77
+-       { name: "organization", label: "Organization / institution", inputType: "text" },
++       { name: "organization", label: "Organization / institution", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/registration/fields.ts:33:72
+-       { name: "studyInstitution", label: "Study institution", inputType: "text" },
++       { name: "studyInstitution", label: "Study institution", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/registration/fields.ts:34:68
+-       { name: "studyProgramme", label: "Study programme", inputType: "text" },
++       { name: "studyProgramme", label: "Study programme", inputType: "" },
+Ran all tests for this mutant.
+
+[Survived] LogicalOperator
+src/registration/Recaptcha.tsx:18:11
+-         if (cancelled || !container.current || !window.grecaptcha || widget.current !== null) {
++         if (cancelled && !container.current || !window.grecaptcha || widget.current !== null) {
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 15 more tests!
+
+
+[Survived] ConditionalExpression
+src/registration/Recaptcha.tsx:18:68
+-         if (cancelled || !container.current || !window.grecaptcha || widget.current !== null) {
++         if (cancelled || !container.current || !window.grecaptcha || false) {
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 13 more tests!
+
+
+[Survived] BlockStatement
+src/registration/Recaptcha.tsx:27:18
+-       return () => {
+-         cancelled = true;
+-       };
++       return () => {};
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 16 more tests!
+
+
+[Survived] BooleanLiteral
+src/registration/Recaptcha.tsx:28:19
+-         cancelled = true;
++         cancelled = false;
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 16 more tests!
+
+
+[Survived] ArrayDeclaration
+src/registration/Recaptcha.tsx:30:6
+-     }, [siteKey, onToken]);
++     }, []);
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 16 more tests!
+
+
+[NoCoverage] StringLiteral
+src/registration/RegistrationPage.tsx:118:68
+-         FIELDS[type].some((f) => f.name === name) ? (values[name] ?? "").trim() : null;
++         FIELDS[type].some((f) => f.name === name) ? (values[name] ?? "Stryker was here!").trim() : null;
+
+[NoCoverage] StringLiteral
+src/registration/RegistrationPage.tsx:123:40
+-         firstName: value("firstName") ?? "",
++         firstName: value("firstName") ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/registration/RegistrationPage.tsx:124:38
+-         lastName: value("lastName") ?? "",
++         lastName: value("lastName") ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/registration/RegistrationPage.tsx:125:32
+-         email: value("email") ?? "",
++         email: value("email") ?? "Stryker was here!",
+
+[Survived] ArrayDeclaration
+src/registration/RegistrationPage.tsx:41:52
+-     const [options, setOptions] = useState<string[]>([]);
++     const [options, setOptions] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    App routing shows the registration page at /
+    App routing shows the registration page at /organizers
+    App routing shows the registration page at /x/organizer
+  and 23 more tests!
+
+
+[Survived] ArrayDeclaration
+src/registration/RegistrationPage.tsx:42:54
+-     const [consents, setConsents] = useState<string[]>([]);
++     const [consents, setConsents] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    App routing shows the registration page at /
+    App routing shows the registration page at /organizers
+    App routing shows the registration page at /x/organizer
+  and 23 more tests!
+
+
+[Survived] ArrayDeclaration
+src/registration/RegistrationPage.tsx:54:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    App routing shows the registration page at /
+    App routing shows the registration page at /organizers
+    App routing shows the registration page at /x/organizer
+  and 23 more tests!
+
+
+[Survived] ArrayDeclaration
+src/registration/RegistrationPage.tsx:56:74
+-     const onToken = useCallback((token: string) => setCaptchaToken(token), []);
++     const onToken = useCallback((token: string) => setCaptchaToken(token), ["Stryker was here"]);
+Tests ran:
+    App routing shows the registration page at /
+    App routing shows the registration page at /organizers
+    App routing shows the registration page at /x/organizer
+  and 23 more tests!
+
+
+[Survived] ConditionalExpression
+src/registration/RegistrationPage.tsx:82:49
+-     const offered = (option: ConferenceOption) => type !== null && option.availableTo.includes(type);
++     const offered = (option: ConferenceOption) => true && option.availableTo.includes(type);
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 18 more tests!
+
+
+[Survived] OptionalChaining
+src/registration/RegistrationPage.tsx:90:9
+-           config?.options.some((o) => o.id === id && o.availableTo.includes(next)),
++           config.options.some((o) => o.id === id && o.availableTo.includes(next)),
+Tests ran:
+    RegistrationPage drops options the new type cannot select and lets options be unchecked
+
+
+[Survived] ConditionalExpression
+src/registration/RegistrationPage.tsx:110:9
+-       if (!config || !type) return;
++       if (false) return;
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 13 more tests!
+
+
+[Survived] LogicalOperator
+src/registration/RegistrationPage.tsx:110:9
+-       if (!config || !type) return;
++       if (!config && !type) return;
+Tests ran:
+    RegistrationPage sends the widget token, trimmed values and nulls for the other type
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+  and 13 more tests!
+
+
+[Survived] ConditionalExpression
+src/registration/RegistrationPage.tsx:142:9
+-       if (!testMode) setCaptchaResets((n) => n + 1);
++       if (true) setCaptchaResets((n) => n + 1);
+Tests ran:
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+    RegistrationPage places option and consent errors next to their checkboxes
+  and 5 more tests!
+
+
+[Survived] ConditionalExpression
+src/registration/RegistrationPage.tsx:157:23
+-         setGeneralError(other.length > 0 ? other.join(" ") : null);
++         setGeneralError(true ? other.join(" ") : null);
+Tests ran:
+    RegistrationPage resets the widget and shows unplaced errors as a general message
+    RegistrationPage clears the general error when the backend rejects only known fields
+    RegistrationPage places option and consent errors next to their checkboxes
+  and 2 more tests!
+
+
+Ran 4.31 tests per mutant on average.
+-----------------------|------------------|----------|-----------|------------|----------|----------|
+                       | % Mutation score |          |           |            |          |          |
+File                   |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files              |  93.71 |   94.43 |      492 |         0 |         29 |        4 |        1 |
+ organizer             |  91.82 |   91.82 |      101 |         0 |          9 |        0 |        1 |
+  OrganizerPage.tsx    |  91.82 |   91.82 |      101 |         0 |          9 |        0 |        1 |
+ registration          |  92.55 |   93.71 |      298 |         0 |         20 |        4 |        0 |
+  fields.ts            |  93.24 |   93.24 |       69 |         0 |          5 |        0 |        0 |
+  Recaptcha.tsx        |  86.49 |   86.49 |       32 |         0 |          5 |        0 |        0 |
+  RegistrationPage.tsx |  93.36 |   95.17 |      197 |         0 |         10 |        4 |        0 |
+ api.ts                | 100.00 |  100.00 |       93 |         0 |          0 |        0 |        0 |
+-----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m18:17:53 (32016) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/mutation.json
+[32m18:17:53 (32016) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/reports/mutation/mutation.html
+[32m18:17:53 (32016) INFO MutationTestExecutor[39m Done in 12 minutes and 14 seconds.
+exit=0
+2026-10-22T16:17:54Z

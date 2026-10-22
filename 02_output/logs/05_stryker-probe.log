@@ -1,0 +1,513 @@
+[36m17:58:56 (43340) DEBUG ConfigReader[39m Loading config from stryker.config.json
+[36m17:58:56 (43340) DEBUG ConfigReader[39m Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "vitest",
+  "mutate": [
+    "src/registration/RegistrationPage.tsx:105:1-105:80"
+  ],
+  "reporters": [
+    "clear-text"
+  ],
+  "coverageAnalysis": "all",
+  "tempDirName": ".stryker-tmp-probe",
+  "concurrency": 1,
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true,
+    "skipFull": false
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "fileLogLevel": "off",
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "disableTypeChecks": true,
+  "symlinkNodeModules": true,
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": [],
+  "testFiles": []
+}
+[36m17:58:56 (43340) DEBUG PluginLoader[39m Loading @stryker-mutator/* from C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\node_modules\@stryker-mutator
+[36m17:58:56 (43340) DEBUG PluginLoader[39m Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+[36m17:58:56 (43340) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/vitest-runner
+[36m17:58:57 (43340) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m17:58:57 (43340) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m17:58:57 (43340) DEBUG MetaSchemaBuilder[39m Contributing 1 schemas from plugins to options validation.
+[32m17:58:57 (43340) INFO ProjectReader[39m Found 1 of 63 file(s) to be mutated.
+[36m17:58:57 (43340) DEBUG ProjectReader[39m All input files: [
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.dockerignore",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.jscpd.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.npmrc",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.prettierignore",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.prettierrc.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\base.css",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\block-navigation.js",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\coverage-summary.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\favicon.png",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\prettify.css",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\prettify.js",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\sort-arrow-sprite.png",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\sorter.js",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\api.ts.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\App.tsx.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\organizer\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\organizer\\OrganizerPage.tsx.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\registration\\fields.ts.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\registration\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\registration\\Recaptcha.tsx.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\registration\\recaptchaLoader.ts.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\coverage\\src\\registration\\RegistrationPage.tsx.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\dist\\assets\\index-BNqjr_4P.js",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\dist\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\Dockerfile",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\eslint.config.js",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\index.html",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\nginx.conf",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\package-lock.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\package.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\playwright.config.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\api.test.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\api.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\App.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\main.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\organizer\\OrganizerPage.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\fields.test.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\fields.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\Recaptcha.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\Recaptcha.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\recaptchaLoader.test.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\recaptchaLoader.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\RegistrationPage.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\RegistrationPage.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\test-setup.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\stryker.config.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\test-results\\.last-run.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\acceptance\\support.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\acceptance\\us001-external-form.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\acceptance\\us002-student-form.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\acceptance\\us004-confirmation.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\acceptance\\us009-organizer-page.test.tsx",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-01-external-registration.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-02-student-registration.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-03-field-errors.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-04-slovenian-characters.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-05-export.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\e2e-06-organizer-search.spec.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tests\\e2e\\support.ts",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tsconfig.json",
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\vite.config.ts"
+]
+[36m17:58:57 (43340) DEBUG ProjectReader[39m Files to mutate: [
+  "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\src\\registration\\RegistrationPage.tsx"
+]
+[36m17:58:57 (43340) DEBUG TemporaryDirectory[39m Using temp directory "C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\.stryker-tmp-probe\sandbox-Cj0qeT"
+[36m17:58:57 (43340) DEBUG Instrumenter[39m Instrumenting 1 source files with mutants
+[36m17:58:58 (43340) DEBUG Instrumenter[39m Instrumented src\registration\RegistrationPage.tsx (6 mutant(s))
+[32m17:58:58 (43340) INFO Instrumenter[39m Instrumented 1 source file(s) with 6 mutant(s)
+[36m17:58:58 (43340) DEBUG TSConfigPreprocessor[39m Rewriting file ProjectFile {
+  fs: [FileSystem],
+  name: 'C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\tsconfig.json',
+  mutate: false
+}
+[32m17:58:59 (43340) INFO ConcurrencyTokenProvider[39m Creating 1 test runner process(es).
+[36m17:58:59 (43340) DEBUG ChildProcessProxy[39m Started CheckerWorker in worker process 0 with pid 39492 
+[36m17:59:00 (39492) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/vitest-runner
+[36m17:59:00 (39492) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m17:59:00 (39492) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m17:59:01 (43340) DEBUG Sandbox[39m Creating a sandbox for files in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\.stryker-tmp-probe\sandbox-Cj0qeT
+[36m17:59:01 (43340) DEBUG Sandbox[39m Start symlink node_modules
+[36m17:59:01 (43340) DEBUG Sandbox[39m Create symlink from C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\node_modules to C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\.stryker-tmp-probe\sandbox-Cj0qeT\node_modules
+[36m17:59:01 (43340) DEBUG BroadcastReporter[39m Broadcasting to reporters ["clear-text"]
+[36m17:59:01 (43340) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in worker process 0 with pid 30236 
+[36m17:59:02 (30236) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/vitest-runner
+[36m17:59:02 (30236) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m17:59:02 (30236) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m17:59:03 (30236) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\.stryker-tmp-probe\sandbox-Cj0qeT
+[36m17:59:03 (30236) DEBUG VitestTestRunner[39m vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": true,
+  "environment": "jsdom",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "unstubGlobals": false,
+  "unstubEnvs": false,
+  "include": [
+    "src/**/*.test.{ts,tsx}",
+    "tests/acceptance/**/*.test.{ts,tsx}"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/.git/**"
+  ],
+  "teardownTimeout": 10000,
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**",
+    "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT/src/test-setup.ts"
+  ],
+  "update": false,
+  "reporters": [
+    [
+      "agent",
+      {}
+    ]
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true,
+    "allowWrite": true,
+    "allowExec": true,
+    "token": "cf81d453-9311-4e6e-85ea-a6f482b4cdb4"
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "src/**/*.test.{ts,tsx}",
+      "src/**/*.d.ts",
+      "src/main.tsx",
+      "src/test-setup.ts",
+      "src/test-setup.ts",
+      "src/**/*.test.{ts,tsx}",
+      "tests/acceptance/**/*.test.{ts,tsx}",
+      "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT/vite.config.ts",
+      "vitest.config.ts",
+      "vitest.config.mts",
+      "vitest.config.cts",
+      "vitest.config.js",
+      "vitest.config.mjs",
+      "vitest.config.cjs",
+      "vite.config.ts",
+      "vite.config.mts",
+      "vite.config.cts",
+      "vite.config.js",
+      "vite.config.mjs",
+      "vite.config.cjs",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/node_modules/**"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text-summary",
+        {}
+      ],
+      [
+        "json-summary",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ]
+    ],
+    "allowExternal": false,
+    "excludeAfterRemap": false,
+    "processingConcurrency": 16,
+    "ignoreClassMethods": [],
+    "skipFull": false,
+    "watermarks": {
+      "statements": [
+        50,
+        80
+      ],
+      "functions": [
+        50,
+        80
+      ],
+      "branches": [
+        50,
+        80
+      ],
+      "lines": [
+        50,
+        80
+      ]
+    },
+    "include": [
+      "src/**/*.{ts,tsx}"
+    ]
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/.git/**"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "detectAsyncLeaks": false,
+  "setupFiles": [
+    "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.stryker-tmp-probe\\sandbox-Cj0qeT\\stryker-setup-0.js",
+    "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT/src/test-setup.ts"
+  ],
+  "deps": {
+    "moduleDirectories": [
+      "/node_modules/"
+    ],
+    "optimizer": {
+      "ssr": {
+        "enabled": false
+      },
+      "client": {
+        "enabled": false
+      }
+    },
+    "web": {
+      "transformAssets": true,
+      "transformCss": true,
+      "transformGlobPattern": []
+    }
+  },
+  "server": {
+    "deps": {}
+  },
+  "config": "C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\frontend\\.stryker-tmp-probe\\sandbox-Cj0qeT\\vite.config.ts",
+  "pool": "threads",
+  "maxWorkers": 1,
+  "bail": 1,
+  "defines": {},
+  "viteDefine": {},
+  "root": "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT",
+  "mode": "test",
+  "project": [],
+  "provide": {},
+  "tags": [],
+  "name": "",
+  "inspector": {
+    "enabled": false,
+    "waitForDebugger": false
+  },
+  "clearScreen": true,
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "isolate": true,
+    "fileParallelism": true,
+    "ui": true,
+    "commands": {},
+    "detailsPanelPosition": "right",
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "locators": {
+      "testIdAttribute": "data-testid",
+      "exact": false
+    },
+    "screenshotFailures": false,
+    "api": {
+      "port": 63315,
+      "allowWrite": true,
+      "allowExec": true
+    },
+    "trace": {
+      "mode": "off"
+    }
+  },
+  "expect": {},
+  "globalSetup": [],
+  "attachmentsDir": "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT/.vitest-attachments",
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "snapshotSerializers": [],
+  "execArgv": [],
+  "cache": {
+    "dir": "C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-1-search/02_output/frontend/.stryker-tmp-probe/sandbox-Cj0qeT/node_modules/.vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "sequence": {
+    "groupOrder": 0,
+    "hooks": "stack"
+  },
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "experimental": {
+    "importDurations": {
+      "print": false,
+      "failOnDanger": false,
+      "limit": 0,
+      "thresholds": {
+        "warn": 100,
+        "danger": 500
+      }
+    }
+  }
+}
+[32m17:59:03 (43340) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "all" coverage analysis). This may take a while.
+[36m17:59:03 (43340) DEBUG DryRunExecutor[39m Using timeout of 300000 ms.
+[36m17:59:03 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (300000 ms) for a test run
+[32m17:59:22 (43340) INFO DryRunExecutor[39m Initial test run succeeded. Ran 19 tests in 18 seconds (net 4113.9716000000035 ms, overhead 14229.028399999996 ms).
+[36m17:59:22 (43340) DEBUG ChildProcessProxy[39m Disposing of worker process 39492
+[36m17:59:22 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (19522.387899999994 ms) for a test run
+[36m17:59:22 (43340) DEBUG ChildProcessProxy[39m Kill 39492
+[36m17:59:25 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (19522.387899999994 ms) for a test run
+[36m17:59:28 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (19522.387899999994 ms) for a test run
+[36m17:59:31 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (19522.387899999994 ms) for a test run
+[36m17:59:34 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (19522.387899999994 ms) for a test run
+[36m17:59:37 (43340) DEBUG TimeoutDecorator[39m Starting timeout timer (22333.593549999998 ms) for a test run
+
+All tests
+  src/registration/RegistrationPage.test.tsx
+    ✘ RegistrationPage says so when the form configuration cannot be loaded (covered 0)
+    ✘ RegistrationPage shows a loading text first (covered 0)
+    ✓ RegistrationPage sends the widget token, trimmed values and nulls for the other type (killed 1)
+    ~ RegistrationPage resets the widget and shows unplaced errors as a general message (covered 1)
+    ~ RegistrationPage clears the general error when the backend rejects only known fields (covered 1)
+    ✓ RegistrationPage drops options the new type cannot select and lets options be unchecked (killed 3)
+    ✘ RegistrationPage clears a field's error when the field changes (covered 0)
+  tests/acceptance
+    us001-external-form.test.tsx
+      ✘ US-001 external participant form AC-001-08 shows exactly the external fields, the grouped active options and unchecked consents (covered 0)
+    us002-student-form.test.tsx
+      ✘ US-002 student form AC-002-07 shows exactly the student fields and only the options available to students (covered 0)
+      ✘ US-002 student form AC-002-07 switching from external to student replaces the fields (covered 0)
+    us004-confirmation.test.tsx
+      ~ US-004 registration confirmation AC-004-01 shows the confirmation with the name and the selected options once the backend accepts (covered 1)
+      ~ US-004 registration confirmation AC-004-02 shows the backend's field errors next to the fields and keeps the entered values (covered 1)
+      ~ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email and sends nothing (covered 1)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (covered 1)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend cannot be reached (covered 1)
+    us009-organizer-page.test.tsx
+      ✘ US-009 organizer search page AC-009-12 wrong credentials show an error and no data; valid credentials show the list and controls (covered 0)
+      ✘ US-009 organizer search page AC-009-12 the search field and filters are sent as query parameters (covered 0)
+      ✘ US-009 organizer search page AC-009-12 page navigation requests the next page (covered 0)
+      ✘ US-009 organizer search page AC-009-13 markup in registration data is shown as literal text and not executed (covered 0)
+
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m [Killed] MethodExpression
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m src/registration/RegistrationPage.tsx:105:32
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m -       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m +       return list.includes(id) ? list : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m Killed by: RegistrationPage drops options the new type cannot select and lets options be unchecked
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m 
+[Survived] ArrowFunction
+src/registration/RegistrationPage.tsx:105:44
+-       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
++       return list.includes(id) ? list.filter(() => undefined) : [...list, id];
+Tests ran:
+    RegistrationPage drops options the new type cannot select and lets options be unchecked
+
+
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m [Killed] ConditionalExpression
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m src/registration/RegistrationPage.tsx:105:51
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m -       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m +       return list.includes(id) ? list.filter((x) => true) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m Killed by: RegistrationPage drops options the new type cannot select and lets options be unchecked
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m 
+[Survived] ConditionalExpression
+src/registration/RegistrationPage.tsx:105:51
+-       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
++       return list.includes(id) ? list.filter((x) => false) : [...list, id];
+Tests ran:
+    RegistrationPage drops options the new type cannot select and lets options be unchecked
+
+
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m [Killed] EqualityOperator
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m src/registration/RegistrationPage.tsx:105:51
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m -       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m +       return list.includes(id) ? list.filter((x) => x === id) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m Killed by: RegistrationPage drops options the new type cannot select and lets options be unchecked
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m 
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m [Killed] ArrayDeclaration
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m src/registration/RegistrationPage.tsx:105:63
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m -       return list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m +       return list.includes(id) ? list.filter((x) => x !== id) : [];
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m Killed by: RegistrationPage sends the widget token, trimmed values and nulls for the other type
+[36m17:59:41 (43340) DEBUG ClearTextReporter[39m 
+Ran 1.00 tests per mutant on average.
+----------------------|------------------|----------|-----------|------------|----------|----------|
+                      | % Mutation score |          |           |            |          |          |
+File                  |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files             |  66.67 |   66.67 |        4 |         0 |          2 |        0 |        0 |
+ RegistrationPage.tsx |  66.67 |   66.67 |        4 |         0 |          2 |        0 |        0 |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[36m17:59:41 (43340) DEBUG MutationTestReportHelper[39m No breaking threshold configured. Won't fail the build no matter how low your mutation score is. Set `thresholds.break` to change this behavior.
+[32m17:59:41 (43340) INFO MutationTestExecutor[39m Done in 45 seconds.
+[36m17:59:41 (43340) DEBUG ChildProcessProxy[39m Disposing of worker process 30236
+[36m17:59:41 (43340) DEBUG ChildProcessProxy[39m Kill 30236
+[36m17:59:42 (43340) DEBUG TemporaryDirectory[39m Deleting stryker temp directory C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\frontend\.stryker-tmp-probe\sandbox-Cj0qeT

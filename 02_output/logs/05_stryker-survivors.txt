@@ -1,0 +1,106 @@
+organizer/OrganizerPage.tsx 36 N ArrayDeclaration | ["Stryker was here"] | .catch(() => setOptions([]));
+organizer/OrganizerPage.tsx 50 N ConditionalExpression | true | } else if (outcome.kind === "rejected") {
+organizer/OrganizerPage.tsx 50 N ConditionalExpression | false | } else if (outcome.kind === "rejected") {
+organizer/OrganizerPage.tsx 50 N EqualityOperator | outcome.kind !== "rejected" | } else if (outcome.kind === "rejected") {
+organizer/OrganizerPage.tsx 50 N StringLiteral | "" | } else if (outcome.kind === "rejected") {
+organizer/OrganizerPage.tsx 50 N BlockStatement | {} | } else if (outcome.kind === "rejected") {
+organizer/OrganizerPage.tsx 51 N ConditionalExpression | true | setError(outcome.errors.map((e) => e.message).join(" ") || LOAD_ERROR)
+organizer/OrganizerPage.tsx 51 N ConditionalExpression | false | setError(outcome.errors.map((e) => e.message).join(" ") || LOAD_ERROR)
+organizer/OrganizerPage.tsx 51 N LogicalOperator | outcome.errors.map(e => e.message).join(" ") && LO | setError(outcome.errors.map((e) => e.message).join(" ") || LOAD_ERROR)
+organizer/OrganizerPage.tsx 51 N ArrowFunction | () => undefined | setError(outcome.errors.map((e) => e.message).join(" ") || LOAD_ERROR)
+organizer/OrganizerPage.tsx 51 N StringLiteral | "" | setError(outcome.errors.map((e) => e.message).join(" ") || LOAD_ERROR)
+organizer/OrganizerPage.tsx 52 N BlockStatement | {} | } else {
+organizer/OrganizerPage.tsx 53 N CallExpression | ; | setError(LOAD_ERROR);
+organizer/OrganizerPage.tsx 168 N StringLiteral | "Stryker was here!" | <td>{item.organization ?? item.studyInstitution ?? ""}</td>
+organizer/OrganizerPage.tsx 177 N ArithmeticOperator | query.page + 1 | <button type="button" disabled={query.page <= 1} onClick={() => goTo(q
+organizer/OrganizerPage.tsx 24 S ArrayDeclaration | ["Stryker was here"] | const [options, setOptions] = useState<ConferenceOption[]>([]);
+organizer/OrganizerPage.tsx 25 S StringLiteral | "Stryker was here!" | const [username, setUsername] = useState("");
+organizer/OrganizerPage.tsx 26 S StringLiteral | "Stryker was here!" | const [password, setPassword] = useState("");
+organizer/OrganizerPage.tsx 36 S ArrowFunction | () => undefined | .catch(() => setOptions([]));
+organizer/OrganizerPage.tsx 37 S ArrayDeclaration | ["Stryker was here"] | }, []);
+organizer/OrganizerPage.tsx 46 S ConditionalExpression | true | } else if (outcome.kind === "unauthorized") {
+organizer/OrganizerPage.tsx 47 S CallExpression | ; | setCredentials(null);
+organizer/OrganizerPage.tsx 48 S CallExpression | ; | setResult(null);
+organizer/OrganizerPage.tsx 58 S CallExpression | ; | event.preventDefault();
+organizer/OrganizerPage.tsx 63 S CallExpression | ; | event.preventDefault();
+organizer/OrganizerPage.tsx 64 S ConditionalExpression | true | if (credentials) void load(credentials, { ...draft, page: 1 });
+organizer/OrganizerPage.tsx 68 S ConditionalExpression | true | if (credentials) void load(credentials, { ...query, page });
+organizer/OrganizerPage.tsx 71 S ArrowFunction | () => undefined | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S LogicalOperator | options.find(o => o.id === id)?.name && id | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S OptionalChaining | options.find(o => o.id === id).name | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S ArrowFunction | () => undefined | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S ConditionalExpression | true | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S ConditionalExpression | false | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 71 S EqualityOperator | o.id !== id | const optionName = (id: string) => options.find((o) => o.id === id)?.n
+organizer/OrganizerPage.tsx 73 S LogicalOperator | !credentials && !result | if (!credentials || !result) {
+organizer/OrganizerPage.tsx 142 S ConditionalExpression | true | {error && <p role="alert">{error}</p>}
+organizer/OrganizerPage.tsx 142 S ConditionalExpression | false | {error && <p role="alert">{error}</p>}
+organizer/OrganizerPage.tsx 142 S LogicalOperator | error || <p role="alert">{error}</p> | {error && <p role="alert">{error}</p>}
+organizer/OrganizerPage.tsx 145 S ConditionalExpression | false | {result.items.length === 0 ? (
+organizer/OrganizerPage.tsx 164 S LogicalOperator | TYPE_LABELS[item.type] && item.type | <td>{TYPE_LABELS[item.type] ?? item.type}</td>
+organizer/OrganizerPage.tsx 168 S LogicalOperator | (item.organization ?? item.studyInstitution) && "" | <td>{item.organization ?? item.studyInstitution ?? ""}</td>
+organizer/OrganizerPage.tsx 168 S LogicalOperator | item.organization && item.studyInstitution | <td>{item.organization ?? item.studyInstitution ?? ""}</td>
+organizer/OrganizerPage.tsx 169 S StringLiteral | "" | <td>{item.options.map(optionName).join(", ")}</td>
+organizer/OrganizerPage.tsx 177 S ArrowFunction | () => undefined | <button type="button" disabled={query.page <= 1} onClick={() => goTo(q
+organizer/OrganizerPage.tsx 13 S StringLiteral | "" | export const LOAD_ERROR = "The registrations could not be loaded. Plea
+organizer/OrganizerPage.tsx 15 S ObjectLiteral | {} | const TYPE_LABELS: Record<string, string> = {
+organizer/OrganizerPage.tsx 16 S StringLiteral | "" | EXTERNAL: "External participant",
+organizer/OrganizerPage.tsx 17 S StringLiteral | "" | STUDENT: "Student",
+organizer/OrganizerPage.tsx 20 S StringLiteral | "Stryker was here!" | const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "", pag
+organizer/OrganizerPage.tsx 20 S StringLiteral | "Stryker was here!" | const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "", pag
+organizer/OrganizerPage.tsx 20 S StringLiteral | "Stryker was here!" | const EMPTY_QUERY: SearchQuery = { text: "", type: "", option: "", pag
+registration/RegistrationPage.tsx 118 N StringLiteral | "Stryker was here!" | FIELDS[type].some((f) => f.name === name) ? (values[name] ?? "").trim(
+registration/RegistrationPage.tsx 123 N StringLiteral | "Stryker was here!" | firstName: value("firstName") ?? "",
+registration/RegistrationPage.tsx 124 N StringLiteral | "Stryker was here!" | lastName: value("lastName") ?? "",
+registration/RegistrationPage.tsx 125 N StringLiteral | "Stryker was here!" | email: value("email") ?? "",
+registration/RegistrationPage.tsx 41 S ArrayDeclaration | ["Stryker was here"] | const [options, setOptions] = useState<string[]>([]);
+registration/RegistrationPage.tsx 45 S StringLiteral | "Stryker was here!" | const [captchaToken, setCaptchaToken] = useState("");
+registration/RegistrationPage.tsx 42 S ArrayDeclaration | ["Stryker was here"] | const [consents, setConsents] = useState<string[]>([]);
+registration/RegistrationPage.tsx 54 S ArrayDeclaration | ["Stryker was here"] | }, []);
+registration/RegistrationPage.tsx 56 S ArrayDeclaration | ["Stryker was here"] | const onToken = useCallback((token: string) => setCaptchaToken(token),
+registration/RegistrationPage.tsx 82 S ConditionalExpression | true | const offered = (option: ConferenceOption) => type !== null && option.
+registration/RegistrationPage.tsx 90 S OptionalChaining | config.options | config?.options.some((o) => o.id === id && o.availableTo.includes(next
+registration/RegistrationPage.tsx 87 S CallExpression | ; | setErrors({});
+registration/RegistrationPage.tsx 105 S ArrowFunction | () => undefined | return list.includes(id) ? list.filter((x) => x !== id) : [...list, id
+registration/RegistrationPage.tsx 105 S ConditionalExpression | false | return list.includes(id) ? list.filter((x) => x !== id) : [...list, id
+registration/RegistrationPage.tsx 109 S CallExpression | ; | event.preventDefault();
+registration/RegistrationPage.tsx 110 S LogicalOperator | !config && !type | if (!config || !type) return;
+registration/RegistrationPage.tsx 111 S CallExpression | ; | setGeneralError(null);
+registration/RegistrationPage.tsx 120 S BooleanLiteral | false | setSubmitting(true);
+registration/RegistrationPage.tsx 127 S StringLiteral | "" | studyInstitution: value("studyInstitution"),
+registration/RegistrationPage.tsx 128 S StringLiteral | "" | studyProgramme: value("studyProgramme"),
+registration/RegistrationPage.tsx 129 S StringLiteral | "" | studentId: value("studentId"),
+registration/RegistrationPage.tsx 142 S ConditionalExpression | true | if (!testMode) setCaptchaResets((n) => n + 1);
+registration/RegistrationPage.tsx 146 S StringLiteral | "" | "options",
+registration/RegistrationPage.tsx 157 S ConditionalExpression | true | setGeneralError(other.length > 0 ? other.join(" ") : null);
+registration/RegistrationPage.tsx 157 S StringLiteral | "" | setGeneralError(other.length > 0 ? other.join(" ") : null);
+registration/RegistrationPage.tsx 157 S EqualityOperator | other.length >= 0 | setGeneralError(other.length > 0 ? other.join(" ") : null);
+registration/RegistrationPage.tsx 171 S ConditionalExpression | false | checked={type === "EXTERNAL"}
+registration/RegistrationPage.tsx 171 S StringLiteral | "" | checked={type === "EXTERNAL"}
+registration/RegistrationPage.tsx 180 S ConditionalExpression | false | checked={type === "STUDENT"}
+registration/RegistrationPage.tsx 180 S StringLiteral | "" | checked={type === "STUDENT"}
+registration/RegistrationPage.tsx 196 S StringLiteral | "Stryker was here!" | value={values[field.name] ?? ""}
+registration/RegistrationPage.tsx 216 S StringLiteral | "" | aria-describedby={errors.options ? "options-error" : undefined}
+registration/RegistrationPage.tsx 234 S StringLiteral | "" | aria-describedby={errors.consents ? "consents-error" : undefined}
+registration/RegistrationPage.tsx 207 S ConditionalExpression | false | if (inGroup.length === 0) return null;
+registration/RegistrationPage.tsx 238 S StringLiteral | "Stryker was here!" | {consent.mandatory ? " (required)" : ""}
+registration/RegistrationPage.tsx 238 S StringLiteral | "" | {consent.mandatory ? " (required)" : ""}
+api.ts 87 S ObjectLiteral | {} | const response = await fetch("/api/form-config", { headers: { Accept: 
+api.ts 87 S ObjectLiteral | {} | const response = await fetch("/api/form-config", { headers: { Accept: 
+api.ts 87 S StringLiteral | "" | const response = await fetch("/api/form-config", { headers: { Accept: 
+App.tsx 6 S Regex | /\/$/ | const organizer = window.location.pathname.replace(/\/+$/, "") === "/o
+App.tsx 6 S StringLiteral | "Stryker was here!" | const organizer = window.location.pathname.replace(/\/+$/, "") === "/o
+registration/fields.ts 21 S StringLiteral | "" | { name: "firstName", label: "First name", inputType: "text" },
+registration/fields.ts 22 S StringLiteral | "" | { name: "lastName", label: "Last name", inputType: "text" },
+registration/fields.ts 33 S StringLiteral | "" | { name: "studyInstitution", label: "Study institution", inputType: "te
+registration/fields.ts 34 S StringLiteral | "" | { name: "studyProgramme", label: "Study programme", inputType: "text" 
+registration/fields.ts 45 S Regex | /^[^@\s]+@[^@\s]+\.[^@\s]+/ | const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+registration/Recaptcha.tsx 18 S LogicalOperator | cancelled && !container.current | if (cancelled || !container.current || !window.grecaptcha || widget.cu
+registration/Recaptcha.tsx 18 S ConditionalExpression | false | if (cancelled || !container.current || !window.grecaptcha || widget.cu
+registration/Recaptcha.tsx 27 S BlockStatement | {} | return () => {
+registration/Recaptcha.tsx 28 S BooleanLiteral | false | cancelled = true;
+registration/Recaptcha.tsx 30 S ArrayDeclaration | [] | }, [siteKey, onToken]);
+registration/Recaptcha.tsx 33 S LogicalOperator | resetCount > 0 || widget.current !== null | if (resetCount > 0 && widget.current !== null && window.grecaptcha) {
+registration/Recaptcha.tsx 33 S ConditionalExpression | true | if (resetCount > 0 && widget.current !== null && window.grecaptcha) {
+registration/Recaptcha.tsx 33 S EqualityOperator | resetCount >= 0 | if (resetCount > 0 && widget.current !== null && window.grecaptcha) {
+registration/Recaptcha.tsx 33 S ConditionalExpression | true | if (resetCount > 0 && widget.current !== null && window.grecaptcha) {
