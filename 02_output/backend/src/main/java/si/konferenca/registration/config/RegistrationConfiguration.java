@@ -19,6 +19,7 @@ import si.konferenca.registration.adapter.captcha.TestModeCaptchaVerifier;
 import si.konferenca.registration.adapter.jsoncopy.FileJsonCopyStore;
 import si.konferenca.registration.adapter.mail.MailNotifier;
 import si.konferenca.registration.adapter.persistence.JpaRegistrationStore;
+import si.konferenca.registration.adapter.persistence.RegistrationJpaRepository;
 import si.konferenca.registration.adapter.persistence.SpringTransactionRunner;
 import si.konferenca.registration.application.CaptchaVerifier;
 import si.konferenca.registration.application.JsonCopyStore;
@@ -51,8 +52,9 @@ public class RegistrationConfiguration {
   }
 
   @Bean
-  RegistrationStore registrationStore(EntityManager entityManager) {
-    return new JpaRegistrationStore(entityManager);
+  JpaRegistrationStore registrationStore(
+      EntityManager entityManager, RegistrationJpaRepository repository) {
+    return new JpaRegistrationStore(entityManager, repository);
   }
 
   @Bean
