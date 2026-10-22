@@ -66,6 +66,97 @@ Harness fixes before the freeze: `RunningApp` first passed settings as default p
 - Helpers checked: `timestamptz` read with `getObject(…, OffsetDateTime.class)`; attachment bytes compared with `byte[]` equality (`isEqualTo`), not `doesNotContain`; Mailpit summaries checked for To/Cc/Bcc; the xlsx reader handles shared and inline strings; JSON fields read with Jackson 3 `asString()`.
 - Formatting and lint: backend tests formatted with Spotless (google-java-format); frontend tests pass Prettier, ESLint and `tsc --noEmit`.
 
+## Phase 5: first full run
+
+2026-10-22, before any unit test or fix, on the phase 4 code (backend `0245a8d`, frontend `654f085`, stack rebuilt): 129 tests, 129 passed, 0 failed (backend acceptance 105, frontend acceptance 18, e2e 6). Nothing to classify.
+
+## Phase 5: unit and integration tests
+
+| Component | Area | Test classes / files |
+|---|---|---|
+| backend | domain rules | `RegistrationValidatorTest`, `EmailAddressTest`, `ConferenceConfigurationTest`, `SearchCriteriaTest`, `RegistrationModelTest` |
+| backend | application | `RegistrationServiceTest` (storage order, rollback, copy deletion, email failures), `QueryServicesTest` |
+| backend | adapters | `ConfigTest`, `RecaptchaVerifierTest` (DoD-P05: mocked siteverify endpoint, accepted and rejected token), `SmtpNotifierTest`, `MailTextsTest`, `FileJsonCopyStoreTest`, `PoiWorkbookWriterTest`, `LikeEscapeTest` |
+| backend | security and web | `FiltersTest` (rate limit, body size, HTTPS-only, entry point), `ApiExceptionHandlerTest` |
+| backend | architecture | `ArchitectureTest` (the six rules of `02_specification.md` §2) |
+| frontend | logic | `validation.test.ts`, `api.test.ts`, `recaptcha.test.ts` |
+| frontend | components | `Captcha.test.tsx`, `RegistrationPage.test.tsx`, `OrganizerPage.test.tsx` |
+
+## Coverage (JaCoCo 0.8.12 / Vitest coverage-v8 4.1.11)
+
+Scope: backend `si.konferenca.registration.**` without `RegistrationApplication`; frontend `src/**` without `main.tsx`, `test-setup.ts`, tests and declarations. Each figure from its own clean run.
+
+| Component | Level | Tests | Line | Branch |
+|---|---|---|---|---|
+| backend | unit (incl. architecture) | 183 | 75.72 % (633/836) | 95.83 % (253/264) |
+| backend | nonUnit (acceptance) | 105 | 86.96 % (727/836) | 72.35 % (191/264) |
+| backend | all | 288 | **98.09 %** (820/836) | 99.24 % (262/264) |
+| frontend | unit | 75 | 99.54 % (218/219) | 96.32 % (131/136) |
+| frontend | nonUnit (acceptance) | 18 | 78.08 % (171/219) | 70.58 % (96/136) |
+| frontend | all | 93 | **100 %** (219/219) | 98.52 % (134/136) |
+
+The e2e tests exercise both components inside containers; their coverage is not instrumented, so nonUnit is the acceptance level only. Line gate (95 %) met for both components after the unit areas above.
+
+## Mutation testing
+
+### Backend (PIT 1.30.0, pitest-junit5-plugin 1.2.3, default mutators)
+
+One full run, 2026-10-22 20:25–20:51 UTC, scope `si.konferenca.registration.*` without `RegistrationApplication`, tests: all 288 JUnit tests (unit, architecture, acceptance; D-15). Log `logs/05_pit-full.log`, mutants `logs/05_pit-full-mutations.csv`.
+
+| Generated | Killed | Survived | No coverage | Equivalent | Raw score | Adjusted score | Covered score |
+|---|---|---|---|---|---|---|---|
+| 365 | 340 | 18 | 7 | 0 | **93.15 %** | **93.15 %** | 94.97 % (340/358) |
+
+The gate (≥ 90 %) is met by the first full run: no survivor round, no further backend tests (stop rule).
+
+Survivors in security, validation and persistence code, classified individually (`severity-scale.md`):
+
+| Class.method:line | Mutation | Why it survives | Severity |
+|---|---|---|---|
+| `RegistrationValidator.text:89`, `email:98` | return "" instead of null for an invalid field | the value is never used once an error was recorded (the result carries no data when errors exist) | Low |
+| `StartupChecks.verify:18` | check call removed | the checks themselves are tested through `StartupChecks.check`; only the Spring hook is unasserted | Low |
+| `RateLimitFilter.doFilterInternal:46-47` (5) | purge threshold and purge predicate | purging stale windows only bounds memory; the window arithmetic decides the limit and is killed | Low |
+| `RequestSizeFilter$LimitedStream.read:79, 88` | `>` vs `>=` on the running count | boundary of a body without declared length; such bodies are rejected either way one byte later | Low |
+| `SecurityFilters.corsConfigurationSource:51-59` (2 survived, 7 no coverage) | CORS origin branch | CORS is only for local development and off by default; production refuses start with it | Low |
+| `SecurityFilters.register:42`, `JsonAuthenticationEntryPoint.writeJson:35` | `setOrder` / `setCharacterEncoding` removed | order and charset match the container defaults in these tests | Low |
+| `JpaRegistrationStore.save:24` | `flush()` removed | the commit flushes anyway; the explicit flush only surfaces errors before the JSON copy is written | Low |
+| `FileJsonCopyStore.write:46` | cleanup of the temporary file after a failed write removed | in the tested failure the temporary file is never created (the directory is a file), so nothing is left either way | Low |
+| `SmtpNotifier.notifyOrganizers:66` | `setFrom` removed | the sender is taken from the mail session default in the test; the From address is asserted only for the participant email | Low |
+| `ApiExceptionHandler.causeName:71` | log text "" | log content only | Low |
+
+### Frontend (Stryker 10.0.0 with the Vitest runner 4.1.11)
+
+Scope `src/**` without `main.tsx`, `test-setup.ts`, tests and declarations; tests: all Vitest tests (unit and acceptance; D-15). The tool check (`validation.ts` alone, 73.5 % at 89 % line coverage) showed that mutants are activated.
+
+| Run | Tests | Files mutated | Mutants | Killed | Survived | Score |
+|---|---|---|---|---|---|---|
+| full, 20:51–21:00 UTC | 93 | all 7 | 535 | 459 | 76 | 85.79 % |
+| survivor round 1, 21:02–21:10 UTC | 109 | `RegistrationPage.tsx`, `OrganizerPage.tsx`, `Captcha.tsx`, `App.tsx`, `api.ts` | 452 | 419 | 33 | 92.70 % |
+
+Recomputed after round 1 (classes not re-run keep their full-run counts):
+
+| File | Killed / total | Source |
+|---|---|---|
+| `RegistrationPage.tsx` | 192 / 209 | round 1 |
+| `OrganizerPage.tsx` | 93 / 103 | round 1 |
+| `api.ts` | 93 / 95 | round 1 |
+| `Captcha.tsx` | 38 / 42 | round 1 |
+| `App.tsx` | 3 / 3 | round 1 |
+| `validation.ts` | 68 / 68 | full run |
+| `recaptcha.ts` | 15 / 15 | full run |
+| **component** | **502 / 535 = 93.83 %** raw = adjusted (no equivalents claimed) | |
+
+93.83 % is more than 1.0 point above 90 %: gate met after round 1, no confirming full run, no further frontend tests. Round 1 tests: `RegistrationPage.fields.test.tsx`, `OrganizerPage.state.test.tsx`, two cases in `Captcha.test.tsx`.
+
+The 33 survivors left are in UI state handling, not in validation (`validation.ts` 100 %), security or persistence code: initial values that later code ignores (`useState` defaults of unused lists, effect dependency arrays), `preventDefault` calls (jsdom does not navigate), the space text between a checkbox and its label (the accessible name is trimmed), catch blocks returning `undefined` instead of `null` (both falsy to the caller), and guards that the UI cannot reach (submit without a type). All Low.
+
+## Code size and duplication (cloc 1.98 in image `aldanial/cloc:2.10`, D-04)
+
+| Component | Production code lines | Test code lines | Duplication |
+|---|---|---|---|
+| backend | 2061 (Java 1931, YAML 69, JSON 32, SQL 29) | 3805 | PMD CPD (100 tokens): 0 |
+| frontend | 782 (TypeScript 719, CSS 63) | 2195 (unit, acceptance, e2e) | jscpd 5.4.0 on `src` without tests: 0 % |
+
 ## Equivalent mutants
 
-None yet (phase 5).
+None claimed in either component (adjusted score = raw score).

@@ -1,0 +1,230 @@
+[32m22:08:17 (48984) INFO ProjectReader[39m Found 1 of 60 file(s) to be mutated.
+[32m22:08:18 (48984) INFO Instrumenter[39m Instrumented 1 source file(s) with 68 mutant(s)
+[32m22:08:21 (48984) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m22:08:26 (48984) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m22:08:47 (48984) INFO DryRunExecutor[39m Initial test run succeeded. Ran 18 tests in 20 seconds (net 4799.488299999995 ms, overhead 15714.511700000005 ms).
+[33m22:08:47 (48984) WARN MutantTestPlanner[39m Detected 17 static mutants (25% of total) that are estimated to take 42% of the time running the tests!
+  You might want to enable "ignoreStatic" to ignore these static mutants for your next run. 
+  For more information about static mutants visit: https://stryker-mutator.io/docs/mutation-testing-elements/static-mutants
+  (disable "warnings.slow" to ignore this warning)
+
+All tests
+  us001-external-form.test.tsx
+    ✘ US-001 external participant form AC-001-08: choosing external participant shows exactly the external fields (covered 0)
+    ✘ US-001 external participant form AC-001-08: active options are grouped as workshops, events, meals and other activities (covered 0)
+    ✘ US-001 external participant form AC-001-08: every consent checkbox is unchecked (covered 0)
+  us002-student-form.test.tsx
+    ✘ US-002 student form AC-002-07: choosing student shows exactly the student fields (covered 0)
+    ✘ US-002 student form AC-002-07: only active options available to students are shown, grouped by category (covered 0)
+    ✘ US-002 student form AC-002-07: every consent checkbox is unchecked (covered 0)
+    ✘ US-002 student form AC-002-07: switching from external to student hides the external-only option (covered 0)
+  us004-confirmation.test.tsx
+    ✓ US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form (killed 31)
+    ~ US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted (covered 50)
+    ~ US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain (covered 50)
+    ✓ US-004 registration confirmation AC-004-03: an empty required field is reported and no request is sent (killed 7)
+    ✓ US-004 registration confirmation AC-004-03: an invalid email is reported and no request is sent (killed 12)
+    ~ US-004 registration confirmation AC-004-04: a backend failure shows a general message without technical details (covered 50)
+    ~ US-004 registration confirmation AC-004-04: an unreachable backend shows a general message and no confirmation (covered 50)
+  us009-organizer-page.test.tsx
+    ✘ US-009 organizer page AC-009-12: wrong credentials show an error and no registration data (covered 0)
+    ✘ US-009 organizer page AC-009-12: valid credentials show the list with search, filters and page navigation (covered 0)
+    ✘ US-009 organizer page AC-009-12: wrong then valid credentials show the list (covered 0)
+    ✘ US-009 organizer page AC-009-13: markup and script in registration data appear only as literal text (covered 0)
+
+[NoCoverage] BooleanLiteral
+src/validation.ts:32:81
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return true;
+
+[Survived] ConditionalExpression
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (false) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] LogicalOperator
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if ((at <= 0 || at !== value.lastIndexOf("@")) && FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] LogicalOperator
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (at <= 0 && at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (false || FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (false || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] EqualityOperator
+src/validation.ts:32:7
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (at < 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:32:18
+-     if (at <= 0 || at !== value.lastIndexOf("@") || FORBIDDEN.test(value)) return false;
++     if (at <= 0 || false || FORBIDDEN.test(value)) return false;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] MethodExpression
+src/validation.ts:33:18
+-     const domain = value.slice(at + 1);
++     const domain = value;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ArithmeticOperator
+src/validation.ts:33:30
+-     const domain = value.slice(at + 1);
++     const domain = value.slice(at - 1);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] EqualityOperator
+src/validation.ts:34:10
+-     return domain.indexOf(".") > 0 && !domain.endsWith(".") && !domain.includes("..");
++     return domain.indexOf(".") >= 0 && !domain.endsWith(".") && !domain.includes("..");
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] MethodExpression
+src/validation.ts:34:38
+-     return domain.indexOf(".") > 0 && !domain.endsWith(".") && !domain.includes("..");
++     return domain.indexOf(".") > 0 && !domain.startsWith(".") && !domain.includes("..");
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 3 more tests!
+
+
+[Survived] MethodExpression
+src/validation.ts:48:38
+-     if (!errors.email && !isValidEmail(values.email.trim())) errors.email = MESSAGES.email;
++     if (!errors.email && !isValidEmail(values.email)) errors.email = MESSAGES.email;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:49:7
+-     if (consents.some((c) => c.mandatory && !given.has(c.id))) errors.consents = MESSAGES.consent;
++     if (false) errors.consents = MESSAGES.consent;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] MethodExpression
+src/validation.ts:49:7
+-     if (consents.some((c) => c.mandatory && !given.has(c.id))) errors.consents = MESSAGES.consent;
++     if (consents.every(c => c.mandatory && !given.has(c.id))) errors.consents = MESSAGES.consent;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ArrowFunction
+src/validation.ts:49:21
+-     if (consents.some((c) => c.mandatory && !given.has(c.id))) errors.consents = MESSAGES.consent;
++     if (consents.some(() => undefined)) errors.consents = MESSAGES.consent;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:49:28
+-     if (consents.some((c) => c.mandatory && !given.has(c.id))) errors.consents = MESSAGES.consent;
++     if (consents.some((c) => false)) errors.consents = MESSAGES.consent;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 4 more tests!
+
+
+[Survived] StringLiteral
+src/validation.ts:7:12
+-     consent: "This consent is required.",
++     consent: "",
+Ran all tests for this mutant.
+
+Ran 3.65 tests per mutant on average.
+---------------|------------------|----------|-----------|------------|----------|----------|
+               | % Mutation score |          |           |            |          |          |
+File           |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+All files      |  73.53 |   74.63 |       50 |         0 |         17 |        1 |        0 |
+ validation.ts |  73.53 |   74.63 |       50 |         0 |         17 |        1 |        0 |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m22:09:57 (48984) INFO MutationTestExecutor[39m Done in 1 minute and 41 seconds.

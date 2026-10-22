@@ -1,0 +1,461 @@
+[32m23:02:45 (46876) INFO ProjectReader[39m Found 5 of 51 file(s) to be mutated.
+[32m23:02:46 (46876) INFO Instrumenter[39m Instrumented 5 source file(s) with 452 mutant(s)
+[32m23:02:46 (46876) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m23:02:49 (46876) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m23:03:07 (46876) INFO DryRunExecutor[39m Initial test run succeeded. Ran 77 tests in 17 seconds (net 4402.573899999987 ms, overhead 13417.426100000013 ms).
+
+All tests
+  src
+    api.test.ts
+      ✓ getFormConfig returns the configuration (killed 3)
+      ✓ getFormConfig rejects when the backend fails (killed 2)
+      ✓ submitRegistration posts JSON and returns the new id (killed 13)
+      ✓ submitRegistration returns the field errors of a 400 (killed 9)
+      ✓ submitRegistration treats 400 {"message":"x"} as a failure (killed 3)
+      ~ submitRegistration treats 400 not json as a failure (covered 22)
+      ✓ submitRegistration treats 201 not json as a failure (killed 2)
+      ✓ submitRegistration treats 500 {"errors":[]} as a failure (killed 1)
+      ~ submitRegistration treats 503  as a failure (covered 16)
+      ✓ submitRegistration treats a network error as a failure (killed 3)
+      ✓ organizer search encodes Basic credentials as UTF-8 (killed 6)
+      ✓ organizer search builds the query from the set filters only (killed 12)
+      ✓ organizer search sends the credentials and returns the result (killed 16)
+      ✓ organizer search reports wrong credentials (killed 3)
+      ✓ organizer search returns parameter errors (killed 4)
+      ✓ organizer search treats 400 {} as a failure (killed 2)
+      ✓ organizer search treats 403 {"message":"https"} as a failure (killed 3)
+      ~ organizer search treats 500  as a failure (covered 33)
+      ✓ organizer search treats 200 not json as a failure (killed 3)
+      ✓ organizer search treats a network error as a failure (killed 3)
+    Captcha.test.tsx
+      ✓ Captcha in test mode gives the test token without loading Google (killed 1)
+      ✓ Captcha renders the widget with the site key and passes its tokens on (killed 8)
+      ✓ Captcha resets the widget when the reset signal changes (killed 6)
+      ✓ Captcha does not reset before the widget exists or in test mode (killed 2)
+      ✓ Captcha gives no token when Google cannot be loaded (killed 2)
+      ✓ Captcha does not render after it was removed (killed 3)
+      ✓ Captcha renders only with the newest site key when it changes while loading (killed 4)
+      ✓ Captcha resets safely when the Google API is not on the window (killed 1)
+    OrganizerPage.state.test.tsx
+      ✓ OrganizerPage state starts with empty credentials, no alert and asks for the first page only (killed 13)
+      ✓ OrganizerPage state removes the login error after a successful sign-in (killed 2)
+      ✓ OrganizerPage state clears the search text on sign-out (killed 1)
+      ✓ OrganizerPage state offers no option filter values before the configuration arrives (killed 1)
+      ✓ OrganizerPage state routes paths below /organizer to the organizer page (killed 1)
+    OrganizerPage.test.tsx
+      ✓ OrganizerPage pages forward and back with the page buttons (killed 30)
+      ~ OrganizerPage an exact multiple of the page size has no extra page (covered 111)
+      ✓ OrganizerPage applies search text on submit and filters on change, from page one (killed 15)
+      ✓ OrganizerPage shows types, the organization or institution, options and raw invalid times (killed 12)
+      ✓ OrganizerPage signing out forgets the credentials and the list (killed 3)
+      ✓ OrganizerPage returns to the login when the credentials stop working (killed 6)
+      ✓ OrganizerPage shows a load failure without signing in and clears it on success (killed 7)
+      ✓ OrganizerPage works without options when the form configuration fails (killed 1)
+    RegistrationPage.fields.test.tsx
+      ✓ RegistrationPage fields starts with empty fields, no errors and the chosen radio checked (killed 20)
+      ✓ RegistrationPage fields uses an email input for the email and text inputs otherwise (killed 6)
+      ✓ RegistrationPage fields links an error to its field and removes the link once fixed (killed 9)
+      ✓ RegistrationPage fields sends and confirms trimmed values (killed 6)
+      ✓ RegistrationPage fields clears client errors when the type changes (killed 1)
+      ✓ RegistrationPage fields enables the button again after a failure and clears the failure on the next submit (killed 2)
+      ✓ RegistrationPage fields shows no form error when the backend reports field errors only (killed 4)
+      ✓ RegistrationPage fields hides a category without options for the type (killed 12)
+      ✓ RegistrationPage fields sends an empty token while the widget has given none (killed 2)
+    RegistrationPage.test.tsx
+      ✓ RegistrationPage shows a message when the form configuration cannot be loaded (killed 9)
+      ✓ RegistrationPage shows only the type choice before a type is chosen (killed 1)
+      ✓ RegistrationPage keeps common values and drops options the new type cannot select (killed 57)
+      ✓ RegistrationPage unchecking an option or consent removes it from the request (killed 9)
+      ✓ RegistrationPage requires the mandatory consent before sending (killed 3)
+      ✓ RegistrationPage shows backend errors without an input in the form error area (killed 19)
+      ✓ RegistrationPage clears earlier errors when the type changes and after a valid resubmission (killed 2)
+      ✓ RegistrationPage disables the button while sending and ignores a second submit (killed 3)
+      ✓ RegistrationPage sends the widget token when not in test mode (killed 4)
+  tests/acceptance
+    us001-external-form.test.tsx
+      ~ US-001 external participant form AC-001-08: choosing external participant shows exactly the external fields (covered 110)
+      ~ US-001 external participant form AC-001-08: active options are grouped as workshops, events, meals and other activities (covered 110)
+      ~ US-001 external participant form AC-001-08: every consent checkbox is unchecked (covered 110)
+    us002-student-form.test.tsx
+      ~ US-002 student form AC-002-07: choosing student shows exactly the student fields (covered 110)
+      ✓ US-002 student form AC-002-07: only active options available to students are shown, grouped by category (killed 6)
+      ~ US-002 student form AC-002-07: every consent checkbox is unchecked (covered 110)
+      ~ US-002 student form AC-002-07: switching from external to student hides the external-only option (covered 111)
+    us004-confirmation.test.tsx
+      ✓ US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form (killed 24)
+      ~ US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted (covered 178)
+      ✓ US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain (killed 7)
+      ~ US-004 registration confirmation AC-004-03: an empty required field is reported and no request is sent (covered 130)
+      ✓ US-004 registration confirmation AC-004-03: an invalid email is reported and no request is sent (killed 1)
+      ✓ US-004 registration confirmation AC-004-04: a backend failure shows a general message without technical details (killed 3)
+      ~ US-004 registration confirmation AC-004-04: an unreachable backend shows a general message and no confirmation (covered 169)
+    us009-organizer-page.test.tsx
+      ✓ US-009 organizer page AC-009-12: wrong credentials show an error and no registration data (killed 1)
+      ✓ US-009 organizer page AC-009-12: valid credentials show the list with search, filters and page navigation (killed 1)
+      ~ US-009 organizer page AC-009-12: wrong then valid credentials show the list (covered 121)
+      ~ US-009 organizer page AC-009-13: markup and script in registration data appear only as literal text (covered 114)
+
+[Survived] BlockStatement
+src/api.ts:30:11
+-     } catch {
+-       return null;
+-     }
++     } catch {}
+Tests ran:
+    submitRegistration treats 400 not json as a failure
+
+
+[Survived] BlockStatement
+src/api.ts:50:13
+-       } catch {
+-         return { kind: "failed" };
+-       }
++       } catch {}
+Tests ran:
+    submitRegistration treats 201 not json as a failure
+
+
+[Survived] ConditionalExpression
+src/Captcha.tsx:30:46
+-           if (!active || !container.current || widget.current !== null) return;
++           if (!active || !container.current || false) return;
+Tests ran:
+    RegistrationPage sends the widget token when not in test mode
+    RegistrationPage fields sends an empty token while the widget has given none
+    Captcha renders the widget with the site key and passes its tokens on
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+src/Captcha.tsx:44:9
+-       if (resetSignal === 0 || testMode || widget.current === null) return;
++       if (false || widget.current === null) return;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 35 more tests!
+
+
+[Survived] LogicalOperator
+src/Captcha.tsx:44:9
+-       if (resetSignal === 0 || testMode || widget.current === null) return;
++       if (resetSignal === 0 && testMode || widget.current === null) return;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 35 more tests!
+
+
+[Survived] ConditionalExpression
+src/Captcha.tsx:44:9
+-       if (resetSignal === 0 || testMode || widget.current === null) return;
++       if (false || testMode || widget.current === null) return;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 35 more tests!
+
+
+[Survived] ArrowFunction
+src/OrganizerPage.tsx:31:14
+-         .catch(() => setOptions([]));
++         .catch(() => undefined);
+Tests ran:
+    OrganizerPage pages forward and back with the page buttons
+    OrganizerPage an exact multiple of the page size has no extra page
+    OrganizerPage applies search text on submit and filters on change, from page one
+  and 14 more tests!
+
+
+[Survived] ArrayDeclaration
+src/OrganizerPage.tsx:32:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    OrganizerPage pages forward and back with the page buttons
+    OrganizerPage an exact multiple of the page size has no extra page
+    OrganizerPage applies search text on submit and filters on change, from page one
+  and 14 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:38:7
+-         setResult(null);
++         ;
+Tests ran:
+    OrganizerPage returns to the login when the credentials stop working
+    OrganizerPage state removes the login error after a successful sign-in
+    US-009 organizer page AC-009-12: wrong credentials show an error and no registration data
+  and 1 more test!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:46:5
+-       setLoginError(null);
++       ;
+Tests ran:
+    OrganizerPage pages forward and back with the page buttons
+    OrganizerPage an exact multiple of the page size has no extra page
+    OrganizerPage applies search text on submit and filters on change, from page one
+  and 12 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:54:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage pages forward and back with the page buttons
+    OrganizerPage an exact multiple of the page size has no extra page
+    OrganizerPage applies search text on submit and filters on change, from page one
+  and 13 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:59:9
+-       if (credentials) void load(credentials, { ...filters, page: 1, ...changes });
++       if (true) void load(credentials, { ...filters, page: 1, ...changes });
+Tests ran:
+    OrganizerPage applies search text on submit and filters on change, from page one
+    OrganizerPage state clears the search text on sign-out
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:63:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage applies search text on submit and filters on change, from page one
+    OrganizerPage state clears the search text on sign-out
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:69:5
+-       setResult(null);
++       ;
+Tests ran:
+    OrganizerPage signing out forgets the credentials and the list
+    OrganizerPage state clears the search text on sign-out
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:72:5
+-       setFilters(FIRST_PAGE);
++       ;
+Tests ran:
+    OrganizerPage signing out forgets the credentials and the list
+    OrganizerPage state clears the search text on sign-out
+
+
+[Survived] LogicalOperator
+src/OrganizerPage.tsx:107:8
+-         {credentials && result && (
++         {credentials || result && (
+Tests ran:
+    OrganizerPage pages forward and back with the page buttons
+    OrganizerPage an exact multiple of the page size has no extra page
+    OrganizerPage applies search text on submit and filters on change, from page one
+  and 14 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationPage.tsx:57:54
+-     const [selected, setSelected] = useState<string[]>([]);
++     const [selected, setSelected] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 29 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationPage.tsx:58:48
+-     const [given, setGiven] = useState<string[]>([]);
++     const [given, setGiven] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 29 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationPage.tsx:70:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 29 more tests!
+
+
+[Survived] LogicalOperator
+src/RegistrationPage.tsx:73:5
+-       config && type ? config.options.filter((o) => o.availableTo.includes(type)) : [];
++       config || type ? config.options.filter((o) => o.availableTo.includes(type)) : [];
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 29 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationPage.tsx:73:83
+-       config && type ? config.options.filter((o) => o.availableTo.includes(type)) : [];
++       config && type ? config.options.filter((o) => o.availableTo.includes(type)) : ["Stryker was here"];
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 29 more tests!
+
+
+[Survived] OptionalChaining
+src/RegistrationPage.tsx:81:9
+-           config?.options.some((o) => o.id === id && o.availableTo.includes(next)),
++           config.options.some((o) => o.id === id && o.availableTo.includes(next)),
+Tests ran:
+    RegistrationPage keeps common values and drops options the new type cannot select
+
+
+[Survived] CallExpression
+src/RegistrationPage.tsx:102:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 17 more tests!
+
+
+[Survived] ConditionalExpression
+src/RegistrationPage.tsx:103:9
+-       if (!config || !type || submitting) return;
++       if (false || submitting) return;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 17 more tests!
+
+
+[Survived] LogicalOperator
+src/RegistrationPage.tsx:103:9
+-       if (!config || !type || submitting) return;
++       if (!config && !type || submitting) return;
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 17 more tests!
+
+
+[Survived] MethodExpression
+src/RegistrationPage.tsx:116:14
+-         email: values.email.trim(),
++         email: values.email,
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 13 more tests!
+
+
+[Survived] ArrowFunction
+src/RegistrationPage.tsx:126:20
+-       setResetSignal((n) => n + 1);
++       setResetSignal(() => undefined);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 13 more tests!
+
+
+[Survived] ArithmeticOperator
+src/RegistrationPage.tsx:126:27
+-       setResetSignal((n) => n + 1);
++       setResetSignal((n) => n - 1);
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 13 more tests!
+
+
+[Survived] MethodExpression
+src/RegistrationPage.tsx:129:18
+-           name: `${values.firstName.trim()} ${values.lastName.trim()}`,
++           name: `${values.firstName} ${values.lastName.trim()}`,
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    RegistrationPage keeps common values and drops options the new type cannot select
+  and 5 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationPage.tsx:174:18
+-                 />{" "}
++                 />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 28 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationPage.tsx:183:18
+-                 />{" "}
++                 />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 28 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationPage.tsx:219:30
+-                             />{" "}
++                             />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 27 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationPage.tsx:236:24
+-                       />{" "}
++                       />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01: accepted registration shows a confirmation with name and options instead of the form
+    US-004 registration confirmation AC-004-01: no confirmation is shown before the backend accepted
+    US-004 registration confirmation AC-004-02: backend field errors are shown next to their fields and the values remain
+  and 27 more tests!
+
+
+Ran 5.12 tests per mutant on average.
+----------------------|------------------|----------|-----------|------------|----------|----------|
+                      | % Mutation score |          |           |            |          |          |
+File                  |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files             |  92.70 |   92.70 |      419 |         0 |         33 |        0 |        0 |
+ api.ts               |  97.89 |   97.89 |       93 |         0 |          2 |        0 |        0 |
+ App.tsx              | 100.00 |  100.00 |        3 |         0 |          0 |        0 |        0 |
+ Captcha.tsx          |  90.48 |   90.48 |       38 |         0 |          4 |        0 |        0 |
+ OrganizerPage.tsx    |  90.29 |   90.29 |       93 |         0 |         10 |        0 |        0 |
+ RegistrationPage.tsx |  91.87 |   91.87 |      192 |         0 |         17 |        0 |        0 |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m23:10:06 (46876) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2-search/02_output/frontend/reports/mutation/mutation.json
+[32m23:10:06 (46876) INFO MutationTestExecutor[39m Done in 7 minutes and 21 seconds.

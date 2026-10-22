@@ -1,0 +1,25 @@
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2-search/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  10 passed (10)
+      Tests  93 passed (93)
+   Start at  22:29:24
+   Duration  11.99s (transform 4.79s, setup 9.80s, import 10.06s, tests 13.20s, environment 46.34s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |    99.6 |    98.52 |     100 |     100 |                   
+ OrganizerPage.tsx |     100 |    95.83 |     100 |     100 | 59                
+ ...rationPage.tsx |   98.82 |       98 |     100 |     100 | 209               
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.6% ( 249/250 )
+Branches     : 98.52% ( 134/136 )
+Functions    : 100% ( 73/73 )
+Lines        : 100% ( 219/219 )
+================================================================================

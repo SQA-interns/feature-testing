@@ -127,3 +127,12 @@
 - Options: 1. Exclude only these two patterns in `backend/spotbugs-exclude.xml` (proposed default; every other pattern stays enabled). 2. Wrap every injected bean and record component in defensive copies.
 - Human response: none
 - Resolution: option 1
+
+## D-15: Mutation runs use the JUnit and Vitest suites, not the Playwright e2e tests
+- Timestamp: 2026-10-22T20:30:32Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: `measurement-scope.md` asks for the component's full automated suite in mutation runs, or a decision with the tests actually run. The six e2e tests run in a browser against the Docker stack built from the source (`docker compose up --build`), several minutes per build; PIT and Stryker mutate classes in memory and cannot rebuild the images per mutant.
+- Options: 1. Backend PIT runs every JUnit test (unit, architecture, acceptance with Testcontainers: 288); frontend Stryker runs every Vitest test (unit and acceptance: 93); the e2e tests are left out of both, they still run in phases 4 to 6 (proposed default). 2. Leave out the backend acceptance tests as well, to make PIT faster (narrows the tests; rejected).
+- Human response: none
+- Resolution: option 1

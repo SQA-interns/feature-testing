@@ -1,0 +1,40 @@
+
+ RUN  v4.1.11 C:/Users/tanej/Documents/LAB/tanej_single-agent_sdd_v001_run-2-search/02_output/frontend
+
+ ❯ src/Captcha.test.tsx (6 tests | 2 failed) 10163ms
+     × does not reset before the widget exists or in test mode 10037ms
+     × gives no token when Google cannot be loaded 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/Captcha.test.tsx > Captcha > does not reset before the widget exists or in test mode
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/Captcha.test.tsx:28:3
+     26|
+     27| describe("Captcha", () => {
+     28|   beforeEach(() => loadRecaptcha.mockReset());
+       |   ^
+     29|   afterEach(() => {
+     30|     cleanup();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/Captcha.test.tsx > Captcha > gives no token when Google cannot be loaded
+Error: blocked
+ ❯ src/Captcha.test.tsx:99:37
+     97|
+     98|   it("gives no token when Google cannot be loaded", async () => {
+     99|     loadRecaptcha.mockRejectedValue(new Error("blocked"));
+       |                                     ^
+    100|     const onToken = vi.fn();
+    101|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  2 failed | 56 passed (58)
+   Start at  22:26:48
+   Duration  15.30s (transform 671ms, setup 2.48s, import 1.06s, tests 10.36s, environment 12.58s)
+
