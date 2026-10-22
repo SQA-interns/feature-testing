@@ -181,7 +181,7 @@ Plain text (`text/plain; charset=UTF-8`), contract `emails.md`. Subject from con
 
 ### 6.2 Organizer notification (US-007, SR-07)
 
-One message to every address in `ORGANIZER_EMAILS`, plain text listing the registration's fields, with the attachment `registration-<id>.json` (`application/json`) whose bytes are the stored JSON copy.
+One message per address in `ORGANIZER_EMAILS` (each organizer is the only recipient of their copy), plain text listing the registration's fields, with the attachment `registration-<id>.json` (`application/json`) whose bytes are the stored JSON copy.
 
 ### 6.3 reCAPTCHA (SR-01, SR-02, AR-07)
 

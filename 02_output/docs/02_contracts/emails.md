@@ -16,7 +16,7 @@ Sent over SMTP (`SMTP_HOST`, `SMTP_PORT`, `SMTP_TLS`, optional `SMTP_USERNAME`/`
 
 | Part | Value |
 |---|---|
-| To | every address in `ORGANIZER_EMAILS` (comma separated, trimmed) |
+| To | each address in `ORGANIZER_EMAILS` (comma separated, trimmed) gets its own message, so organizers do not see each other's addresses |
 | Subject | `New registration: <CONFERENCE_NAME>` |
 | Body | `text/plain; charset=UTF-8`; `<label>: <value>` lines for id, type, first name, last name, email, the type's institution fields, options (ids), consents (ids), registered at |
 | Attachment | `registration-<id>.json`, `application/json`, the exact bytes of the stored JSON copy (AC-007-02) |
