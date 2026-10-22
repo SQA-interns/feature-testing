@@ -3,6 +3,8 @@ package si.konferenca.registration.application;
 import java.time.Clock;
 import java.util.List;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -14,15 +16,19 @@ import si.konferenca.registration.domain.RegistrationValidator;
 
 /**
  * Accepts a registration: validation, captcha, then the database row and the JSON copy in one
- * transaction (BR-07, AR-05). Success is reported only after both are written.
+ * transaction (BR-07, AR-05). Success is reported only after both are written; the emails follow
+ * and cannot undo an accepted registration (OQ-03).
  */
 @Service
 public class RegistrationService {
+
+  private static final Logger LOG = LoggerFactory.getLogger(RegistrationService.class);
 
   private final RegistrationValidator validator;
   private final CaptchaVerifier captcha;
   private final RegistrationStore store;
   private final JsonCopyStore copies;
+  private final Notifier notifier;
   private final TransactionTemplate transaction;
   private final Clock clock;
 
@@ -31,12 +37,14 @@ public class RegistrationService {
       CaptchaVerifier captcha,
       RegistrationStore store,
       JsonCopyStore copies,
+      Notifier notifier,
       PlatformTransactionManager transactionManager,
       Clock clock) {
     this.validator = new RegistrationValidator(configuration);
     this.captcha = captcha;
     this.store = store;
     this.copies = copies;
+    this.notifier = notifier;
     this.transaction = new TransactionTemplate(transactionManager);
     this.clock = clock;
   }
@@ -66,8 +74,18 @@ public class RegistrationService {
     }
     Registration registration =
         Registration.accept(UUID.randomUUID(), result.data(), clock.instant());
-    store(registration);
+    byte[] jsonCopy = store(registration);
+    notifySafely(() -> notifier.sendConfirmation(registration), registration);
+    notifySafely(() -> notifier.notifyOrganizers(registration, jsonCopy), registration);
     return new Outcome(registration.id(), List.of());
+  }
+
+  private static void notifySafely(Runnable notification, Registration registration) {
+    try {
+      notification.run();
+    } catch (RuntimeException e) {
+      LOG.warn("Email failed for registration {}", registration.id());
+    }
   }
 
   private byte[] store(Registration registration) {
