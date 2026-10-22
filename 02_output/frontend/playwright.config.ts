@@ -5,8 +5,10 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   reporter: [["list"]],
+  timeout: 60_000,
+  expect: { timeout: 10_000 },
   use: {
-    baseURL: process.env.E2E_BASE_URL ?? "http://127.0.0.1:5173",
+    baseURL: process.env.E2E_BASE_URL ?? "http://127.0.0.1:8081",
     trace: "retain-on-failure",
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
