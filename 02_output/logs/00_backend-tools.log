@@ -1,0 +1,172 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (default-cli) > :pmd @ registration-backend >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ registration-backend ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.7.0
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.1.1/spring-boot-starter-parent-4.1.1-site.xml
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/4.1.1/spring-boot-dependencies-4.1.1-site.xml
+[WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (default-cli) < :pmd @ registration-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (default-cli) @ registration-backend ---
+[INFO] 
+[INFO] >>> pmd:3.26.0:cpd-check (default-cli) > :cpd @ registration-backend >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:cpd (cpd) @ registration-backend ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:cpd-check (default-cli) < :cpd @ registration-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:cpd-check (default-cli) @ registration-backend ---
+[INFO] 
+[INFO] >>> spotbugs:4.10.4.1:check (default-cli) > :spotbugs @ registration-backend >>>
+[INFO] 
+[INFO] --- spotbugs:4.10.4.1:spotbugs (spotbugs) @ registration-backend ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.4.1:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.10.4.1:check (default-cli) < :spotbugs @ registration-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.10.4.1:check (default-cli) @ registration-backend ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:help (default-cli) @ registration-backend ---
+[INFO] JaCoCo :: Maven Plugin 0.8.12
+  The JaCoCo Maven Plugin provides the JaCoCo runtime agent to your tests and
+  allows basic report creation.
+
+This plugin has 11 goals:
+
+jacoco:check
+  Checks that the code coverage metrics are being met.
+
+jacoco:dump
+  Request a dump over TCP/IP from a JaCoCo agent running in tcpserver mode.
+  
+  Note concerning parallel builds: While the dump goal as such is thread safe,
+  it has to be considered that TCP/IP server ports of the agents are a shared
+  resource.
+
+jacoco:help
+  Display help information on jacoco-maven-plugin.
+  Call mvn jacoco:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+  details.
+
+jacoco:instrument
+  Performs offline instrumentation. Note that after execution of test you must
+  restore original classes with help of 'restore-instrumented-classes' goal.
+  Warning: The preferred way for code coverage analysis with JaCoCo is
+  on-the-fly instrumentation. Offline instrumentation has several drawbacks and
+  should only be used if a specific scenario explicitly requires this mode.
+  Please consult documentation about offline instrumentation before using this
+  mode.
+
+jacoco:merge
+  Mojo for merging a set of execution data files (*.exec) into a single file
+
+jacoco:prepare-agent
+  Prepares a property pointing to the JaCoCo runtime agent that can be passed as
+  a VM argument to the application under test. Depending on the project
+  packaging type by default a property with the following name is set:
+  
+  - tycho.testArgLine for packaging type eclipse-test-plugin and
+  - argLine otherwise.
+  
+  If your project already defines VM arguments for test execution, be sure that
+  they will include property defined by JaCoCo.
+  
+  One of the ways to do this in case of maven-surefire-plugin - is to use syntax
+  for late property evaluation:
+  
+   <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-surefire-plugin</artifactId>
+   <configuration>
+   <argLine>@{argLine} -your -extra -arguments</argLine>
+   </configuration>
+   </plugin>
+  
+  You can define empty property to avoid JVM startup error Could not find or
+  load main class @{argLine} when using late property evaluation and
+  jacoco-maven-plugin not executed.
+  
+  Another way is to define 'argLine' as a Maven property rather than as part of
+  the configuration of maven-surefire-plugin:
+  
+   <properties>
+   <argLine>-your -extra -arguments</argLine>
+   </properties>
+   ...
+   <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-surefire-plugin</artifactId>
+   <configuration>
+   <!-- no argLine here -->
+   </configuration>
+   </plugin>
+  
+  Resulting coverage information is collected during execution and by default
+  written to a file when the process terminates.
+
+jacoco:prepare-agent-integration
+  Same as prepare-agent, but provides default values suitable for
+  integration-tests:
+  - bound to pre-integration-test phase
+  - different destFile
+
+jacoco:report
+  Creates a code coverage report for tests of a single project in multiple
+  formats (HTML, XML, and CSV).
+
+jacoco:report-aggregate
+  Creates a structured code coverage report (HTML, XML, and CSV) from multiple
+  projects within reactor. The report is created from all modules this project
+  depends on, and optionally this project itself. From those projects class and
+  source files as well as JaCoCo execution data files will be collected. In
+  addition execution data is collected from the project itself. This also allows
+  to create coverage reports when tests are in separate projects than the code
+  under test, for example in case of integration tests.
+  
+  Using the dependency scope allows to distinguish projects which contribute
+  execution data but should not become part of the report:
+  
+  - compile, runtime, provided: Project source and execution data is included in
+    the report.
+  - test: Only execution data is considered for the report.
+
+jacoco:report-integration
+  Same as report, but provides default values suitable for integration-tests:
+  - bound to report-integration phase
+  - different dataFile
+
+jacoco:restore-instrumented-classes
+  Restores original classes as they were before offline instrumentation.
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.285 s
+[INFO] Finished at: 2026-10-22T10:17:09+02:00
+[INFO] ------------------------------------------------------------------------
