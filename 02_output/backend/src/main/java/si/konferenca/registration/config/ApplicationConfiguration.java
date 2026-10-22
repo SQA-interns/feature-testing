@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
+import si.konferenca.registration.adapter.web.FormConfigController;
 import si.konferenca.registration.application.FormConfiguration;
 import si.konferenca.registration.domain.ConferenceCatalogue;
 
@@ -22,6 +23,12 @@ public class ApplicationConfiguration {
   @Bean
   FormConfiguration formConfiguration(ConferenceCatalogue catalogue) {
     return new FormConfiguration(catalogue);
+  }
+
+  @Bean
+  FormConfigController.CaptchaWidget captchaWidget(AppSettings settings) {
+    return new FormConfigController.CaptchaWidget(
+        settings.captcha().siteKey(), settings.captcha().testMode());
   }
 
   @Bean
