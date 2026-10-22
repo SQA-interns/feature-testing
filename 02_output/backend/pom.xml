@@ -174,11 +174,52 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.12</version>
+        <configuration>
+          <!-- measurement exclusion: the entry point only (docs/03_test-strategy.md) -->
+          <excludes>
+            <exclude>si/konferenca/registration/RegistrationApplication.class</exclude>
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
         <version>1.30.0</version>
+        <configuration>
+          <!-- mutation scope of quality-requirements.md; full suite of every level -->
+          <targetClasses>
+            <param>si.konferenca.registration.*</param>
+          </targetClasses>
+          <targetTests>
+            <param>si.konferenca.registration.*</param>
+          </targetTests>
+          <excludedClasses>
+            <param>si.konferenca.registration.RegistrationApplication</param>
+          </excludedClasses>
+          <threads>2</threads>
+          <timeoutConstant>10000</timeoutConstant>
+          <timestampedReports>false</timestampedReports>
+          <outputFormats>
+            <param>HTML</param>
+            <param>XML</param>
+            <param>CSV</param>
+          </outputFormats>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.pitest</groupId>
