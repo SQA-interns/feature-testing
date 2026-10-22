@@ -5,7 +5,7 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: spec-driven, acceptance tests first (`general/phases.md`)
-- Current phase: 6 (verify)
-- Last gate result: phase 5 passed 2026-10-22: quality gate met: backend line 98.32 %, mutation 91.20 % (full run, 0 rounds); frontend line 100 %, mutation 93.81 % (1 survivor round). 227 backend and 62 frontend tests pass.
-- Next step: phase 6, skill `general/skills/verify-release`: DoD evidence, scans (Dependency-Check, npm audit, Semgrep, Gitleaks), runtime demonstration, manifest hashes, report.
+- Current phase: 7 (release)
+- Last gate result: phase 6 passed 2026-10-22: 295 tests pass (227 backend, 62 frontend, 6 e2e), manifests match, scans clean (0 Critical/High; 3 Medium accepted, 7 Low), no secret in files or commits, runtime demonstration done (`docs/06_verification-report.md`).
+- Next step: phase 7, root and component READMEs, release notes with the manual-test list, clean-checkout check, run summary.
 - Waiting for the human on: nothing
