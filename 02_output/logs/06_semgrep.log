@@ -1,0 +1,37 @@
+               
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 116 files tracked by git with 1077 Code rules:
+                                                                                                                        
+  Language      Rules   Files          Origin      Rules                                                                
+ ─────────────────────────────        ───────────────────                                                               
+  <multilang>      75      77          Community    1077                                                                
+  java            118      54                                                                                           
+  ts              164      20                                                                                           
+  json              4       9                                                                                           
+  js              154       2                                                                                           
+  yaml             35       2                                                                                           
+  dockerfile        7       2                                                                                           
+  bash              4       1                                                                                           
+  html              1       1                                                                                           
+                                                                                                                        
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 3 (3 blocking)
+ • Rules run: 403
+ • Targets scanned: 116
+ • Parsed lines: ~99.9%
+ • Scan skipped: 
+   ◦ Matching --exclude patterns: 57
+   ◦ Files matching .semgrepignore patterns: 46
+ • Scan was limited to files tracked by git
+ • For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 403 rules on 116 files: 3 findings.
+
+A new version of Semgrep is available. See https://semgrep.dev/docs/upgrading

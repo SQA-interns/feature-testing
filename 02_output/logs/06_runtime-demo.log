@@ -1,0 +1,50 @@
+== NFR-04 health
+{"groups":["liveness","readiness"],"status":"UP"}
+{"status":"UP"}
+{"status":"UP"}
+== form-config: {"options":[{"id":"ws-ai","name":"Workshop: Applied AI","category":"WORKSHOP","availableTo":["EXTERNAL","STUDENT"]},{"id":"ws-research","name":"Workshop: Resear...
+== DoD-P01 external -> {"id":"8b4d59f5-94c6-470b-95e6-e83fb2f596a7"} ; student -> {"id":"35c8de56-ed72-4ba8-9e72-96181a3c2a74"}
+== DoD-P02 database rows
+8b4d59f5-94c6-470b-95e6-e83fb2f596a7|EXTERNAL|Demo|External1792703955|2026-10-22 21:19:15.504+00
+35c8de56-ed72-4ba8-9e72-96181a3c2a74|STUDENT|Čedomir|Študent1792703955|2026-10-22 21:19:15.73+00
+   options/consents: 5 options, 2 consents
+   JSON copies:
+-rw------- 1 app app 404 Oct 22 21:19 /data/json-copies/35c8de56-ed72-4ba8-9e72-96181a3c2a74.json
+-rw------- 1 app app 412 Oct 22 21:19 /data/json-copies/8b4d59f5-94c6-470b-95e6-e83fb2f596a7.json
+== DoD-P03 Mailpit
+   ***@gmail.com | New registration 35c8de56-ed72-4ba8-9e72-96181a3c2a74 | attachments: 1
+   ***@example.org | Registration confirmation: Conference 2026 | attachments: 0
+   ***@gmail.com | New registration 8b4d59f5-94c6-470b-95e6-e83fb2f596a7 | attachments: 1
+   ***@example.org | Registration confirmation: Conference 2026 | attachments: 0
+== DoD-P04 export
+  with credentials: 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 4706 bytes
+  zip signature: PK
+  without credentials: 401
+  wrong password: 401
+== DoD-P06 search
+  by last name: {"total":1,"page":1,"items":[{"id":"8b4d59f5-94c6-470b-95e6-e83fb2f596a7","type":"EXTERNAL","firstName":"Demo","lastName":"External1792703955","email":"ext1792703955@example.org","organization":"Demo 
+  by type STUDENT, total/first type: 3 STUDENT
+  without credentials: 401
+  invalid page: {"errors":[{"field":"page","message":"The page must be a number from 1."}]}
+== SB-10 headers backend
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+== SB-10 headers frontend
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: no-referrer
+Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+== frontend proxy /api with a forged Host header: 200
+== SR-03 size limit: 413
+== SR-03 rate limit (60/min, /api/form-config):
+  429 answers among 70 requests: 13
+HTTP/1.1 429 
+Retry-After: 35
+== SB-11 users: backend app / frontend nginx
+== NFR-02 recreate all containers
+  rows before: 9, after: 9
+  JSON copy after: /data/json-copies/8b4d59f5-94c6-470b-95e6-e83fb2f596a7.json
+  search after recreation: {"total":1,"page":1,"items":[{"id":"8b4d59f5-94c6-470b-95e6-e83fb2f596a7","type"

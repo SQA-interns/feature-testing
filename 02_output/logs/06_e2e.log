@@ -1,0 +1,15 @@
+
+Running 6 tests using 1 worker
+
+
+  ok 1 [chromium] › tests\e2e\e2e-01-external-registers.spec.ts:17:1 › E2E-01 external participant registers (AC-001-01, AC-004-01, AC-005-01, AC-007-02) (3.0s)
+
+  ok 2 [chromium] › tests\e2e\e2e-02-student-registers.spec.ts:23:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (2.1s)
+  ok 3 [chromium] › tests\e2e\e2e-03-field-errors.spec.ts:5:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (1.5s)
+
+  ok 4 [chromium] › tests\e2e\e2e-04-slovenian-characters.spec.ts:19:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (2.6s)
+
+  ok 5 [chromium] › tests\e2e\e2e-05-organizer-exports.spec.ts:13:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (491ms)
+  ok 6 [chromium] › tests\e2e\e2e-06-organizer-searches.spec.ts:18:1 › E2E-06 organizer searches registrations (AC-009-01, AC-009-02, AC-009-03, AC-009-12) (2.4s)
+
+  6 passed (14.1s)

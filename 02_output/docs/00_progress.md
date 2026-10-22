@@ -5,7 +5,7 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: spec-driven, acceptance tests first (`general/phases.md`)
-- Current phase: 6 (verify)
-- Last gate result: phase 5 passed (2026-10-22): quality gate met; backend line 98.09 %, mutation 93.15 % (first full run, 0 rounds); frontend line 100 %, mutation 93.83 % (after round 1); full suites pass (backend 288, frontend 109, e2e 6)
-- Next step: phase 6: verify-release skill (scans, DoD evidence, runtime demonstration, manifests)
+- Current phase: 7 (release)
+- Last gate result: phase 6 passed (2026-10-22): every DoD item has evidence (DoD-08/09 in phase 7); no open Critical/High; manifests match; no secret leak; F-01 fixed, F-02..F-08 accepted
+- Next step: phase 7: root and component READMEs, release notes, clean-clone check
 - Waiting for the human on: nothing
