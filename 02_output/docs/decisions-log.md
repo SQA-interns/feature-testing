@@ -91,3 +91,21 @@
 - Options: 1. (default) Apply PA-02: classify Low, false positive; suppress for that one artifact only.
 - Human response: none (pre-approved, PA-02)
 - Resolution: option 1
+
+## D-11: Status code for organizer requests refused by HTTPS-only access
+- Timestamp: 2026-10-22T09:09:55Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: AC-008-04 and AC-009-10 require that, with `ORGANIZER_HTTPS_ONLY` on, valid credentials over plain HTTP from a non-local client are "refused" with no data; `api-contract.md` fixes 401 only for missing or wrong credentials and gives no code for this case.
+- Options: 1. (default) 403 with error field `protocol`, checked before the credentials, so the credentials are never evaluated over plain HTTP; 2. 401 as for wrong credentials (hides the reason, but suggests the credentials were wrong).
+- Human response: none
+- Resolution: pending review (option 1 applied in `docs/02_specification.md` 8.2)
+
+## D-12: Specification and contracts committed in three commits
+- Timestamp: 2026-10-22T09:09:55Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: `general/phases.md` asks for the specification with all its contracts in one commit; together they exceed the 400-line commit limit of `general/working-rules.md`, which takes precedence (`AGENTS.md`).
+- Options: 1. (default) Commit the specification, the JSON contracts, and the Markdown contracts with the validator separately, each under 400 lines.
+- Human response: none
+- Resolution: option 1
