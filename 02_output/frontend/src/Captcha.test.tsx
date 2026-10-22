@@ -120,4 +120,35 @@ describe("Captcha", () => {
 
     expect(grecaptcha.render).not.toHaveBeenCalled();
   });
+
+  it("renders only with the newest site key when it changes while loading", async () => {
+    const { grecaptcha, rendered } = fakeGrecaptcha();
+    const pending: ((value: unknown) => void)[] = [];
+    loadRecaptcha.mockImplementation(() => new Promise((r) => pending.push(r)));
+    const { rerender } = render(
+      <Captcha siteKey="old" testMode={false} onToken={vi.fn()} resetSignal={0} />,
+    );
+
+    rerender(<Captcha siteKey="new" testMode={false} onToken={vi.fn()} resetSignal={0} />);
+    await act(async () => pending.forEach((resolve) => resolve(grecaptcha)));
+
+    expect(pending).toHaveLength(2);
+    expect(grecaptcha.render).toHaveBeenCalledTimes(1);
+    expect(rendered[0].sitekey).toBe("new");
+  });
+
+  it("resets safely when the Google API is not on the window", async () => {
+    const { grecaptcha } = fakeGrecaptcha();
+    loadRecaptcha.mockResolvedValue(grecaptcha);
+    const onToken = vi.fn();
+    const { rerender } = render(
+      <Captcha siteKey="k" testMode={false} onToken={onToken} resetSignal={0} />,
+    );
+    await act(async () => {});
+
+    rerender(<Captcha siteKey="k" testMode={false} onToken={onToken} resetSignal={1} />);
+
+    expect(onToken).toHaveBeenLastCalledWith("");
+    expect(grecaptcha.reset).not.toHaveBeenCalled();
+  });
 });
