@@ -1,0 +1,33 @@
+{
+  "options": [
+    { "id": "ws-ai", "name": "Workshop: AI in practice", "category": "WORKSHOP", "active": true },
+    { "id": "ws-data", "name": "Workshop: Data engineering", "category": "WORKSHOP", "active": true },
+    {
+      "id": "ws-leadership",
+      "name": "Workshop: Leading research teams",
+      "category": "WORKSHOP",
+      "active": true,
+      "availableTo": ["EXTERNAL"]
+    },
+    { "id": "ws-blockchain", "name": "Workshop: Blockchain", "category": "WORKSHOP", "active": false },
+    { "id": "ev-reception", "name": "Welcome reception", "category": "EVENT", "active": true },
+    {
+      "id": "ev-dinner",
+      "name": "Conference dinner",
+      "category": "EVENT",
+      "active": true,
+      "availableTo": ["EXTERNAL"]
+    },
+    { "id": "ev-student-meetup", "name": "Student meetup", "category": "EVENT", "active": true, "availableTo": ["STUDENT"] },
+    { "id": "meal-lunch", "name": "Lunch (both days)", "category": "MEAL", "active": true },
+    { "id": "meal-vegetarian", "name": "Vegetarian lunch (both days)", "category": "MEAL", "active": true },
+    { "id": "other-tour", "name": "Guided city tour", "category": "OTHER", "active": true }
+  ],
+  "consents": [
+    {
+      "id": "privacy",
+      "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.",
+      "mandatory": true
+    }
+  ]
+}
