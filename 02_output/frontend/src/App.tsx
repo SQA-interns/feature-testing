@@ -1,11 +1,13 @@
+import { OrganizerPage } from "./organizer/OrganizerPage";
 import { RegistrationPage } from "./registration/RegistrationPage";
 
-/** `/` is the registration page (the organizer page joins in US-009). */
+/** `/` is the registration page, `/organizer` the organizer search page. */
 export function App() {
+  const organizer = window.location.pathname.replace(/\/+$/, "") === "/organizer";
   return (
     <main>
       <h1>Conference registration</h1>
-      <RegistrationPage />
+      {organizer ? <OrganizerPage /> : <RegistrationPage />}
     </main>
   );
 }
