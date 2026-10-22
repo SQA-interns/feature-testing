@@ -1,0 +1,52 @@
+| AC | Tests | Commits |
+|---|---|---|
+| AC-001-01 | Us001ExternalRegistrationAcceptanceTest.java, e2e-01-external-registration.spec.ts | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-02 | Us001ExternalRegistrationAcceptanceTest.java | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-03 | Us001ExternalRegistrationAcceptanceTest.java | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-04 | Us001ExternalRegistrationAcceptanceTest.java | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-05 | Us001ExternalRegistrationAcceptanceTest.java | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-06 | Us001ExternalRegistrationAcceptanceTest.java | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-07 | Us001CaptchaVerificationAcceptanceTest.java (3), Us001ExternalRegistrationAcceptanceTest.java (2) | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-001-08 | us001-external-form.test.tsx, e2e-01-external-registration.spec.ts | 02cdabf, 54fd0c5, a15ce4a, cd38e75, eb4cec1, ed38694 (+7) |
+| AC-002-01 | Us002StudentRegistrationAcceptanceTest.java, e2e-02-student-registration.spec.ts | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-02 | Us002StudentRegistrationAcceptanceTest.java | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-03 | Us002StudentRegistrationAcceptanceTest.java | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-04 | Us002StudentRegistrationAcceptanceTest.java | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-05 | Us002StudentRegistrationAcceptanceTest.java | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-06 | Us002CaptchaVerificationAcceptanceTest.java (2), Us002StudentRegistrationAcceptanceTest.java | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-002-07 | us002-student-form.test.tsx (2), e2e-02-student-registration.spec.ts | 2c50fbd, 54fd0c5, a15ce4a, eb4cec1, f0c79df, 9479887 (+1) |
+| AC-003-01 | Us003ConferenceOptionsAcceptanceTest.java | cdd2fc0, 1842009, 53201a7, 84ee2d0, f4848f0, abf2d13 |
+| AC-003-02 | Us003ConferenceOptionsAcceptanceTest.java | cdd2fc0, 1842009, 53201a7, 84ee2d0, f4848f0, abf2d13 |
+| AC-003-03 | Us003ConferenceOptionsAcceptanceTest.java | cdd2fc0, 1842009, 53201a7, 84ee2d0, f4848f0, abf2d13 |
+| AC-004-01 | us004-confirmation.test.tsx, e2e-01-external-registration.spec.ts, e2e-02-student-registration.spec.ts | 269f543, f0c79df, 9479887, 9f288ac, 12bd9cd, 5db5155 |
+| AC-004-02 | us004-confirmation.test.tsx, e2e-03-field-errors.spec.ts | 269f543, f0c79df, 9479887, 9f288ac, 12bd9cd, 5db5155 |
+| AC-004-03 | us004-confirmation.test.tsx, e2e-03-field-errors.spec.ts | 269f543, f0c79df, 9479887, 9f288ac, 12bd9cd, 5db5155 |
+| AC-004-04 | us004-confirmation.test.tsx (2) | 269f543, f0c79df, 9479887, 9f288ac, 12bd9cd, 5db5155 |
+| AC-005-01 | Us005StorageAcceptanceTest.java, e2e-01-external-registration.spec.ts | 461eafb, 457fe7a, 20e912f |
+| AC-005-02 | Us005StorageAcceptanceTest.java, e2e-01-external-registration.spec.ts | 461eafb, 457fe7a, 20e912f |
+| AC-005-03 | Us005JsonCopyFailureAcceptanceTest.java | 461eafb, 457fe7a, 20e912f |
+| AC-005-04 | Us005StorageAcceptanceTest.java, e2e-04-slovenian-characters.spec.ts | 461eafb, 457fe7a, 20e912f |
+| AC-006-01 | Us006ParticipantEmailAcceptanceTest.java, e2e-01-external-registration.spec.ts | e934f27, 6109d17, 7295abe |
+| AC-006-02 | Us006ParticipantEmailAcceptanceTest.java | e934f27, 6109d17, 7295abe |
+| AC-006-03 | Us006MailServerDownAcceptanceTest.java | e934f27, 6109d17, 7295abe |
+| AC-007-01 | Us007OrganizerNotificationAcceptanceTest.java (2), e2e-01-external-registration.spec.ts | d1a3e55, fb34f01, 6109d17, 7295abe |
+| AC-007-02 | Us007OrganizerNotificationAcceptanceTest.java, e2e-01-external-registration.spec.ts | d1a3e55, fb34f01, 6109d17, ea12aac, 7295abe |
+| AC-008-01 | Us008ExportAcceptanceTest.java, e2e-05-export.spec.ts | 0371ae0, de69bfc, 144ae13, facb5d2, 02ace9e, cb97ce6 (+1) |
+| AC-008-02 | Us008ExportAcceptanceTest.java, e2e-05-export.spec.ts | 0371ae0, de69bfc, 144ae13, facb5d2, 02ace9e, cb97ce6 (+1) |
+| AC-008-03 | Us008ExportAcceptanceTest.java, e2e-04-slovenian-characters.spec.ts | 0371ae0, de69bfc, 144ae13, facb5d2, 02ace9e, cb97ce6 (+1) |
+| AC-008-04 | Us008ExportAcceptanceTest.java | 0371ae0, de69bfc, 144ae13, facb5d2, 02ace9e, cb97ce6 (+1) |
+| AC-009-01 | Us009SearchAcceptanceTest.java, e2e-06-organizer-search.spec.ts | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-02 | Us009SearchAcceptanceTest.java, e2e-06-organizer-search.spec.ts | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-03 | Us009SearchAcceptanceTest.java, e2e-06-organizer-search.spec.ts | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-04 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-05 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-06 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-07 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-08 | Us009SearchAcceptanceTest.java (2) | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-09 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-10 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-11 | Us009SearchAcceptanceTest.java | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-12 | us009-organizer-page.test.tsx (3), e2e-06-organizer-search.spec.ts | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+| AC-009-13 | us009-organizer-page.test.tsx | 0294dda, 7acb276, de69bfc, facb5d2, 02ace9e, ed38694 (+5) |
+
+48 acceptance criteria; without a test: none; without a commit: none.

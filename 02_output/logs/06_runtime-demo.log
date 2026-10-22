@@ -1,0 +1,61 @@
+
+== start the stack (images built from the current code)
+backend=healthy db=healthy frontend=healthy mailpit=healthy 
+
+== health and readiness (NFR-04)
+/actuator/health -> {"groups":["liveness","readiness"],"status":"UP"}
+/actuator/health/liveness -> {"status":"UP"}
+/actuator/health/readiness -> {"status":"UP"}
+
+== registrations through the frontend proxy (DoD-P01)
+external 201
+student 201
+ids: external da07eea4-3f5f-4f54-8497-3ad8ab7523c8 student 25b5fde2-d599-47df-be12-21e6710db054
+
+== stored in PostgreSQL and as JSON copies (DoD-P02)
+EXTERNAL|Zunanji1792686525|Društvo Šentjur ČŠŽ
+STUDENT|Študent1792686525|Univerza v Ljubljani
+25b5fde2-d599-47df-be12-21e6710db054.json
+da07eea4-3f5f-4f54-8497-3ad8ab7523c8.json
+
+== emails in Mailpit (DoD-P03)
+ext1792686525 2 messages: New registration: Konferenca 2026 -> <ORGANIZER_EMAILS> attachments 1 | Registration confirmed: Konferenca 2026 -> ext1792686525@example.org attachments 0
+stu1792686525 2 messages: New registration: Konferenca 2026 -> <ORGANIZER_EMAILS> attachments 1 | Registration confirmed: Konferenca 2026 -> stu1792686525@example.org attachments 0
+
+== export (DoD-P04)
+with credentials 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 5256 bytes
+  workbook part: xl/sharedStrings.xml
+  workbook part: xl/worksheets/sheet1.xml
+without credentials 401
+wrong credentials 401
+
+== search (DoD-P06)
+by last name: total 1 EXTERNAL Zunanji1792686525
+by type STUDENT: total 6 all students: true
+search without credentials 401
+organizer page 200
+
+== rejections, limits and headers (SR-01, SR-03, SB-10)
+{"errors":[{"field":"captchaToken","message":"The reCAPTCHA check failed. Please try again."}]} 400
+Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/reca
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: no-referrer
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+containers run as: frontend=nginx backend=app
+
+== recreate every container (NFR-02)
+before: 16 rows, 16 JSON copies
+containers after down: 0
+backend=healthy db=healthy frontend=healthy mailpit=healthy 
+after: 16 rows, 16 JSON copies
+Zunanji1792686525
+
+== HTTPS-only organizer access at runtime (SR-06, D-11)
+{"errors":[{"field":"protocol","message":"Organizer access requires HTTPS."}]} 403
+export over plain HTTP from the host (not loopback inside the container) 403
+export with HTTPS-only off again 200
