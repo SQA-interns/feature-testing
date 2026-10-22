@@ -109,3 +109,12 @@
 - Options: 1. (default) Commit the specification, the JSON contracts, and the Markdown contracts with the validator separately, each under 400 lines.
 - Human response: none
 - Resolution: option 1
+
+## D-13: SpotBugs false positives excluded by class
+- Timestamp: 2026-10-22T10:51:09Z
+- Phase: 4
+- Type: non-blocking
+- Trigger: `spotbugs:check` (effort Max, threshold Low) reports EI_EXPOSE_REP2 for constructor-injected collaborators (ports, EntityManager) in `RegisterParticipant`, `ExportRegistrations`, `SearchRegistrations`, `JpaRegistrationStore`; EI_EXPOSE_REP for the wrapped input stream of `RequestSizeFilter$Limited`; THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION for `SecurityConfiguration` (`HttpSecurity.build()` declares `throws Exception`). The genuine findings (records holding mutable lists) were fixed in code.
+- Options: 1. (default) Exclude exactly these patterns for exactly these classes in `backend/spotbugs-exclude.xml`; every other finding still fails the check; 2. copy or wrap injected collaborators (no effect on behaviour, hides the dependency).
+- Human response: none
+- Resolution: option 1
