@@ -1,0 +1,347 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\tanej\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\tanej\\Documents\\LAB\\tanej_single-agent_sdd_v001_run-1-search\\02_output\\backend\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+12:36:24.111 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest]: Us001CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:36:24.727 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+12:36:25.185 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest]: Us001CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:36:25.192 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.CaptchaVerifierStubAcceptanceTest]: CaptchaVerifierStubAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:36:25.194 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:36:25.194 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+12:36:26.243 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+12:36:26.251 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+12:36:26.305 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+12:36:27.742 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+12:36:29.394 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+12:36:29.397 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+12:36:29.467 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.8.2
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7612 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+12:36:30.682 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+12:36:31.460 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: d49b2871d52b5f7a5d15fd1786464aae516c374f798fb7ca9973de3a5a0ab01b
+12:36:32.562 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT1.8799038S
+12:36:32.575 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+12:36:32.575 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+12:36:32.577 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+12:36:32.578 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+12:36:32.832 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: b9b243cb60afe70acd450986de3000102a045544c26f2330430a95b84284cf67
+12:36:38.152 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT5.5742147S
+12:36:38.154 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:55052/test?loggerLevel=OFF)
+12:36:38.155 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+12:36:38.366 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: d1d9436b6a8a40b67c05b5b56648a9af5de909615147c56957784952a07b3d74
+12:36:39.071 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /inspiring_ishizaka: Waiting for 60 seconds for URL: http://localhost:61152/readyz (where port 61152 maps to container port 8025)
+12:36:39.102 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.9468228S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T12:36:39.924+02:00  INFO 23340 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : Starting Us001CaptchaVerificationAcceptanceTest using Java 21.0.11 with PID 23340 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T12:36:39.927+02:00  INFO 23340 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T12:36:42.308+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T12:36:42.480+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 1 JPA repository interface.
+2026-10-22T12:36:44.428+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T12:36:44.469+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T12:36:44.469+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T12:36:44.620+02:00  INFO 23340 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4630 ms
+2026-10-22T12:36:45.629+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-22T12:36:46.076+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6e587233
+2026-10-22T12:36:46.087+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-22T12:36:46.153+02:00  INFO 23340 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55052/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T12:36:46.327+02:00  INFO 23340 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-22T12:36:46.342+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.061s)
+2026-10-22T12:36:46.389+02:00  INFO 23340 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-22T12:36:46.527+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-22T12:36:46.558+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - registration"
+2026-10-22T12:36:46.685+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.070s)
+2026-10-22T12:36:46.994+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T12:36:47.191+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-22T12:36:48.566+02:00  INFO 23340 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T12:36:48.865+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55052/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T12:36:51.818+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T12:36:51.982+02:00  INFO 23340 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T12:36:52.702+02:00  INFO 23340 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizers
+2026-10-22T12:36:53.906+02:00  INFO 23340 --- [registration-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-22T12:36:54.323+02:00  INFO 23340 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T12:36:54.495+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 61165 (http) with context path '/'
+2026-10-22T12:36:54.511+02:00  INFO 23340 --- [registration-backend] [           main] a.Us001CaptchaVerificationAcceptanceTest : Started Us001CaptchaVerificationAcceptanceTest in 15.33 seconds (process running for 35.662)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\tanej\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-10-22T12:36:55.878+02:00  INFO 23340 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T12:36:55.878+02:00  INFO 23340 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T12:36:55.878+02:00  INFO 23340 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 34.24 s -- in si.konferenca.registration.acceptance.Us001CaptchaVerificationAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+2026-10-22T12:36:57.618+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest]: Us001ExternalRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:36:57.622+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+2026-10-22T12:36:57.632+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest]: Us001ExternalRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:36:57.633+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:36:57.634+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:36:57.638+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T12:36:57.796+02:00  INFO 23340 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : Starting Us001ExternalRegistrationAcceptanceTest using Java 21.0.11 with PID 23340 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T12:36:57.797+02:00  INFO 23340 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T12:36:58.200+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T12:36:58.233+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2026-10-22T12:36:58.412+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T12:36:58.415+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T12:36:58.415+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T12:36:58.476+02:00  INFO 23340 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 676 ms
+2026-10-22T12:36:58.594+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-22T12:36:58.621+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@729eebf1
+2026-10-22T12:36:58.621+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-22T12:36:58.624+02:00  INFO 23340 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55052/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T12:36:58.679+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.019s)
+2026-10-22T12:36:58.737+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-22T12:36:58.739+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T12:36:58.777+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T12:36:58.821+02:00  INFO 23340 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T12:36:58.841+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55052/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T12:36:58.937+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T12:36:58.988+02:00  INFO 23340 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T12:36:59.220+02:00  INFO 23340 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizers
+2026-10-22T12:36:59.428+02:00  INFO 23340 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T12:36:59.464+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 61198 (http) with context path '/'
+2026-10-22T12:36:59.469+02:00  INFO 23340 --- [registration-backend] [           main] .Us001ExternalRegistrationAcceptanceTest : Started Us001ExternalRegistrationAcceptanceTest in 1.714 seconds (process running for 40.617)
+2026-10-22T12:36:59.639+02:00  INFO 23340 --- [registration-backend] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T12:36:59.639+02:00  INFO 23340 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T12:36:59.641+02:00  INFO 23340 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.546 s -- in si.konferenca.registration.acceptance.Us001ExternalRegistrationAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+2026-10-22T12:37:05.167+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest]: Us002CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.171+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+2026-10-22T12:37:05.173+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest]: Us002CaptchaVerificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.174+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.CaptchaVerifierStubAcceptanceTest]: CaptchaVerifierStubAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.175+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.178+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.536 s -- in si.konferenca.registration.acceptance.Us002CaptchaVerificationAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+2026-10-22T12:37:05.704+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest]: Us002StudentRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.707+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+2026-10-22T12:37:05.709+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest]: Us002StudentRegistrationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.709+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.711+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:05.711+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.185 s -- in si.konferenca.registration.acceptance.Us002StudentRegistrationAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+2026-10-22T12:37:10.891+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest]: Us005JsonCopyFailureAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:10.894+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+2026-10-22T12:37:10.896+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest]: Us005JsonCopyFailureAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:10.896+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.JsonCopyUnwritableAcceptanceTest]: JsonCopyUnwritableAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:10.896+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:10.897+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T12:37:10.940+02:00  INFO 23340 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : Starting Us005JsonCopyFailureAcceptanceTest using Java 21.0.11 with PID 23340 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T12:37:10.940+02:00  INFO 23340 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T12:37:11.279+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T12:37:11.310+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2026-10-22T12:37:11.446+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T12:37:11.448+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T12:37:11.448+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T12:37:11.519+02:00  INFO 23340 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 575 ms
+2026-10-22T12:37:11.603+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-22T12:37:11.628+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@6ce84912
+2026-10-22T12:37:11.629+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-22T12:37:11.631+02:00  INFO 23340 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55052/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T12:37:11.684+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.017s)
+2026-10-22T12:37:11.740+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-22T12:37:11.741+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T12:37:11.773+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T12:37:11.811+02:00  INFO 23340 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T12:37:11.835+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55052/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T12:37:11.910+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T12:37:11.953+02:00  INFO 23340 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T12:37:11.973+02:00  WARN 23340 --- [registration-backend] [           main] s.k.r.a.jsoncopy.FileJsonCopyStore       : JSON copy directory cannot be created; registrations will fail until it can
+2026-10-22T12:37:12.159+02:00  INFO 23340 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizers
+2026-10-22T12:37:12.376+02:00  INFO 23340 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T12:37:12.392+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 61551 (http) with context path '/'
+2026-10-22T12:37:12.412+02:00  INFO 23340 --- [registration-backend] [           main] k.r.a.Us005JsonCopyFailureAcceptanceTest : Started Us005JsonCopyFailureAcceptanceTest in 1.506 seconds (process running for 53.56)
+2026-10-22T12:37:12.586+02:00  INFO 23340 --- [registration-backend] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T12:37:12.586+02:00  INFO 23340 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T12:37:12.587+02:00  INFO 23340 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-22T12:37:12.625+02:00 ERROR 23340 --- [registration-backend] [o-auto-3-exec-1] s.k.r.adapter.web.ApiExceptionHandler    : Request failed with si.konferenca.registration.application.RegistrationNotStoredException
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.806 s -- in si.konferenca.registration.acceptance.Us005JsonCopyFailureAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+2026-10-22T12:37:12.699+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005StorageAcceptanceTest]: Us005StorageAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:12.702+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+2026-10-22T12:37:12.704+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us005StorageAcceptanceTest]: Us005StorageAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:12.705+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:12.706+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:12.708+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.496 s -- in si.konferenca.registration.acceptance.Us005StorageAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+2026-10-22T12:37:14.203+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest]: Us006MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:14.205+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+2026-10-22T12:37:14.206+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest]: Us006MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:14.207+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.MailServerDownAcceptanceTest]: MailServerDownAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:14.208+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:14.208+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-22T12:37:14.249+02:00  INFO 23340 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : Starting Us006MailServerDownAcceptanceTest using Java 21.0.11 with PID 23340 (started by tanej in C:\Users\tanej\Documents\LAB\tanej_single-agent_sdd_v001_run-1-search\02_output\backend)
+2026-10-22T12:37:14.249+02:00  INFO 23340 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T12:37:14.556+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T12:37:14.584+02:00  INFO 23340 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2026-10-22T12:37:14.713+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-22T12:37:14.714+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T12:37:14.715+02:00  INFO 23340 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-22T12:37:14.779+02:00  INFO 23340 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 527 ms
+2026-10-22T12:37:14.865+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-10-22T12:37:14.892+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@4df688e5
+2026-10-22T12:37:14.892+02:00  INFO 23340 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-10-22T12:37:14.895+02:00  INFO 23340 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:55052/test?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-22T12:37:14.959+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.029s)
+2026-10-22T12:37:15.027+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-22T12:37:15.029+02:00  INFO 23340 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-22T12:37:15.066+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-22T12:37:15.106+02:00  INFO 23340 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T12:37:15.123+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:55052/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T12:37:15.199+02:00  INFO 23340 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T12:37:15.241+02:00  INFO 23340 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T12:37:15.461+02:00  INFO 23340 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizers
+2026-10-22T12:37:15.643+02:00  INFO 23340 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-22T12:37:15.667+02:00  INFO 23340 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 61611 (http) with context path '/'
+2026-10-22T12:37:15.671+02:00  INFO 23340 --- [registration-backend] [           main] .k.r.a.Us006MailServerDownAcceptanceTest : Started Us006MailServerDownAcceptanceTest in 1.453 seconds (process running for 56.819)
+2026-10-22T12:37:15.807+02:00  INFO 23340 --- [registration-backend] [o-auto-4-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T12:37:15.807+02:00  INFO 23340 --- [registration-backend] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T12:37:15.809+02:00  INFO 23340 --- [registration-backend] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-22T12:37:15.860+02:00  WARN 23340 --- [registration-backend] [o-auto-4-exec-1] s.k.r.adapter.mail.MailNotifier          : Email for registration cc16cd6c-3b0c-4b4d-b245-720a02db4a19 failed
+2026-10-22T12:37:15.864+02:00  WARN 23340 --- [registration-backend] [o-auto-4-exec-1] s.k.r.adapter.mail.MailNotifier          : Email for registration cc16cd6c-3b0c-4b4d-b245-720a02db4a19 failed
+2026-10-22T12:37:15.868+02:00  WARN 23340 --- [registration-backend] [o-auto-4-exec-1] s.k.r.adapter.mail.MailNotifier          : Email for registration cc16cd6c-3b0c-4b4d-b245-720a02db4a19 failed
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.713 s -- in si.konferenca.registration.acceptance.Us006MailServerDownAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+2026-10-22T12:37:15.912+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest]: Us006ParticipantEmailAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:15.914+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+2026-10-22T12:37:15.916+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest]: Us006ParticipantEmailAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:15.916+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:15.917+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:15.918+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.557 s -- in si.konferenca.registration.acceptance.Us006ParticipantEmailAcceptanceTest
+[INFO] Running si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+2026-10-22T12:37:16.470+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest]: Us007OrganizerNotificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:16.471+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+2026-10-22T12:37:16.473+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest]: Us007OrganizerNotificationAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:16.473+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.StandardAcceptanceTest]: StandardAcceptanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:16.474+02:00  INFO 23340 --- [registration-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [si.konferenca.registration.acceptance.support.AcceptanceTestBase]: AcceptanceTestBase does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-22T12:37:16.475+02:00  INFO 23340 --- [registration-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration si.konferenca.registration.RegistrationApplication for test class si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.839 s -- in si.konferenca.registration.acceptance.Us007OrganizerNotificationAcceptanceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 67, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25:16 min
+[INFO] Finished at: 2026-10-22T12:37:18+02:00
+[INFO] ------------------------------------------------------------------------

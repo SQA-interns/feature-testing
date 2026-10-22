@@ -1,0 +1,168 @@
+ Image registration-backend Building 
+ Image registration-frontend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 620B 0.0s done
+#2 DONE 0.1s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 450B 0.0s done
+#3 DONE 0.1s
+
+#4 [frontend internal] load metadata for docker.io/library/nginx:1.30.5-alpine
+#4 DONE 0.2s
+
+#5 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine
+#5 DONE 0.2s
+
+#6 [frontend internal] load metadata for docker.io/library/node:24.13.0-alpine
+#6 DONE 0.2s
+
+#7 [backend internal] load .dockerignore
+#7 transferring context: 77B 0.0s done
+#7 DONE 0.0s
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 125B 0.0s done
+#8 DONE 0.1s
+
+#9 [backend internal] load build context
+#9 DONE 0.0s
+
+#10 [backend 1/4] FROM docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a
+#10 ...
+
+#11 [frontend internal] load build context
+#11 DONE 0.0s
+
+#10 [backend 1/4] FROM docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a
+#10 resolve docker.io/library/eclipse-temurin:21.0.10_7-jre-alpine@sha256:ad0cdd9782db550ca7dde6939a16fd850d04e683d37d3cff79d84a5848ba6a5a 0.1s done
+#10 CACHED
+
+#12 [frontend build 1/7] FROM docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
+#12 resolve docker.io/library/node:24.13.0-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e 0.1s done
+#12 DONE 0.1s
+
+#13 [frontend stage-1 1/4] FROM docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#13 resolve docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94 0.1s done
+#13 DONE 0.1s
+
+#11 [frontend internal] load build context
+#11 transferring context: 281.79kB 0.1s done
+#11 DONE 0.1s
+
+#13 [frontend stage-1 1/4] FROM docker.io/library/nginx:1.30.5-alpine@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+#13 CACHED
+
+#14 [frontend build 2/7] WORKDIR /app
+#14 CACHED
+
+#9 [backend internal] load build context
+#9 ...
+
+#15 [frontend stage-1 2/4] COPY nginx.conf /etc/nginx/nginx.conf
+#15 DONE 0.2s
+
+#9 [backend internal] load build context
+#9 ...
+
+#16 [frontend build 3/7] COPY package.json package-lock.json .npmrc ./
+#16 DONE 0.2s
+
+#9 [backend internal] load build context
+#9 ...
+
+#17 [backend 2/4] RUN addgroup -S app && adduser -S -G app app     && mkdir -p /data/json-copies /app     && chown -R app:app /data /app
+#17 DONE 1.8s
+
+#9 [backend internal] load build context
+#9 ...
+
+#18 [backend 3/4] WORKDIR /app
+#18 DONE 0.1s
+
+#9 [backend internal] load build context
+#9 transferring context: 50.34MB 5.2s
+#9 transferring context: 80.25MB 7.7s done
+#9 DONE 7.7s
+
+#19 [backend 4/4] COPY --chown=app:app target/registration-backend-*.jar /app/app.jar
+#19 DONE 1.3s
+
+#20 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#20 ...
+
+#21 [backend] exporting to image
+#21 exporting layers
+#21 exporting layers 7.6s done
+#21 exporting manifest sha256:28a754babbb879a3f2fbc80b581b6b7876564cb64212a71fab1fd02c062dd0d6 0.1s done
+#21 exporting config sha256:2e5bf7842b86ebd1629d16347823e571c967673620369a2d65effc802e50f622 0.1s done
+#21 exporting attestation manifest sha256:11d8cbd693f5668e245c0f843dc924db3da63670faf3b3ced34d61194041c678 0.1s done
+#21 exporting manifest list sha256:ee1a4919920c1f990adc843e787fda7623e1002e9b2ed01297c627e49e9af561
+#21 exporting manifest list sha256:ee1a4919920c1f990adc843e787fda7623e1002e9b2ed01297c627e49e9af561 0.1s done
+#21 naming to docker.io/library/registration-backend:latest 0.0s done
+#21 unpacking to docker.io/library/registration-backend:latest
+#21 unpacking to docker.io/library/registration-backend:latest 1.4s done
+#21 DONE 9.4s
+
+#20 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#20 11.08 npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+#20 ...
+
+#22 [backend] resolving provenance for metadata file
+#22 DONE 0.1s
+
+#20 [frontend build 4/7] RUN npm ci --ignore-scripts --no-audit --no-fund
+#20 26.77 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#20 34.62 
+#20 34.62 added 443 packages in 32s
+#20 34.63 npm notice
+#20 34.63 npm notice New minor version of npm available! 11.6.2 -> 11.21.1
+#20 34.63 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.1
+#20 34.63 npm notice To update run: npm install -g npm@11.21.1
+#20 34.63 npm notice
+#20 DONE 38.7s
+
+#23 [frontend build 5/7] COPY index.html tsconfig.json vite.config.ts ./
+#23 DONE 0.7s
+
+#24 [frontend build 6/7] COPY src ./src
+#24 DONE 0.2s
+
+#25 [frontend build 7/7] RUN npx tsc --noEmit && npx vite build
+#25 9.585 vite v6.4.4 building for production...
+#25 9.817 transforming...
+#25 12.92 ✓ 34 modules transformed.
+#25 13.32 rendering chunks...
+#25 13.35 computing gzip size...
+#25 13.38 dist/index.html                  0.33 kB │ gzip:  0.24 kB
+#25 13.38 dist/assets/index-BNqjr_4P.js  235.68 kB │ gzip: 73.44 kB
+#25 13.38 ✓ built in 3.70s
+#25 DONE 13.7s
+
+#26 [frontend stage-1 3/4] COPY --from=build /app/dist /usr/share/nginx/html
+#26 DONE 0.1s
+
+#27 [frontend stage-1 4/4] RUN chown -R nginx:nginx /var/cache/nginx /usr/share/nginx/html
+#27 DONE 0.8s
+
+#28 [frontend] exporting to image
+#28 exporting layers
+#28 exporting layers 0.4s done
+#28 exporting manifest sha256:260abd673d0632131ab9db5ce21e80b4e9526bf56347be4bfdea164537191b3c 0.0s done
+#28 exporting config sha256:3fedc0c15c0360f597c0b06542dd7ba8a08bdb0dfaf0786b6b18376599c2f41b 0.0s done
+#28 exporting attestation manifest sha256:29d37401c12deca504247237a34b1384ffdce6b13f1707de08f2d76ea30b5e42
+#28 exporting attestation manifest sha256:29d37401c12deca504247237a34b1384ffdce6b13f1707de08f2d76ea30b5e42 0.0s done
+#28 exporting manifest list sha256:f650ea89a10ca262e90c5c08df09be8c6155d7693dae807afdfdc68f2ef8915e 0.0s done
+#28 naming to docker.io/library/registration-frontend:latest done
+#28 unpacking to docker.io/library/registration-frontend:latest
+#28 unpacking to docker.io/library/registration-frontend:latest 0.2s done
+#28 DONE 0.9s
+
+#29 [frontend] resolving provenance for metadata file
+#29 DONE 0.1s
+ Image registration-backend Built 
+ Image registration-frontend Built 
