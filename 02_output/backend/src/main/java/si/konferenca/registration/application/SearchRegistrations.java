@@ -14,7 +14,11 @@ public class SearchRegistrations {
     record Found(SearchPage page) implements Outcome {}
 
     /** Invalid parameters, one error each. */
-    record Rejected(List<FieldError> errors) implements Outcome {}
+    record Rejected(List<FieldError> errors) implements Outcome {
+      public Rejected {
+        errors = List.copyOf(errors);
+      }
+    }
   }
 
   private final SearchRequestValidator validator;

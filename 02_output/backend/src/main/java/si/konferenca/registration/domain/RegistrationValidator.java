@@ -36,6 +36,12 @@ public final class RegistrationValidator {
       Participant participant,
       List<String> options,
       List<String> consents) {
+    public Result {
+      errors = List.copyOf(errors);
+      options = List.copyOf(options);
+      consents = List.copyOf(consents);
+    }
+
     public boolean valid() {
       return errors.isEmpty();
     }
@@ -117,21 +123,28 @@ public final class RegistrationValidator {
     }
     Set<String> seen = new HashSet<>();
     for (String id : selected) {
-      Optional<ConferenceOption> option = id == null ? Optional.empty() : catalogue.option(id);
-      String problem;
-      if (option.isEmpty() || !option.get().active()) {
-        problem = "An option is not offered.";
-      } else if (type.isPresent() && !option.get().isOfferedTo(type.get())) {
-        problem = "An option is not available for this registration type.";
-      } else if (!seen.add(id)) {
-        problem = "An option is selected more than once.";
-      } else {
-        continue;
+      String problem = optionProblem(id, type, seen);
+      if (problem != null) {
+        errors.add(new FieldError("options", problem));
+        return List.of();
       }
-      errors.add(new FieldError("options", problem));
-      return List.of();
     }
     return List.copyOf(selected);
+  }
+
+  /** Why the option cannot be selected, or null when it can. */
+  private String optionProblem(String id, Optional<RegistrationType> type, Set<String> seen) {
+    Optional<ConferenceOption> option = id == null ? Optional.empty() : catalogue.option(id);
+    if (option.isEmpty() || !option.get().active()) {
+      return "An option is not offered.";
+    }
+    if (type.isPresent() && !option.get().isOfferedTo(type.get())) {
+      return "An option is not available for this registration type.";
+    }
+    if (!seen.add(id)) {
+      return "An option is selected more than once.";
+    }
+    return null;
   }
 
   private List<String> consents(List<FieldError> errors, List<String> raw) {

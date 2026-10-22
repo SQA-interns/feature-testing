@@ -18,7 +18,11 @@ public final class SearchRequestValidator {
   }
 
   /** Errors, or (when there are none) the criteria. */
-  public record Result(List<FieldError> errors, SearchCriteria criteria) {}
+  public record Result(List<FieldError> errors, SearchCriteria criteria) {
+    public Result {
+      errors = List.copyOf(errors);
+    }
+  }
 
   public Result validate(String text, String type, String option, String page) {
     List<FieldError> errors = new ArrayList<>();
@@ -59,13 +63,14 @@ public final class SearchRequestValidator {
     if (!present(page)) {
       return 1;
     }
+    int number;
     try {
-      int number = Integer.parseInt(page.strip());
-      if (number >= 1) {
-        return number;
-      }
+      number = Integer.parseInt(page.strip());
     } catch (NumberFormatException e) {
-      // reported below
+      number = 0;
+    }
+    if (number >= 1) {
+      return number;
     }
     errors.add(new FieldError("page", "Use a page number of 1 or more."));
     return 1;
