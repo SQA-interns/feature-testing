@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- False positives only (D-13); every other SpotBugs finding fails the check. -->
+<FindBugsFilter>
+  <!-- Constructor injection of collaborators (ports, EntityManager), not internal state -->
+  <Match>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+    <Or>
+      <Class name="si.konferenca.registration.application.RegisterParticipant"/>
+      <Class name="si.konferenca.registration.application.ExportRegistrations"/>
+      <Class name="si.konferenca.registration.application.SearchRegistrations"/>
+      <Class name="si.konferenca.registration.adapter.persistence.JpaRegistrationStore"/>
+    </Or>
+  </Match>
+  <!-- A request wrapper must hand out its wrapped input stream -->
+  <Match>
+    <Bug pattern="EI_EXPOSE_REP"/>
+    <Class name="si.konferenca.registration.adapter.web.RequestSizeFilter$Limited"/>
+  </Match>
+  <!-- HttpSecurity.build() is declared to throw Exception by Spring Security -->
+  <Match>
+    <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION"/>
+    <Class name="si.konferenca.registration.config.SecurityConfiguration"/>
+  </Match>
+</FindBugsFilter>
