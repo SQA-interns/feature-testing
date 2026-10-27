@@ -191,6 +191,11 @@
         <version>${dependency-check.version}</version>
         <configuration>
           <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
+          <!-- OSS Index needs credentials not listed in secrets.env.example (D-08) -->
+          <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+          <suppressionFiles>
+            <suppressionFile>dependency-check-suppressions.xml</suppressionFile>
+          </suppressionFiles>
           <formats>
             <format>HTML</format>
             <format>JSON</format>
