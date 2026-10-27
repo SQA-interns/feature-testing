@@ -91,3 +91,39 @@
 - Options: 1. (applied) Classify Low, false positive; suppress for that one artifact only.
 - Human response: none (pre-approved, PA-02)
 - Resolution: option 1
+
+## D-11: Response to organizer credentials over plain HTTP (AC-008-04, SR-06)
+- Timestamp: 2026-10-27T10:15:06Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: AC-008-04 requires refusal but does not say how; SR-06 says credentials are never accepted over plain HTTP except on localhost.
+- Options: 1. (chosen, conservative) Answer HTTP 403 with a general error and no data, without evaluating the credentials and without a redirect; 2. Redirect (308) to HTTPS, which invites clients to resend the credentials.
+- Human response: none
+- Resolution: pending review
+
+## D-12: Shipped conference options configuration
+- Timestamp: 2026-10-27T10:15:06Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-04 in `docs/01_requirements-check.md`; the inputs define the option fields (BR-04, OQ-01) but no shipped option set, while E2E-01 and E2E-02 depend on one.
+- Options: 1. (chosen) Ship an example configuration with at least one active option per category available to both types, at least one active option available only to external participants, and one inactive option; the operator replaces it through configuration (AR-04); 2. Ship an empty option set.
+- Human response: none
+- Resolution: pending review
+
+## D-13: User-facing language
+- Timestamp: 2026-10-27T10:15:06Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-05; no language is stated for the form, confirmation, errors or emails. The only given wording, the OQ-02 consent text, is English.
+- Options: 1. (chosen) English throughout, matching the given consent wording; Slovenian characters are supported in all data (NFR-01); 2. Slovenian user interface, which would need wording nobody has approved.
+- Human response: none
+- Resolution: pending review
+
+## D-14: Maximum lengths of text fields
+- Timestamp: 2026-10-27T10:15:06Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-06; no field length is given, but SR-03 needs a body size limit and the database needs column sizes.
+- Options: 1. (chosen) 200 characters per name, institution and programme field, 254 for email (RFC 5321 path limit), 50 for student ID, counted after trimming; longer input is rejected with a field error (HTTP 400); request body limit 16 KB; 2. No field limits, body limit only.
+- Human response: none
+- Resolution: pending review

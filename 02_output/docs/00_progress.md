@@ -5,9 +5,9 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: single-agent SDD run (`general/phases.md`), run label `tjan/single-agent/sdd/v002/run-2`, run id `tjan-single-agent-sdd-v002-run-2-opus-5-5-t1.8-20261027T0947Z-dda4`
-- Current phase: 0 complete; phase 1 (requirements) next
-- Last gate result: phase 0 passed 2026-10-27 (`docs/00_preflight-report.md`); D-01..D-10 all resolved
-- Next step: `stat.mjs phase 1 start`, then write `docs/01_requirements-check.md` from `project/01_requirements/*`
+- Current phase: 1 complete; phase 2 (design) next
+- Last gate result: phase 1 passed 2026-10-27 (`docs/01_requirements-check.md`); phase 0 passed; D-11..D-14 pending review (non-blocking)
+- Next step: `stat.mjs phase 2 start`, then write `docs/02_specification.md` and `docs/02_contracts/` (OpenAPI, JSON schemas for the JSON copy and options configuration); apply D-11..D-14
 - Environment notes:
   - Node 24.13.0 is not on the default PATH: prefix commands with `PATH=$HOME/.nvm/versions/node/v24.13.0/bin:$PATH`
   - Testcontainers (Docker Desktop): `DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock`
