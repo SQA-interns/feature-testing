@@ -175,11 +175,52 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
+        <configuration>
+          <!-- Measurement exclusion: entry point (docs/03_test-strategy.md) -->
+          <excludes>
+            <exclude>si/konferenca/registration/RegistrationApplication.class</exclude>
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
         <version>${pitest.version}</version>
+        <configuration>
+          <!-- Mutation scope: project/02_design/quality-requirements.md -->
+          <targetClasses>
+            <param>si.konferenca.registration.*</param>
+          </targetClasses>
+          <excludedClasses>
+            <param>si.konferenca.registration.RegistrationApplication</param>
+          </excludedClasses>
+          <!-- The full automated suite, every level -->
+          <targetTests>
+            <param>si.konferenca.registration.*</param>
+          </targetTests>
+          <threads>4</threads>
+          <timestampedReports>false</timestampedReports>
+          <outputFormats>
+            <param>XML</param>
+            <param>HTML</param>
+          </outputFormats>
+          <timeoutConstant>10000</timeoutConstant>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.pitest</groupId>
