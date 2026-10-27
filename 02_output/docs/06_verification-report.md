@@ -18,7 +18,7 @@ Run `tjan/single-agent/sdd/v002/run-2`, verified on 2026-10-27 against the code 
 | Scanners | Dependency-Check (online): 0 unsuppressed; npm audit: 5 Moderate, dev only; Semgrep: 1 ERROR, 1 WARNING; Gitleaks: 20 matches, none a real secret |
 | `.env` leak check | no file and no commit message contains a `.env` value |
 | Traceability | 35/35 AC have a test and a commit |
-| Open Critical/High | **1: F-01 (High), blocking decision D-18** |
+| Open Critical/High | none (F-01 lowered to Low by the human, D-18) |
 
 ## 1. Hashes (step 2)
 
@@ -144,7 +144,7 @@ Severity by `general/quality/severity-scale.md`; tools are used as reported.
 
 | ID | Severity | Source | Finding | Status |
 |---|---|---|---|---|
-| F-01 | High (Semgrep ERROR) | Semgrep `yaml.openapi.security.use-of-basic-authentication`, `docs/02_contracts/openapi.yaml:108`; implemented in `web.SecurityConfiguration` | The organizer export uses HTTP Basic authentication; the rule calls Basic weak and suggests OAuth2, OIDC or mTLS. | **open: blocking decision D-18** (lowering a High needs the human) |
+| F-01 | Low (reported High by Semgrep ERROR; lowered under D-18) | Semgrep `yaml.openapi.security.use-of-basic-authentication`, `docs/02_contracts/openapi.yaml:108`; implemented in `web.SecurityConfiguration` | The organizer export uses HTTP Basic authentication; the rule calls Basic weak and suggests OAuth2, OIDC or mTLS. | accepted: the human chose option 1 of D-18 ("do recomended"); the evidence is in D-18; the release notes name HTTP Basic, TLS and a strong password |
 | F-02 | Medium (Semgrep WARNING) | Semgrep `generic.nginx.security.missing-internal`, `frontend/nginx.conf:38` | `location /api/` has `proxy_pass` without `internal`. | accepted: false positive. The upstream is the constant `http://backend:8080` (set in the config, no request data in the target), so the location cannot be steered to another host; `internal` would make `/api/` unreachable for the browser and break every flow. |
 | F-03 | Low | Gitleaks `generic-api-key`, 19 lines in 8 committed phase 3 logs (`03_backend-acceptance-run.log`, `03_us00*-first.log`) | Lines `Using generated security password: <uuid>` printed by Spring Boot for the bootstrap skeleton's default user. | accepted: each value was a random password of a user that existed only inside one test JVM in phase 3; the current code has no such user, no `.env` value is involved, and history is not rewritten. |
 | F-04 | Medium | npm audit | 5 Moderate advisories in dev-only tooling. | accepted per D-05 (PA-03) and D-06; production audit is clean; listed in the release notes. |
@@ -181,20 +181,20 @@ Survivors outside these areas (mail transfer-encoding header, UI literals and Re
 | DoD-02 | `06_backend-check.log`, `06_frontend-final-run.log` | met |
 | DoD-03 | `docs/03_test-strategy.md` "Test measures": scope, raw and adjusted scores, 0 rounds | met |
 | DoD-04 | `ArchitectureTest` (5 rules of S2, cycle check) in the backend run | met |
-| DoD-05 | section 8 | **not met while F-01 is open (D-18)** |
+| DoD-05 | section 8 | met: no open Critical or High (F-01 lowered under D-18) |
 | DoD-06 | section 3 | met |
 | DoD-07 | section 7 | met |
 | DoD-08 | READMEs are written in phase 7 | checked at the phase 7 gate (clone log) |
 | DoD-09 | release notes are written in phase 7 | checked at the phase 7 gate |
-| DoD-10 | decisions log: D-01..D-17 resolved or pending review (D-11..D-14), D-18 open; manifests match | met apart from D-18 |
+| DoD-10 | decisions log: D-01..D-18 resolved, D-11..D-14 marked pending review; manifests match | met |
 | DoD-11 | phase 3 commits change no production source; the freeze commit `e933b1c` adds only the manifest and every listed file was committed before it; every user story has build commits (US-001 6 … US-008 2); manifest matches | met; commit sizes F-06 |
 | DoD-P01..P04 | section 3 | met |
 | DoD-P05 | `RecaptchaVerificationAcceptanceTest` (accepted, rejected, HTTP 500, test token with test mode off) | met |
 
 ## 10. Decisions (step 12)
 
-D-01..D-10, D-15..D-17 are resolved; D-11..D-14 are resolved by the agent and marked pending review; D-18 (F-01) is open and blocking.
+D-01..D-10 and D-15..D-18 are resolved (D-18 by the human, option 1); D-11..D-14 are resolved by the agent and marked pending review.
 
 ## 11. Verify → fix → re-verify loops
 
-None so far: no Critical or High finding has been fixed. F-01 waits for D-18.
+None: the only High (F-01) was lowered by the human under D-18 rather than fixed; no code changed in phase 6, so nothing was re-verified or re-measured.
