@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recaptcha-siteverify.schema.json",
+  "title": "Google reCAPTCHA v2 siteverify response (the part the backend reads)",
+  "description": "The backend POSTs application/x-www-form-urlencoded secret=<RECAPTCHA_SECRET_KEY>&response=<token> to RECAPTCHA_VERIFY_URL (default https://www.google.com/recaptcha/api/siteverify; tests point it at a mock, DoD-P05). A token is accepted only when the call returns HTTP 200 with success=true; any other status, a timeout or an unreadable body is a rejection (SR-01). Unknown properties are ignored.",
+  "type": "object",
+  "required": ["success"],
+  "properties": {
+    "success": { "type": "boolean" },
+    "challenge_ts": { "type": "string" },
+    "hostname": { "type": "string" },
+    "error-codes": { "type": "array", "items": { "type": "string" } }
+  },
+  "examples": [
+    { "success": true, "challenge_ts": "2026-10-27T10:00:00Z", "hostname": "registration.example.org" },
+    { "success": false, "error-codes": ["invalid-input-response"] }
+  ]
+}
