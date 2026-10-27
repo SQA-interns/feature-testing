@@ -184,8 +184,8 @@ Survivors outside these areas (mail transfer-encoding header, UI literals and Re
 | DoD-05 | section 8 | met: no open Critical or High (F-01 lowered under D-18) |
 | DoD-06 | section 3 | met |
 | DoD-07 | section 7 | met |
-| DoD-08 | READMEs are written in phase 7 | checked at the phase 7 gate (clone log) |
-| DoD-09 | release notes are written in phase 7 | checked at the phase 7 gate |
+| DoD-08 | phase 7 clean checkout (`out/logs/07_clean-checkout.log`): fresh clone, every root, backend and frontend README command run; two gaps found (Prettier on the frontend README, `COMPOSE_PROJECT_NAME` for the end-to-end tests), fixed in `e8ff856`, then all passed (backend 301, frontend 74, end-to-end 5, checks clean) | met (phase 7) |
+| DoD-09 | `docs/release-notes.md` "Must be tested manually by a human": real reCAPTCHA, real SMTP delivery, HTTPS and proxy, production startup, Excel, browsers, production data survival (all external services of `environments.md`) | met (phase 7) |
 | DoD-10 | decisions log: D-01..D-18 resolved, D-11..D-14 marked pending review; manifests match | met |
 | DoD-11 | phase 3 commits change no production source; the freeze commit `e933b1c` adds only the manifest and every listed file was committed before it; every user story has build commits (US-001 6 … US-008 2); manifest matches | met; commit sizes F-06 |
 | DoD-P01..P04 | section 3 | met |
