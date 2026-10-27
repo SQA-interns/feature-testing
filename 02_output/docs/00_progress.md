@@ -5,9 +5,9 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: single-agent SDD run (`general/phases.md`), run label `tjan/single-agent/sdd/v002/run-2`, run id `tjan-single-agent-sdd-v002-run-2-opus-5-5-t1.8-20261027T0947Z-dda4`
-- Current phase: 3 (test design): all tests written and committed per story; freeze commit next
-- Last gate result: phase 2 passed 2026-10-27: every AC, SR, SB, NFR, AR, BR, DoD-P maps to `docs/02_specification.md`; contracts validated (`out/logs/02_contract-validation.log`, `out/logs/02_contract-sql.log`); D-11..D-14 pending review
-- Next step: freeze commit (`docs/03_acceptance-manifest.sha256` only), then `stat.mjs phase 3 end` / `phase 4 start`; build story by story, layer by layer (`docs/02_specification.md`, notes in `docs/03_test-strategy.md`)
+- Current phase: 4 (build) started; phase 3 complete
+- Last gate result: phase 3 passed 2026-10-27: 101 frozen tests (89 backend acceptance, 7 frontend acceptance, 5 e2e), all failing for behavioural reasons on the skeleton; freeze commit e933b1c; 35/35 AC traced
+- Next step: build per user story and layer (domain+use case, persistence/adapters, web/API, UI), each commit at most 15 files / 400 lines, no tests or docs in the same commit; run the frozen tests after each story
 - Environment notes:
   - Node via nvm, as the operator does: `source ~/.nvm/nvm.sh; nvm use` in `02_output/frontend` (reads `.nvmrc`), or `nvm use 24.13.0` at the root. Use `;` after sourcing: nvm.sh returns 3 because the default alias `lts/*` does not resolve
   - Docker Desktop: the `docker` CLI and Testcontainers find its socket by themselves; no DOCKER_HOST or socket override needed
