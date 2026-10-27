@@ -7,9 +7,9 @@ The only file a human fills before starting the agent; the agent checks everythi
 - Model: claude-opus-5-5
 - Effort: medium
 - Template version: 1.8
-- Run label: kyuhi_single-agent_sdd_v007
-- Operator: kyuhi
-- Machine: kyuhiPC
+- Run label: tjan/single-agent/sdd/v002/run-2
+- Operator: tjan
+- Machine: tjanPC
 - Plan: PRO
 - Permission mode: auto
 - Run ID:
@@ -18,7 +18,7 @@ The only file a human fills before starting the agent; the agent checks everythi
 | Line | What to write |
 |---|---|
 | Model, Effort, Template version, Operator, Machine, Plan, Permission mode | pre-filled for kyuhi; check them, and change them if someone else or another setup does the run |
-| Run label | **change it for every run** (the next one is `kyuhi_single-agent_sdd_v008`); use it as the run folder's name; it names the run in reports |
+| Run label | **change it for every run** (the next one is `tjan/single-agent/sdd/v002/run-2-search`); use it as the run folder's name; it names the run in reports |
 | Run ID | **leave empty**: `stat.mjs init` generates a unique one |
 | Starting commit | **leave empty**: `stat.mjs init` records the commit the agent starts from |
 | Operator | `kyuhi`, `tanej` or `tjan` (lower case, exactly like this) |
