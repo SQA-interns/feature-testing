@@ -9,8 +9,10 @@
 | Acceptance | backend | `02_output/backend/src/test/java/si/konferenca/registration/acceptance/` | JUnit 6 through Surefire (`./mvnw -B test`). The real backend on a random port (`@SpringBootTest`) is called over HTTP with `java.net.http.HttpClient`. PostgreSQL `postgres:16.15-alpine` and Mailpit `axllent/mailpit:v1.31.1` run as Testcontainers. The siteverify mock is the JDK `HttpServer`. Configuration is supplied only under the variable names of specification S7.1. Outcomes are read through the public interfaces: the HTTP API, the storage contract (`database-schema.sql`, plain JDBC), the JSON copy directory and the Mailpit API. | yes |
 | Acceptance | frontend | `02_output/frontend/src/acceptance/` | Vitest 4 with jsdom and Testing Library. `App` is rendered and driven by accessible role and name, as in `registration-form-ui.md`. `fetch` is stubbed with the contract shapes of `openapi.yaml`. | yes |
 | End-to-end | local stack | `02_output/frontend/e2e/` | Playwright 1.63 Chromium against `docker compose up` in `02_output`, with one test per scenario E2E-01..E2E-05. Storage is checked with `docker compose exec` (psql, the JSON copy), mail through the Mailpit API, and the workbook with a built-in zip reader. | yes |
-| Architecture | backend | written in phase 4/5 (ArchUnit rules of specification S2) | JUnit | no |
-| Unit / integration | both | phase 5 | JUnit, Vitest | no |
+| Architecture | backend | `src/test/java/.../architecture/ArchitectureTest.java`: the 5 ArchUnit rules of specification S2 (6 rule fields) | JUnit (ArchUnit engine) | no |
+| Unit | backend | `src/test/java/.../{domain,config,application,web,adapter}/` | JUnit 6, AssertJ, Mockito; JDK `HttpServer` for siteverify, `@TempDir` for files | no |
+| Integration | backend | `web/SecurityWebTest.java`: the MVC slice with the real security chain and filters, use cases mocked | `@WebMvcTest` + MockMvc (`@EnableWebSecurity` in the test configuration, because Boot 4 leaves security out of the slice) | no |
+| Unit / component | frontend | `src/*.test.ts(x)` | Vitest, Testing Library, `fetch` and `grecaptcha` stubbed | no |
 
 The frozen set is every file under the `acceptance` and `e2e` paths above, including their `support/` harness files. It is listed in `docs/03_acceptance-manifest.sha256`. Supporting files that are not frozen: `docker-compose.yml`, the Dockerfiles, `nginx.conf`, `config/conference.json`, `playwright.config.ts` and `vite.config.ts`.
 
@@ -68,6 +70,8 @@ No test passes on bootstrap code. AC-008-02, which on its own would match the sk
 
 ## First complete run (before any fix)
 
+Phase 5 started with the full suite on the final production code of phase 4, before any unit test was written (`out/logs/05_backend-first-run.log`, `05_frontend-first-run.log`; end-to-end from the phase 4 gate, `04_e2e-gate.log`). Backend 89/89, frontend 7/7, end-to-end 5/5: no failure, so nothing to classify. No production code changed in phase 5.
+
 ## Final run (phase 6)
 
 ## Test measures (phase 5, updated in phase 6 only for a component that changed)
@@ -76,3 +80,13 @@ No test passes on bootstrap code. AC-008-02, which on its own would match the sk
 
 | Component | Level | Tests passed / failed | Line coverage | Branch coverage | Mutation score (scope) | Tools |
 |---|---|---|---|---|---|---|
+| backend | unit | 201 / 0 unit, 5 / 0 integration (MVC slice), 6 / 0 architecture | 93.47 % (830/888), with the slice and architecture tests | 95.31 % (264/277) | n/a | JUnit 6, JaCoCo 0.8.12 (`out/logs/05_coverage/backend-unit.csv`) |
+| backend | non-unit | 89 / 0 acceptance; 5 / 0 end-to-end (not instrumented, D-17) | 90.54 % (804/888) | 71.48 % (198/277) | n/a | JUnit 6, JaCoCo 0.8.12 (`out/logs/05_backend-first-run.log`, same production code) |
+| backend | all levels | 301 / 0 | **99.44 %** (883/888) | 96.39 % (267/277) | raw **92.71 %** (318 killed of 343; 23 survived, 2 no coverage), adjusted 92.71 % (0 equivalent), covered 93.26 % (318/341); scope `si.konferenca.registration.*` minus `RegistrationApplication`; tests: the full JUnit suite (acceptance, unit, integration, architecture) | JaCoCo 0.8.12 (`out/logs/05_coverage/backend-all.csv`), PIT 1.30.0 + junit5 plugin 1.2.3 (`out/logs/05_mutation/backend-pit-mutations.xml`) |
+| frontend | unit | 67 / 0 | 100 % (156/156) | 97.01 % (130/134) | n/a | Vitest 4.1.11, v8 (`out/logs/05_coverage/frontend-unit.json`) |
+| frontend | non-unit | 7 / 0 acceptance; 5 / 0 end-to-end (not instrumented, D-17) | 76.28 % (119/156) | 62.68 % (84/134) | n/a | Vitest 4.1.11, v8 (`out/logs/05_frontend-first-run.log`, same production code) |
+| frontend | all levels | 74 / 0 | **100 %** (156/156) | 97.01 % (130/134) | raw **90.30 %** (428 killed of 474 generated; 40 survived, 4 no coverage, 2 runtime errors counted as not killed; Stryker's own score without the 2 errors 90.68 %), adjusted 90.30 % (0 equivalent), covered 91.45 % (428/468); scope `src/**/*.{ts,tsx}` minus `main.tsx`, `*.d.ts`, tests; tests: the full Vitest suite (acceptance, unit/component) | Vitest v8, Stryker 10.0.0 vitest-runner (`out/logs/05_mutation/frontend-stryker-mutation.json`) |
+
+Quality gate (`project/02_design/quality-requirements.md`): line >= 95 %, adjusted mutation >= 90 %. Both components meet it with the one full mutation run; no survivor round was needed (`mutationRounds` 0), no survivor is counted as equivalent, and no further tests were added after the runs. Tool checks before the full runs: PIT on `EmailAddress` with its unit test killed 9/10 (`05_pit-sanity.log`), Stryker on `validation.ts` scored 94.29 % (`05_stryker-sanity.log`). PIT ran 1335 tests for 343 mutants; Stryker 4.15 tests per mutant.
+
+Code size (`aldanial/cloc:2.10`, code lines): backend production 2084 (61 files, sources and resources), backend tests 3598 (31); frontend production 659 (11: `src` without tests, `index.html`, `nginx.conf`), frontend tests 1641 (18, incl. end-to-end).

@@ -145,3 +145,12 @@
 - Options: 1. (proposed) Make the harness apply overrides explicitly: `AcceptanceTestBase` no longer carries a `@DynamicPropertySource`; it offers `register(registry, overrides)`, and each of the 9 concrete acceptance classes declares one `@DynamicPropertySource` that calls it (`Map.of()` for none; the reCAPTCHA and mail-down classes pass their current overrides unchanged). No assertion changes; the manifest is regenerated for the 10 changed files by a commit the human approves; 2. Smaller change in 3 files (`AcceptanceTestBase`, `RecaptchaVerificationAcceptanceTest`, `MailServerDownAcceptanceTest`): subclasses hand their overrides to the base through a static map that the base merges in; it relies on Spring calling the subclass method first, which is undocumented; 3. Leave the tests frozen as they are: the phase 4 gate cannot pass (4 tests fail) and AC-006-03 stays untested.
 - Human response: "do the recommended fix and document that frozen files have been modified. re freeze the files when done." (2026-10-27T11:32:48Z)
 - Resolution: option 1; the 10 changed harness and test files are re-frozen in a new manifest commit, listed in docs/03_test-strategy.md
+
+## D-17: End-to-end tests are outside the coverage and mutation runs
+- Timestamp: 2026-10-27T15:31:31Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: `general/quality/measurement-scope.md` asks for each component's full automated suite, at every level, under the coverage and mutation tools. The 5 Playwright end-to-end tests drive the containers of `docker-compose.yml`: the backend runs from the packaged jar inside its image and the frontend as the nginx-served production build, so neither JaCoCo/PIT (which instrument or mutate classes in the Maven test JVM) nor Vitest v8/Stryker (which instrument or mutate the sources run by Vitest) can see them. Mutating would need an image rebuild and stack restart per mutant.
+- Options: 1. (chosen) Run every JUnit level (acceptance, unit, slice, architecture) under JaCoCo and PIT, and every Vitest level (acceptance, unit/component) under Vitest coverage and Stryker; record the end-to-end tests as passed/failed only, and name the tests run with each figure; 2. Instrument the containers (JaCoCo agent in the backend image, an istanbul build of the frontend) for coverage only; mutation stays infeasible, and it changes the shipped images or needs a second build.
+- Human response: none
+- Resolution: option 1; non-unit coverage is the JUnit/Vitest acceptance tests, and the mutation figures name their tests
