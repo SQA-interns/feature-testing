@@ -1,0 +1,36 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) (1.0m)
+
+
+  1) [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.check: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('radio', { name: 'External participant' })
+
+
+      25 |
+      26 |   await page.goto("/");
+    > 27 |   await page.getByRole("radio", { name: "External participant" }).check();
+         |                                                                   ^
+      28 |   await page.getByLabel("First name").fill("Ana");
+      29 |   await page.getByLabel("Last name").fill(lastName);
+      30 |   await page.getByLabel("Email").fill(email);
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-01-external-registers.spec.ts:27:67
+
+    Error Context: test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 

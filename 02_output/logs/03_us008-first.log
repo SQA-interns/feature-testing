@@ -1,0 +1,208 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] skip non existing resourceDirectory /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest
+12:01:18.508 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+12:01:18.513 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+12:01:18.543 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+12:01:19.211 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/tjan-kazar/.docker/desktop/docker.sock)
+12:01:19.212 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+12:01:19.231 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.3.1
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 31283 MB
+  Labels: 
+    com.docker.desktop.address=unix:///home/tjan-kazar/.docker/desktop/docker-cli.sock
+12:01:19.831 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+12:01:19.995 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: b7286f2ca67944188f25d0b79c7a723f62ba37a67038f17abd578c0bbb2dc095
+12:01:20.456 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.62553913S
+12:01:20.461 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+12:01:20.461 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+12:01:20.461 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+12:01:20.462 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+12:01:20.586 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: 55abf0682fce05903f5aea309bbd814fa03c13bea373329abbf26067f56296c2
+12:01:22.697 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT2.234286797S
+12:01:22.699 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:37953/registration?loggerLevel=OFF)
+12:01:22.700 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+12:01:22.854 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 9da935fb45e45e0efe786466aa0cd9174b5cb4ffd40898e748ca89f071f9bf1e
+12:01:23.236 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /goofy_moser: Waiting for 60 seconds for URL: http://localhost:38901/livez (where port 38901 maps to container port 8025)
+12:01:23.244 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.544260909S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-27T12:01:23.613+01:00  INFO 130521 --- [registration-backend] [           main] s.k.r.a.RegistrationExportAcceptanceTest : Starting RegistrationExportAcceptanceTest using Java 21.0.12.1 with PID 130521 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend)
+2026-10-27T12:01:23.615+01:00  INFO 130521 --- [registration-backend] [           main] s.k.r.a.RegistrationExportAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-27T12:01:24.293+01:00  INFO 130521 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-27T12:01:24.317+01:00  INFO 130521 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
+2026-10-27T12:01:24.870+01:00  INFO 130521 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-27T12:01:24.888+01:00  INFO 130521 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-27T12:01:24.888+01:00  INFO 130521 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-27T12:01:24.934+01:00  INFO 130521 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1301 ms
+2026-10-27T12:01:25.272+01:00  INFO 130521 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-27T12:01:25.471+01:00  INFO 130521 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22cce199
+2026-10-27T12:01:25.473+01:00  INFO 130521 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-27T12:01:25.495+01:00  INFO 130521 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:37953/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-27T12:01:25.545+01:00  INFO 130521 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-27T12:01:25.547+01:00  INFO 130521 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.008s)
+2026-10-27T12:01:25.547+01:00  WARN 130521 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-27T12:01:25.564+01:00  INFO 130521 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-27T12:01:25.642+01:00  INFO 130521 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-27T12:01:25.646+01:00  INFO 130521 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-27T12:01:25.744+01:00  INFO 130521 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-27T12:01:25.791+01:00  INFO 130521 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-27T12:01:26.155+01:00  INFO 130521 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-27T12:01:26.229+01:00  INFO 130521 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:37953/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-27T12:01:26.530+01:00  INFO 130521 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-27T12:01:26.567+01:00  INFO 130521 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-27T12:01:27.043+01:00  WARN 130521 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 83fccb2f-9f74-40af-b219-12c3fd043773
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-27T12:01:27.063+01:00  INFO 130521 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-27T12:01:27.219+01:00  INFO 130521 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-27T12:01:27.317+01:00  INFO 130521 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 46783 (http) with context path '/'
+2026-10-27T12:01:27.331+01:00  INFO 130521 --- [registration-backend] [           main] s.k.r.a.RegistrationExportAcceptanceTest : Started RegistrationExportAcceptanceTest in 4.009 seconds (process running for 10.115)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/home/tjan-kazar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-10-27T12:01:28.264+01:00  INFO 130521 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27T12:01:28.265+01:00  INFO 130521 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-27T12:01:28.266+01:00  INFO 130521 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[ERROR] Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 10.62 s <<< FAILURE! -- in si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(String, String)[1] -- Time elapsed: 0.967 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(RegistrationExportAcceptanceTest.java:123)
+
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(String, String)[2] -- Time elapsed: 0.051 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(RegistrationExportAcceptanceTest.java:123)
+
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(String, String)[3] -- Time elapsed: 0.048 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused(RegistrationExportAcceptanceTest.java:123)
+
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_04_plainHttpFromRemoteClientIsRefused -- Time elapsed: 0.050 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_04_plainHttpFromRemoteClientIsRefused(RegistrationExportAcceptanceTest.java:159)
+
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInWorkbook -- Time elapsed: 0.046 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInWorkbook(RegistrationExportAcceptanceTest.java:144)
+
+[ERROR] si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_01_organizerExportsOneRowPerRegistration -- Time elapsed: 0.043 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[setup registration: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.register(RegistrationExportAcceptanceTest.java:33)
+	at si.konferenca.registration.acceptance.RegistrationExportAcceptanceTest.ac_008_01_organizerExportsOneRowPerRegistration(RegistrationExportAcceptanceTest.java:72)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_01_organizerExportsOneRowPerRegistration:72->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused:123->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused:123->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_02_exportWithoutValidCredentialsIsRefused:123->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_03_slovenianCharactersAreUnchangedInWorkbook:144->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[ERROR]   RegistrationExportAcceptanceTest.ac_008_04_plainHttpFromRemoteClientIsRefused:159->register:33 [setup registration: ] 
+expected: 201
+ but was: 401
+[INFO] 
+[ERROR] Tests run: 6, Failures: 6, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.426 s
+[INFO] Finished at: 2026-10-27T12:01:29+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

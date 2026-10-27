@@ -1,0 +1,224 @@
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend
+
+ ❯ src/acceptance/us002-student-form.test.tsx (1 test | 1 failed) 1046ms
+     × AC-002-07 shows exactly the student fields, only student options by category and unchecked consents 1044ms
+ ❯ src/acceptance/us001-external-form.test.tsx (1 test | 1 failed) 1047ms
+     × AC-001-08 shows exactly the external fields, active options by category and unchecked consents 1045ms
+ ❯ src/acceptance/us004-confirmation.test.tsx (5 tests | 5 failed) 5094ms
+     × AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance 1045ms
+     × AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values 1009ms
+     × AC-004-03 shows field errors for an empty required field and an invalid email without sending a request 1014ms
+     × AC-004-04 shows a general error without technical details when the backend fails (500) 1010ms
+     × AC-004-04 shows a general error without technical details when the backend cannot be reached 1012ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/acceptance/us001-external-form.test.tsx > US-001 external participant form > AC-001-08 shows exactly the external fields, active options by category and unchecked consents
+TestingLibraryElementError: Unable to find role="radio" and name "External participant"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ src/acceptance/us001-external-form.test.tsx:28:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  src/acceptance/us002-student-form.test.tsx > US-002 student form > AC-002-07 shows exactly the student fields, only student options by category and unchecked consents
+TestingLibraryElementError: Unable to find role="radio" and name "Student"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ src/acceptance/us002-student-form.test.tsx:25:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  src/acceptance/us004-confirmation.test.tsx > US-004 registration confirmation > AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+TestingLibraryElementError: Unable to find role="radio" and name "External participant"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ fillValidExternal src/acceptance/support/form.ts:43:9
+ ❯ src/acceptance/us004-confirmation.test.tsx:47:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  src/acceptance/us004-confirmation.test.tsx > US-004 registration confirmation > AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+TestingLibraryElementError: Unable to find role="radio" and name "External participant"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ fillValidExternal src/acceptance/support/form.ts:43:9
+ ❯ src/acceptance/us004-confirmation.test.tsx:80:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  src/acceptance/us004-confirmation.test.tsx > US-004 registration confirmation > AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+TestingLibraryElementError: Unable to find role="radio" and name "External participant"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ src/acceptance/us004-confirmation.test.tsx:102:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  src/acceptance/us004-confirmation.test.tsx > US-004 registration confirmation > AC-004-04 shows a general error without technical details when the backend fails (500)
+ FAIL  src/acceptance/us004-confirmation.test.tsx > US-004 registration confirmation > AC-004-04 shows a general error without technical details when the backend cannot be reached
+TestingLibraryElementError: Unable to find role="radio" and name "External participant"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [0mConference registration[0m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ chooseType src/acceptance/support/form.ts:30:32
+     28|
+     29| export async function chooseType(label: "External participant" | "Stud…
+     30|   fireEvent.click(await screen.findByRole("radio", { name: label }));
+       |                                ^
+     31| }
+     32|
+ ❯ fillValidExternal src/acceptance/support/form.ts:43:9
+ ❯ src/acceptance/us004-confirmation.test.tsx:145:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  7 failed (7)
+   Start at  12:03:01
+   Duration  6.11s (transform 150ms, setup 552ms, import 119ms, tests 7.19s, environment 1.78s)
+

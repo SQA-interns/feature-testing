@@ -120,7 +120,7 @@ Order in `RegisterParticipant`: validate fields, options and consents (S4.2..S4.
 - A field that is missing, null, empty or blank after trimming gives `REQUIRED` (AC-001-02, AC-002-02).
 - Lengths are counted in Unicode code points after trimming: 200 for names, organization, study institution and programme; 254 for email; 50 for student ID. A longer value gives `TOO_LONG`.
 - Email: one address of the form `local@domain`. The local part is 1..64 characters from `A-Za-z0-9!#$%&'*+/=?^_\`{|}~.-`, with no leading, trailing or double dot. The domain has at least two labels of `A-Za-z0-9-`, does not start or end a label with `-`, and its last label is at least two letters. No spaces, CR, LF or commas are allowed. Anything else gives `INVALID_FORMAT` (AC-001-04, AC-002-03). The same rule runs in the frontend (S6.2).
-- Text accepts any Unicode letters, including č, š, ž (BR-03). Control characters other than tab are rejected with `INVALID_FORMAT` in name, institution, programme and student ID fields.
+- Text fields other than email accept any Unicode text, including č, š, ž (BR-03), line breaks and markup; they are stored as accepted and neutralised where they are output (emails: S4.7; UI: React escaping; export: string cells), as AC-006-02 requires.
 
 ### S4.3 Options (BR-04, SR-04, OQ-01, OQ-04)
 
@@ -153,7 +153,7 @@ After the commit, the backend sends the participant confirmation and one notific
 
 ### S4.8 Export (US-008, SR-07, AC-008-01, AC-008-03)
 
-There is one sheet, `Registrations`, with a header row and one row per registration ordered by registration time. Columns: Registration ID, Type, Registered at (UTC, ISO 8601), First name, Last name, Email, Organization / institution, Study institution, Study programme, Student ID, Workshops, Events, Meals, Other activities (option names joined with `; `), and Consents (`<id> (<givenAt>)` joined with `; `). Every cell is written as a string cell (`setCellValue(String)`), never as a formula. Text therefore stays unchanged (AC-008-03), and a value such as `=1+1` is not evaluated. The workbook includes no internal field (SR-07). The file name is `registrations-<yyyy-MM-dd>.xlsx`.
+There is one sheet, `Registrations`, with a header row and one row per registration ordered by registration time. Columns, with these exact header texts: Registration ID, Type (`EXTERNAL` or `STUDENT`), Registered at (UTC, ISO 8601), First name, Last name, Email, Organization / institution, Study institution, Study programme, Student ID, Workshops, Events, Meals, Other activities (option names joined with `; `), and Consents (`<id> (<givenAt>)` joined with `; `). Every cell is written as a string cell (`setCellValue(String)`), never as a formula. Text therefore stays unchanged (AC-008-03), and a value such as `=1+1` is not evaluated. The workbook includes no internal field (SR-07). The file name is `registrations-<yyyy-MM-dd>.xlsx`.
 
 ## S5 Conference configuration (AR-04, US-003, OQ-01, OQ-02)
 
@@ -224,7 +224,7 @@ A `@RestControllerAdvice` maps validation to 400 `ValidationError`, unreadable J
 
 ## S8 Deployment and runtime
 
-- Backend image: a multi-stage build that packages with the Maven wrapper and runs on `eclipse-temurin:21.0.10_7-jre-alpine` as a non-root user (uid 10001); the configuration file is mounted read-only and only the JSON copy directory is writable (SB-11).
+- Backend image: the jar is packaged on the host with the Maven wrapper (`tech-stack.md` pins no JDK build image) and copied into `eclipse-temurin:21.0.10_7-jre-alpine`, which runs it as a non-root user (uid 10001); the configuration file is mounted read-only and only the JSON copy directory is writable (SB-11).
 - Frontend image: builds in `node:24.13.0-alpine` and serves from `nginx:1.30.5-alpine` as non-root on port 8080. Its nginx serves `/` and proxies `/api/` to the backend. It sets `proxy_set_header Host` to the upstream itself and never forwards the client's Host (SR-08). It sets `X-Forwarded-For $remote_addr`, replacing rather than appending, and `X-Forwarded-Proto $scheme`.
 - `docker-compose.yml` (local): `postgres:16.15-alpine`, `axllent/mailpit:v1.31.1`, backend and frontend. It publishes only `127.0.0.1:8080` (frontend) and `127.0.0.1:8025` (Mailpit UI and API), and uses named volumes `pgdata` and `json-copies` (NFR-02). It sets `APP_ENVIRONMENT=local`, `RECAPTCHA_TEST_MODE=true` and `ORGANIZER_HTTPS_ONLY=false` (allowed only on local plain HTTP, `environments.md`). Secrets come from `.env` (`--env-file`).
 - Health (NFR-04, ES-09): Spring Actuator `/actuator/health/liveness` and `/actuator/health/readiness`, where readiness includes the database. Compose health checks use them for the backend, `pg_isready` for PostgreSQL and `wget` on `/` for the frontend. Dependent services wait for `service_healthy`.

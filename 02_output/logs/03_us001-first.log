@@ -1,0 +1,486 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default-cli) @ registration-backend ---
+[INFO] clean file: /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/src/test/java/si/konferenca/registration/acceptance/support/AcceptanceTestBase.java
+[INFO] Spotless.Java is keeping 7 files clean - 1 were changed to be clean, 1 were already clean, 5 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] skip non existing resourceDirectory /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 6 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest
+11:45:34.719 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+11:45:34.724 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+11:45:34.753 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+11:45:35.463 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/tjan-kazar/.docker/desktop/docker.sock)
+11:45:35.466 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+11:45:35.485 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.3.1
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 31283 MB
+  Labels: 
+    com.docker.desktop.address=unix:///home/tjan-kazar/.docker/desktop/docker-cli.sock
+11:45:36.240 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+11:45:36.485 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 780108ae443092359a6dbc4904adc1fdb762f42303c4f7626f727b03fc4c949e
+11:45:36.967 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.72636753S
+11:45:36.972 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+11:45:36.973 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+11:45:36.973 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+11:45:36.974 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+11:45:37.121 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: c9f809925c14cd4bcfd09b39d0efbe626ecab9d1bafc8da6619d77618593b090
+11:45:39.140 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT2.166054317S
+11:45:39.141 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:33923/registration?loggerLevel=OFF)
+11:45:39.141 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+11:45:39.277 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 26df06ba26551ee1966382334b32fbdb05041b5fa9109e0aafe7006c70bdbc76
+11:45:39.705 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /youthful_khayyam: Waiting for 60 seconds for URL: http://localhost:35177/livez (where port 35177 maps to container port 8025)
+11:45:39.723 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.581271842S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-27T11:45:40.195+01:00  INFO 113758 --- [registration-backend] [           main] k.r.a.ExternalRegistrationAcceptanceTest : Starting ExternalRegistrationAcceptanceTest using Java 21.0.12.1 with PID 113758 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend)
+2026-10-27T11:45:40.197+01:00  INFO 113758 --- [registration-backend] [           main] k.r.a.ExternalRegistrationAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-27T11:45:40.917+01:00  INFO 113758 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-27T11:45:40.944+01:00  INFO 113758 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2026-10-27T11:45:41.673+01:00  INFO 113758 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-27T11:45:41.688+01:00  INFO 113758 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-27T11:45:41.688+01:00  INFO 113758 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-27T11:45:41.739+01:00  INFO 113758 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1521 ms
+2026-10-27T11:45:42.156+01:00  INFO 113758 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-27T11:45:42.385+01:00  INFO 113758 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2389f546
+2026-10-27T11:45:42.386+01:00  INFO 113758 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-27T11:45:42.411+01:00  INFO 113758 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:33923/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-27T11:45:42.474+01:00  INFO 113758 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-27T11:45:42.479+01:00  INFO 113758 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.014s)
+2026-10-27T11:45:42.479+01:00  WARN 113758 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-27T11:45:42.501+01:00  INFO 113758 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-27T11:45:42.577+01:00  INFO 113758 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-27T11:45:42.582+01:00  INFO 113758 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-27T11:45:42.708+01:00  INFO 113758 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-27T11:45:42.769+01:00  INFO 113758 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-27T11:45:43.204+01:00  INFO 113758 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-27T11:45:43.295+01:00  INFO 113758 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:33923/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-27T11:45:43.636+01:00  INFO 113758 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-27T11:45:43.686+01:00  INFO 113758 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-27T11:45:44.257+01:00  WARN 113758 --- [registration-backend] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 95bc728e-f557-4814-a96d-b9bf803c0672
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-10-27T11:45:44.283+01:00  INFO 113758 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-27T11:45:44.490+01:00  INFO 113758 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-27T11:45:44.623+01:00  INFO 113758 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 40771 (http) with context path '/'
+2026-10-27T11:45:44.634+01:00  INFO 113758 --- [registration-backend] [           main] k.r.a.ExternalRegistrationAcceptanceTest : Started ExternalRegistrationAcceptanceTest in 4.844 seconds (process running for 11.429)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/tjan-kazar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-27T11:45:45.475+01:00  INFO 113758 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27T11:45:45.476+01:00  INFO 113758 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-27T11:45:45.477+01:00  INFO 113758 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[ERROR] Tests run: 31, Failures: 31, Errors: 0, Skipped: 0, Time elapsed: 14.33 s <<< FAILURE! -- in si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_03_leadingAndTrailingSpacesAreRemovedBeforeStoring -- Time elapsed: 0.920 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[body: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_03_leadingAndTrailingSpacesAreRemovedBeforeStoring(ExternalRegistrationAcceptanceTest.java:68)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[1] -- Time elapsed: 0.069 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[2] -- Time elapsed: 0.054 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[3] -- Time elapsed: 0.053 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[4] -- Time elapsed: 0.048 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[5] -- Time elapsed: 0.096 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[6] -- Time elapsed: 0.144 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[7] -- Time elapsed: 0.070 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[8] -- Time elapsed: 0.051 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[9] -- Time elapsed: 0.044 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[10] -- Time elapsed: 0.048 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[11] -- Time elapsed: 0.076 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(String, String)[12] -- Time elapsed: 0.146 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected(ExternalRegistrationAcceptanceTest.java:54)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[1] -- Time elapsed: 0.138 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[2] -- Time elapsed: 0.122 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[3] -- Time elapsed: 0.069 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[4] -- Time elapsed: 0.046 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[5] -- Time elapsed: 0.042 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[6] -- Time elapsed: 0.082 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[7] -- Time elapsed: 0.129 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(String)[8] -- Time elapsed: 0.089 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected(ExternalRegistrationAcceptanceTest.java:97)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(String, String)[1] -- Time elapsed: 0.080 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(ExternalRegistrationAcceptanceTest.java:154)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(String, String)[2] -- Time elapsed: 0.146 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(ExternalRegistrationAcceptanceTest.java:154)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(String, String)[3] -- Time elapsed: 0.130 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored(ExternalRegistrationAcceptanceTest.java:154)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_01_validExternalSubmissionIsAcceptedWithNewId -- Time elapsed: 0.129 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[body: ] 
+expected: 201
+ but was: 401
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_01_validExternalSubmissionIsAcceptedWithNewId(ExternalRegistrationAcceptanceTest.java:27)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(String, List)[1] -- Time elapsed: 0.052 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(ExternalRegistrationAcceptanceTest.java:133)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(String, List)[2] -- Time elapsed: 0.059 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(ExternalRegistrationAcceptanceTest.java:133)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(String, List)[3] -- Time elapsed: 0.047 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected(ExternalRegistrationAcceptanceTest.java:133)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(String, List)[1] -- Time elapsed: 0.091 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(ExternalRegistrationAcceptanceTest.java:113)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(String, List)[2] -- Time elapsed: 0.141 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(ExternalRegistrationAcceptanceTest.java:113)
+
+[ERROR] si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(String, List)[3] -- Time elapsed: 0.162 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+	at si.konferenca.registration.acceptance.support.AcceptanceTestBase.assertRejected(AcceptanceTestBase.java:261)
+	at si.konferenca.registration.acceptance.ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected(ExternalRegistrationAcceptanceTest.java:113)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_01_validExternalSubmissionIsAcceptedWithNewId:27 [body: ] 
+expected: 201
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_02_missingEmptyOrBlankRequiredFieldIsRejected:54->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_03_leadingAndTrailingSpacesAreRemovedBeforeStoring:68 [body: ] 
+expected: 201
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_04_invalidEmailFormatIsRejected:97->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected:113->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected:113->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_05_unknownInactiveOrDuplicateOptionIsRejected:113->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected:133->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected:133->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_06_missingMandatoryConsentIsRejected:133->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored:154->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored:154->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[ERROR]   ExternalRegistrationAcceptanceTest.ac_001_07_missingOrRejectedCaptchaTokenIsRejectedAndNothingStored:154->AcceptanceTestBase.assertRejected:261 [status of a rejected submission, body: ] 
+expected: 400
+ but was: 401
+[INFO] 
+[ERROR] Tests run: 31, Failures: 31, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20.152 s
+[INFO] Finished at: 2026-10-27T11:45:49+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
