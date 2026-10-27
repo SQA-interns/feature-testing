@@ -1,0 +1,44 @@
+## clean checkout 2026-10-27T16:17:29Z of 540e36c
+cloned; .env linked (not copied)
+## root README step 2: package jar
+exit 0
+backend/target/registration-backend-0.1.0.jar
+## root README step 2: compose up (COMPOSE_PROJECT_NAME=registration-clonecheck, ports 18080/18025)
+exit 0
+backend: Up 22 seconds (healthy)
+frontend: Up 6 seconds (healthy)
+mailpit: Up 28 seconds (healthy)
+postgres: Up 28 seconds (healthy)
+## root README step 3: form and Mailpit
+form 200
+form-config 200
+mailpit 200
+## root README step 4: export
+export 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+(a first frontend attempt ran nvm inside a pipeline, so node was not on PATH; repeated below)
+## frontend README: nvm use; npm ci
+v24.13.0
+npm ci exit 0
+## npm run build
+exit 0
+## npm test
+ Test Files  9 passed (9)
+      Tests  74 passed (74)
+## npm run check
+exit 1
+## end-to-end: set -a; . ../../.env; set +a; npx playwright test (E2E_BASE_URL=:18080, E2E_MAILPIT_URL=:18025)
+    [chromium] › e2e/e2e-04-slovenian-characters.spec.ts:12:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+    [chromium] › e2e/e2e-05-organizer-export.spec.ts:7:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+  1 passed (12.7s)
+## findings of the first pass: npm run check failed (frontend/README.md not formatted by Prettier); E2E 1/5 because COMPOSE_PROJECT_NAME was not exported for the tests (README gap). Fixed in e8ff856; repeated on that commit:
+## npm run check
+exit 0
+## end-to-end with COMPOSE_PROJECT_NAME=registration-clonecheck exported (frontend README)
+  5 passed (11.2s)
+## backend README: ./mvnw -B test
+exit 0
+[INFO] Tests run: 301, Failures: 0, Errors: 0, Skipped: 0
+## backend README: check
+exit 0
+## stop and remove the clone's stack (its own project and volumes)
+down exit 0
