@@ -1,0 +1,24 @@
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  9 passed (9)
+      Tests  74 passed (74)
+   Start at  16:27:29
+   Duration  7.18s (transform 1.24s, setup 5.63s, import 1.98s, tests 11.02s, environment 14.11s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |    97.01 |     100 |     100 |                   
+ ...rationForm.tsx |     100 |     92.3 |     100 |     100 | 70-76             
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 164/164 )
+Branches     : 97.01% ( 130/134 )
+Functions    : 100% ( 50/50 )
+Lines        : 100% ( 156/156 )
+================================================================================

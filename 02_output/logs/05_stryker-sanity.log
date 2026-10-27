@@ -1,0 +1,136 @@
+[32m16:28:19 (325344) INFO ProjectReader[39m Found 1 of 65 file(s) to be mutated.
+[32m16:28:20 (325344) INFO Instrumenter[39m Instrumented 1 source file(s) with 105 mutant(s)
+[32m16:28:21 (325344) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m16:28:25 (325344) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m16:28:43 (325344) INFO DryRunExecutor[39m Initial test run succeeded. Ran 44 tests in 17 seconds (net 5601.012981999994 ms, overhead 12040.987018000007 ms).
+
+All tests
+  acceptance
+    us001-external-form.test.tsx
+      ✘ US-001 external participant form AC-001-08 shows exactly the external fields, active options by category and unchecked consents (covered 0)
+    us002-student-form.test.tsx
+      ✘ US-002 student form AC-002-07 shows exactly the student fields, only student options by category and unchecked consents (covered 0)
+    us004-confirmation.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance (killed 10)
+      ~ US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values (covered 51)
+      ✓ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request (killed 2)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500) (covered 51)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend cannot be reached (covered 51)
+  App.test.tsx
+    ✘ App shows loading, then the conference and the form (covered 0)
+    ✘ App shows an alert when the configuration cannot be loaded (covered 0)
+    ✘ App ignores a late answer after unmounting (covered 0)
+    ✘ Confirmation says when no options were selected (covered 0)
+  RegistrationForm.test.tsx
+    ✘ RegistrationForm shows nothing but the type choice before a type is chosen (covered 0)
+    ✓ RegistrationForm offers options by type and drops unavailable ones when the type changes (killed 21)
+    ✓ RegistrationForm checks the form before sending and marks the fields (killed 1)
+    ~ RegistrationForm shows the backend's field errors and a general alert for unknown fields (covered 51)
+    ~ RegistrationForm shows the general alert when sending fails, and disables the button meanwhile (covered 51)
+    ✓ RegistrationForm asks reCAPTCHA for a new token after a failed send (killed 1)
+  validation.test.ts
+    ✓ isValidEmail accepts a@b.si (killed 9)
+    ✓ isValidEmail accepts ana.novak@example.org (killed 6)
+    ✓ isValidEmail accepts ana+tag@sub.example.co.uk (killed 1)
+    ~ isValidEmail accepts o'neil@example.org (covered 22)
+    ✓ isValidEmail accepts aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.org (killed 1)
+    ✓ isValidEmail rejects (killed 1)
+    ~ isValidEmail rejects ana (covered 10)
+    ~ isValidEmail rejects @example.org (covered 10)
+    ~ isValidEmail rejects ana@ (covered 22)
+    ~ isValidEmail rejects ana@@example.org (covered 13)
+    ~ isValidEmail rejects ana@x@example.org (covered 13)
+    ✓ isValidEmail rejects .ana@example.org (killed 3)
+    ✓ isValidEmail rejects an..a@example.org (killed 1)
+    ~ isValidEmail rejects ana novak@example.org (covered 20)
+    ~ isValidEmail rejects ana@example (covered 22)
+    ~ isValidEmail rejects ana@example.o (covered 22)
+    ✓ isValidEmail rejects ana@-host.example.org (killed 1)
+    ✓ isValidEmail rejects ana@example.org. (killed 1)
+    ~ isValidEmail rejects xana@example.org,eve@example.org (covered 13)
+    ✓ isValidEmail rejects aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.org (killed 1)
+    ✓ validate accepts a complete external form (killed 17)
+    ✓ validate checks only the fields of the chosen type (killed 5)
+    ✓ validate reports missing and blank fields as required (killed 1)
+    ✓ validate counts characters after trimming, by code point (killed 6)
+    ✓ validate checks the email format after the length, on the trimmed value (killed 3)
+    ✓ validate requires mandatory consents only (killed 4)
+    ✓ validate requires a captcha token (killed 3)
+
+[Survived] ConditionalExpression
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (false) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] LogicalOperator
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at <= 0 && at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (false || at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] EqualityOperator
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at < 0 || at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:34:18
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at <= 0 || false) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 30 more tests!
+
+
+[Survived] BlockStatement
+src/validation.ts:34:49
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
+-       return false;
+-     }
++     if (at <= 0 || at !== value.lastIndexOf("@")) {}
+Tests ran:
+    isValidEmail rejects
+    isValidEmail rejects ana
+    isValidEmail rejects @example.org
+  and 3 more tests!
+
+
+Ran 6.09 tests per mutant on average.
+---------------|------------------|----------|-----------|------------|----------|----------|
+               | % Mutation score |          |           |            |          |          |
+File           |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+All files      |  94.29 |   94.29 |       99 |         0 |          6 |        0 |        0 |
+ validation.ts |  94.29 |   94.29 |       99 |         0 |          6 |        0 |        0 |
+---------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m16:31:08 (325344) INFO MutationTestExecutor[39m Done in 2 minutes and 50 seconds.
