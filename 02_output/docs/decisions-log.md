@@ -127,3 +127,12 @@
 - Options: 1. (chosen) 200 characters per name, institution and programme field, 254 for email (RFC 5321 path limit), 50 for student ID, counted after trimming; longer input is rejected with a field error (HTTP 400); request body limit 16 KB; 2. No field limits, body limit only.
 - Human response: none
 - Resolution: pending review
+
+## D-15: Contract validation with the host's Python parsers
+- Timestamp: 2026-10-27T10:41:40Z
+- Phase: 2
+- Type: non-blocking
+- Trigger: The phase 2 gate needs the contracts validated with a parser; `tech-stack.md` lists no OpenAPI or JSON Schema validator.
+- Options: 1. (chosen) Validate with the host's existing python3 PyYAML 6.0.1 and jsonschema 4.10.3 (Draft 2020-12): `openapi.yaml` against the official OAS 3.1 schema (2022-10-07) plus $ref resolution, each JSON schema against its meta-schema with its examples and negative cases, and `database-schema.sql` applied to the pinned `postgres:16.15-alpine`. Script `02_output/tools/validate-contracts.py`; nothing installed and no project dependency added; 2. Add an npm OpenAPI validator to `tech-stack.md` tooling as dev-only tooling.
+- Human response: none
+- Resolution: option 1
