@@ -17,11 +17,12 @@ The frontend has no settings of its own. The conference name, captcha mode and s
 
 The end-to-end tests read these environment variables:
 
-| Variable | Meaning | Source |
-|---|---|---|
-| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for E2E-05 | `.env` in the repository root (secret; export it, do not print it) |
-| `ORGANIZER_EMAILS` | Recipients the organizer emails are checked against | `.env` |
-| `E2E_BASE_URL`, `E2E_MAILPIT_URL` | Override `http://127.0.0.1:8080` and `http://127.0.0.1:8025` | optional |
+| Variable                                   | Meaning                                                                                                                                                 | Source                                                             |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for E2E-05                                                                                                                              | `.env` in the repository root (secret; export it, do not print it) |
+| `ORGANIZER_EMAILS`                         | Recipients the organizer emails are checked against                                                                                                     | `.env`                                                             |
+| `E2E_BASE_URL`, `E2E_MAILPIT_URL`          | Override `http://127.0.0.1:8080` and `http://127.0.0.1:8025`                                                                                            | optional                                                           |
+| `COMPOSE_PROJECT_NAME`                     | Must match the stack's project name when it was started with one, because the tests read the database and the JSON copies through `docker compose exec` | optional                                                           |
 
 Run them from this folder, for example:
 
@@ -34,24 +35,25 @@ npx playwright test
 
 Run from this folder after `npm ci`.
 
-| Purpose | Command |
-|---|---|
-| Install dependencies (exact, from the lock file) | `npm ci` |
-| Build (to `dist/`, with type check) | `npm run build` |
-| Test (unit, component and acceptance, Vitest) | `npm test` |
-| Check (Prettier, ESLint, TypeScript) | `npm run check` |
-| Run the dev server (needs the local stack for `/api`) | `npm run dev`, then open the printed URL |
-| Run in the local stack | from `02_output/`: `docker compose --env-file ../.env up -d --build --wait` |
-| End-to-end tests (Playwright, against the stack) | `npx playwright test` |
-| Coverage (v8, `coverage/`) | `npm run coverage` |
-| Mutation testing (Stryker, `reports/mutation/`) | `npm run mutation` |
-| Duplication | `npm run duplication` |
-| Dependency scan | `npm audit` (`npm audit --omit=dev` for the shipped code) |
+| Purpose                                               | Command                                                                     |
+| ----------------------------------------------------- | --------------------------------------------------------------------------- |
+| Install dependencies (exact, from the lock file)      | `npm ci`                                                                    |
+| Build (to `dist/`, with type check)                   | `npm run build`                                                             |
+| Test (unit, component and acceptance, Vitest)         | `npm test`                                                                  |
+| Check (Prettier, ESLint, TypeScript)                  | `npm run check`                                                             |
+| Run the dev server (needs the local stack for `/api`) | `npm run dev`, then open the printed URL                                    |
+| Run in the local stack                                | from `02_output/`: `docker compose --env-file ../.env up -d --build --wait` |
+| End-to-end tests (Playwright, against the stack)      | `npx playwright test`                                                       |
+| Coverage (v8, `coverage/`)                            | `npm run coverage`                                                          |
+| Mutation testing (Stryker, `reports/mutation/`)       | `npm run mutation`                                                          |
+| Duplication                                           | `npm run duplication`                                                       |
+| Dependency scan                                       | `npm audit` (`npm audit --omit=dev` for the shipped code)                   |
 
 ## Troubleshooting
 
 - **"The registration form is not available right now."** The backend cannot be reached through `/api`. Start the local stack, or check `docker compose logs backend`.
 - **`npm ci` complains about the engine.** Switch to Node 24.13.0 (`nvm use`).
+- **End-to-end tests fail with `Command failed: docker compose … exec`.** The stack runs under another `COMPOSE_PROJECT_NAME`. Export the same name before `npx playwright test`.
 - **End-to-end tests time out at the start.** Check that the stack is up and healthy (`docker compose ps`), and that `E2E_BASE_URL` points to it when you use other ports.
 - **E2E-05 fails with 401.** The organizer variables in the shell do not match the `.env` the stack was started with.
 - **The reCAPTCHA widget does not appear in production.** The CSP allows scripts and frames only from `www.google.com/recaptcha` and `www.gstatic.com/recaptcha`, so check that the site key belongs to the served domain.

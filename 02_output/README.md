@@ -38,7 +38,7 @@ Prerequisites: Docker with Compose v2, and JDK 21 to package the backend jar tha
 
 5. Stop with `docker compose --env-file ../.env down`. The data stays in the named volumes `pgdata` and `json-copies`; `down -v` deletes it.
 
-To use other host ports, set `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT`. To keep this stack apart from another one on the same machine, set `COMPOSE_PROJECT_NAME`, which also gives it its own volumes.
+To use other host ports, set `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT`. To keep this stack apart from another one on the same machine, set `COMPOSE_PROJECT_NAME`, which also gives it its own volumes. Keep the same `COMPOSE_PROJECT_NAME` exported when you run the end-to-end tests.
 
 ## Tests
 
