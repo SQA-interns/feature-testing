@@ -18,7 +18,7 @@ The frozen set is every file under the `acceptance` and `e2e` paths above, inclu
 
 - Backend: `cd 02_output/backend && ./mvnw -B test`. It needs Docker; Testcontainers finds Docker Desktop by itself. The tests must not run as root, because AC-005-03 makes a directory read-only and asserts that it is.
 - Frontend: `cd 02_output/frontend && nvm use && npm test`.
-- End-to-end: first `./backend/mvnw -B -f backend/pom.xml package -DskipTests`, then `docker compose --env-file ../.env up -d --build --wait` in `02_output`. Then, in `02_output/frontend`, export `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` and `ORGANIZER_EMAILS` from `.env` without printing them (`working-rules.md`, Secrets) and run `npx playwright test`. `E2E_BASE_URL` and `E2E_MAILPIT_URL` override `http://127.0.0.1:8080` and `:8025`. In this run they were `:18080` and `:18025`, because another local project holds 8080 and 8025. `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT` move the published ports.
+- End-to-end: first `./backend/mvnw -B -f backend/pom.xml package -DskipTests`, then `docker compose --env-file ../.env up -d --build --wait` in `02_output`. Then, in `02_output/frontend`, export `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` and `ORGANIZER_EMAILS` from `.env` without printing them (`working-rules.md`, Secrets) and run `npx playwright test`. `E2E_BASE_URL` and `E2E_MAILPIT_URL` override `http://127.0.0.1:8080` and `:8025`. In this run the stack ran as `COMPOSE_PROJECT_NAME=registration-sdd-run2`, because a volume of an earlier run on this machine uses the default project name `registration`. `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT` move the published ports.
 
 ### Choices the tests make (from the specification, not new behaviour)
 
@@ -36,6 +36,12 @@ The frozen set is every file under the `acceptance` and `e2e` paths above, inclu
 - The JSON attachment must arrive byte for byte equal to the stored copy (AC-007-02). Send it base64-encoded, so that SMTP does not rewrite line endings.
 - Export cells must be string cells with the exact header texts of specification S4.8, `Registered at` and `Consents` among them.
 - `server.forward-headers-strategy=native` is needed for AC-008-04 (specification S7.2).
+
+## Changes to frozen tests
+
+| Date | Decision | Commit | Files | Change | Re-frozen in |
+|---|---|---|---|---|---|
+| 2026-10-27 | D-16 (human-approved, option 1) | `0f86268` | `AcceptanceTestBase.java` and the 9 backend acceptance classes | Spring Framework 7.0.9 registers a base class's `@DynamicPropertySource` after the subclass's, so the per-class overrides of `RecaptchaVerificationAcceptanceTest` (production reCAPTCHA path) and `MailServerDownAcceptanceTest` (SMTP down) were silently ignored: 4 tests could not pass, and AC-006-03 passed without the mail server being down. The base now offers `register(registry, overrides)` and each concrete class declares one `@DynamicPropertySource` calling it. No assertion, input or expected value changed. After the change: 89/89 backend acceptance tests pass, and the mail-down run logs "email not sent" (`out/logs/04_backend-run-3.log`). | the manifest commit after `0f86268` |
 
 ## Measurement exclusions
 
