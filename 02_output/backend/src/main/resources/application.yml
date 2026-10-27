@@ -1,4 +1,5 @@
-# Environment-specific values come from the environment (ES-01); secrets have no default.
+# Environment-specific values come from the variables of docs/02_specification.md S7.1 (ES-01).
+# Secrets and connection settings have no default.
 spring:
   application:
     name: registration-backend
@@ -12,6 +13,16 @@ spring:
       ddl-auto: validate
   flyway:
     enabled: true
+  main:
+    banner-mode: off
+
+server:
+  forward-headers-strategy: native
+  error:
+    whitelabel:
+      enabled: false
+    include-message: never
+    include-stacktrace: never
 
 management:
   endpoints:
@@ -22,3 +33,36 @@ management:
     health:
       probes:
         enabled: true
+      group:
+        readiness:
+          include: readinessState,db
+
+app:
+  environment: ${APP_ENVIRONMENT}
+  conference:
+    name: ${CONFERENCE_NAME:Conference}
+    config-file: ${CONFERENCE_CONFIG_FILE}
+  json-copy-dir: ${JSON_COPY_DIR:/data/json-copies}
+  recaptcha:
+    test-mode: ${RECAPTCHA_TEST_MODE:false}
+    site-key: ${RECAPTCHA_SITE_KEY:}
+    secret-key: ${RECAPTCHA_SECRET_KEY:}
+    verify-url: ${RECAPTCHA_VERIFY_URL:https://www.google.com/recaptcha/api/siteverify}
+  organizer:
+    username: ${ORGANIZER_USERNAME}
+    password: ${ORGANIZER_PASSWORD}
+    emails: ${ORGANIZER_EMAILS}
+    https-only: ${ORGANIZER_HTTPS_ONLY:true}
+  mail:
+    host: ${SMTP_HOST}
+    port: ${SMTP_PORT}
+    starttls: ${SMTP_STARTTLS}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    from: ${MAIL_FROM:registration@localhost}
+  cors-allowed-origin: ${CORS_ALLOWED_ORIGIN:}
+  rate-limit:
+    form-config-per-minute: ${RATE_LIMIT_FORM_CONFIG_PER_MINUTE:60}
+    registration-per-minute: ${RATE_LIMIT_REGISTRATION_PER_MINUTE:10}
+    export-per-minute: ${RATE_LIMIT_EXPORT_PER_MINUTE:10}
+  max-request-bytes: ${MAX_REQUEST_BYTES:16384}
