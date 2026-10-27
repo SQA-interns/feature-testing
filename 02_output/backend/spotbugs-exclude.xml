@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  EI_EXPOSE_REP2 reports every collaborator passed to a constructor; for Spring beans outside the
+  domain that is dependency injection, not leaked internal state. The domain keeps the check.
+-->
+<FindBugsFilter>
+  <Match>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+    <Not>
+      <Package name="si.konferenca.registration.domain"/>
+    </Not>
+  </Match>
+</FindBugsFilter>
