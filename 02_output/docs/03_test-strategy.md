@@ -74,6 +74,8 @@ Phase 5 started with the full suite on the final production code of phase 4, bef
 
 ## Final run (phase 6)
 
+Run on 2026-10-27 on the code of phase 5 (no production code or test changed since): backend 301/301 (acceptance 89, unit 201, integration 5, architecture 6; `out/logs/06_backend-final-run.log`), frontend 74/74 (acceptance 7, unit/component 67; `06_frontend-final-run.log`), end-to-end 5/5 against the rebuilt stack (`06_e2e-final-run.log`). No failure, no flaky or skipped test. Coverage and mutation are not re-measured (`measurement-scope.md`: nothing changed since phase 5).
+
 ## Test measures (phase 5, updated in phase 6 only for a component that changed)
 
 <!-- Filled in phase 5 from the runners and tools; copied into the run summary in phase 7. Definitions: general/quality/measurement-scope.md. Level rows: tests passed / failed. unit = coverage of the unit tests only; non-unit = integration, acceptance, architecture and end-to-end tests under the coverage tool; all levels = one merged report. Mutation score only on the all levels row, with scope, tool, killed of total and the tests run. -->
