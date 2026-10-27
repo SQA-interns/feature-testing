@@ -1,0 +1,17 @@
+{
+  "options": [
+    { "id": "ws-testing", "name": "Workshop: Testing in practice", "category": "WORKSHOP", "active": true },
+    { "id": "ws-industry", "name": "Workshop: Industry partnerships", "category": "WORKSHOP", "active": true, "availableTo": ["EXTERNAL"] },
+    { "id": "ws-legacy", "name": "Workshop: Legacy systems", "category": "WORKSHOP", "active": false },
+    { "id": "ev-dinner", "name": "Conference dinner", "category": "EVENT", "active": true },
+    { "id": "meal-lunch-vegetarian", "name": "Lunch (vegetarian)", "category": "MEAL", "active": true },
+    { "id": "other-city-tour", "name": "City tour", "category": "OTHER", "active": true }
+  ],
+  "consents": [
+    {
+      "id": "privacy",
+      "text": "I agree that my personal data is processed for organizing the conference and that it is shared with the conference organizers.",
+      "mandatory": true
+    }
+  ]
+}
