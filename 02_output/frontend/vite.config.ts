@@ -12,5 +12,17 @@ export default defineConfig({
     include: ["src/**/*.test.{ts,tsx}"],
     passWithNoTests: true,
     setupFiles: ["src/acceptance/support/setup.ts"],
+    coverage: {
+      provider: "v8",
+      include: ["src/**/*.{ts,tsx}"],
+      // Measurement exclusions: docs/03_test-strategy.md
+      exclude: [
+        "src/main.tsx",
+        "src/**/*.d.ts",
+        "src/**/*.test.{ts,tsx}",
+        "src/acceptance/**",
+      ],
+      reporter: ["text", "json-summary", "json", "html"],
+    },
   },
 });
