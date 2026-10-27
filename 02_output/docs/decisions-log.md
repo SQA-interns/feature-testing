@@ -136,3 +136,12 @@
 - Options: 1. (chosen) Validate with the host's existing python3 PyYAML 6.0.1 and jsonschema 4.10.3 (Draft 2020-12): `openapi.yaml` against the official OAS 3.1 schema (2022-10-07) plus $ref resolution, each JSON schema against its meta-schema with its examples and negative cases, and `database-schema.sql` applied to the pinned `postgres:16.15-alpine`. Script `02_output/tools/validate-contracts.py`; nothing installed and no project dependency added; 2. Add an npm OpenAPI validator to `tech-stack.md` tooling as dev-only tooling.
 - Human response: none
 - Resolution: option 1
+
+## D-16: Frozen harness ignores per-class configuration overrides
+- Timestamp: 2026-10-27T11:22:00Z
+- Phase: 4
+- Type: blocking
+- Trigger: First backend run in phase 4 (`out/logs/04_backend-run-1.log`): 85/89 acceptance tests pass; the 4 failures are in `RecaptchaVerificationAcceptanceTest` (AC-001-07, AC-002-06, DoD-P05), whose context still runs in reCAPTCHA test mode. Cause: with Spring Framework 7.0.9 the base class `AcceptanceTestBase` registers its `@DynamicPropertySource` values after the subclass's, so the base value wins for the same key (reproduced outside the repository: base "X=base", subclass "X=sub" gives "base"; a subclass method of the same name does not hide it). The same defect makes `MailServerDownAcceptanceTest` (AC-006-03) pass without the mail server being down (no "email not sent" log line). Both files and the base are listed in `docs/03_acceptance-manifest.sha256`. A correct implementation cannot make the 4 tests pass, and AC-006-03 is not really tested.
+- Options: 1. (proposed) Make the harness apply overrides explicitly: `AcceptanceTestBase` no longer carries a `@DynamicPropertySource`; it offers `register(registry, overrides)`, and each of the 9 concrete acceptance classes declares one `@DynamicPropertySource` that calls it (`Map.of()` for none; the reCAPTCHA and mail-down classes pass their current overrides unchanged). No assertion changes; the manifest is regenerated for the 10 changed files by a commit the human approves; 2. Smaller change in 3 files (`AcceptanceTestBase`, `RecaptchaVerificationAcceptanceTest`, `MailServerDownAcceptanceTest`): subclasses hand their overrides to the base through a static map that the base merges in; it relies on Spring calling the subclass method first, which is undocumented; 3. Leave the tests frozen as they are: the phase 4 gate cannot pass (4 tests fail) and AC-006-03 stays untested.
+- Human response: none
+- Resolution: pending

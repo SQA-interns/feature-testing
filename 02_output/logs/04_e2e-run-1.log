@@ -1,0 +1,141 @@
+
+Running 5 tests using 1 worker
+
+  ✘  1 [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) (5.7s)
+  ✘  2 [chromium] › e2e/e2e-02-student-registers.spec.ts:11:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (5.8s)
+  ✓  3 [chromium] › e2e/e2e-03-field-errors.spec.ts:3:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (595ms)
+  ✘  4 [chromium] › e2e/e2e-04-slovenian-characters.spec.ts:12:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (5.5s)
+  ✘  5 [chromium] › e2e/e2e-05-organizer-export.spec.ts:7:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (58ms)
+
+
+  1) [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Registration received' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Registration received' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Registration received' })
+
+
+      45 |   await expect(
+      46 |     page.getByRole("heading", { name: "Registration received" }),
+    > 47 |   ).toBeVisible();
+         |     ^
+      48 |   await expect(page.getByText(`Thank you, Ana ${lastName}.`)).toBeVisible();
+      49 |   for (const option of OPTIONS) {
+      50 |     await expect(page.getByText(option)).toBeVisible();
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-01-external-registers.spec.ts:47:5
+
+    Error Context: test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-01-external-registers--c44c1-006-01-AC-007-01-AC-007-02--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e/e2e-02-student-registers.spec.ts:11:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Registration received' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Registration received' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Registration received' })
+
+
+      59 |   await expect(
+      60 |     page.getByRole("heading", { name: "Registration received" }),
+    > 61 |   ).toBeVisible();
+         |     ^
+      62 |   await expect(page.getByText(`Thank you, Luka ${lastName}.`)).toBeVisible();
+      63 |
+      64 |   const rows = sql(
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-02-student-registers.spec.ts:61:5
+
+    Error Context: test-results/e2e-02-student-registers-E-d84ac-002-01-AC-002-07-AC-004-01--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-02-student-registers-E-d84ac-002-01-AC-002-07-AC-004-01--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-02-student-registers-E-d84ac-002-01-AC-002-07-AC-004-01--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e/e2e-04-slovenian-characters.spec.ts:12:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Thank you, Čedomir Žiga Šuštaršič1793100428992912.')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('Thank you, Čedomir Žiga Šuštaršič1793100428992912.') with timeout 5000ms
+      - waiting for getByText('Thank you, Čedomir Žiga Šuštaršič1793100428992912.')
+
+
+      38 |   await expect(
+      39 |     page.getByText(`Thank you, ${firstName} ${lastName}.`),
+    > 40 |   ).toBeVisible();
+         |     ^
+      41 |
+      42 |   const rows = sql(
+      43 |     `SELECT id, first_name, last_name, organization FROM registration WHERE email = ${literal(email)}`,
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-04-slovenian-characters.spec.ts:40:5
+
+    Error Context: test-results/e2e-04-slovenian-character-195f6--chain-AC-005-04-AC-008-03--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-04-slovenian-character-195f6--chain-AC-005-04-AC-008-03--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-04-slovenian-character-195f6--chain-AC-005-04-AC-008-03--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e/e2e-05-organizer-export.spec.ts:7:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 500
+
+      21 |     },
+      22 |   });
+    > 23 |   expect(created.status()).toBe(201);
+         |                            ^
+      24 |
+      25 |   const authorized = await request.get("/api/registrations/export", {
+      26 |     headers: { Authorization: basicAuth() },
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-05-organizer-export.spec.ts:23:28
+
+    Error Context: test-results/e2e-05-organizer-export-E2-6b426-ations-AC-008-01-AC-008-02--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-05-organizer-export-E2-6b426-ations-AC-008-01-AC-008-02--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-05-organizer-export-E2-6b426-ations-AC-008-01-AC-008-02--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) 
+    [chromium] › e2e/e2e-02-student-registers.spec.ts:11:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) 
+    [chromium] › e2e/e2e-04-slovenian-characters.spec.ts:12:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) 
+    [chromium] › e2e/e2e-05-organizer-export.spec.ts:7:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) 
+  1 passed (20.4s)
