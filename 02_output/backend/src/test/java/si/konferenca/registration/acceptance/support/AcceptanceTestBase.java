@@ -25,7 +25,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.postgresql.PostgreSQLContainer;
@@ -85,9 +84,15 @@ public abstract class AcceptanceTestBase {
   protected final Mailpit mailpit =
       new Mailpit("http://" + MAILPIT.getHost() + ":" + MAILPIT.getMappedPort(8025));
 
-  @DynamicPropertySource
-  static void configure(DynamicPropertyRegistry registry) {
-    baseProperties().forEach((key, value) -> registry.add(key, () -> value));
+  /**
+   * Registers the base configuration with the given overrides applied. Each concrete test class
+   * calls this from its own {@code @DynamicPropertySource} method: Spring registers a base class's
+   * method after the subclass's, so a base-class registration would win over any override (D-16).
+   */
+  protected static void register(DynamicPropertyRegistry registry, Map<String, String> overrides) {
+    Map<String, String> properties = baseProperties();
+    properties.putAll(overrides);
+    properties.forEach((key, value) -> registry.add(key, () -> value));
   }
 
   /** The configuration every acceptance context starts from, by variable name (S7.1). */

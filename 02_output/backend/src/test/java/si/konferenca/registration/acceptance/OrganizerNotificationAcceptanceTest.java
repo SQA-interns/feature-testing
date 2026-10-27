@@ -10,12 +10,19 @@ import java.util.Map;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import si.konferenca.registration.acceptance.support.AcceptanceTestBase;
 import si.konferenca.registration.acceptance.support.Mailpit;
 import si.konferenca.registration.acceptance.support.Submissions;
 
 /** US-007 Organizer notification, observed in Mailpit. */
 class OrganizerNotificationAcceptanceTest extends AcceptanceTestBase {
+
+  @DynamicPropertySource
+  static void configure(DynamicPropertyRegistry registry) {
+    register(registry, Map.of());
+  }
 
   private Mailpit.Message awaitSingleMailTo(String address) {
     Awaitility.await()

@@ -9,12 +9,19 @@ import java.util.Map;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import si.konferenca.registration.acceptance.support.AcceptanceTestBase;
 import si.konferenca.registration.acceptance.support.Mailpit;
 import si.konferenca.registration.acceptance.support.Submissions;
 
 /** US-006 Participant email confirmation, observed in Mailpit. */
 class ParticipantEmailAcceptanceTest extends AcceptanceTestBase {
+
+  @DynamicPropertySource
+  static void configure(DynamicPropertyRegistry registry) {
+    register(registry, Map.of());
+  }
 
   private List<Mailpit.Message> awaitMailTo(String address) {
     Awaitility.await()

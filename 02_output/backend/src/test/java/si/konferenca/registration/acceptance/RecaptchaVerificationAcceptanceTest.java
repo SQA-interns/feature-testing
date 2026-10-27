@@ -21,11 +21,18 @@ import si.konferenca.registration.acceptance.support.Submissions;
 class RecaptchaVerificationAcceptanceTest extends AcceptanceTestBase {
 
   @DynamicPropertySource
-  static void productionCaptcha(DynamicPropertyRegistry registry) {
-    registry.add("RECAPTCHA_TEST_MODE", () -> "false");
-    registry.add("RECAPTCHA_SITE_KEY", () -> FakeSiteverify.SITE_KEY);
-    registry.add("RECAPTCHA_SECRET_KEY", () -> FakeSiteverify.SECRET);
-    registry.add("RECAPTCHA_VERIFY_URL", () -> FakeSiteverify.instance().url());
+  static void configure(DynamicPropertyRegistry registry) {
+    register(
+        registry,
+        Map.of(
+            "RECAPTCHA_TEST_MODE",
+            "false",
+            "RECAPTCHA_SITE_KEY",
+            FakeSiteverify.SITE_KEY,
+            "RECAPTCHA_SECRET_KEY",
+            FakeSiteverify.SECRET,
+            "RECAPTCHA_VERIFY_URL",
+            FakeSiteverify.instance().url()));
   }
 
   @Test

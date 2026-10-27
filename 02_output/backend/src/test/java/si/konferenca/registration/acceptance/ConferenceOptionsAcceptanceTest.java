@@ -18,6 +18,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import si.konferenca.registration.RegistrationApplication;
 import si.konferenca.registration.acceptance.support.AcceptanceTestBase;
 import si.konferenca.registration.acceptance.support.TestConferenceConfig;
@@ -25,6 +27,11 @@ import tools.jackson.databind.JsonNode;
 
 /** US-003 Configurable conference options, through GET /api/form-config and startup. */
 class ConferenceOptionsAcceptanceTest extends AcceptanceTestBase {
+
+  @DynamicPropertySource
+  static void configure(DynamicPropertyRegistry registry) {
+    register(registry, Map.of());
+  }
 
   @Test
   @DisplayName("AC-003-01 form configuration lists only active options with their attributes")

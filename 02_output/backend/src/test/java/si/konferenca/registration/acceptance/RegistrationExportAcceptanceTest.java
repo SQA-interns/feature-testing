@@ -19,11 +19,18 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import si.konferenca.registration.acceptance.support.AcceptanceTestBase;
 import si.konferenca.registration.acceptance.support.Submissions;
 
 /** US-008 Registration export, through GET /api/registrations/export. */
 class RegistrationExportAcceptanceTest extends AcceptanceTestBase {
+
+  @DynamicPropertySource
+  static void configure(DynamicPropertyRegistry registry) {
+    register(registry, Map.of());
+  }
 
   private static final String XLSX =
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";

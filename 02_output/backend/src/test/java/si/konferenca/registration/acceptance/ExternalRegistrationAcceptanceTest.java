@@ -13,11 +13,18 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import si.konferenca.registration.acceptance.support.AcceptanceTestBase;
 import si.konferenca.registration.acceptance.support.Submissions;
 
 /** US-001 External participant registration, through POST /api/registrations. */
 class ExternalRegistrationAcceptanceTest extends AcceptanceTestBase {
+
+  @DynamicPropertySource
+  static void configure(DynamicPropertyRegistry registry) {
+    register(registry, Map.of());
+  }
 
   @Test
   @DisplayName("AC-001-01 valid external submission is accepted with a new id")

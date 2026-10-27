@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.net.ServerSocket;
 import java.net.http.HttpResponse;
+import java.util.Map;
 import java.util.UUID;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,15 +19,14 @@ import si.konferenca.registration.acceptance.support.Submissions;
 class MailServerDownAcceptanceTest extends AcceptanceTestBase {
 
   @DynamicPropertySource
-  static void smtpUnavailable(DynamicPropertyRegistry registry) {
+  static void configure(DynamicPropertyRegistry registry) {
     int closedPort;
     try (ServerSocket socket = new ServerSocket(0)) {
       closedPort = socket.getLocalPort();
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
-    registry.add("SMTP_HOST", () -> "127.0.0.1");
-    registry.add("SMTP_PORT", () -> String.valueOf(closedPort));
+    register(registry, Map.of("SMTP_HOST", "127.0.0.1", "SMTP_PORT", String.valueOf(closedPort)));
   }
 
   @Test
