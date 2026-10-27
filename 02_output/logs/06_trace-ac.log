@@ -1,0 +1,39 @@
+| AC | Tests | Commits |
+|---|---|---|
+| AC-001-01 | ExternalRegistrationAcceptanceTest.java, e2e-01-external-registers.spec.ts | 9788bf0, e933b1c, 83e29f5, b945401, f67e8ac, 9d0fda1 (+2) |
+| AC-001-02 | ExternalRegistrationAcceptanceTest.java | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-03 | ExternalRegistrationAcceptanceTest.java | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-04 | ExternalRegistrationAcceptanceTest.java | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-05 | ExternalRegistrationAcceptanceTest.java | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-06 | ExternalRegistrationAcceptanceTest.java | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-07 | ExternalRegistrationAcceptanceTest.java, RecaptchaVerificationAcceptanceTest.java (4) | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-001-08 | e2e-01-external-registers.spec.ts, us001-external-form.test.tsx | 9788bf0, 83e29f5, b945401, f67e8ac, 9d0fda1, 307e53b (+1) |
+| AC-002-01 | StudentRegistrationAcceptanceTest.java, e2e-02-student-registers.spec.ts | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-02 | StudentRegistrationAcceptanceTest.java | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-03 | StudentRegistrationAcceptanceTest.java | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-04 | StudentRegistrationAcceptanceTest.java | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-05 | StudentRegistrationAcceptanceTest.java | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-06 | RecaptchaVerificationAcceptanceTest.java (2), StudentRegistrationAcceptanceTest.java | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-002-07 | e2e-02-student-registers.spec.ts, us002-student-form.test.tsx | 0faeb3e, 83e29f5, b945401, 5a08e80 |
+| AC-003-01 | ConferenceOptionsAcceptanceTest.java | ee2e1bb, 6842e47, 307e53b |
+| AC-003-02 | ConferenceOptionsAcceptanceTest.java | ee2e1bb, 6842e47, 307e53b |
+| AC-003-03 | ConferenceOptionsAcceptanceTest.java | ee2e1bb, 6842e47, 307e53b, 5f77396 |
+| AC-004-01 | e2e-01-external-registers.spec.ts, e2e-02-student-registers.spec.ts, us004-confirmation.test.tsx | e724a39, 021e7c2, f763fd6, 5a08e80 |
+| AC-004-02 | e2e-03-field-errors.spec.ts, us004-confirmation.test.tsx | e724a39, 021e7c2, f763fd6, 5a08e80 |
+| AC-004-03 | e2e-03-field-errors.spec.ts, us004-confirmation.test.tsx | e724a39, 021e7c2, f763fd6, 5a08e80 |
+| AC-004-04 | us004-confirmation.test.tsx | e724a39, 021e7c2, f763fd6, 5a08e80 |
+| AC-005-01 | RegistrationStorageAcceptanceTest.java, e2e-01-external-registers.spec.ts | 0d849b4, f67e8ac, f0d9e0e, bb60236 |
+| AC-005-02 | RegistrationStorageAcceptanceTest.java, e2e-01-external-registers.spec.ts | 0d849b4, f67e8ac, f0d9e0e, bb60236 |
+| AC-005-03 | RegistrationStorageAcceptanceTest.java | 0d849b4, f67e8ac, f0d9e0e, bb60236 |
+| AC-005-04 | RegistrationStorageAcceptanceTest.java, e2e-04-slovenian-characters.spec.ts | 0d849b4, f67e8ac, f0d9e0e, bb60236 |
+| AC-006-01 | ParticipantEmailAcceptanceTest.java, e2e-01-external-registers.spec.ts | 8bb1eed, a6f284d, 6b6926e |
+| AC-006-02 | ParticipantEmailAcceptanceTest.java | 8bb1eed, a6f284d, 6b6926e |
+| AC-006-03 | MailServerDownAcceptanceTest.java | 8bb1eed, a6f284d, 6b6926e |
+| AC-007-01 | OrganizerNotificationAcceptanceTest.java, e2e-01-external-registers.spec.ts | 065f190, a6f284d, 6b6926e |
+| AC-007-02 | OrganizerNotificationAcceptanceTest.java, e2e-01-external-registers.spec.ts | 065f190, a6f284d, 6b6926e |
+| AC-008-01 | RegistrationExportAcceptanceTest.java, e2e-05-organizer-export.spec.ts | 6ec6548, 6aae807, c2f8df1, 6b6926e |
+| AC-008-02 | RegistrationExportAcceptanceTest.java, e2e-05-organizer-export.spec.ts | 6ec6548, 6aae807, c2f8df1, ce5c072, 6b6926e |
+| AC-008-03 | RegistrationExportAcceptanceTest.java, e2e-04-slovenian-characters.spec.ts | 6ec6548, 6aae807, c2f8df1, 6b6926e |
+| AC-008-04 | RegistrationExportAcceptanceTest.java | 6ec6548, e933b1c, 6aae807, c2f8df1, 6b6926e |
+
+35 acceptance criteria; without a test: none; without a commit: none.

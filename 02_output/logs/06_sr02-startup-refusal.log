@@ -1,0 +1,9 @@
+### docker compose run backend with: APP_ENVIRONMENT=production RECAPTCHA_TEST_MODE=true
+exit code: 1 (124 = still running after 120 s)
+IllegalStateException: production needs RECAPTCHA_TEST_MODE=false and both reCAPTCHA keys
+### docker compose run backend with: APP_ENVIRONMENT=production RECAPTCHA_TEST_MODE=false RECAPTCHA_SITE_KEY= RECAPTCHA_SECRET_KEY=
+exit code: 1 (124 = still running after 120 s)
+IllegalStateException: production needs RECAPTCHA_TEST_MODE=false and both reCAPTCHA keys
+### docker compose run backend with: APP_ENVIRONMENT=staging
+exit code: 1 (124 = still running after 120 s)
+IllegalStateException: APP_ENVIRONMENT must be one of [production, test, local]

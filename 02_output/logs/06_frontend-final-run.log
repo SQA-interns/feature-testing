@@ -1,0 +1,44 @@
+
+> registration-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend
+
+
+ Test Files  9 passed (9)
+      Tests  74 passed (74)
+   Start at  16:51:03
+   Duration  2.60s (transform 949ms, setup 2.05s, import 1.28s, tests 2.86s, environment 6.02s)
+
+
+> registration-frontend@0.1.0 check
+> npm run format:check && npm run lint && npm run typecheck
+
+
+> registration-frontend@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> registration-frontend@0.1.0 lint
+> eslint .
+
+
+> registration-frontend@0.1.0 typecheck
+> tsc --noEmit
+
+
+> registration-frontend@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 35 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.27 kB
+dist/assets/index-BNWdTV6Q.css    0.41 kB │ gzip:  0.26 kB
+dist/assets/index-qlxQ6e8b.js   232.51 kB │ gzip: 72.76 kB
+✓ built in 1.18s

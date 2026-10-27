@@ -1,0 +1,51 @@
+
+## NFR-04 health and readiness; SB-11 least privilege
+backend: Up About a minute (healthy)
+frontend: Up About a minute (healthy)
+mailpit: Up 4 hours (healthy)
+postgres: Up 4 hours (healthy)
+/actuator/health -> {"groups":["liveness","readiness"],"status":"UP"}
+/actuator/health/liveness -> {"status":"UP"}
+/actuator/health/readiness -> {"status":"UP"}
+backend process user: uid=10001(app) gid=10001(app) groups=10001(app)
+frontend process user: uid=101(nginx) gid=101(nginx) groups=101(nginx)
+
+## SB-10 security headers
+/ 200 {"Content-Security-Policy": "default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'", "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "no-referrer"}
+/api/form-config 200 {"X-Content-Type-Options": "nosniff", "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate", "X-Frame-Options": "DENY", "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'", "Referrer-Policy": "no-referrer"}
+
+## DoD-P01 one external and one student registration
+form-config: conference 'Conference 2026' captcha {'mode': 'TEST'} options ['ws-testing', 'ws-industry', 'ev-dinner', 'meal-lunch-vegetarian', 'other-city-tour'] consents ['privacy']
+EXTERNAL -> 201 id 29ffeb9e-f7d4-46ef-a2ec-7d62b0fb5e96 options ['ws-testing', 'ws-industry']
+STUDENT -> 201 id 1d610d50-ede7-462d-ac7d-0fbe2c7666df options ['ws-testing', 'ev-dinner']
+
+## DoD-P02 database rows and JSON copies
+29ffeb9e-f7d4-46ef-a2ec-7d62b0fb5e96|EXTERNAL|Demo Ana|Runtime|2026-10-27 15:52:46.201+00
+1d610d50-ede7-462d-ac7d-0fbe2c7666df|STUDENT|Demo Žiga|Šuštar|2026-10-27 15:52:46.248+00
+options: 1d610d50-ede7-462d-ac7d-0fbe2c7666df|ws-testing; 1d610d50-ede7-462d-ac7d-0fbe2c7666df|ev-dinner; 29ffeb9e-f7d4-46ef-a2ec-7d62b0fb5e96|ws-testing; 29ffeb9e-f7d4-46ef-a2ec-7d62b0fb5e96|ws-industry
+29ffeb9e-f7d4-46ef-a2ec-7d62b0fb5e96.json present: True
+1d610d50-ede7-462d-ac7d-0fbe2c7666df.json present: True
+
+## DoD-P03 participant and organizer emails in Mailpit
+subject 'New registration: Conference 2026' to ['<ORGANIZER_EMAILS entry>'] attachments 1
+subject 'New registration: Conference 2026' to ['<ORGANIZER_EMAILS entry>'] attachments 1
+subject 'Registration confirmed: Conference 2026' to ['demo.ziga@example.org'] attachments 0
+subject 'Registration confirmed: Conference 2026' to ['demo.ana@example.org'] attachments 0
+total messages: 4
+
+## DoD-P04 organizer export, and the same request without access
+with organizer credentials -> 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet attachment; filename="registrations-2026-10-27.xlsx" 5458 bytes
+valid xlsx zip; rows: 15 ; both ids in workbook: True ; Slovenian text intact: True
+without credentials -> 401 Basic realm="registration-export" {"message":"Authentication required."}
+wrong password -> 401 Basic realm="registration-export" {"message":"Authentication required."}
+
+## NFR-02 data survives recreation of every container
+rows before: 14 copies before: 14
+
+
+backend: Up 16 seconds (healthy)
+frontend: Up 5 seconds (healthy)
+mailpit: Up 22 seconds (healthy)
+postgres: Up 22 seconds (healthy)
+rows after: 14 ; demo rows after: 2
+copies after: 14 ; demo copies after: True
