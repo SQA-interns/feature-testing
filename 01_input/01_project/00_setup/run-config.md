@@ -7,7 +7,7 @@ The only file a human fills before starting the agent; the agent checks everythi
 - Model: claude-opus-5-5
 - Effort: medium
 - Template version: 1.8
-- Run label: tjan/single-agent/sdd/v002/run-2
+- Run label: tjan/single-agent/sdd/v002/run-2-search
 - Operator: tjan
 - Machine: tjanPC
 - Plan: PRO
