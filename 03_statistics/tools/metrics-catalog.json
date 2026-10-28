@@ -389,6 +389,24 @@
       "how": "finalTestRun.failed."
     },
     {
+      "id": "oracleRegression",
+      "group": "quality",
+      "label": "Hidden oracle: base project scenarios passed",
+      "unit": "pct",
+      "dir": "higher",
+      "goal": "The base project still works as specified, judged by checks the agent never saw. In a brownfield run a drop means the change broke existing behaviour.",
+      "how": "results/oracle/oracle-summary.json, regression R01-R15 (feature experiment oracle): passed of total; empty when the oracle was not run."
+    },
+    {
+      "id": "oracleFeature",
+      "group": "quality",
+      "label": "Hidden oracle: feature scenarios passed",
+      "unit": "pct",
+      "dir": "higher",
+      "goal": "The feature works as specified, judged by checks the agent never saw; the same scenarios for greenfield and brownfield runs of a feature.",
+      "how": "results/oracle/oracle-summary.json, feature scenarios (search S01-S10, group G01-G11): passed of total; empty for normal runs and when the oracle was not run."
+    },
+    {
       "id": "firstFailed",
       "group": "quality",
       "label": "Failing tests (first run)",

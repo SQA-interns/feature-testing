@@ -95,7 +95,7 @@ function fillSummary(file, r, log) {
   const sha = (s) => (s ? String(s).slice(0, 7) : "not set");
   const blocks = {};
   blocks.run = ["| Item | Value |", "|---|---|",
-    "| Run id | " + log.runId + " |", "| Model, effort | " + [log.model, log.effort].filter(Boolean).join(", ") + " |", "| Template version | " + (log.templateVersion ?? "–") + " |",
+    "| Run id | " + log.runId + " |", "| Model, effort | " + [log.model, log.effort].filter(Boolean).join(", ") + " |", "| Template version | " + (log.templateVersion ?? "–") + " |", "| Run type, feature, base run | " + [log.experiment?.runType || "normal", log.experiment?.feature || "none", log.experiment?.baseRun || "–"].join(", ") + " |",
     "| Start commit | " + sha(log.startCommit) + " |", "| End commit | " + sha(log.finalCommit) + " |", "| Start, end | " + (log.start ?? "–") + ", " + (log.end ?? "–") + " |"];
   const rows = (t.byPhase || []).map((p) => "| " + p.phase + " " + (p.name || "") + " | " + fmtMin(p.wallMin) + " | " + fmtMin(p.waitMin) + " | " + fmtMin(p.agentMin) + " |");
   blocks.time = ["| Phase | Wall | Waiting for the human | Agent time |", "|---|---|---|---|", ...rows,
@@ -167,7 +167,7 @@ if (runDir) {
   }
   outPath = path.resolve(flag("--out") || path.join(resultsDir, "run-report.html"));
   config = { title: "Run report: " + (log.runLabel || log.runId || "run"), subtitle: `Run ID ${log.runId || "?"} · Template ${log.templateVersion || "?"}, ${log.model || "model ?"}, effort ${log.effort || "?"}. Human waiting and everything it caused is excluded from every figure that is compared.`,
-    rebuildBaselineCacheWriteTokens: 550000, runs: [{ label: log.runLabel || log.runId || "this run", series: "run", template: String(log.templateVersion || ""), statsDir }], excluded: [], single: true };
+    rebuildBaselineCacheWriteTokens: 550000, runs: [{ label: log.runLabel || log.runId || "this run", series: seriesOf(log), template: String(log.templateVersion || ""), statsDir }], excluded: [], single: true };
 } else {
   const configPath = path.resolve(positional[0] || path.join(here, "runs.config.json"));
   config = readJson(configPath);
@@ -178,6 +178,20 @@ if (!config.runs.length) { console.log("no finished runs found (scan: " + JSON.s
 const catalog = readJson(path.join(here, "metrics-catalog.json"));
 
 // ---------------------------------------------------------------- finding runs (config.scan)
+// Feature experiment: runs are grouped by run type and feature; runs without `experiment` keep the template version as series.
+function seriesOf(log) {
+  const e = log.experiment;
+  if (!e || !e.runType) return String(log.templateVersion || "run");
+  return e.feature && e.feature !== "none" ? `${e.runType} ${e.feature}` : e.runType;
+}
+
+// Oracle results (hidden oracle of the feature experiment), copied by the operator to results/oracle/ after the run.
+function readOracle(statsDir) {
+  const f = path.join(statsDir, "results", "oracle", "oracle-summary.json");
+  if (!fs.existsSync(f)) return null;
+  try { return readJson(f); } catch { return null; }
+}
+
 function scanRuns(cfg, base) {
   const out = [], seen = new Set((cfg.runs || []).map((r) => r.label));
   const skip = new Set(["node_modules", ".git", ...(cfg.exclude || [])]);
@@ -202,7 +216,7 @@ function scanRuns(cfg, base) {
     let label = log.runLabel || f.folder, n = 2;
     while (seen.has(label)) label = `${log.runLabel || f.folder} (${n++})`;
     seen.add(label);
-    out.push({ label, series: String(log.templateVersion || "run"), template: String(log.templateVersion || ""), statsDir: f.statsDir, repo: { dir: f.repoDir } });
+    out.push({ label, series: seriesOf(log), template: String(log.templateVersion || ""), statsDir: f.statsDir, repo: { dir: f.repoDir } });
   }
   return out;
 }
@@ -332,6 +346,10 @@ function gather(run) {
 
   const dec = log.decisions || [], fl = log.fixLoops || [], hi = log.humanInterventions || [];
   set("blocking", dec.filter((d) => d.type === "blocking").length, "l");
+  const oracle = readOracle(run.statsDir);
+  const pct = (g) => (g && g.total ? r1((100 * g.passed) / g.total) : null);
+  set("oracleRegression", pct(oracle?.regression), "o", oracle?.regression ? `${oracle.regression.passed} of ${oracle.regression.total}` + (oracle.regression.failed?.length ? `; failed ${oracle.regression.failed.join(", ")}` : "") : null);
+  set("oracleFeature", pct(oracle?.featureScenarios), "o", oracle?.featureScenarios ? `${oracle.feature}: ${oracle.featureScenarios.passed} of ${oracle.featureScenarios.total}` + (oracle.featureScenarios.failed?.length ? `; failed ${oracle.featureScenarios.failed.join(", ")}` : "") : null);
   set("interventions", hi.length, "l");
   set("decisions", dec.length, "l");
   set("fixLoops", fl.length, "l");

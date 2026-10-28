@@ -1,0 +1,64 @@
+{
+  "phase": "main",
+  "feature": "none",
+  "tag": "ywetyq",
+  "base_url": "http://127.0.0.1:8080",
+  "results": {
+    "R01": {
+      "result": "pass",
+      "detail": "status 200, 5 options, mandatory consents ['privacy']"
+    },
+    "R02": {
+      "result": "pass",
+      "detail": "external: status 201, id 0b1e2890-8f36-414e-a642-2f15bb72b7e4"
+    },
+    "R03": {
+      "result": "pass",
+      "detail": "student: status 201, id 08e7e9e1-ce85-4841-af80-5c7a6d193d68"
+    },
+    "R04": {
+      "result": "pass",
+      "detail": "whitespace-only first name: status 400, error fields ['firstName'], stored False"
+    },
+    "R05": {
+      "result": "pass",
+      "detail": "invalid email: status 400, error fields ['email'], stored False"
+    },
+    "R06": {
+      "result": "pass",
+      "detail": "unknown option: status 400, error fields ['options'], stored False"
+    },
+    "R07": {
+      "result": "pass",
+      "detail": "mandatory consent missing: status 400, error fields ['consents'], stored False"
+    },
+    "R08": {
+      "result": "pass",
+      "detail": "rejected captcha token: status 400, stored False"
+    },
+    "R09": {
+      "result": "pass",
+      "detail": "participant confirmations 1, names participant True"
+    },
+    "R10": {
+      "result": "pass",
+      "detail": "organizer notifications 1, JSON attachment with the registration True"
+    },
+    "R11": {
+      "result": "pass",
+      "detail": "status 200, header True, row found True"
+    },
+    "R12": {
+      "result": "pass",
+      "detail": "export without credentials: status 401"
+    },
+    "R13": {
+      "result": "pass",
+      "detail": "Slovenian characters: status 201, unchanged in export True"
+    },
+    "R14": {
+      "result": "pass",
+      "detail": "surrounding spaces removed: status 201, stored 'ywetyqchbayv'"
+    }
+  }
+}
