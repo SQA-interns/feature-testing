@@ -38,3 +38,26 @@ Run on 2026-10-29 against the baseline production code (`out/logs/cr-001_03_back
 | End-to-end | 1 | 0 | 1 | Behaviour missing: no `Organizer registrations` heading at `/organizer`. |
 
 Baseline tests in the same runs: backend 301/301, frontend 74/74, end-to-end 5/5 (E2E-01..05). Full suite: 380 + 3 + 2 = 385 passed, 31 + 14 + 1 = 46 failed, all in tests of ADDED items.
+
+## Phase 5: first full run and quality gate
+
+Both components changed since `4d664d2`, so the gate applies to both, with the baseline's scope, tools and tests.
+
+First full run on the final production code, before any unit test (`out/logs/cr-001_05_backend-first-run.log`, `cr-001_05_frontend-first-run.log`; end-to-end from the phase 4 run `cr-001_04_e2e-run-1.log` on the same code): backend 335/335, frontend 90/90, end-to-end 6/6. No failure, so nothing to classify; `failedBaseline` 0.
+
+| Component | Line (all levels) | Branch | Mutation, first full run | Rounds | Mutation, final | Changed lines since base |
+|---|---|---|---|---|---|---|
+| backend | 99.53 % | 96.86 % | 410/431 = 95.13 % (`cr-001_05_pit-full-run.log`) | 0 | 95.13 % | 92/92 killed |
+| frontend | 99.63 % (after round 1; 95.23 % before) | 96.33 % | 625/755 = 82.78 % (`cr-001_05_stryker-full-run.log`) | 1 | 689/755 = 91.26 % | 261/281 killed |
+
+Line coverage met the threshold for both before any unit test, so mutation ran once per component. The backend met the gate on its full run; no backend test was added. Frontend round 1 added `src/api.test.ts` cases for `searchRegistrations` and `basicAuthorization`, `src/routes.test.ts` and `src/OrganizerPage.test.tsx` (page states, 400/401/failure handling, stale replies, filter names), then re-ran only the three mutated files (`cr-001_05_stryker-round-1.log`):
+
+| File | Full run | Round 1 |
+|---|---|---|
+| `src/OrganizerPage.tsx` | 98/153 | 137/153 |
+| `src/api.ts` | 69/94 | 92/94 |
+| `src/routes.ts` | 8/10 | 10/10 |
+| other files (not re-run) | 450/498 | 450/498 |
+| frontend | 625/755 = 82.78 % | 689/755 = 91.26 % |
+
+The recomputed score is 1.26 points above the threshold, so no confirming full run followed. Final suite: backend 335, frontend 121 (acceptance 23, unit/component 98), end-to-end 6.

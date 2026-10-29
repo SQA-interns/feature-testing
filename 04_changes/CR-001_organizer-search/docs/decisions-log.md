@@ -75,3 +75,12 @@ Ids continue after D-18 of `02_output/docs/decisions-log.md`.
 - Options: 1. (default) The organizer search answers 401 with the same `Error` body and no `WWW-Authenticate` header; the export keeps its challenge unchanged (AC-008-02 must not change); 2. Keep the challenge and accept the browser dialog in front of the page's own form.
 - Human response: none
 - Resolution: option 1, pending review
+
+## D-27: Human approves D-23..D-26
+- Timestamp: 2026-10-29T14:04:12Z
+- Phase: 5
+- Type: non-blocking
+- Trigger: D-23 (organizer search rate limit 30 per minute), D-24 (id not shown on the page), D-25 (a filter change uses the current search text) and D-26 (no Basic challenge on the search's 401) were pending review.
+- Options: 1. Keep the four resolutions as built; 2. Change one or more of them.
+- Human response: "i agree with all of the decisions you presented" (2026-10-29T14:04:12Z)
+- Resolution: option 1; D-23..D-26 approved as built

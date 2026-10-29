@@ -1,0 +1,1362 @@
+
+> registration-frontend@0.1.0 mutation
+> stryker run
+
+[32m14:38:53 (1957784) INFO ProjectReader[39m Found 11 of 77 file(s) to be mutated.
+[32m14:38:54 (1957784) INFO Instrumenter[39m Instrumented 11 source file(s) with 755 mutant(s)
+[32m14:38:54 (1957784) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m14:38:55 (1957784) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m14:38:56 (1957784) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:39:10 (1957784) INFO DryRunExecutor[39m Initial test run succeeded. Ran 90 tests in 13 seconds (net 3658.268727999988 ms, overhead 10055.731272000012 ms).
+Mutation testing 2% (elapsed: <1m, remaining: ~7m) 53/755 tested (0 survived, 0 timed out)
+Mutation testing 3% (elapsed: <1m, remaining: ~9m) 65/755 tested (3 survived, 0 timed out)
+Mutation testing 6% (elapsed: <1m, remaining: ~7m) 81/755 tested (3 survived, 0 timed out)
+Mutation testing 9% (elapsed: <1m, remaining: ~6m) 102/755 tested (3 survived, 0 timed out)
+Mutation testing 9% (elapsed: <1m, remaining: ~7m) 131/755 tested (6 survived, 0 timed out)
+Mutation testing 10% (elapsed: ~1m, remaining: ~8m) 154/755 tested (10 survived, 0 timed out)
+Mutation testing 11% (elapsed: ~1m, remaining: ~9m) 165/755 tested (15 survived, 0 timed out)
+Mutation testing 11% (elapsed: ~1m, remaining: ~10m) 180/755 tested (20 survived, 0 timed out)
+Mutation testing 12% (elapsed: ~1m, remaining: ~10m) 191/755 tested (24 survived, 0 timed out)
+Mutation testing 12% (elapsed: ~1m, remaining: ~11m) 196/755 tested (26 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~1m, remaining: ~12m) 205/755 tested (29 survived, 0 timed out)
+Mutation testing 13% (elapsed: ~2m, remaining: ~12m) 218/755 tested (35 survived, 0 timed out)
+Mutation testing 14% (elapsed: ~2m, remaining: ~12m) 231/755 tested (38 survived, 0 timed out)
+Mutation testing 15% (elapsed: ~2m, remaining: ~12m) 242/755 tested (39 survived, 0 timed out)
+Mutation testing 16% (elapsed: ~2m, remaining: ~12m) 255/755 tested (39 survived, 0 timed out)
+Mutation testing 17% (elapsed: ~2m, remaining: ~12m) 268/755 tested (40 survived, 0 timed out)
+Mutation testing 18% (elapsed: ~2m, remaining: ~12m) 289/755 tested (40 survived, 0 timed out)
+Mutation testing 19% (elapsed: ~3m, remaining: ~12m) 306/755 tested (42 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~3m, remaining: ~12m) 310/755 tested (42 survived, 0 timed out)
+Mutation testing 21% (elapsed: ~3m, remaining: ~11m) 317/755 tested (45 survived, 0 timed out)
+Mutation testing 24% (elapsed: ~3m, remaining: ~11m) 333/755 tested (46 survived, 0 timed out)
+Mutation testing 25% (elapsed: ~3m, remaining: ~10m) 345/755 tested (47 survived, 0 timed out)
+Mutation testing 25% (elapsed: ~3m, remaining: ~10m) 350/755 tested (48 survived, 0 timed out)
+Mutation testing 27% (elapsed: ~4m, remaining: ~10m) 359/755 tested (48 survived, 0 timed out)
+Mutation testing 28% (elapsed: ~4m, remaining: ~10m) 371/755 tested (52 survived, 0 timed out)
+Mutation testing 29% (elapsed: ~4m, remaining: ~10m) 385/755 tested (52 survived, 0 timed out)
+Mutation testing 29% (elapsed: ~4m, remaining: ~10m) 398/755 tested (52 survived, 0 timed out)
+Mutation testing 31% (elapsed: ~4m, remaining: ~10m) 405/755 tested (53 survived, 0 timed out)
+Mutation testing 31% (elapsed: ~4m, remaining: ~10m) 408/755 tested (56 survived, 0 timed out)
+Mutation testing 34% (elapsed: ~5m, remaining: ~9m) 418/755 tested (57 survived, 0 timed out)
+Mutation testing 35% (elapsed: ~5m, remaining: ~9m) 422/755 tested (59 survived, 0 timed out)
+Mutation testing 36% (elapsed: ~5m, remaining: ~9m) 430/755 tested (63 survived, 0 timed out)
+Mutation testing 39% (elapsed: ~5m, remaining: ~8m) 443/755 tested (64 survived, 0 timed out)
+Mutation testing 41% (elapsed: ~5m, remaining: ~8m) 454/755 tested (64 survived, 0 timed out)
+Mutation testing 43% (elapsed: ~5m, remaining: ~7m) 464/755 tested (66 survived, 0 timed out)
+Mutation testing 45% (elapsed: ~6m, remaining: ~7m) 475/755 tested (67 survived, 0 timed out)
+Mutation testing 46% (elapsed: ~6m, remaining: ~7m) 479/755 tested (67 survived, 0 timed out)
+Mutation testing 47% (elapsed: ~6m, remaining: ~6m) 494/755 tested (67 survived, 0 timed out)
+Mutation testing 48% (elapsed: ~6m, remaining: ~6m) 511/755 tested (68 survived, 0 timed out)
+Mutation testing 48% (elapsed: ~6m, remaining: ~6m) 519/755 tested (68 survived, 0 timed out)
+Mutation testing 49% (elapsed: ~6m, remaining: ~6m) 529/755 tested (70 survived, 0 timed out)
+Mutation testing 49% (elapsed: ~7m, remaining: ~7m) 537/755 tested (73 survived, 0 timed out)
+Mutation testing 50% (elapsed: ~7m, remaining: ~7m) 550/755 tested (74 survived, 0 timed out)
+Mutation testing 50% (elapsed: ~7m, remaining: ~7m) 568/755 tested (74 survived, 0 timed out)
+Mutation testing 52% (elapsed: ~7m, remaining: ~6m) 581/755 tested (74 survived, 0 timed out)
+Mutation testing 53% (elapsed: ~7m, remaining: ~6m) 586/755 tested (77 survived, 0 timed out)
+Mutation testing 55% (elapsed: ~7m, remaining: ~6m) 599/755 tested (82 survived, 0 timed out)
+Mutation testing 56% (elapsed: ~8m, remaining: ~6m) 607/755 tested (82 survived, 0 timed out)
+Mutation testing 59% (elapsed: ~8m, remaining: ~5m) 628/755 tested (82 survived, 0 timed out)
+Mutation testing 61% (elapsed: ~8m, remaining: ~5m) 646/755 tested (82 survived, 0 timed out)
+Mutation testing 63% (elapsed: ~8m, remaining: ~4m) 651/755 tested (83 survived, 0 timed out)
+Mutation testing 66% (elapsed: ~8m, remaining: ~4m) 660/755 tested (83 survived, 0 timed out)
+Mutation testing 69% (elapsed: ~8m, remaining: ~3m) 667/755 tested (85 survived, 0 timed out)
+Mutation testing 72% (elapsed: ~9m, remaining: ~3m) 675/755 tested (86 survived, 0 timed out)
+Mutation testing 74% (elapsed: ~9m, remaining: ~3m) 681/755 tested (86 survived, 0 timed out)
+Mutation testing 75% (elapsed: ~9m, remaining: ~3m) 685/755 tested (86 survived, 0 timed out)
+Mutation testing 80% (elapsed: ~9m, remaining: ~2m) 699/755 tested (86 survived, 0 timed out)
+Mutation testing 80% (elapsed: ~9m, remaining: ~2m) 700/755 tested (86 survived, 0 timed out)
+Mutation testing 81% (elapsed: ~9m, remaining: ~2m) 702/755 tested (86 survived, 0 timed out)
+Mutation testing 82% (elapsed: ~10m, remaining: ~2m) 705/755 tested (87 survived, 0 timed out)
+Mutation testing 83% (elapsed: ~10m, remaining: ~2m) 707/755 tested (87 survived, 0 timed out)
+Mutation testing 86% (elapsed: ~10m, remaining: ~1m) 716/755 tested (87 survived, 0 timed out)
+Mutation testing 90% (elapsed: ~10m, remaining: ~1m) 729/755 tested (87 survived, 0 timed out)
+Mutation testing 95% (elapsed: ~10m, remaining: <1m) 741/755 tested (87 survived, 0 timed out)
+Mutation testing 95% (elapsed: ~10m, remaining: <1m) 743/755 tested (87 survived, 0 timed out)
+Mutation testing 99% (elapsed: ~11m, remaining: <1m) 753/755 tested (87 survived, 0 timed out)
+
+All tests
+  acceptance
+    us001-external-form.test.tsx
+      ✓ US-001 external participant form AC-001-08 shows exactly the external fields, active options by category and unchecked consents (killed 2)
+    us002-student-form.test.tsx
+      ✓ US-002 student form AC-002-07 shows exactly the student fields, only student options by category and unchecked consents (killed 5)
+    us004-confirmation.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance (killed 60)
+      ✓ US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values (killed 16)
+      ✓ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request (killed 4)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500) (covered 260)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend cannot be reached (covered 255)
+    us009-organizer-filters.test.tsx
+      ✓ US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list (killed 43)
+      ✓ US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive (killed 23)
+      ✓ US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0 (killed 2)
+      ✓ US-009 organizer search bar, filters and counts AC-009-24 every configured option is listed by category with its count, zero included (killed 7)
+      ✓ US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search (killed 25)
+      ~ US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts (covered 181)
+      ~ US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts (covered 181)
+    us009-organizer-search.test.tsx
+      ✓ US-009 organizer registration search AC-009-01 /organizer shows the login form and no registration data (killed 9)
+      ✓ US-009 organizer registration search AC-009-02 the registration page for External participant has no link to /organizer (killed 3)
+      ~ US-009 organizer registration search AC-009-02 the registration page for Student has no link to /organizer (covered 147)
+      ✓ US-009 organizer registration search AC-009-04 wrong credentials show an error and no registration data (killed 18)
+      ✓ US-009 organizer registration search AC-009-06 valid credentials list every registration newest first with the number of matches (killed 29)
+      ✓ US-009 organizer registration search AC-009-07 a listed registration shows its type, fields, options, consents and time, and nothing else (killed 37)
+      ~ US-009 organizer registration search AC-009-28 Slovenian characters are shown unchanged (covered 155)
+      ~ US-009 organizer registration search AC-009-29 markup in registration text appears only as literal text and no script runs (covered 155)
+      ✓ US-009 organizer registration search AC-009-30 after a reload the login form is shown again and no storage or cookie holds the credentials (killed 1)
+  api.test.ts
+    ✓ fetchFormConfig gets the configuration from the relative API path (killed 3)
+    ✓ fetchFormConfig fails on an error status (killed 3)
+    ✓ submitRegistration posts JSON and returns the accepted registration (killed 10)
+    ✓ submitRegistration returns the field errors of a 400 (killed 9)
+    ✓ submitRegistration treats a 400 without field errors as failed (killed 3)
+    ✓ submitRegistration treats a 400 with an empty list as failed (killed 3)
+    ~ submitRegistration treats a 400 with a non-list as failed (covered 20)
+    ~ submitRegistration treats a 200 as failed (covered 16)
+    ~ submitRegistration treats a 429 as failed (covered 16)
+    ~ submitRegistration treats a 500 as failed (covered 16)
+    ✓ submitRegistration treats a network error as failed (killed 3)
+  App.test.tsx
+    ✓ App shows loading, then the conference and the form (killed 19)
+    ✓ App shows an alert when the configuration cannot be loaded (killed 9)
+    ~ App ignores a late answer after unmounting (covered 52)
+    ✓ Confirmation says when no options were selected (killed 3)
+  Captcha.test.tsx
+    ✓ Captcha in test mode sets and clears the test token (killed 2)
+    ✓ Captcha in test mode shows its error next to the checkbox (killed 5)
+    ✓ Captcha with reCAPTCHA loads the script once and renders when it is ready (killed 24)
+    ✓ Captcha with reCAPTCHA renders at once when the API is loaded and resets on request (killed 13)
+    ✓ Captcha with reCAPTCHA does not reset a widget that was never rendered (killed 1)
+  messages.test.ts
+    ✓ messageFor firstName REQUIRED (killed 2)
+    ✓ messageFor email INVALID_FORMAT (killed 1)
+    ✓ messageFor lastName TOO_LONG (killed 2)
+    ✓ messageFor organization NOT_ALLOWED (killed 2)
+    ✓ messageFor consents.privacy CONSENT_REQUIRED (killed 2)
+    ✓ messageFor consents.x UNKNOWN_CONSENT (killed 2)
+    ✓ messageFor recaptchaToken CAPTCHA_FAILED (killed 2)
+    ✓ messageFor x UNKNOWN_OPTION (killed 3)
+    ✓ messageFor x INACTIVE_OPTION (killed 1)
+    ✓ messageFor x DUPLICATE_OPTION (killed 1)
+    ✓ messageFor x OPTION_NOT_AVAILABLE (killed 1)
+    ✓ messageFor optionIds REQUIRED (killed 2)
+    ✓ messageFor firstName SOMETHING_NEW (killed 1)
+    ✓ messageFor uses the texts of registration-form-ui.md (killed 11)
+  RegistrationForm.test.tsx
+    ~ RegistrationForm shows nothing but the type choice before a type is chosen (covered 32)
+    ✓ RegistrationForm offers options by type and drops unavailable ones when the type changes (killed 95)
+    ✓ RegistrationForm checks the form before sending and marks the fields (killed 9)
+    ✓ RegistrationForm shows the backend's field errors and a general alert for unknown fields (killed 22)
+    ✓ RegistrationForm shows the general alert when sending fails, and disables the button meanwhile (killed 5)
+    ✓ RegistrationForm asks reCAPTCHA for a new token after a failed send (killed 11)
+  validation.test.ts
+    ✓ isValidEmail accepts a@b.si (killed 7)
+    ✓ isValidEmail accepts ana.novak@example.org (killed 3)
+    ✓ isValidEmail accepts ana+tag@sub.example.co.uk (killed 1)
+    ~ isValidEmail accepts o'neil@example.org (covered 22)
+    ✓ isValidEmail accepts aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.org (killed 1)
+    ✓ isValidEmail rejects (killed 1)
+    ~ isValidEmail rejects ana (covered 10)
+    ~ isValidEmail rejects @example.org (covered 10)
+    ~ isValidEmail rejects ana@ (covered 22)
+    ~ isValidEmail rejects ana@@example.org (covered 13)
+    ~ isValidEmail rejects ana@x@example.org (covered 13)
+    ✓ isValidEmail rejects .ana@example.org (killed 3)
+    ✓ isValidEmail rejects an..a@example.org (killed 1)
+    ~ isValidEmail rejects ana novak@example.org (covered 20)
+    ~ isValidEmail rejects ana@example (covered 22)
+    ~ isValidEmail rejects ana@example.o (covered 22)
+    ✓ isValidEmail rejects ana@-host.example.org (killed 1)
+    ✓ isValidEmail rejects ana@example.org. (killed 1)
+    ~ isValidEmail rejects xana@example.org,eve@example.org (covered 13)
+    ✓ isValidEmail rejects aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.org (killed 1)
+    ✓ validate accepts a complete external form (killed 16)
+    ✓ validate checks only the fields of the chosen type (killed 5)
+    ✓ validate reports missing and blank fields as required (killed 1)
+    ✓ validate counts characters after trimming, by code point (killed 4)
+    ✓ validate checks the email format after the length, on the trimmed value (killed 3)
+    ✓ validate requires mandatory consents only (killed 4)
+    ✓ validate requires a captcha token (killed 3)
+
+[NoCoverage] ConditionalExpression
+src/api.ts:98:9
+-       if (response.status === 400) {
++       if (true) {
+
+[NoCoverage] ConditionalExpression
+src/api.ts:98:9
+-       if (response.status === 400) {
++       if (false) {
+
+[NoCoverage] EqualityOperator
+src/api.ts:98:9
+-       if (response.status === 400) {
++       if (response.status !== 400) {
+
+[NoCoverage] BlockStatement
+src/api.ts:98:34
+-       if (response.status === 400) {
+-         const body = (await response.json()) as { fieldErrors?: FieldError[] };
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
+-           return { kind: "rejected", fieldErrors: body.fieldErrors };
+-         }
+-       }
++       if (response.status === 400) {}
+
+[NoCoverage] ConditionalExpression
+src/api.ts:100:11
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (true) {
+
+[NoCoverage] ConditionalExpression
+src/api.ts:100:11
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (false) {
+
+[NoCoverage] LogicalOperator
+src/api.ts:100:11
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (Array.isArray(body.fieldErrors) || body.fieldErrors.length > 0) {
+
+[NoCoverage] ConditionalExpression
+src/api.ts:100:46
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (Array.isArray(body.fieldErrors) && true) {
+
+[NoCoverage] EqualityOperator
+src/api.ts:100:46
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length >= 0) {
+
+[NoCoverage] EqualityOperator
+src/api.ts:100:46
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
++         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length <= 0) {
+
+[NoCoverage] BlockStatement
+src/api.ts:100:75
+-         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {
+-           return { kind: "rejected", fieldErrors: body.fieldErrors };
+-         }
++         if (Array.isArray(body.fieldErrors) && body.fieldErrors.length > 0) {}
+
+[NoCoverage] ObjectLiteral
+src/api.ts:101:16
+-           return { kind: "rejected", fieldErrors: body.fieldErrors };
++           return {};
+
+[NoCoverage] StringLiteral
+src/api.ts:101:24
+-           return { kind: "rejected", fieldErrors: body.fieldErrors };
++           return { kind: "", fieldErrors: body.fieldErrors };
+
+[NoCoverage] ObjectLiteral
+src/api.ts:104:12
+-       return { kind: "failed" };
++       return {};
+
+[NoCoverage] StringLiteral
+src/api.ts:104:20
+-       return { kind: "failed" };
++       return { kind: "" };
+
+[NoCoverage] BlockStatement
+src/api.ts:105:11
+-     } catch {
+-       return { kind: "failed" };
+-     }
++     } catch {}
+
+[NoCoverage] ObjectLiteral
+src/api.ts:106:12
+-       return { kind: "failed" };
++       return {};
+
+[NoCoverage] StringLiteral
+src/api.ts:106:20
+-       return { kind: "failed" };
++       return { kind: "" };
+
+[Survived] ConditionalExpression
+src/api.ts:45:9
+-       if (response.status === 400) {
++       if (true) {
+Tests ran:
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500)
+    RegistrationForm shows the backend's field errors and a general alert for unknown fields
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:79:9
+-       if (value !== "") {
++       if (true) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/api.ts:79:19
+-       if (value !== "") {
++       if (value !== "Stryker was here!") {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:84:18
+-     const suffix = encoded === "" ? "" : `?${encoded}`;
++     const suffix = false ? "" : `?${encoded}`;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/api.ts:84:30
+-     const suffix = encoded === "" ? "" : `?${encoded}`;
++     const suffix = encoded === "Stryker was here!" ? "" : `?${encoded}`;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/api.ts:88:17
+-           Accept: "application/json",
++           Accept: "",
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:95:9
+-       if (response.status === 401) {
++       if (true) {
+Tests ran:
+    US-009 organizer registration search AC-009-04 wrong credentials show an error and no registration data
+
+
+[Survived] BlockStatement
+src/App.tsx:31:18
+-       return () => {
+-         active = false;
+-       };
++       return () => {};
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 9 more tests!
+
+
+[Survived] BooleanLiteral
+src/App.tsx:32:16
+-         active = false;
++         active = true;
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 9 more tests!
+
+
+[Survived] ArrayDeclaration
+src/App.tsx:34:6
+-     }, []);
++     }, ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+src/Captcha.tsx:81:11
+-         if (container.current && window.grecaptcha && widgetId.current === null) {
++         if (true && widgetId.current === null) {
+Tests ran:
+    RegistrationForm asks reCAPTCHA for a new token after a failed send
+    Captcha with reCAPTCHA loads the script once and renders when it is ready
+    Captcha with reCAPTCHA renders at once when the API is loaded and resets on request
+
+
+[Survived] LogicalOperator
+src/Captcha.tsx:81:11
+-         if (container.current && window.grecaptcha && widgetId.current === null) {
++         if (container.current || window.grecaptcha && widgetId.current === null) {
+Tests ran:
+    RegistrationForm asks reCAPTCHA for a new token after a failed send
+    Captcha with reCAPTCHA loads the script once and renders when it is ready
+    Captcha with reCAPTCHA renders at once when the API is loaded and resets on request
+
+
+[Survived] StringLiteral
+src/Captcha.tsx:48:14
+-             />{" "}
++             />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 12 more tests!
+
+
+[Survived] ArrayDeclaration
+src/Captcha.tsx:100:6
+-     }, [siteKey, onToken]);
++     }, []);
+Tests ran:
+    RegistrationForm asks reCAPTCHA for a new token after a failed send
+    Captcha with reCAPTCHA loads the script once and renders when it is ready
+    Captcha with reCAPTCHA renders at once when the API is loaded and resets on request
+  and 1 more test!
+
+
+[Survived] OptionalChaining
+src/Captcha.tsx:104:7
+-         window.grecaptcha?.reset(widgetId.current);
++         window.grecaptcha.reset(widgetId.current);
+Tests ran:
+    RegistrationForm asks reCAPTCHA for a new token after a failed send
+    Captcha with reCAPTCHA renders at once when the API is loaded and resets on request
+
+
+[Survived] StringLiteral
+src/messages.ts:20:15
+-     loadFailed: "The registrations could not be loaded. Please try again later.",
++     loadFailed: "",
+Ran all tests for this mutant.
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:66:7
+-         case "rejected":
+-           setResult(null);
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
+-             setSearchError(ORGANIZER_MESSAGES.searchTooLong);
+-           } else {
+-             setFailed(true);
+-           }
+-           return;
++         case "rejected":
+
+[NoCoverage] StringLiteral
+src/OrganizerPage.tsx:66:12
+-         case "rejected":
++         case "":
+
+[NoCoverage] CallExpression
+src/OrganizerPage.tsx:67:9
+-           setResult(null);
++           ;
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:68:13
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (true) {
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:68:13
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (false) {
+
+[NoCoverage] MethodExpression
+src/OrganizerPage.tsx:68:13
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.every(e => e.field === "search")) {
+
+[NoCoverage] ArrowFunction
+src/OrganizerPage.tsx:68:38
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.some(() => undefined)) {
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:68:45
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.some((e) => true)) {
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:68:45
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.some((e) => false)) {
+
+[NoCoverage] EqualityOperator
+src/OrganizerPage.tsx:68:45
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.some((e) => e.field !== "search")) {
+
+[NoCoverage] StringLiteral
+src/OrganizerPage.tsx:68:57
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.some((e) => e.field === "")) {
+
+[NoCoverage] BlockStatement
+src/OrganizerPage.tsx:68:68
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
+-             setSearchError(ORGANIZER_MESSAGES.searchTooLong);
+-           } else {
++           if (outcome.fieldErrors.some((e) => e.field === "search")) {} else {
+
+[NoCoverage] CallExpression
+src/OrganizerPage.tsx:69:11
+-             setSearchError(ORGANIZER_MESSAGES.searchTooLong);
++             ;
+
+[NoCoverage] BlockStatement
+src/OrganizerPage.tsx:70:16
+-           } else {
+-             setFailed(true);
+-           }
++           } else {}
+
+[NoCoverage] BooleanLiteral
+src/OrganizerPage.tsx:71:21
+-             setFailed(true);
++             setFailed(false);
+
+[NoCoverage] ConditionalExpression
+src/OrganizerPage.tsx:74:7
+-         default:
+-           setFailed(true);
++         default:
+
+[NoCoverage] BooleanLiteral
+src/OrganizerPage.tsx:75:19
+-           setFailed(true);
++           setFailed(false);
+
+[NoCoverage] BlockStatement
+src/OrganizerPage.tsx:109:37
+-       if (request !== latest.current) {
+-         return;
+-       }
++       if (request !== latest.current) {}
+
+[NoCoverage] ArrayDeclaration
+src/OrganizerPage.tsx:137:65
+-       categories.find((c) => c.category === category)?.options ?? [];
++       categories.find((c) => c.category === category)?.options ?? ["Stryker was here"];
+
+[Survived] EqualityOperator
+src/OrganizerPage.tsx:33:10
+-     return [...text.trim()].length > MAX_SEARCH_LENGTH;
++     return [...text.trim()].length >= MAX_SEARCH_LENGTH;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+  and 1 more test!
+
+
+[Survived] MethodExpression
+src/OrganizerPage.tsx:33:14
+-     return [...text.trim()].length > MAX_SEARCH_LENGTH;
++     return [...text].length > MAX_SEARCH_LENGTH;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+  and 1 more test!
+
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:41:44
+-     const [username, setUsername] = useState("");
++     const [username, setUsername] = useState("Stryker was here!");
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] BooleanLiteral
+src/OrganizerPage.tsx:45:60
+-     const [wrongCredentials, setWrongCredentials] = useState(false);
++     const [wrongCredentials, setWrongCredentials] = useState(true);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] BooleanLiteral
+src/OrganizerPage.tsx:46:40
+-     const [failed, setFailed] = useState(false);
++     const [failed, setFailed] = useState(true);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:47:36
+-     const [text, setText] = useState("");
++     const [text, setText] = useState("Stryker was here!");
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] ArrayDeclaration
+src/OrganizerPage.tsx:51:66
+-     const [categories, setCategories] = useState<CategoryCounts[]>([]);
++     const [categories, setCategories] = useState<CategoryCounts[]>(["Stryker was here"]);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:62:9
+-           setCredentials(null);
++           ;
+Tests ran:
+    US-009 organizer registration search AC-009-04 wrong credentials show an error and no registration data
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:63:9
+-           setResult(null);
++           ;
+Tests ran:
+    US-009 organizer registration search AC-009-04 wrong credentials show an error and no registration data
+
+
+[Survived] UpdateOperator
+src/OrganizerPage.tsx:84:21
+-       const request = ++latest.current;
++       const request = --latest.current;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+  and 1 more test!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:87:7
+-         setResult(null);
++         ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:90:5
+-       setSearchError(null);
++       ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:92:9
+-       if (request === latest.current) {
++       if (true) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:98:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] BooleanLiteral
+src/OrganizerPage.tsx:100:18
+-       setLoggingIn(true);
++       setLoggingIn(false);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] BooleanLiteral
+src/OrganizerPage.tsx:101:25
+-       setWrongCredentials(false);
++       setWrongCredentials(true);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] UpdateOperator
+src/OrganizerPage.tsx:103:21
+-       const request = ++latest.current;
++       const request = --latest.current;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] ObjectLiteral
+src/OrganizerPage.tsx:104:54
+-       const outcome = await searchRegistrations(login, {
+-         search: "",
+-         ...NO_FILTERS,
+-       });
++       const outcome = await searchRegistrations(login, {});
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] BooleanLiteral
+src/OrganizerPage.tsx:108:18
+-       setLoggingIn(false);
++       setLoggingIn(true);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:109:9
+-       if (request !== latest.current) {
++       if (false) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:112:9
+-       if (outcome.kind === "ok") {
++       if (true) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:114:15
+-         setText("");
++         setText("Stryker was here!");
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 9 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:115:7
+-         setFilters(NO_FILTERS);
++         ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 9 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:116:7
+-         setSearchError(null);
++         ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 9 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:122:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:123:9
+-       if (credentials) {
++       if (true) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts
+    US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:131:9
+-       if (credentials) {
++       if (true) {
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+
+
+[Survived] OptionalChaining
+src/OrganizerPage.tsx:137:5
+-       categories.find((c) => c.category === category)?.options ?? [];
++       categories.find(c => c.category === category).options ?? [];
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 9 more tests!
+
+
+[Survived] LogicalOperator
+src/OrganizerPage.tsx:142:8
+-         {wrongCredentials && (
+-           <p role="alert" className="alert">
+-             {ORGANIZER_MESSAGES.wrongCredentials}
+-           </p>
+-         )}
++         {wrongCredentials || <p role="alert" className="alert">
++             {ORGANIZER_MESSAGES.wrongCredentials}
++           </p>}
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:147:8
+-         {failed && (
+-           <p role="alert" className="alert">
+-             {ORGANIZER_MESSAGES.loadFailed}
+-           </p>
+-         )}
++         {true}
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:147:8
+-         {failed && (
+-           <p role="alert" className="alert">
+-             {ORGANIZER_MESSAGES.loadFailed}
+-           </p>
+-         )}
++         {false}
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 11 more tests!
+
+
+[Survived] LogicalOperator
+src/OrganizerPage.tsx:237:12
+-             {result && !searchError && <OrganizerResults result={result} />}
++             {result || !searchError && <OrganizerResults result={result} />}
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0
+  and 9 more tests!
+
+
+[Survived] ObjectLiteral
+src/OrganizerPage.tsx:15:44
+-   const NO_FILTERS: Record<Filter, string> = {
+-     type: "",
+-     workshop: "",
+-     event: "",
+-     meal: "",
+-     other: "",
+-   };
++   const NO_FILTERS: Record<Filter, string> = {};
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:24:16
+-     ["WORKSHOP", "workshop", "Workshop"],
++     ["WORKSHOP", "", "Workshop"],
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:25:13
+-     ["EVENT", "event", "Event"],
++     ["EVENT", "", "Event"],
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:27:13
+-     ["OTHER", "other", "Other activity"],
++     ["OTHER", "", "Other activity"],
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/OrganizerResults.tsx:34:55
+-       fields.push([title, names.length > 0 ? names.join("; ") : undefined]);
++       fields.push([title, names.length > 0 ? names.join("") : undefined]);
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-24 every configured option is listed by category with its count, zero included
+  and 8 more tests!
+
+
+[Survived] StringLiteral
+src/OrganizerResults.tsx:38:58
+-       r.consents.map((c) => `${c.id} (${c.givenAt})`).join("; "),
++       r.consents.map((c) => `${c.id} (${c.givenAt})`).join(""),
+Tests ran:
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+    US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive
+    US-009 organizer search bar, filters and counts AC-009-24 every configured option is listed by category with its count, zero included
+  and 8 more tests!
+
+
+[NoCoverage] StringLiteral
+src/RegistrationForm.tsx:70:56
+-         FIELDS_BY_TYPE[type].map((f) => [f, values[f] ?? ""]),
++         FIELDS_BY_TYPE[type].map((f) => [f, values[f] ?? "Stryker was here!"]),
+
+[NoCoverage] StringLiteral
+src/RegistrationForm.tsx:74:38
+-         firstName: values.firstName ?? "",
++         firstName: values.firstName ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/RegistrationForm.tsx:75:36
+-         lastName: values.lastName ?? "",
++         lastName: values.lastName ?? "Stryker was here!",
+
+[NoCoverage] StringLiteral
+src/RegistrationForm.tsx:76:30
+-         email: values.email ?? "",
++         email: values.email ?? "Stryker was here!",
+
+[Survived] ArrayDeclaration
+src/RegistrationForm.tsx:27:54
+-     const [consents, setConsents] = useState<string[]>([]);
++     const [consents, setConsents] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationForm.tsx:26:54
+-     const [selected, setSelected] = useState<string[]>([]);
++     const [selected, setSelected] = useState<string[]>(["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] BooleanLiteral
+src/RegistrationForm.tsx:31:52
+-     const [generalError, setGeneralError] = useState(false);
++     const [generalError, setGeneralError] = useState(true);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] ArrayDeclaration
+src/RegistrationForm.tsx:34:67
+-     const onToken = useCallback((value: string) => setToken(value), []);
++     const onToken = useCallback((value: string) => setToken(value), ["Stryker was here"]);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] CallExpression
+src/RegistrationForm.tsx:55:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 8 more tests!
+
+
+[Survived] BooleanLiteral
+src/RegistrationForm.tsx:64:21
+-       setGeneralError(false);
++       setGeneralError(true);
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 7 more tests!
+
+
+[Survived] LogicalOperator
+src/RegistrationForm.tsx:74:18
+-         firstName: values.firstName ?? "",
++         firstName: values.firstName && "",
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500)
+  and 5 more tests!
+
+
+[Survived] LogicalOperator
+src/RegistrationForm.tsx:75:17
+-         lastName: values.lastName ?? "",
++         lastName: values.lastName && "",
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500)
+  and 5 more tests!
+
+
+[Survived] LogicalOperator
+src/RegistrationForm.tsx:76:14
+-         email: values.email ?? "",
++         email: values.email && "",
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500)
+  and 5 more tests!
+
+
+[Survived] MethodExpression
+src/RegistrationForm.tsx:81:17
+-         consents: config.consents
+-           .filter((c) => consents.includes(c.id))
++         consents: config.consents
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500)
+  and 5 more tests!
+
+
+[Survived] MethodExpression
+src/RegistrationForm.tsx:107:23
+-         setGeneralError(result.fieldErrors.some((e) => !shown.has(e.field)));
++         setGeneralError(result.fieldErrors.every(e => !shown.has(e.field)));
+Tests ran:
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    RegistrationForm shows the backend's field errors and a general alert for unknown fields
+
+
+[Survived] ConditionalExpression
+src/RegistrationForm.tsx:121:22
+-               checked={type === "EXTERNAL"}
++               checked={false}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:121:31
+-               checked={type === "EXTERNAL"}
++               checked={type === ""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:123:14
+-             />{" "}
++             />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] ConditionalExpression
+src/RegistrationForm.tsx:130:22
+-               checked={type === "STUDENT"}
++               checked={false}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:130:31
+-               checked={type === "STUDENT"}
++               checked={type === ""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:132:14
+-             />{" "}
++             />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 13 more tests!
+
+
+[Survived] ConditionalExpression
+src/RegistrationForm.tsx:145:23
+-                   type={field === "email" ? "email" : "text"}
++                   type={false ? "email" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:145:33
+-                   type={field === "email" ? "email" : "text"}
++                   type={field === "" ? "email" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:145:43
+-                   type={field === "email" ? "email" : "text"}
++                   type={field === "email" ? "" : "text"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:145:53
+-                   type={field === "email" ? "email" : "text"}
++                   type={field === "email" ? "email" : ""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:146:41
+-                   value={values[field] ?? ""}
++                   value={values[field] ?? "Stryker was here!"}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:200:51
+-                         aria-invalid={errors[key] ? "true" : undefined}
++                         aria-invalid={errors[key] ? "" : undefined}
+Tests ran:
+    RegistrationForm checks the form before sending and marks the fields
+    RegistrationForm shows the backend's field errors and a general alert for unknown fields
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:175:26
+-                         />{" "}
++                         />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] StringLiteral
+src/RegistrationForm.tsx:204:24
+-                       />{" "}
++                       />{""}
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 11 more tests!
+
+
+[Survived] ConditionalExpression
+src/routes.ts:3:39
+-     return pathname === "/organizer" || pathname === "/organizer/";
++     return pathname === "/organizer" || false;
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+src/routes.ts:3:52
+-     return pathname === "/organizer" || pathname === "/organizer/";
++     return pathname === "/organizer" || pathname === "";
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (false) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] LogicalOperator
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at <= 0 && at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (false || at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] EqualityOperator
+src/validation.ts:34:7
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at < 0 || at !== value.lastIndexOf("@")) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 33 more tests!
+
+
+[Survived] BlockStatement
+src/validation.ts:34:49
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
+-       return false;
+-     }
++     if (at <= 0 || at !== value.lastIndexOf("@")) {}
+Tests ran:
+    isValidEmail rejects
+    isValidEmail rejects ana
+    isValidEmail rejects @example.org
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+src/validation.ts:34:18
+-     if (at <= 0 || at !== value.lastIndexOf("@")) {
++     if (at <= 0 || false) {
+Tests ran:
+    US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance
+    US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values
+    US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request
+  and 30 more tests!
+
+
+Ran 4.89 tests per mutant on average.
+----------------------|------------------|----------|-----------|------------|----------|----------|
+                      | % Mutation score |          |           |            |          |          |
+File                  |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files             |  83.00 |   87.78 |      625 |         0 |         87 |       41 |        2 |
+ api.ts               |  73.40 |   90.79 |       69 |         0 |          7 |       18 |        0 |
+ App.tsx              |  92.31 |   92.31 |       36 |         0 |          3 |        0 |        0 |
+ Captcha.tsx          |  92.06 |   92.06 |       58 |         0 |          5 |        0 |        0 |
+ Confirmation.tsx     | 100.00 |  100.00 |        5 |         0 |          0 |        0 |        0 |
+ messages.ts          |  97.78 |   97.78 |       44 |         0 |          1 |        0 |        0 |
+ OrganizerPage.tsx    |  64.05 |   73.13 |       98 |         0 |         36 |       19 |        0 |
+ OrganizerResults.tsx |  96.61 |   96.61 |       57 |         0 |          2 |        0 |        0 |
+ RegistrationForm.tsx |  83.89 |   85.80 |      151 |         0 |         25 |        4 |        2 |
+ routes.ts            |  80.00 |   80.00 |        8 |         0 |          2 |        0 |        0 |
+ validation.ts        |  94.29 |   94.29 |       99 |         0 |          6 |        0 |        0 |
+----------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:50:15 (1957784) INFO JsonReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/reports/mutation/mutation.json
+[32m14:50:15 (1957784) INFO HtmlReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/reports/mutation/mutation.html
+[32m14:50:15 (1957784) INFO MutationTestExecutor[39m Done in 11 minutes and 21 seconds.

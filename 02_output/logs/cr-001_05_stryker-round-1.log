@@ -1,0 +1,311 @@
+[32m14:52:10 (1992030) INFO ProjectReader[39m Found 3 of 79 file(s) to be mutated.
+[32m14:52:10 (1992030) INFO Instrumenter[39m Instrumented 3 source file(s) with 257 mutant(s)
+[32m14:52:11 (1992030) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m14:52:13 (1992030) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m14:52:14 (1992030) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:52:39 (1992030) INFO DryRunExecutor[39m Initial test run succeeded. Ran 75 tests in 24 seconds (net 9049.083300000004 ms, overhead 15680.916699999996 ms).
+Mutation testing 3% (elapsed: <1m, remaining: ~4m) 11/257 tested (0 survived, 0 timed out)
+Mutation testing 7% (elapsed: <1m, remaining: ~4m) 19/257 tested (1 survived, 0 timed out)
+Mutation testing 9% (elapsed: <1m, remaining: ~4m) 33/257 tested (4 survived, 0 timed out)
+Mutation testing 9% (elapsed: <1m, remaining: ~6m) 45/257 tested (4 survived, 0 timed out)
+Mutation testing 12% (elapsed: <1m, remaining: ~6m) 55/257 tested (6 survived, 0 timed out)
+Mutation testing 15% (elapsed: ~1m, remaining: ~5m) 64/257 tested (6 survived, 0 timed out)
+Mutation testing 20% (elapsed: ~1m, remaining: ~4m) 74/257 tested (8 survived, 0 timed out)
+Mutation testing 24% (elapsed: ~1m, remaining: ~4m) 84/257 tested (11 survived, 0 timed out)
+Mutation testing 26% (elapsed: ~1m, remaining: ~4m) 96/257 tested (13 survived, 0 timed out)
+Mutation testing 33% (elapsed: ~1m, remaining: ~3m) 109/257 tested (13 survived, 0 timed out)
+Mutation testing 37% (elapsed: ~1m, remaining: ~2m) 122/257 tested (13 survived, 0 timed out)
+Mutation testing 42% (elapsed: ~2m, remaining: ~2m) 132/257 tested (13 survived, 0 timed out)
+Mutation testing 43% (elapsed: ~2m, remaining: ~2m) 134/257 tested (13 survived, 0 timed out)
+Mutation testing 49% (elapsed: ~2m, remaining: ~2m) 147/257 tested (13 survived, 0 timed out)
+Mutation testing 54% (elapsed: ~2m, remaining: ~2m) 167/257 tested (14 survived, 0 timed out)
+Mutation testing 56% (elapsed: ~2m, remaining: ~2m) 181/257 tested (14 survived, 0 timed out)
+Mutation testing 60% (elapsed: ~2m, remaining: ~1m) 197/257 tested (14 survived, 0 timed out)
+Mutation testing 61% (elapsed: ~3m, remaining: ~1m) 215/257 tested (15 survived, 0 timed out)
+Mutation testing 65% (elapsed: ~3m, remaining: ~1m) 230/257 tested (15 survived, 0 timed out)
+Mutation testing 66% (elapsed: ~3m, remaining: ~1m) 232/257 tested (15 survived, 0 timed out)
+Mutation testing 77% (elapsed: ~3m, remaining: ~1m) 241/257 tested (15 survived, 0 timed out)
+Mutation testing 87% (elapsed: ~3m, remaining: <1m) 248/257 tested (15 survived, 0 timed out)
+Mutation testing 92% (elapsed: ~3m, remaining: <1m) 252/257 tested (16 survived, 0 timed out)
+Mutation testing 98% (elapsed: ~4m, remaining: <1m) 256/257 tested (17 survived, 0 timed out)
+
+All tests
+  acceptance
+    us001-external-form.test.tsx
+      ~ US-001 external participant form AC-001-08 shows exactly the external fields, active options by category and unchecked consents (covered 18)
+    us002-student-form.test.tsx
+      ✓ US-002 student form AC-002-07 shows exactly the student fields, only student options by category and unchecked consents (killed 2)
+    us004-confirmation.test.tsx
+      ✓ US-004 registration confirmation AC-004-01 shows the confirmation with name and selected options and hides the form after acceptance (killed 5)
+      ~ US-004 registration confirmation AC-004-02 shows backend field errors next to their fields, no confirmation, and keeps the values (covered 42)
+      ~ US-004 registration confirmation AC-004-03 shows field errors for an empty required field and an invalid email without sending a request (covered 18)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend fails (500) (covered 34)
+      ~ US-004 registration confirmation AC-004-04 shows a general error without technical details when the backend cannot be reached (covered 29)
+    us009-organizer-filters.test.tsx
+      ✓ US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list (killed 15)
+      ✓ US-009 organizer search bar, filters and counts AC-009-21 each category filter offers any and every configured option, active and inactive (killed 13)
+      ~ US-009 organizer search bar, filters and counts AC-009-23 no match shows 'No registrations match' and the number 0 (covered 103)
+      ~ US-009 organizer search bar, filters and counts AC-009-24 every configured option is listed by category with its count, zero included (covered 103)
+      ✓ US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search (killed 9)
+      ~ US-009 organizer search bar, filters and counts AC-009-27 a search text with the Search button updates the list and the counts (covered 129)
+      ~ US-009 organizer search bar, filters and counts AC-009-27 a search text with Enter in the search bar updates the list and the counts (covered 129)
+    us009-organizer-search.test.tsx
+      ~ US-009 organizer registration search AC-009-01 /organizer shows the login form and no registration data (covered 27)
+      ~ US-009 organizer registration search AC-009-02 the registration page for External participant has no link to /organizer (covered 18)
+      ~ US-009 organizer registration search AC-009-02 the registration page for Student has no link to /organizer (covered 18)
+      ✓ US-009 organizer registration search AC-009-04 wrong credentials show an error and no registration data (killed 1)
+      ✓ US-009 organizer registration search AC-009-06 valid credentials list every registration newest first with the number of matches (killed 3)
+      ~ US-009 organizer registration search AC-009-07 a listed registration shows its type, fields, options, consents and time, and nothing else (covered 103)
+      ~ US-009 organizer registration search AC-009-28 Slovenian characters are shown unchanged (covered 103)
+      ~ US-009 organizer registration search AC-009-29 markup in registration text appears only as literal text and no script runs (covered 103)
+      ~ US-009 organizer registration search AC-009-30 after a reload the login form is shown again and no storage or cookie holds the credentials (covered 103)
+  api.test.ts
+    ✓ fetchFormConfig gets the configuration from the relative API path (killed 3)
+    ✓ fetchFormConfig fails on an error status (killed 3)
+    ✓ submitRegistration posts JSON and returns the accepted registration (killed 13)
+    ✓ submitRegistration returns the field errors of a 400 (killed 9)
+    ✓ submitRegistration treats a 400 without field errors as failed (killed 3)
+    ✓ submitRegistration treats a 400 with an empty list as failed (killed 3)
+    ~ submitRegistration treats a 400 with a non-list as failed (covered 20)
+    ~ submitRegistration treats a 200 as failed (covered 16)
+    ~ submitRegistration treats a 429 as failed (covered 16)
+    ~ submitRegistration treats a 500 as failed (covered 16)
+    ✓ submitRegistration treats a network error as failed (killed 3)
+    ✓ searchRegistrations sends no query string when nothing is set, with JSON and Basic headers (killed 20)
+    ✓ searchRegistrations sends only the values that are set (killed 4)
+    ✓ searchRegistrations reports 401 as unauthorized (killed 6)
+    ✓ searchRegistrations returns the field errors of a 400 (killed 9)
+    ✓ searchRegistrations treats a 400 without field errors as failed (killed 6)
+    ~ searchRegistrations treats a 400 with no list as failed (covered 34)
+    ~ searchRegistrations treats a 403 as failed (covered 30)
+    ~ searchRegistrations treats a 500 as failed (covered 30)
+    ✓ searchRegistrations treats a network error as failed (killed 3)
+    ~ basicAuthorization encodes the credentials as UTF-8 (covered 3)
+  App.test.tsx
+    ~ App shows loading, then the conference and the form (covered 18)
+    ~ App shows an alert when the configuration cannot be loaded (covered 20)
+    ~ App ignores a late answer after unmounting (covered 20)
+    ✘ Confirmation says when no options were selected (covered 0)
+  OrganizerPage.test.tsx
+    ✓ OrganizerPage login starts with empty fields and no alert (killed 9)
+    ✓ OrganizerPage login logs in with the entered credentials and no criteria (killed 26)
+    ✓ OrganizerPage login disables Log in while the request runs (killed 2)
+    ✓ OrganizerPage login shows the general alert when the login request fails, and keeps the form (killed 6)
+    ✓ OrganizerPage login clears the wrong-credentials alert when the next login succeeds (killed 6)
+    ✓ OrganizerPage search sends exactly 100 characters (killed 10)
+    ✓ OrganizerPage search sends 100 characters with surrounding spaces (killed 1)
+    ✓ OrganizerPage search hides the error and shows the list again after a valid search (killed 14)
+    ✓ OrganizerPage search shows the search error for a 400 on the search field and no list (killed 9)
+    ✓ OrganizerPage search shows the general alert for a 400 on a filter and no list (killed 5)
+    ~ OrganizerPage search shows the general alert when a search fails and clears it on the next result (covered 99)
+    ✓ OrganizerPage search returns to the login form when a later search is refused, and resets the criteria at the next login (killed 4)
+    ✓ OrganizerPage search ignores a response that arrives after a newer one (killed 1)
+    ✓ OrganizerPage search sends each category filter under its own name (killed 11)
+  RegistrationForm.test.tsx
+    ✘ RegistrationForm shows nothing but the type choice before a type is chosen (covered 0)
+    ~ RegistrationForm offers options by type and drops unavailable ones when the type changes (covered 14)
+    ✘ RegistrationForm checks the form before sending and marks the fields (covered 0)
+    ~ RegistrationForm shows the backend's field errors and a general alert for unknown fields (covered 24)
+    ~ RegistrationForm shows the general alert when sending fails, and disables the button meanwhile (covered 16)
+    ~ RegistrationForm asks reCAPTCHA for a new token after a failed send (covered 16)
+  routes.test.ts
+    ~ isOrganizerPath accepts /organizer (covered 7)
+    ✓ isOrganizerPath accepts /organizer/ (killed 2)
+    ~ isOrganizerPath rejects / (covered 10)
+    ~ isOrganizerPath rejects (covered 10)
+    ~ isOrganizerPath rejects /organizers (covered 10)
+    ~ isOrganizerPath rejects /organizer/x (covered 10)
+    ~ isOrganizerPath rejects /Organizer (covered 10)
+
+[Survived] ConditionalExpression
+src/api.ts:45:9
+-       if (response.status === 400) {
++       if (true) {
+Tests ran:
+    RegistrationForm shows the backend's field errors and a general alert for unknown fields
+    RegistrationForm shows the general alert when sending fails, and disables the button meanwhile
+    RegistrationForm asks reCAPTCHA for a new token after a failed send
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+src/api.ts:98:9
+-       if (response.status === 400) {
++       if (true) {
+Tests ran:
+    searchRegistrations returns the field errors of a 400
+    searchRegistrations treats a 400 without field errors as failed
+    searchRegistrations treats a 400 with no list as failed
+  and 2 more tests!
+
+
+[NoCoverage] BlockStatement
+src/OrganizerPage.tsx:109:37
+-       if (request !== latest.current) {
+-         return;
+-       }
++       if (request !== latest.current) {}
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:47:36
+-     const [text, setText] = useState("");
++     const [text, setText] = useState("Stryker was here!");
+Tests ran:
+    OrganizerPage login starts with empty fields and no alert
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login disables Log in while the request runs
+  and 25 more tests!
+
+
+[Survived] ArrayDeclaration
+src/OrganizerPage.tsx:51:66
+-     const [categories, setCategories] = useState<CategoryCounts[]>([]);
++     const [categories, setCategories] = useState<CategoryCounts[]>(["Stryker was here"]);
+Tests ran:
+    OrganizerPage login starts with empty fields and no alert
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login disables Log in while the request runs
+  and 25 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:63:9
+-           setResult(null);
++           ;
+Tests ran:
+    OrganizerPage login disables Log in while the request runs
+    OrganizerPage login clears the wrong-credentials alert when the next login succeeds
+    OrganizerPage search returns to the login form when a later search is refused, and resets the criteria at the next login
+  and 1 more test!
+
+
+[Survived] MethodExpression
+src/OrganizerPage.tsx:68:13
+-           if (outcome.fieldErrors.some((e) => e.field === "search")) {
++           if (outcome.fieldErrors.every(e => e.field === "search")) {
+Tests ran:
+    OrganizerPage search shows the search error for a 400 on the search field and no list
+    OrganizerPage search shows the general alert for a 400 on a filter and no list
+
+
+[Survived] UpdateOperator
+src/OrganizerPage.tsx:84:21
+-       const request = ++latest.current;
++       const request = --latest.current;
+Tests ran:
+    OrganizerPage search sends exactly 100 characters
+    OrganizerPage search sends 100 characters with surrounding spaces
+    OrganizerPage search hides the error and shows the list again after a valid search
+  and 10 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:87:7
+-         setResult(null);
++         ;
+Tests ran:
+    OrganizerPage search hides the error and shows the list again after a valid search
+    US-009 organizer search bar, filters and counts AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:98:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login disables Log in while the request runs
+    OrganizerPage login shows the general alert when the login request fails, and keeps the form
+  and 23 more tests!
+
+
+[Survived] UpdateOperator
+src/OrganizerPage.tsx:103:21
+-       const request = ++latest.current;
++       const request = --latest.current;
+Tests ran:
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login disables Log in while the request runs
+    OrganizerPage login shows the general alert when the login request fails, and keeps the form
+  and 23 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:109:9
+-       if (request !== latest.current) {
++       if (false) {
+Tests ran:
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login disables Log in while the request runs
+    OrganizerPage login shows the general alert when the login request fails, and keeps the form
+  and 23 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:122:5
+-       event.preventDefault();
++       ;
+Tests ran:
+    OrganizerPage search sends exactly 100 characters
+    OrganizerPage search sends 100 characters with surrounding spaces
+    OrganizerPage search hides the error and shows the list again after a valid search
+  and 8 more tests!
+
+
+[Survived] CallExpression
+src/OrganizerPage.tsx:116:7
+-         setSearchError(null);
++         ;
+Tests ran:
+    OrganizerPage login logs in with the entered credentials and no criteria
+    OrganizerPage login clears the wrong-credentials alert when the next login succeeds
+    OrganizerPage search sends exactly 100 characters
+  and 20 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:123:9
+-       if (credentials) {
++       if (true) {
+Tests ran:
+    OrganizerPage search sends exactly 100 characters
+    OrganizerPage search sends 100 characters with surrounding spaces
+    OrganizerPage search hides the error and shows the list again after a valid search
+  and 8 more tests!
+
+
+[Survived] ConditionalExpression
+src/OrganizerPage.tsx:131:9
+-       if (credentials) {
++       if (true) {
+Tests ran:
+    OrganizerPage search returns to the login form when a later search is refused, and resets the criteria at the next login
+    OrganizerPage search sends each category filter under its own name
+    US-009 organizer search bar, filters and counts AC-009-26 changing a filter updates the list and the counts without pressing Search
+
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:24:16
+-     ["WORKSHOP", "workshop", "Workshop"],
++     ["WORKSHOP", "", "Workshop"],
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/OrganizerPage.tsx:25:13
+-     ["EVENT", "event", "Event"],
++     ["EVENT", "", "Event"],
+Ran all tests for this mutant.
+
+Ran 4.25 tests per mutant on average.
+-------------------|------------------|----------|-----------|------------|----------|----------|
+                   | % Mutation score |          |           |            |          |          |
+File               |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files          |  93.00 |   93.36 |      239 |         0 |         17 |        1 |        0 |
+ api.ts            |  97.87 |   97.87 |       92 |         0 |          2 |        0 |        0 |
+ OrganizerPage.tsx |  89.54 |   90.13 |      137 |         0 |         15 |        1 |        0 |
+ routes.ts         | 100.00 |  100.00 |       10 |         0 |          0 |        0 |        0 |
+-------------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:56:43 (1992030) INFO JsonReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/reports/mutation/mutation.json
+[32m14:56:43 (1992030) INFO HtmlReporter[39m Your report can be found at: file:///home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/reports/mutation/mutation.html
+[32m14:56:43 (1992030) INFO MutationTestExecutor[39m Done in 4 minutes and 33 seconds.

@@ -1,0 +1,29 @@
+
+> registration-frontend@0.1.0 coverage
+> vitest run --coverage
+
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend
+      Coverage enabled with v8
+
+
+ Test Files  13 passed (13)
+      Tests  121 passed (121)
+   Start at  14:56:57
+   Duration  7.89s (transform 1.35s, setup 6.66s, import 2.09s, tests 14.77s, environment 15.59s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.64 |    96.33 |     100 |   99.63 |                   
+ OrganizerPage.tsx |   98.75 |    91.42 |     100 |   98.71 | 110               
+ ...rationForm.tsx |     100 |     92.3 |     100 |     100 | 70-76             
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.64% ( 283/284 )
+Branches     : 96.33% ( 184/191 )
+Functions    : 100% ( 81/81 )
+Lines        : 99.63% ( 272/273 )
+================================================================================
