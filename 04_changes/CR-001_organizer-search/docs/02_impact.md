@@ -50,3 +50,8 @@ None: CR-001 has no MODIFIED or REMOVED criterion or scenario.
 
 | Path | Action | Reason |
 |---|---|---|
+| `backend/src/test/java/si/konferenca/registration/acceptance/OrganizerSearchTextAcceptanceTest.java` | add | Phase 3: the search-text criteria (AC-009-08..16) split from `OrganizerSearchAcceptanceTest` to keep each commit under 400 lines |
+| `backend/src/test/java/si/konferenca/registration/acceptance/support/OrganizerSearchTestBase.java` | add | Phase 3: the harness is a base class for the three search classes, named instead of the predicted `support/OrganizerSearch.java` |
+| `backend/src/test/resources/spring.properties` | add | Phase 3: test context cache capped; three more acceptance contexts exceeded PostgreSQL's 100 connections |
+| `frontend/src/acceptance/us009-organizer-filters.test.tsx` | add | Phase 3: split from `us009-organizer-search.test.tsx` to keep each commit under 400 lines |
+| `frontend/src/App.tsx` | modify | Phase 3: `App` routes by path (S6.3), so the tests can open `/organizer` through the existing entry; replaces the predicted `Root.tsx` |

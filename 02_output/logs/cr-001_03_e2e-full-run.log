@@ -1,0 +1,49 @@
+
+Running 6 tests using 1 worker
+
+  ✓  1 [chromium] › e2e/e2e-01-external-registers.spec.ts:18:1 › E2E-01 external participant registers (AC-001-01, AC-001-08, AC-004-01, AC-005-01, AC-005-02, AC-006-01, AC-007-01, AC-007-02) (1.5s)
+  ✓  2 [chromium] › e2e/e2e-02-student-registers.spec.ts:11:1 › E2E-02 student registers (AC-002-01, AC-002-07, AC-004-01) (1.1s)
+  ✓  3 [chromium] › e2e/e2e-03-field-errors.spec.ts:3:1 › E2E-03 field errors are shown next to the fields (AC-004-02, AC-004-03) (660ms)
+  ✓  4 [chromium] › e2e/e2e-04-slovenian-characters.spec.ts:12:1 › E2E-04 Slovenian characters survive the whole chain (AC-005-04, AC-008-03) (1.1s)
+  ✓  5 [chromium] › e2e/e2e-05-organizer-export.spec.ts:7:1 › E2E-05 organizer exports registrations (AC-008-01, AC-008-02) (479ms)
+NOTICE:  truncate cascades to table "registration_option"
+NOTICE:  truncate cascades to table "registration_consent"
+  ✘  6 [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) (5.5s)
+
+
+  1) [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Organizer registrations' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Organizer registrations' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Organizer registrations' })
+
+
+      47 |   await expect(
+      48 |     page.getByRole("heading", { name: "Organizer registrations" }),
+    > 49 |   ).toBeVisible();
+         |     ^
+      50 |   await expect(page.getByText("Koš")).toHaveCount(0);
+      51 |
+      52 |   const { username, password } = organizerCredentials();
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-06-organizer-search.spec.ts:49:5
+
+    Error Context: test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) 
+  5 passed (11.2s)

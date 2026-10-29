@@ -1,0 +1,453 @@
+
+> registration-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend
+
+ ❯ src/acceptance/us009-organizer-filters.test.tsx (7 tests | 7 failed) 115ms
+     × AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list 57ms
+     × AC-009-21 each category filter offers any and every configured option, active and inactive 10ms
+     × AC-009-23 no match shows 'No registrations match' and the number 0 10ms
+     × AC-009-24 every configured option is listed by category with its count, zero included 8ms
+     × AC-009-26 changing a filter updates the list and the counts without pressing Search 10ms
+     × AC-009-27 a search text with the Search button updates the list and the counts 10ms
+     × AC-009-27 a search text with Enter in the search bar updates the list and the counts 7ms
+ ❯ src/acceptance/us009-organizer-search.test.tsx (9 tests | 7 failed) 1260ms
+     × AC-009-01 /organizer shows the login form and no registration data 1061ms
+     × AC-009-04 wrong credentials show an error and no registration data 8ms
+     × AC-009-06 valid credentials list every registration newest first with the number of matches 9ms
+     × AC-009-07 a listed registration shows its type, fields, options, consents and time, and nothing else 8ms
+     × AC-009-28 Slovenian characters are shown unchanged 4ms
+     × AC-009-29 markup in registration text appears only as literal text and no script runs 4ms
+     × AC-009-30 after a reload the login form is shown again and no storage or cookie holds the credentials 4ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 14 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-17 a search text over 100 characters shows an error next to the search bar and no result list
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-21 each category filter offers any and every configured option, active and inactive
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:65:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-23 no match shows 'No registrations match' and the number 0
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:95:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-24 every configured option is listed by category with its count, zero included
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:110:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-26 changing a filter updates the list and the counts without pressing Search
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:148:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-27 a search text with the Search button updates the list and the counts
+ FAIL  src/acceptance/us009-organizer-filters.test.tsx > US-009 organizer search bar, filters and counts > AC-009-27 a search text with Enter in the search bar updates the list and the counts
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-filters.test.tsx:203:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-01 /organizer shows the login form and no registration data
+TestingLibraryElementError: Unable to find role="heading" and name "Organizer registrations"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"alert"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [0mThe registration form is not available right now. Please try again later.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"alert"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [0mThe registration form is not available right now. Please try again later.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/acceptance/us009-organizer-search.test.tsx:46:20
+     44|
+     45|     expect(
+     46|       await screen.findByRole("heading", { name: "Organizer registrati…
+       |                    ^
+     47|     ).toBeInTheDocument();
+     48|     expect(screen.getByLabelText("Username")).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-04 wrong credentials show an error and no registration data
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:85:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-06 valid credentials list every registration newest first with the number of matches
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:102:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-07 a listed registration shows its type, fields, options, consents and time, and nothing else
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:130:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-28 Slovenian characters are shown unchanged
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:172:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-29 markup in registration text appears only as literal text and no script runs
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:192:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/14]⎯
+
+ FAIL  src/acceptance/us009-organizer-search.test.tsx > US-009 organizer registration search > AC-009-30 after a reload the login form is shown again and no storage or cookie holds the credentials
+TestingLibraryElementError: Unable to find a label with the text of: Username
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mConference registration[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mLoading…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ logIn src/acceptance/support/organizer.ts:147:27
+    145|
+    146| export function logIn(username = USERNAME, password = PASSWORD) {
+    147|   fireEvent.change(screen.getByLabelText("Username"), {
+       |                           ^
+    148|     target: { value: username },
+    149|   });
+ ❯ src/acceptance/us009-organizer-search.test.tsx:209:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/14]⎯
+
+
+ Test Files  2 failed | 9 passed (11)
+      Tests  14 failed | 76 passed (90)
+   Start at  14:27:09
+   Duration  2.88s (transform 1.20s, setup 2.68s, import 1.57s, tests 4.96s, environment 7.42s)
+

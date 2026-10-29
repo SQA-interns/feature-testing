@@ -1,0 +1,555 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< si.konferenca:registration-backend >-----------------
+[INFO] Building registration-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ registration-backend ---
+[INFO] argLine set to -javaagent:/home/tjan-kazar/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/target/jacoco.exec,excludes=si/konferenca/registration/RegistrationApplication.class
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ registration-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ registration-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ registration-backend ---
+[INFO] skip non existing resourceDirectory /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ registration-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 35 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ registration-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest
+14:19:17.341 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+14:19:17.349 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+14:19:17.387 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+14:19:18.632 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/tjan-kazar/.docker/desktop/docker.sock)
+14:19:18.642 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+14:19:18.665 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.3.1
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 31283 MB
+  Labels: 
+    com.docker.desktop.address=unix:///home/tjan-kazar/.docker/desktop/docker-cli.sock
+14:19:19.206 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+14:19:19.399 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 7f322864354dc71a1be3eb48a427d51c2dc9ced8c430ba58e7999524077feee8
+14:19:19.854 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.647759913S
+14:19:19.859 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+14:19:19.859 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+14:19:19.860 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+14:19:19.861 [main] INFO tc.postgres:16.15-alpine -- Creating container for image: postgres:16.15-alpine
+14:19:19.950 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine is starting: 92787e475e2a64a4fa1f803bc4748ccb8de77b72713570c0b0e080fa0fbdc100
+14:19:22.875 [main] INFO tc.postgres:16.15-alpine -- Container postgres:16.15-alpine started in PT3.014199337S
+14:19:22.876 [main] INFO tc.postgres:16.15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF)
+14:19:22.876 [main] INFO tc.axllent/mailpit:v1.31.1 -- Creating container for image: axllent/mailpit:v1.31.1
+14:19:22.991 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 is starting: 044d1db775f28c404331869927555d233472c8f0258fec00f58edf1290f62e5c
+14:19:23.345 [main] INFO org.testcontainers.containers.wait.strategy.HttpWaitStrategy -- /relaxed_noyce: Waiting for 60 seconds for URL: http://localhost:40711/livez (where port 40711 maps to container port 8025)
+14:19:23.354 [main] INFO tc.axllent/mailpit:v1.31.1 -- Container axllent/mailpit:v1.31.1 started in PT0.477375787S
+2026-10-29T14:19:23.930+01:00  INFO 1924140 --- [registration-backend] [           main] .k.r.a.OrganizerSearchTextAcceptanceTest : Starting OrganizerSearchTextAcceptanceTest using Java 21.0.12.1 with PID 1924140 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend)
+2026-10-29T14:19:23.932+01:00  INFO 1924140 --- [registration-backend] [           main] .k.r.a.OrganizerSearchTextAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-29T14:19:25.091+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-29T14:19:25.179+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
+2026-10-29T14:19:26.099+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-29T14:19:26.122+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-29T14:19:26.123+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-29T14:19:26.175+01:00  INFO 1924140 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2217 ms
+2026-10-29T14:19:26.669+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-29T14:19:26.919+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c1712b
+2026-10-29T14:19:26.921+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-29T14:19:26.960+01:00  INFO 1924140 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-29T14:19:27.041+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-29T14:19:27.046+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.024s)
+2026-10-29T14:19:27.068+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-29T14:19:27.134+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-29T14:19:27.152+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create registration"
+2026-10-29T14:19:27.202+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.030s)
+2026-10-29T14:19:27.344+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-29T14:19:27.429+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-29T14:19:28.026+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-29T14:19:28.161+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-29T14:19:29.374+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-29T14:19:29.436+01:00  INFO 1924140 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29T14:19:29.545+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-29T14:19:30.245+01:00  INFO 1924140 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizerAccount
+2026-10-29T14:19:30.900+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-29T14:19:30.978+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 42665 (http) with context path '/'
+2026-10-29T14:19:30.989+01:00  INFO 1924140 --- [registration-backend] [           main] .k.r.a.OrganizerSearchTextAcceptanceTest : Started OrganizerSearchTextAcceptanceTest in 7.534 seconds (process running for 16.081)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/tjan-kazar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-29T14:19:31.815+01:00  INFO 1924140 --- [registration-backend] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-29T14:19:31.816+01:00  INFO 1924140 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-29T14:19:31.817+01:00  INFO 1924140 --- [registration-backend] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[ERROR] Tests run: 17, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 24.58 s <<< FAILURE! -- in si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself(String)[1] -- Time elapsed: 1.812 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=koš}: {"timestamp":"2026-10-29T13:19:32.863Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself(OrganizerSearchTextAcceptanceTest.java:99)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself(String)[2] -- Time elapsed: 0.496 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=KOŠ}: {"timestamp":"2026-10-29T13:19:33.390Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself(OrganizerSearchTextAcceptanceTest.java:99)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_12_accentedLetterDoesNotMatchOtherAccents -- Time elapsed: 0.606 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=č}: {"timestamp":"2026-10-29T13:19:34.000Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_12_accentedLetterDoesNotMatchOtherAccents(OrganizerSearchTextAcceptanceTest.java:109)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_10_letterWithoutAccentMatchesAccentedLetters -- Time elapsed: 0.558 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=kos}: {"timestamp":"2026-10-29T13:19:34.561Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_10_letterWithoutAccentMatchesAccentedLetters(OrganizerSearchTextAcceptanceTest.java:89)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(String)[1] -- Time elapsed: 0.498 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=}: {"timestamp":"2026-10-29T13:19:35.063Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(OrganizerSearchTextAcceptanceTest.java:142)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(String)[2] -- Time elapsed: 0.519 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=   }: {"timestamp":"2026-10-29T13:19:35.585Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(OrganizerSearchTextAcceptanceTest.java:142)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(String)[3] -- Time elapsed: 0.473 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search= 	 }: {"timestamp":"2026-10-29T13:19:36.061Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything(OrganizerSearchTextAcceptanceTest.java:142)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored(String)[1] -- Time elapsed: 0.512 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=NOVAK}: {"timestamp":"2026-10-29T13:19:36.574Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored(OrganizerSearchTextAcceptanceTest.java:78)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored(String)[2] -- Time elapsed: 0.385 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=novak}: {"timestamp":"2026-10-29T13:19:36.964Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored(OrganizerSearchTextAcceptanceTest.java:78)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_13_dMatchesDWithStroke -- Time elapsed: 0.475 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=duric}: {"timestamp":"2026-10-29T13:19:37.442Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_13_dMatchesDWithStroke(OrganizerSearchTextAcceptanceTest.java:119)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(String, Supplier)[1] -- Time elapsed: 0.588 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=ylo}: {"timestamp":"2026-10-29T13:19:38.036Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(OrganizerSearchTextAcceptanceTest.java:67)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(String, Supplier)[2] -- Time elapsed: 0.520 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=ylo}: {"timestamp":"2026-10-29T13:19:38.559Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(OrganizerSearchTextAcceptanceTest.java:67)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(String, Supplier)[3] -- Time elapsed: 0.494 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=ylo}: {"timestamp":"2026-10-29T13:19:39.056Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(OrganizerSearchTextAcceptanceTest.java:67)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(String, Supplier)[4] -- Time elapsed: 0.500 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=ylo}: {"timestamp":"2026-10-29T13:19:39.558Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(OrganizerSearchTextAcceptanceTest.java:67)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(String, Supplier)[5] -- Time elapsed: 0.544 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=ylo}: {"timestamp":"2026-10-29T13:19:40.103Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches(OrganizerSearchTextAcceptanceTest.java:67)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_16_searchTextOver100CharactersIsRejected -- Time elapsed: 0.392 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_16_searchTextOver100CharactersIsRejected(OrganizerSearchTextAcceptanceTest.java:153)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_14_surroundingSpacesAreIgnored -- Time elapsed: 0.425 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=novak}: {"timestamp":"2026-10-29T13:19:40.927Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchTextAcceptanceTest.ac_009_14_surroundingSpacesAreIgnored(OrganizerSearchTextAcceptanceTest.java:129)
+
+[INFO] Running si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest
+2026-10-29T14:19:40.992+01:00  INFO 1924140 --- [registration-backend] [           main] s.k.r.a.OrganizerSearchAcceptanceTest    : Starting OrganizerSearchAcceptanceTest using Java 21.0.12.1 with PID 1924140 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend)
+2026-10-29T14:19:40.992+01:00  INFO 1924140 --- [registration-backend] [           main] s.k.r.a.OrganizerSearchAcceptanceTest    : No active profile set, falling back to 1 default profile: "default"
+2026-10-29T14:19:41.216+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-29T14:19:41.228+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2026-10-29T14:19:41.357+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-29T14:19:41.358+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-29T14:19:41.359+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-29T14:19:41.371+01:00  INFO 1924140 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 377 ms
+2026-10-29T14:19:41.456+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-29T14:19:41.469+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@7675a11f
+2026-10-29T14:19:41.469+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-29T14:19:41.471+01:00  INFO 1924140 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-29T14:19:41.492+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.007s)
+2026-10-29T14:19:41.521+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-29T14:19:41.522+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-29T14:19:41.542+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-29T14:19:41.568+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-29T14:19:41.581+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-29T14:19:41.636+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-29T14:19:41.658+01:00  INFO 1924140 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29T14:19:41.979+01:00  INFO 1924140 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizerAccount
+2026-10-29T14:19:42.096+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-29T14:19:42.113+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 42171 (http) with context path '/'
+2026-10-29T14:19:42.118+01:00  INFO 1924140 --- [registration-backend] [           main] s.k.r.a.OrganizerSearchAcceptanceTest    : Started OrganizerSearchAcceptanceTest in 1.168 seconds (process running for 27.209)
+2026-10-29T14:19:42.180+01:00  INFO 1924140 --- [registration-backend] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-29T14:19:42.181+01:00  INFO 1924140 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-29T14:19:42.185+01:00  INFO 1924140 --- [registration-backend] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+[ERROR] Tests run: 16, Failures: 13, Errors: 0, Skipped: 0, Time elapsed: 7.658 s <<< FAILURE! -- in si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(String, String, String)[1] -- Time elapsed: 0.671 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(OrganizerSearchAcceptanceTest.java:289)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(String, String, String)[2] -- Time elapsed: 0.345 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(OrganizerSearchAcceptanceTest.java:289)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(String, String, String)[3] -- Time elapsed: 0.337 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(OrganizerSearchAcceptanceTest.java:289)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(String, String, String)[4] -- Time elapsed: 0.366 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 400
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected(OrganizerSearchAcceptanceTest.java:289)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_18_typeFilter -- Time elapsed: 0.438 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {type=STUDENT}: {"timestamp":"2026-10-29T13:19:44.284Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_18_typeFilter(OrganizerSearchAcceptanceTest.java:230)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_06_listsEveryRegistrationNewestFirstWithCount -- Time elapsed: 0.421 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {}: {"timestamp":"2026-10-29T13:19:45.530Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_06_listsEveryRegistrationNewestFirstWithCount(OrganizerSearchAcceptanceTest.java:100)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_07_rowHoldsOnlyTheExportData -- Time elapsed: 0.384 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {}: {"timestamp":"2026-10-29T13:19:45.917Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_07_rowHoldsOnlyTheExportData(OrganizerSearchAcceptanceTest.java:152)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_23_noMatchGivesZero -- Time elapsed: 0.423 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=nobody-has-this-text}: {"timestamp":"2026-10-29T13:19:46.342Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_23_noMatchGivesZero(OrganizerSearchAcceptanceTest.java:216)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_24_everyOptionIsCountedByCategory -- Time elapsed: 0.376 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {}: {"timestamp":"2026-10-29T13:19:46.719Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_24_everyOptionIsCountedByCategory(OrganizerSearchAcceptanceTest.java:304)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_20_allConditionsMustHold -- Time elapsed: 0.552 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {search=novak, type=STUDENT, meal=meal-lunch}: {"timestamp":"2026-10-29T13:19:47.273Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_20_allConditionsMustHold(OrganizerSearchAcceptanceTest.java:269)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_19_categoryFilter -- Time elapsed: 0.497 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {workshop=ws-industry}: {"timestamp":"2026-10-29T13:19:47.773Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_19_categoryFilter(OrganizerSearchAcceptanceTest.java:246)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_05_plainHttpFromRemoteClientIsRefused -- Time elapsed: 0.364 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[control: the same remote client over HTTPS (via the proxy) is served] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_05_plainHttpFromRemoteClientIsRefused(OrganizerSearchAcceptanceTest.java:76)
+
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_25_countsFollowTheTypeFilter -- Time elapsed: 0.452 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[search {}: {"timestamp":"2026-10-29T13:19:48.592Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+	at si.konferenca.registration.acceptance.support.OrganizerSearchTestBase.search(OrganizerSearchTestBase.java:56)
+	at si.konferenca.registration.acceptance.OrganizerSearchAcceptanceTest.ac_009_25_countsFollowTheTypeFilter(OrganizerSearchAcceptanceTest.java:333)
+
+[INFO] Running si.konferenca.registration.acceptance.OrganizerSearchRateLimitAcceptanceTest
+2026-10-29T14:19:48.630+01:00  INFO 1924140 --- [registration-backend] [           main] a.OrganizerSearchRateLimitAcceptanceTest : Starting OrganizerSearchRateLimitAcceptanceTest using Java 21.0.12.1 with PID 1924140 (started by tjan-kazar in /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend)
+2026-10-29T14:19:48.631+01:00  INFO 1924140 --- [registration-backend] [           main] a.OrganizerSearchRateLimitAcceptanceTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-29T14:19:48.770+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-29T14:19:48.783+01:00  INFO 1924140 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2026-10-29T14:19:48.866+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-29T14:19:48.867+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-29T14:19:48.867+01:00  INFO 1924140 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+2026-10-29T14:19:48.878+01:00  INFO 1924140 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 245 ms
+2026-10-29T14:19:48.945+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-29T14:19:48.960+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@232cc1f3
+2026-10-29T14:19:48.960+01:00  INFO 1924140 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-29T14:19:48.963+01:00  INFO 1924140 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF (PostgreSQL 16.15)
+2026-10-29T14:19:48.985+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.007s)
+2026-10-29T14:19:49.008+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-29T14:19:49.009+01:00  INFO 1924140 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-29T14:19:49.025+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-29T14:19:49.045+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-29T14:19:49.053+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:43429/registration?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: registration/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-29T14:19:49.103+01:00  INFO 1924140 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-29T14:19:49.126+01:00  INFO 1924140 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29T14:19:49.474+01:00  INFO 1924140 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizerAccount
+2026-10-29T14:19:49.571+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-29T14:19:49.584+01:00  INFO 1924140 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 36095 (http) with context path '/'
+2026-10-29T14:19:49.588+01:00  INFO 1924140 --- [registration-backend] [           main] a.OrganizerSearchRateLimitAcceptanceTest : Started OrganizerSearchRateLimitAcceptanceTest in 0.983 seconds (process running for 34.679)
+2026-10-29T14:19:49.642+01:00  INFO 1924140 --- [registration-backend] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-29T14:19:49.642+01:00  INFO 1924140 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-29T14:19:49.644+01:00  INFO 1924140 --- [registration-backend] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.022 s <<< FAILURE! -- in si.konferenca.registration.acceptance.OrganizerSearchRateLimitAcceptanceTest
+[ERROR] si.konferenca.registration.acceptance.OrganizerSearchRateLimitAcceptanceTest.sr_03_organizerSearchIsRateLimited -- Time elapsed: 2.030 s <<< FAILURE!
+java.lang.AssertionError: 
+[statuses] 
+Expecting ArrayList:
+  [401, 401, 401, 401, 401, 401, 401]
+to contain only:
+  [401, 429]
+but could not find the following element(s):
+  [429]
+
+	at si.konferenca.registration.acceptance.OrganizerSearchRateLimitAcceptanceTest.sr_03_organizerSearchIsRateLimited(OrganizerSearchRateLimitAcceptanceTest.java:42)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_05_plainHttpFromRemoteClientIsRefused:76 [control: the same remote client over HTTPS (via the proxy) is served] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_06_listsEveryRegistrationNewestFirstWithCount:100->OrganizerSearchTestBase.search:56 [search {}: {"timestamp":"2026-10-29T13:19:45.530Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_07_rowHoldsOnlyTheExportData:152->OrganizerSearchTestBase.search:56 [search {}: {"timestamp":"2026-10-29T13:19:45.917Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_18_typeFilter:230->OrganizerSearchTestBase.search:56 [search {type=STUDENT}: {"timestamp":"2026-10-29T13:19:44.284Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_19_categoryFilter:246->OrganizerSearchTestBase.search:56 [search {workshop=ws-industry}: {"timestamp":"2026-10-29T13:19:47.773Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_20_allConditionsMustHold:269->OrganizerSearchTestBase.search:56 [search {search=novak, type=STUDENT, meal=meal-lunch}: {"timestamp":"2026-10-29T13:19:47.273Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected:289 
+expected: 400
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected:289 
+expected: 400
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected:289 
+expected: 400
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_22_invalidFilterIsRejected:289 
+expected: 400
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_23_noMatchGivesZero:216->OrganizerSearchTestBase.search:56 [search {search=nobody-has-this-text}: {"timestamp":"2026-10-29T13:19:46.342Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_24_everyOptionIsCountedByCategory:304->OrganizerSearchTestBase.search:56 [search {}: {"timestamp":"2026-10-29T13:19:46.719Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchAcceptanceTest.ac_009_25_countsFollowTheTypeFilter:333->OrganizerSearchTestBase.search:56 [search {}: {"timestamp":"2026-10-29T13:19:48.592Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchRateLimitAcceptanceTest.sr_03_organizerSearchIsRateLimited:42 [statuses] 
+Expecting ArrayList:
+  [401, 401, 401, 401, 401, 401, 401]
+to contain only:
+  [401, 429]
+but could not find the following element(s):
+  [429]
+
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches:67->OrganizerSearchTestBase.search:56 [search {search=ylo}: {"timestamp":"2026-10-29T13:19:38.036Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches:67->OrganizerSearchTestBase.search:56 [search {search=ylo}: {"timestamp":"2026-10-29T13:19:38.559Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches:67->OrganizerSearchTestBase.search:56 [search {search=ylo}: {"timestamp":"2026-10-29T13:19:39.056Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches:67->OrganizerSearchTestBase.search:56 [search {search=ylo}: {"timestamp":"2026-10-29T13:19:39.558Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_08_searchTextInAFieldMatches:67->OrganizerSearchTestBase.search:56 [search {search=ylo}: {"timestamp":"2026-10-29T13:19:40.103Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored:78->OrganizerSearchTestBase.search:56 [search {search=NOVAK}: {"timestamp":"2026-10-29T13:19:36.574Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_09_caseIsIgnored:78->OrganizerSearchTestBase.search:56 [search {search=novak}: {"timestamp":"2026-10-29T13:19:36.964Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_10_letterWithoutAccentMatchesAccentedLetters:89->OrganizerSearchTestBase.search:56 [search {search=kos}: {"timestamp":"2026-10-29T13:19:34.561Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself:99->OrganizerSearchTestBase.search:56 [search {search=koš}: {"timestamp":"2026-10-29T13:19:32.863Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_11_accentedLetterMatchesOnlyItself:99->OrganizerSearchTestBase.search:56 [search {search=KOŠ}: {"timestamp":"2026-10-29T13:19:33.390Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_12_accentedLetterDoesNotMatchOtherAccents:109->OrganizerSearchTestBase.search:56 [search {search=č}: {"timestamp":"2026-10-29T13:19:34.000Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_13_dMatchesDWithStroke:119->OrganizerSearchTestBase.search:56 [search {search=duric}: {"timestamp":"2026-10-29T13:19:37.442Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_14_surroundingSpacesAreIgnored:129->OrganizerSearchTestBase.search:56 [search {search=novak}: {"timestamp":"2026-10-29T13:19:40.927Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything:142->OrganizerSearchTestBase.search:56 [search {search=}: {"timestamp":"2026-10-29T13:19:35.063Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything:142->OrganizerSearchTestBase.search:56 [search {search=   }: {"timestamp":"2026-10-29T13:19:35.585Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_15_emptySearchTextListsEverything:142->OrganizerSearchTestBase.search:56 [search {search= 	 }: {"timestamp":"2026-10-29T13:19:36.061Z","status":403,"error":"Forbidden","path":"/api/organizer/registrations"}] 
+expected: 200
+ but was: 403
+[ERROR]   OrganizerSearchTextAcceptanceTest.ac_009_16_searchTextOver100CharactersIsRejected:153 
+expected: 400
+ but was: 403
+[INFO] 
+[ERROR] Tests run: 34, Failures: 31, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  41.837 s
+[INFO] Finished at: 2026-10-29T14:19:52+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project registration-backend: There are test failures.
+[ERROR] 
+[ERROR] See /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

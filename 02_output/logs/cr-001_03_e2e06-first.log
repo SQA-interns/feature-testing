@@ -1,0 +1,43 @@
+
+Running 1 test using 1 worker
+
+NOTICE:  truncate cascades to table "registration_option"
+NOTICE:  truncate cascades to table "registration_consent"
+  ✘  1 [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) (5.6s)
+
+
+  1) [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Organizer registrations' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Organizer registrations' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Organizer registrations' })
+
+
+      47 |   await expect(
+      48 |     page.getByRole("heading", { name: "Organizer registrations" }),
+    > 49 |   ).toBeVisible();
+         |     ^
+      50 |   await expect(page.getByText("Koš")).toHaveCount(0);
+      51 |
+      52 |   const { username, password } = organizerCredentials();
+        at /home/tjan-kazar/storage/Work/lab/agentic_lab/Structured_Input_Files/02_output/frontend/e2e/e2e-06-organizer-search.spec.ts:49:5
+
+    Error Context: test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-06-organizer-search-E2-0e32e-09-01-04-06-10-18-24-25-28--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e/e2e-06-organizer-search.spec.ts:10:1 › E2E-06 organizer searches registrations (AC-009-01, 04, 06, 10, 18, 24, 25, 28) 
