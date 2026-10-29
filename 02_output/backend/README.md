@@ -7,6 +7,7 @@ Spring Boot REST API of the conference registration (contract: [`../docs/02_cont
 - `GET /api/form-config`: the active options, consents and captcha mode.
 - `POST /api/registrations`: validates, verifies the captcha, stores the registration in PostgreSQL and as a JSON copy, then sends the emails.
 - `GET /api/registrations/export`: the Excel workbook, for the organizer only (HTTP Basic).
+- `GET /api/organizer/registrations`: search and filter the registrations with per-option counts, for the organizer only (same credentials; parameters `search`, `type`, `workshop`, `event`, `meal`, `other`; CR-001).
 - `/actuator/health`, `/actuator/health/liveness`, `/actuator/health/readiness`: health and readiness.
 
 The code follows ports and adapters under `si.konferenca.registration` (`domain`, `application`, `config`, `adapter.*`, `web`); ArchUnit tests enforce the rules of specification S2.
@@ -34,11 +35,11 @@ Every setting is an environment variable (specification S7.1). Secrets have no d
 | `RECAPTCHA_TEST_MODE` | Deterministic test mode (token `test-pass`) | `false` | compose: `true` |
 | `RECAPTCHA_SITE_KEY`, `RECAPTCHA_SECRET_KEY` | Google reCAPTCHA v2 keys | empty | `.env` in production (secret) |
 | `RECAPTCHA_VERIFY_URL` | Verification endpoint | Google siteverify | default |
-| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for the export | required | `.env` (secret) |
+| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for the export and the organizer search | required | `.env` (secret) |
 | `ORGANIZER_EMAILS` | Notification recipients, comma separated | required | `.env` |
-| `ORGANIZER_HTTPS_ONLY` | Refuse the export over plain HTTP except from localhost (403) | `true` | compose: `false` (local plain HTTP only) |
+| `ORGANIZER_HTTPS_ONLY` | Refuse the export and the organizer search over plain HTTP except from localhost (403) | `true` | compose: `false` (local plain HTTP only) |
 | `CORS_ALLOWED_ORIGIN` | Origin allowed to call the API from another host | empty (no CORS) | not set |
-| `RATE_LIMIT_FORM_CONFIG_PER_MINUTE`, `RATE_LIMIT_REGISTRATION_PER_MINUTE`, `RATE_LIMIT_EXPORT_PER_MINUTE` | Requests per client and minute | 60, 10, 10 | default |
+| `RATE_LIMIT_FORM_CONFIG_PER_MINUTE`, `RATE_LIMIT_REGISTRATION_PER_MINUTE`, `RATE_LIMIT_EXPORT_PER_MINUTE`, `RATE_LIMIT_ORGANIZER_SEARCH_PER_MINUTE` | Requests per client and minute | 60, 10, 10, 30 | default |
 | `MAX_REQUEST_BYTES` | Request body limit | 16384 | default |
 
 With `APP_ENVIRONMENT=production` the backend refuses to start when reCAPTCHA test mode is on or a key is empty (SR-02). It also refuses an unknown environment, an invalid conference file, and missing organizer settings.
@@ -69,5 +70,7 @@ Run from this folder.
 - **AC-005-03 fails when run as root.** The test makes a directory read-only, and root can still write to it. Run the tests as a normal user.
 - **The backend container stays `unhealthy`.** Check `docker compose logs backend`. Common causes are a wrong `POSTGRES_PASSWORD` for an existing `pgdata` volume, an invalid conference file, or missing organizer variables.
 - **"production needs RECAPTCHA_TEST_MODE=false and both reCAPTCHA keys".** Set the real keys and turn test mode off. This is the SR-02 startup check.
-- **The export answers 403 "Organizer access requires HTTPS."** The request came over plain HTTP from another host. Use HTTPS through the reverse proxy, or set `ORGANIZER_HTTPS_ONLY=false` only for local plain HTTP.
+- **The export or the organizer search answers 403 "Organizer access requires HTTPS."** The request came over plain HTTP from another host. Use HTTPS through the reverse proxy, or set `ORGANIZER_HTTPS_ONLY=false` only for local plain HTTP.
 - **429 "Too many requests".** The per-client limit was reached. Wait for the `Retry-After` seconds.
+- **The organizer search answers 400.** The search text is longer than 100 characters, or a filter names an unknown type or option, or an option of another category; the `fieldErrors` name the parameter.
+- **Many acceptance tests fail with "too many clients already".** Each acceptance class has its own Spring context and connection pool; `src/test/resources/spring.properties` keeps at most 4 contexts alive. Keep it when adding acceptance classes.

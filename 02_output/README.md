@@ -4,14 +4,14 @@
 
 ## Overview
 
-A web application for registering participants of a conference. External participants and students fill in a form, choose workshops, events, meals and other activities, and give the required consents. A registration is accepted only after server-side validation and a Google reCAPTCHA v2 check. It is stored in PostgreSQL and as a raw JSON copy, and then confirmed on the page and by email. The organizers receive a notification email with the JSON copy attached and can download every registration as an Excel workbook.
+A web application for registering participants of a conference. External participants and students fill in a form, choose workshops, events, meals and other activities, and give the required consents. A registration is accepted only after server-side validation and a Google reCAPTCHA v2 check. It is stored in PostgreSQL and as a raw JSON copy, and then confirmed on the page and by email. The organizers receive a notification email with the JSON copy attached, can download every registration as an Excel workbook, and can search and filter the registrations on an organizer page at `/organizer` with per-option counts (CR-001).
 
 ## Components
 
 | Component | What it is | README |
 |---|---|---|
-| backend | Spring Boot REST API under `/api`: validation, storage, emails, export | [backend/README.md](backend/README.md) |
-| frontend | React single-page form, served by nginx, which also proxies `/api` to the backend | [frontend/README.md](frontend/README.md) |
+| backend | Spring Boot REST API under `/api`: validation, storage, emails, export, organizer search | [backend/README.md](backend/README.md) |
+| frontend | React app served by nginx: the registration form at `/` and the organizer page at `/organizer`; nginx also proxies `/api` to the backend | [frontend/README.md](frontend/README.md) |
 
 `docker-compose.yml` runs the local stack: frontend, backend, PostgreSQL and Mailpit (a local mail catcher). The conference options and consents are configured in [`config/conference.json`](config/conference.json); see the backend README.
 
@@ -36,7 +36,8 @@ Prerequisites: Docker with Compose v2, and JDK 21 to package the backend jar tha
    curl -u "$ORGANIZER_USERNAME:$ORGANIZER_PASSWORD" -o registrations.xlsx http://127.0.0.1:8080/api/registrations/export
    ```
 
-5. Stop with `docker compose --env-file ../.env down`. The data stays in the named volumes `pgdata` and `json-copies`; `down -v` deletes it.
+5. Open the organizer page at <http://127.0.0.1:8080/organizer> and log in with the same organizer credentials. It is not linked from the form; the credentials stay only in the open tab, so a reload asks again.
+6. Stop with `docker compose --env-file ../.env down`. The data stays in the named volumes `pgdata` and `json-copies`; `down -v` deletes it.
 
 To use other host ports, set `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT`. To keep this stack apart from another one on the same machine, set `COMPOSE_PROJECT_NAME`, which also gives it its own volumes. Keep the same `COMPOSE_PROJECT_NAME` exported when you run the end-to-end tests.
 
@@ -58,4 +59,5 @@ To use other host ports, set `FRONTEND_HOST_PORT` and `MAILPIT_HOST_PORT`. To ke
 | [docs/06_verification-report.md](docs/06_verification-report.md) | Verification: runtime demonstration, security evidence, scanners, findings |
 | [docs/release-notes.md](docs/release-notes.md) | What is delivered, known limitations, what must be tested manually |
 | [docs/decisions-log.md](docs/decisions-log.md) | Every decision of the run |
+| [../04_changes/CR-001_organizer-search/](../04_changes/CR-001_organizer-search/) | Change request CR-001 (organizer search) and its run documents in `docs/`: impact, test strategy, verification report, release notes, decisions D-19..D-30 |
 | [logs/](logs/) | Raw output of builds, tests, scans and demonstrations |

@@ -2,7 +2,7 @@
 
 > Written in: phase 7 · Source: `project/02_design/architecture.md`, ES-06 · Agent: writes
 
-React single-page registration form (texts and behaviour: [`../docs/02_contracts/registration-form-ui.md`](../docs/02_contracts/registration-form-ui.md)). It loads the form configuration from `/api/form-config`, validates the fields before sending, and shows the backend's field errors next to the fields. It shows the confirmation only after the backend has accepted the registration. It talks to the backend only through relative `/api` paths.
+React app with two pages: the registration form at `/` (texts and behaviour: [`../docs/02_contracts/registration-form-ui.md`](../docs/02_contracts/registration-form-ui.md)) and the organizer search page at `/organizer` ([`../docs/02_contracts/organizer-search-ui.md`](../docs/02_contracts/organizer-search-ui.md), CR-001). The organizer page asks for the organizer credentials, keeps them only in the open tab's memory, and calls `/api/organizer/registrations`. It loads the form configuration from `/api/form-config`, validates the fields before sending, and shows the backend's field errors next to the fields. It shows the confirmation only after the backend has accepted the registration. It talks to the backend only through relative `/api` paths.
 
 In the container, nginx serves the built files as a non-root user on port 8080. It proxies `/api/` to the backend with its own `Host` header (SR-08) and sets the security headers.
 
@@ -19,7 +19,7 @@ The end-to-end tests read these environment variables:
 
 | Variable                                   | Meaning                                                                                                                                                 | Source                                                             |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for E2E-05                                                                                                                              | `.env` in the repository root (secret; export it, do not print it) |
+| `ORGANIZER_USERNAME`, `ORGANIZER_PASSWORD` | Organizer login for E2E-05 and E2E-06                                                                                                                   | `.env` in the repository root (secret; export it, do not print it) |
 | `ORGANIZER_EMAILS`                         | Recipients the organizer emails are checked against                                                                                                     | `.env`                                                             |
 | `E2E_BASE_URL`, `E2E_MAILPIT_URL`          | Override `http://127.0.0.1:8080` and `http://127.0.0.1:8025`                                                                                            | optional                                                           |
 | `COMPOSE_PROJECT_NAME`                     | Must match the stack's project name when it was started with one, because the tests read the database and the JSON copies through `docker compose exec` | optional                                                           |
@@ -55,5 +55,7 @@ Run from this folder after `npm ci`.
 - **`npm ci` complains about the engine.** Switch to Node 24.13.0 (`nvm use`).
 - **End-to-end tests fail with `Command failed: docker compose … exec`.** The stack runs under another `COMPOSE_PROJECT_NAME`. Export the same name before `npx playwright test`.
 - **End-to-end tests time out at the start.** Check that the stack is up and healthy (`docker compose ps`), and that `E2E_BASE_URL` points to it when you use other ports.
+- **E2E-06 counts more than two registrations.** It empties the `registration` table first through `docker compose exec`; check `COMPOSE_PROJECT_NAME` as above. Do not run it against a stack whose data you need.
+- **The organizer page shows "Wrong username or password."** The credentials do not match the `.env` the stack was started with.
 - **E2E-05 fails with 401.** The organizer variables in the shell do not match the `.env` the stack was started with.
 - **The reCAPTCHA widget does not appear in production.** The CSP allows scripts and frames only from `www.google.com/recaptcha` and `www.gstatic.com/recaptcha`, so check that the site key belongs to the served domain.
