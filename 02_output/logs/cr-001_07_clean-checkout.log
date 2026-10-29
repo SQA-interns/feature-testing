@@ -1,0 +1,30 @@
+## clean checkout 2026-10-29T14:33:23Z of f1e6892
+cloned; .env linked (not copied)
+## root README step 2: package jar and compose up (ports 18080/18025)
+package exit 0
+up exit 0
+backend: Up 16 seconds (healthy)
+frontend: Up 5 seconds (healthy)
+mailpit: Up 22 seconds (healthy)
+postgres: Up 22 seconds (healthy)
+## step 3: form and Mailpit
+form 200
+mailpit 200
+## step 4: export
+export 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+## step 5: organizer page and search
+organizer page 200
+search 200
+## frontend README: nvm use; npm ci; build; test; check
+v24.13.0
+npm ci exit 0
+build exit 0
+      Tests  121 passed (121)
+check exit 0
+## end-to-end: set -a; . ../../.env; set +a; npx playwright test (E2E_BASE_URL=:18080, E2E_MAILPIT_URL=:18025)
+  6 passed (9.1s)
+## backend README: check and test
+check exit 0
+[INFO] Tests run: 335, Failures: 0, Errors: 0, Skipped: 0
+## stop (step 6)
+down exit 0
