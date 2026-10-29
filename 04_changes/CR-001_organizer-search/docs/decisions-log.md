@@ -39,3 +39,39 @@ Ids continue after D-18 of `02_output/docs/decisions-log.md`.
 - Options: 1. (proposed) Accept the three files as changed by the human and record the current hashes in this run's `docs/00_input-manifest.sha256`; 2. Stop the change run until the human restores the baseline versions.
 - Human response: the requester accepted these changes in the change interview, baseline check row 0 of `interview-log.md` ("changed by the requester in a82fcea and accepted by them", 2026-10-28T20:24Z)
 - Resolution: option 1
+
+## D-23: Rate limit of the organizer search
+- Timestamp: 2026-10-29T13:11:30Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-08. SR-03 (MODIFIED) rate limits the organizer search per client but gives no figure; the page calls the API after login, on Search or Enter and on every filter change (BR-13), and failed logins must stay limited (SB-06).
+- Options: 1. (default) Its own endpoint group with 30 requests per client and minute, set by `RATE_LIMIT_ORGANIZER_SEARCH_PER_MINUTE`; successful and failed calls count together, as for the export; 2. Share the export's group and limit (10 per minute), which a few filter changes exhaust; 3. 60 per minute, as the public form configuration.
+- Human response: none
+- Resolution: option 1, pending review
+
+## D-24: Registration id on the organizer page
+- Timestamp: 2026-10-29T13:11:30Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-09. BR-10 says each row shows "the data its export row holds" and lists type, fields, options, consents with time and registration time; the export row also holds the registration id. AC-009-07 says "and no other data".
+- Options: 1. (default, more conservative) The API returns the id (registration data, also in the export) as the key of each row; the page does not show it; 2. Show the id on the page as well.
+- Human response: none
+- Resolution: option 1, pending review
+
+## D-25: Search text used when a filter changes
+- Timestamp: 2026-10-29T13:11:30Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-10. AC-009-26 updates the list when a filter changes without pressing Search; it does not say whether text typed into the search bar but not yet submitted applies.
+- Options: 1. (default) A filter change searches with the text currently in the search bar, so the list always matches what the page shows; 2. A filter change reuses the text of the last Search or Enter.
+- Human response: none
+- Resolution: option 1, pending review
+
+## D-26: No Basic challenge on the organizer search's 401
+- Timestamp: 2026-10-29T13:11:30Z
+- Phase: 1
+- Type: non-blocking
+- Trigger: G-11. AC-009-03 requires 401 for missing or wrong credentials and AC-009-04 an error message on the page. The export's 401 sends `WWW-Authenticate: Basic`, on which browsers open their own login dialog even for a page's `fetch` call, so the page could not show its message.
+- Options: 1. (default) The organizer search answers 401 with the same `Error` body and no `WWW-Authenticate` header; the export keeps its challenge unchanged (AC-008-02 must not change); 2. Keep the challenge and accept the browser dialog in front of the page's own form.
+- Human response: none
+- Resolution: option 1, pending review
