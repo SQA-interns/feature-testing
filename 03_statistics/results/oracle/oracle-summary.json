@@ -1,5 +1,5 @@
 {
-  "feature": "none",
+  "feature": "search",
   "regression": {
     "passed": 15,
     "total": 15,
@@ -7,7 +7,15 @@
     "failed": [],
     "harness": []
   },
-  "featureScenarios": null,
+  "featureScenarios": {
+    "passed": 9,
+    "total": 10,
+    "rate": 0.9,
+    "failed": [],
+    "harness": [
+      "S07"
+    ]
+  },
   "scenarios": {
     "R01": "pass",
     "R02": "pass",
@@ -23,6 +31,16 @@
     "R12": "pass",
     "R13": "pass",
     "R14": "pass",
-    "R15": "pass"
+    "R15": "pass",
+    "S01": "pass",
+    "S02": "pass",
+    "S03": "pass",
+    "S04": "pass",
+    "S05": "pass",
+    "S06": "pass",
+    "S07": "harness",
+    "S08": "pass",
+    "S09": "pass",
+    "S10": "pass"
   }
 }

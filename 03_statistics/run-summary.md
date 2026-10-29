@@ -9,11 +9,33 @@ This run is the change run of CR-001 Organizer registration search (`general/cha
 ## Run
 
 <!-- auto:run -->
+| Item | Value |
+|---|---|
+| Run id | tjan-single-agent-sdd-v002-run-2-search-opus-5-5-t1.8-20261028T2024Z-dd7d |
+| Model, effort | claude-opus-5-5, medium |
+| Template version | 1.8 |
+| Run type, feature, base run | brownfield, search, tjan_single-agent_sdd_v002_run-2 @ a82fcea8398184e42134a76b59cda73ce88e92b0 |
+| Start commit | 4d664d2 |
+| End commit | cb1ddb6 |
+| Start, end | 2026-10-28T20:24:18Z, 2026-10-29T14:37:08Z |
 <!-- /auto:run -->
 
 ## Time (human waiting excluded)
 
 <!-- auto:time -->
+| Phase | Wall | Waiting for the human | Agent time |
+|---|---|---|---|
+| 0 preflight-and-bootstrap | 8 min | 0 min | 8 min |
+| 1 requirements | 1 min | 0 min | 1 min |
+| 2 design | 3 min | 0 min | 3 min |
+| 3 test-design | 13 min | 0 min | 13 min |
+| 4 build | 9 min | 0 min | 9 min |
+| 5 unit-tests | 34 min | 10 min | 24 min |
+| 6 verify | 21 min | 14 min | 8 min |
+| 7 release | 5 min | 0 min | 5 min |
+| **Total** | **18 h 13 min** | **24 min** | **70 min** |
+
+Waits over one hour: 1 (see the report).
 <!-- /auto:time -->
 
 ## Outcome
@@ -62,6 +84,15 @@ This run is the change run of CR-001 Organizer registration search (`general/cha
 ## Commits
 
 <!-- auto:commits -->
+| Measure | Value |
+|---|---|
+| Commits | 28 (docs 13, test 11, feat 4) |
+| Changed lines per commit: median / 90th percentile / largest | 120 / 338 / 361 |
+| Files per commit (median) | 2.5 |
+| Over the size guide / mixing concerns / in a burst | 0 % / 0 % / 35.7 % |
+| Subject follows the format and the 72-character limit | 100 % |
+| Active minutes between commits (median / longest gap) | 1.2 / 14.5 |
+| Cost per commit (median) / per 100 changed lines | $0.38 / $0.43 |
 <!-- /auto:commits -->
 
 ## Decisions and human interventions
@@ -94,6 +125,15 @@ The human also answered D-23..D-26 during phase 5 without being asked to wait (D
 ## Cost and usage (calculated from the transcript)
 
 <!-- auto:usage -->
+| Item | Value |
+|---|---|
+| Cost (calculated from tokens and the prices in usage.md) | $17.44 ($17.44 without the cache rebuilds caused by waits) |
+| Model calls / tool calls | 202 / 214 |
+| Model time / tool time / agent time | 35 min / 27 min / 70 min |
+| Session wall time | 18 h 13 min |
+| Share of the cost at over 150k context | 79.5 % |
+| Context per call (average / peak) | 224k / 433k |
+| Approval prompts that needed a human | 8 (of 214 permission decisions; 0 rejected) |
 <!-- /auto:usage -->
 
 Everything is calculated from the session transcript, the sub-agent transcripts and git by `tools/build-report.mjs`; the complete report is in `03_statistics/results/` and the transcripts are backed up in `03_statistics/data/`.
