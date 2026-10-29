@@ -208,7 +208,7 @@ The form shows exactly the fields of the chosen type. It lists the active option
 
 ### S6.3 Organizer page (CR-001: US-009, BR-09, BR-13, SR-09, `organizer-search-ui.md`)
 
-- `main.tsx` mounts `Root`, which renders `OrganizerPage` when the path is `/organizer` (or `/organizer/`) and the registration `App` otherwise. nginx already serves `index.html` for every path. The registration page has no link to `/organizer` (AC-009-02).
+- `App` (mounted by `main.tsx`) reads `window.location.pathname` and renders `OrganizerPage` for `/organizer` (or `/organizer/`) and the registration page for any other path, which alone loads the form configuration. nginx already serves `index.html` for every path. The registration page has no link to `/organizer` (AC-009-02).
 - `OrganizerPage` first shows only the login form and calls nothing (AC-009-01). `Log in` calls the search with no criteria and the entered credentials in an `Authorization: Basic` header (`api.ts`, UTF-8, base64). 200 shows the result; 401 keeps the form with `Wrong username or password.` (AC-009-04); anything else shows the general alert. The credentials are kept only in React state, never in `localStorage`, `sessionStorage` or a cookie, so a reload asks again (SR-09, AC-009-30).
 - Search and Enter submit the search form (AC-009-27); each select change searches at once with the current text (AC-009-26, D-25). A text over 100 code points after trimming is rejected on the page with the contract's message and no request (AC-009-17). Responses of an older request that arrive after a newer one are ignored.
 - `OrganizerResults` renders the count, the list or `No registrations match`, and the option counts, only as React text (SB-05, SR-09, AC-009-29).
