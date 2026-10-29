@@ -2,7 +2,7 @@ package si.konferenca.registration.web;
 
 import si.konferenca.registration.domain.ErrorCode;
 
-/** English messages of the field error codes (registration-form-ui.md, D-13). */
+/** English messages of the field error codes (registration-form-ui.md, D-13; CR-001 search). */
 final class FieldMessages {
 
   private FieldMessages() {}
@@ -18,6 +18,8 @@ final class FieldMessages {
       case CONSENT_REQUIRED -> "This consent is required.";
       case UNKNOWN_CONSENT -> "This consent is not available.";
       case CAPTCHA_FAILED -> "Please confirm that you are not a robot.";
+      case UNKNOWN_TYPE -> "Unknown registration type.";
+      case WRONG_CATEGORY -> "This option belongs to another category.";
     };
   }
 }

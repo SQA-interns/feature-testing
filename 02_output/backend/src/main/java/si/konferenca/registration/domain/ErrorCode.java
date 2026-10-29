@@ -12,5 +12,9 @@ public enum ErrorCode {
   OPTION_NOT_AVAILABLE,
   CONSENT_REQUIRED,
   UNKNOWN_CONSENT,
-  CAPTCHA_FAILED
+  CAPTCHA_FAILED,
+  /** Organizer search: the registration type filter is not a known type (AC-009-22). */
+  UNKNOWN_TYPE,
+  /** Organizer search: a category filter names an option of another category (AC-009-22). */
+  WRONG_CATEGORY
 }
