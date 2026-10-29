@@ -18,7 +18,7 @@ The credentials live only in the page's memory (React state). Nothing is written
 
 ## Search and filters (BR-11, BR-12, BR-13)
 
-- Search form (`role="search"`, name `Search registrations`): field `Search` and button `Search`. Submitting the form (button or Enter) searches with the current text and filters (AC-009-27).
+- Search form (`role="search"`, accessible name `Search registrations` from its `title`, so that it is not a label of the `Search` field): field `Search` and button `Search`. Submitting the form (button or Enter) searches with the current text and filters (AC-009-27).
 - Selects, each changing the result at once with the text currently in the field (AC-009-26, D-25):
 
 | Label | Options |

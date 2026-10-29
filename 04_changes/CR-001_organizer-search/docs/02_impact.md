@@ -55,3 +55,4 @@ None: CR-001 has no MODIFIED or REMOVED criterion or scenario.
 | `backend/src/test/resources/spring.properties` | add | Phase 3: test context cache capped; three more acceptance contexts exceeded PostgreSQL's 100 connections |
 | `frontend/src/acceptance/us009-organizer-filters.test.tsx` | add | Phase 3: split from `us009-organizer-search.test.tsx` to keep each commit under 400 lines |
 | `frontend/src/App.tsx` | modify | Phase 3: `App` routes by path (S6.3), so the tests can open `/organizer` through the existing entry; replaces the predicted `Root.tsx` |
+| `frontend/src/routes.ts` | add | Phase 4: the path check `isOrganizerPath` in its own module, since a component file exports only components (eslint `react-refresh`); `Root.tsx` and the `main.tsx` change were not needed |
