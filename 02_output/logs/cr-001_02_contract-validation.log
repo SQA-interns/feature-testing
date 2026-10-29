@@ -1,0 +1,13 @@
+OK   openapi.yaml vs OAS 3.1 schema
+OK   openapi.yaml $refs resolve (37)
+OK   conference-config.schema.json meta-schema
+OK   conference-config.schema.json example 0
+OK   registration-copy.schema.json meta-schema
+OK   registration-copy.schema.json example 0
+OK   recaptcha-siteverify.schema.json meta-schema
+OK   recaptcha-siteverify.schema.json example 0
+OK   recaptcha-siteverify.schema.json example 1
+OK   conference-config rejects unknown category
+OK   conference-config rejects missing name
+OK   conference-config rejects blank name
+OK   registration-copy rejects student field on EXTERNAL

@@ -3,7 +3,7 @@ info:
   title: Conference registration API
   version: 1.0.0
   description: >
-    REST API between the frontend (or the organizer) and the backend (AR-01).
+    REST API between the frontend (registration page and organizer page) and the backend (AR-01).
     All paths are under /api. Every endpoint is rate limited per client (SR-03) and
     request bodies are limited to 16 KB (D-14); see docs/02_specification.md.
 servers:
@@ -94,6 +94,90 @@ paths:
                 $ref: "#/components/schemas/Error"
         "403":
           description: Plain HTTP from a non-localhost client while HTTPS-only access is on (AC-008-04, SR-06, D-11)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "500":
+          $ref: "#/components/responses/ServerError"
+  /organizer/registrations:
+    get:
+      operationId: searchRegistrations
+      summary: Search and filter the registrations, organizers only (US-009, BR-11..13, SR-09)
+      description: >
+        Read-only. Without a parameter every registration is listed. A registration is listed
+        when it matches the search text and every filter (BR-12). Counts cover every configured
+        option, active and inactive, over the matching registrations (BR-13).
+      security:
+        - organizerBasic: []
+      parameters:
+        - name: search
+          in: query
+          required: false
+          description: >
+            Part of first name, last name, email, organization or study institution; case and
+            accent rules of BR-11. Leading and trailing whitespace is removed; empty restricts
+            nothing; at most 100 characters (code points) after that, else 400 with field search.
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: false
+          description: Empty or absent for all types; anything else than EXTERNAL or STUDENT gives 400 with field type
+          schema:
+            type: string
+        - name: workshop
+          in: query
+          required: false
+          description: Empty or absent for any; else the id of a configured WORKSHOP option, active or inactive
+          schema:
+            type: string
+        - name: event
+          in: query
+          required: false
+          description: As workshop, for the EVENT category
+          schema:
+            type: string
+        - name: meal
+          in: query
+          required: false
+          description: As workshop, for the MEAL category
+          schema:
+            type: string
+        - name: other
+          in: query
+          required: false
+          description: As workshop, for the OTHER category
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The matching registrations, newest first, and the option counts; Cache-Control no-store
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResult"
+        "400":
+          description: >
+            Search text too long (field search, TOO_LONG), unknown type (field type, UNKNOWN_TYPE),
+            unknown option id (field workshop, event, meal or other, UNKNOWN_OPTION) or an option of
+            another category (WRONG_CATEGORY); no registration data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationError"
+        "401":
+          description: >
+            Missing or wrong credentials (AC-009-03); no WWW-Authenticate header, so a browser
+            shows no login dialog of its own (D-26)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Plain HTTP from a non-localhost client while HTTPS-only access is on (AC-009-05, SR-06)
           content:
             application/json:
               schema:
@@ -284,10 +368,11 @@ components:
           type: string
           description: >
             One of type, firstName, lastName, email, organization, studyInstitution,
-            studyProgramme, studentId, optionIds, consents.<consentId>, recaptchaToken
+            studyProgramme, studentId, optionIds, consents.<consentId>, recaptchaToken;
+            for the organizer search: search, type, workshop, event, meal, other
         code:
           type: string
-          enum: [REQUIRED, INVALID_FORMAT, TOO_LONG, NOT_ALLOWED, UNKNOWN_OPTION, INACTIVE_OPTION, DUPLICATE_OPTION, OPTION_NOT_AVAILABLE, CONSENT_REQUIRED, UNKNOWN_CONSENT, CAPTCHA_FAILED]
+          enum: [REQUIRED, INVALID_FORMAT, TOO_LONG, NOT_ALLOWED, UNKNOWN_OPTION, INACTIVE_OPTION, DUPLICATE_OPTION, OPTION_NOT_AVAILABLE, CONSENT_REQUIRED, UNKNOWN_CONSENT, CAPTCHA_FAILED, UNKNOWN_TYPE, WRONG_CATEGORY]
         message:
           type: string
     ValidationError:
@@ -309,3 +394,103 @@ components:
       properties:
         message:
           type: string
+    SearchResult:
+      type: object
+      additionalProperties: false
+      required: [count, registrations, optionCounts]
+      properties:
+        count:
+          type: integer
+          minimum: 0
+          description: Number of matching registrations (the length of registrations)
+        registrations:
+          type: array
+          description: Every matching registration on one page, newest registration first (BR-13)
+          items:
+            $ref: "#/components/schemas/SearchRegistration"
+        optionCounts:
+          type: array
+          description: One entry per category in the order WORKSHOP, EVENT, MEAL, OTHER
+          items:
+            $ref: "#/components/schemas/CategoryCounts"
+    SearchRegistration:
+      type: object
+      description: >
+        The data of the registration's export row and nothing else (BR-10, SR-07). Fields of the
+        other registration type are absent. The id is the row key; the page does not show it (D-24).
+      additionalProperties: false
+      required: [id, type, registeredAt, firstName, lastName, email, options, consents]
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          $ref: "#/components/schemas/RegistrationType"
+        registeredAt:
+          type: string
+          format: date-time
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        organization:
+          type: string
+        studyInstitution:
+          type: string
+        studyProgramme:
+          type: string
+        studentId:
+          type: string
+        options:
+          type: array
+          description: The selected options as accepted with the registration
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, name, category]
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              category:
+                $ref: "#/components/schemas/OptionCategory"
+        consents:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, givenAt]
+            properties:
+              id:
+                type: string
+              givenAt:
+                type: string
+                format: date-time
+    CategoryCounts:
+      type: object
+      additionalProperties: false
+      required: [category, options]
+      properties:
+        category:
+          $ref: "#/components/schemas/OptionCategory"
+        options:
+          type: array
+          description: Every configured option of the category, active and inactive, in configuration order
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, name, active, count]
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              active:
+                type: boolean
+              count:
+                type: integer
+                minimum: 0
+                description: Matching registrations that selected the option (BR-13)
