@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchFormConfig } from "./api";
 import { MESSAGES } from "./messages";
+import { OrganizerPage } from "./OrganizerPage";
 import { RegistrationForm } from "./RegistrationForm";
+import { isOrganizerPath } from "./routes";
 import type { FormConfig } from "./types";
 
 type State =
@@ -9,7 +11,16 @@ type State =
   | { status: "error" }
   | { status: "ready"; config: FormConfig };
 
+/** The organizer page at /organizer (BR-09), the registration page anywhere else. */
 export default function App() {
+  return isOrganizerPath(window.location.pathname) ? (
+    <OrganizerPage />
+  ) : (
+    <RegistrationPage />
+  );
+}
+
+function RegistrationPage() {
   const [state, setState] = useState<State>({ status: "loading" });
 
   useEffect(() => {

@@ -34,3 +34,29 @@ label {
 button {
   padding: 0.5rem 1.5rem;
 }
+.organizer {
+  max-width: 64rem;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+.registrations > li {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+.registrations dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 1rem;
+  margin: 0;
+}
+.registrations dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.counts h3 {
+  margin-bottom: 0.25rem;
+}
