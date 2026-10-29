@@ -6,7 +6,11 @@ import java.io.IOException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-/** 401 with a Basic challenge and an Error body that holds no data (AC-008-02). */
+/**
+ * 401 with an Error body that holds no data (AC-008-02, AC-009-03). The export carries a Basic
+ * challenge; the organizer search does not, so a browser opens no login dialog over the organizer
+ * page (D-26).
+ */
 public class JsonAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
   @Override
@@ -15,7 +19,9 @@ public class JsonAuthenticationEntryPoint implements AuthenticationEntryPoint {
       HttpServletResponse response,
       AuthenticationException authException)
       throws IOException {
-    response.setHeader("WWW-Authenticate", "Basic realm=\"registration-export\"");
+    if (!HttpsOnlyFilter.SEARCH_PATH.equals(request.getRequestURI())) {
+      response.setHeader("WWW-Authenticate", "Basic realm=\"registration-export\"");
+    }
     JsonErrors.write(response, HttpServletResponse.SC_UNAUTHORIZED, "Authentication required.");
   }
 }

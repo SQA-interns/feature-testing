@@ -20,8 +20,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import si.konferenca.registration.config.AppProperties;
 
 /**
- * Access rules of specification S7.2: public form configuration and registration, the export only
- * for the organizer over HTTP Basic, stateless, no cookies; security headers (SB-10).
+ * Access rules of specification S7.2: public form configuration and registration, the export and
+ * the organizer search only for the organizer over HTTP Basic, stateless, no cookies; security
+ * headers (SB-10).
  */
 @Configuration
 public class SecurityConfiguration {
@@ -42,7 +43,8 @@ public class SecurityConfiguration {
                     .permitAll()
                     .requestMatchers(HttpMethod.POST, "/api/registrations")
                     .permitAll()
-                    .requestMatchers(HttpMethod.GET, HttpsOnlyFilter.EXPORT_PATH)
+                    .requestMatchers(
+                        HttpMethod.GET, HttpsOnlyFilter.EXPORT_PATH, HttpsOnlyFilter.SEARCH_PATH)
                     .hasRole("ORGANIZER")
                     .requestMatchers("/actuator/health", "/actuator/health/**", "/error")
                     .permitAll()

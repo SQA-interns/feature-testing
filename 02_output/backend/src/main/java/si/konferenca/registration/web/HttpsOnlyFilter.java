@@ -10,12 +10,14 @@ import java.net.UnknownHostException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * SR-06: the export is refused over plain HTTP unless the client is on localhost; the request is
- * answered 403 before any credential is read, and never redirected (D-11).
+ * SR-06: the export and the organizer search are refused over plain HTTP unless the client is on
+ * localhost; the request is answered 403 before any credential is read, and never redirected (D-11,
+ * AC-009-05).
  */
 public class HttpsOnlyFilter extends OncePerRequestFilter {
 
   static final String EXPORT_PATH = "/api/registrations/export";
+  static final String SEARCH_PATH = "/api/organizer/registrations";
 
   private final boolean httpsOnly;
 
@@ -25,7 +27,7 @@ public class HttpsOnlyFilter extends OncePerRequestFilter {
 
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
-    return !httpsOnly || !EXPORT_PATH.equals(request.getRequestURI());
+    return !httpsOnly || !isOrganizerPath(request.getRequestURI());
   }
 
   @Override
@@ -38,6 +40,11 @@ public class HttpsOnlyFilter extends OncePerRequestFilter {
       JsonErrors.write(
           response, HttpServletResponse.SC_FORBIDDEN, "Organizer access requires HTTPS.");
     }
+  }
+
+  /** Whether the path takes the organizer credentials. */
+  static boolean isOrganizerPath(String path) {
+    return EXPORT_PATH.equals(path) || SEARCH_PATH.equals(path);
   }
 
   static boolean isLoopback(String address) {

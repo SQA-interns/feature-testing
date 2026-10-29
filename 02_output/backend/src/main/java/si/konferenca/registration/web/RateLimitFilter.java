@@ -17,7 +17,7 @@ import si.konferenca.registration.config.AppProperties;
 
 /**
  * Fixed one-minute windows per client address and endpoint group (SR-03, SB-06). Runs before
- * security, so failed export logins count too.
+ * security, so failed export and organizer search logins count too.
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE + 10)
@@ -72,6 +72,9 @@ public class RateLimitFilter extends OncePerRequestFilter {
     if (HttpsOnlyFilter.EXPORT_PATH.equals(uri)) {
       return "export";
     }
+    if (HttpsOnlyFilter.SEARCH_PATH.equals(uri)) {
+      return "organizer-search";
+    }
     return "registration";
   }
 
@@ -79,6 +82,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
     return switch (group) {
       case "form-config" -> limits.formConfigPerMinute();
       case "export" -> limits.exportPerMinute();
+      case "organizer-search" -> limits.organizerSearchPerMinute();
       default -> limits.registrationPerMinute();
     };
   }

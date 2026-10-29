@@ -65,4 +65,5 @@ app:
     form-config-per-minute: ${RATE_LIMIT_FORM_CONFIG_PER_MINUTE:60}
     registration-per-minute: ${RATE_LIMIT_REGISTRATION_PER_MINUTE:10}
     export-per-minute: ${RATE_LIMIT_EXPORT_PER_MINUTE:10}
+    organizer-search-per-minute: ${RATE_LIMIT_ORGANIZER_SEARCH_PER_MINUTE:30}
   max-request-bytes: ${MAX_REQUEST_BYTES:16384}

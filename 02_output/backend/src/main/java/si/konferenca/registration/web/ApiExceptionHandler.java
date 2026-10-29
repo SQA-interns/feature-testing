@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import si.konferenca.registration.domain.ErrorCode;
+import si.konferenca.registration.domain.FieldError;
 import si.konferenca.registration.domain.RegistrationRejectedException;
+import si.konferenca.registration.domain.SearchRejectedException;
 
 /** Maps failures to the error bodies of openapi.yaml, never with internals (SB-07, ES-07). */
 @RestControllerAdvice
@@ -23,11 +25,21 @@ public class ApiExceptionHandler {
 
   @ExceptionHandler(RegistrationRejectedException.class)
   ResponseEntity<ApiResponses.ValidationError> rejected(RegistrationRejectedException e) {
+    return validationError("The registration was rejected.", e.errors());
+  }
+
+  @ExceptionHandler(SearchRejectedException.class)
+  ResponseEntity<ApiResponses.ValidationError> searchRejected(SearchRejectedException e) {
+    return validationError("The search was rejected.", e.errors());
+  }
+
+  private static ResponseEntity<ApiResponses.ValidationError> validationError(
+      String message, List<FieldError> errors) {
     return ResponseEntity.badRequest()
         .body(
             new ApiResponses.ValidationError(
-                "The registration was rejected.",
-                e.errors().stream()
+                message,
+                errors.stream()
                     .map(
                         f ->
                             new ApiResponses.FieldErrorBody(

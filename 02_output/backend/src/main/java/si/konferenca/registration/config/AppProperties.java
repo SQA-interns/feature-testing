@@ -3,6 +3,7 @@ package si.konferenca.registration.config;
 import java.nio.file.Path;
 import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 /** Typed settings; application.yml maps the variables of specification S7.1 onto them. */
 @ConfigurationProperties("app")
@@ -50,7 +51,27 @@ public record AppProperties(
     }
   }
 
-  /** Requests per client and minute (SR-03). */
+  /** Requests per client and minute (SR-03; organizer search: CR-001, D-23). */
   public record RateLimit(
-      int formConfigPerMinute, int registrationPerMinute, int exportPerMinute) {}
+      int formConfigPerMinute,
+      int registrationPerMinute,
+      int exportPerMinute,
+      int organizerSearchPerMinute) {
+
+    /** The organizer search limit when none is configured (D-23). */
+    public static final int DEFAULT_ORGANIZER_SEARCH_PER_MINUTE = 30;
+
+    /** The bound constructor. */
+    @ConstructorBinding
+    public RateLimit {}
+
+    /** The limits of the baseline groups; the organizer search takes its default. */
+    public RateLimit(int formConfigPerMinute, int registrationPerMinute, int exportPerMinute) {
+      this(
+          formConfigPerMinute,
+          registrationPerMinute,
+          exportPerMinute,
+          DEFAULT_ORGANIZER_SEARCH_PER_MINUTE);
+    }
+  }
 }
