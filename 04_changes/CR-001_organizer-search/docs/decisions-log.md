@@ -102,3 +102,12 @@ Ids continue after D-18 of `02_output/docs/decisions-log.md`.
 - Options: 1. (proposed) The human removes the address from the two files in a new commit (or deletes them; the post-run step can regenerate them) and, if the address should no longer be tied to the run, sets another local `ORGANIZER_EMAILS` in `.env`; the agent then re-runs the step 8 check (history keeps the old text; the check covers files and commit messages); 2. Lower F-07 to Low and accept it: the value is a local notification recipient (Mailpit catches all mail locally), not a credential, and the files are measurement data outside the product; 3. Keep F-07 Critical and open: the run cannot finish (AGENTS.md, DoD-05).
 - Human response: none
 - Resolution: pending human response
+
+## D-30: Human answers D-29: F-07 lowered to Low and accepted
+- Timestamp: 2026-10-29T14:32:31Z
+- Phase: 6
+- Type: blocking
+- Trigger: D-29 (F-07, the `ORGANIZER_EMAILS` value in two committed statistics files) waited for the human.
+- Options: as in D-29.
+- Human response: "we can leak organizer email. i pick 2" (2026-10-29T14:32:31Z)
+- Resolution: option 2 of D-29; F-07 lowered to Low and accepted; the files stay as committed

@@ -16,9 +16,9 @@ CR-001 Organizer registration search on baseline `4d664d2`, verified on 2026-10-
 | Quality gate | met: backend line 99.53 %, mutation 95.13 %; frontend line 99.63 %, mutation 91.26 % (phase 5, `docs/03_test-strategy.md`) |
 | Runtime | DoD-P01..P04, NFR-02, NFR-04 and the CR flows shown on the rebuilt local stack |
 | Scanners | Dependency-Check online 0; npm audit 5 Moderate dev-only, production 0; Semgrep 2 (both baseline F-01, F-02); Gitleaks: no match in any commit of this run |
-| Secrets | **Critical F-07 open**: the `ORGANIZER_EMAILS` value is in two committed statistics files from before the CR (D-29, waiting for the human). Commit messages clean; no file of this run holds a `.env` value |
+| Secrets | F-07: the `ORGANIZER_EMAILS` value is in two committed statistics files from before the CR; reported Critical by the step 8 rule, lowered to Low and accepted by the human (D-29, D-30). Commit messages clean; no file of this run holds a `.env` value |
 | Traceability | 30/30 criteria with tests and commits |
-| Decisions | D-19..D-28 resolved or pending review; D-29 open (blocking) |
+| Decisions | D-19..D-30 resolved or pending review (D-28) |
 
 ## 1. Hashes (step 2, supersession rule)
 
@@ -77,7 +77,7 @@ The baseline table (`02_output/docs/06_verification-report.md` section 4) still 
 
 - Backend container log of the demo (40 lines, `cr-001_06_backend-container.log`): 0 hits for the demo names, emails or study programme, 0 hits for any `.env` value.
 - Error bodies of the search (400, 401, 403, 429) hold a fixed message and field codes only (acceptance tests assert no registration data).
-- `.env` file check: lists `03_statistics/data/3e28dc22-d783-46a9-86e7-7e4ffaf4b7da.jsonl` and `03_statistics/results/transcript.md`, both added in `a82fcea` by the human; the value is `ORGANIZER_EMAILS` (2 lines each). **Critical F-07, D-29.** Commit messages: 0.
+- `.env` file check: lists `03_statistics/data/3e28dc22-d783-46a9-86e7-7e4ffaf4b7da.jsonl` and `03_statistics/results/transcript.md`, both added in `a82fcea` by the human; the value is `ORGANIZER_EMAILS` (2 lines each). F-07: Critical by rule, lowered to Low by the human (D-30). Commit messages: 0.
 
 ## 7. Traceability (step 9)
 
@@ -91,7 +91,7 @@ Ids continue after F-06 of the baseline report. F-01..F-04 of the baseline still
 
 | ID | Severity | Source | Finding | Status |
 |---|---|---|---|---|
-| F-07 | Critical (step 8 rule) | `.env` file check | The `ORGANIZER_EMAILS` value is in `03_statistics/data/3e28dc22-…jsonl` and `03_statistics/results/transcript.md`, committed in `a82fcea` before the CR baseline. | **open**: D-29, waiting for the human |
+| F-07 | Low (reported Critical by the step 8 rule; lowered under D-30) | `.env` file check | The `ORGANIZER_EMAILS` value is in `03_statistics/data/3e28dc22-…jsonl` and `03_statistics/results/transcript.md`, committed in `a82fcea` before the CR baseline. | accepted: the human chose option 2 of D-29 ("we can leak organizer email. i pick 2"); the value is a local notification recipient, not a credential |
 | F-08 | Low | `lint-change.mjs --signed` | The lint rejects `cr/docs/`, which `change-phases.md` requires. | accepted under D-28 (pending review); template tooling defect |
 | F-09 | Low | Stryker survivors in changed frontend code (20 of 281 changed-line mutants) | `OrganizerPage.tsx`: initial-state literals that the first login overwrites, `preventDefault` removals (jsdom does not navigate), `++`→`--` on the request counter (still unique), `failed`/`wrongCredentials` render guards whose states are always reset together; `api.ts`: the `Accept` header literal and a `status === 400` guard whose `true` mutant still falls through to `failed`. | accepted: gate met, stop rule; the behaviours are covered by AC-009-04, 17, 26, 27 and `OrganizerPage.test.tsx`. Backend changed-line mutants: 92/92 killed |
 
@@ -103,7 +103,7 @@ Ids continue after F-06 of the baseline report. F-01..F-04 of the baseline still
 | DoD-02 | checks clean (section 2) |
 | DoD-03 | gate met for both changed components (phase 5) |
 | DoD-04 | `ArchitectureTest` 6/6: no new package dependency outside S2, no cycles |
-| DoD-05 | **not met while F-07 is open** (D-29) |
+| DoD-05 | no open Critical or High: F-07 lowered and accepted by the human (D-30); F-01 accepted under D-18 |
 | DoD-06 | runtime demonstration (section 3) |
 | DoD-07 | traceability (section 7) |
 | DoD-08 | phase 7 (READMEs from a clean checkout) |
@@ -115,8 +115,8 @@ Ids continue after F-06 of the baseline report. F-01..F-04 of the baseline still
 
 ## 10. Decisions (step 12)
 
-D-19..D-22, D-27 resolved; D-23..D-26 approved by the human in D-27; D-28 pending review; **D-29 open (blocking)**.
+D-19..D-22, D-27, D-29, D-30 resolved; D-23..D-26 approved by the human in D-27; D-28 pending review.
 
 ## 11. Verify → fix → re-verify loops
 
-None yet. F-07 cannot be fixed by the agent (D-29).
+None: no Critical or High finding needed a fix; F-07 was resolved by the human's decision (D-30), not by a change.
