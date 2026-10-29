@@ -84,3 +84,21 @@ Ids continue after D-18 of `02_output/docs/decisions-log.md`.
 - Options: 1. Keep the four resolutions as built; 2. Change one or more of them.
 - Human response: "i agree with all of the decisions you presented" (2026-10-29T14:04:12Z)
 - Resolution: option 1; D-23..D-26 approved as built
+
+## D-28: The signed lint rejects the CR's docs folder
+- Timestamp: 2026-10-29T14:27:52Z
+- Phase: 6
+- Type: non-blocking
+- Trigger: `lint-change.mjs 04_changes/CR-001_organizer-search --signed` reports 1 error: "docs not part of a change request". `general/change-phases.md` ("In a change run docs/ means cr/docs/") and README section 3 require the change run to write `cr/docs/`. With `docs/` moved aside for the check and restored at once, the lint reports 0 errors and 1 warning (`out/logs/cr-001_06_lint.log`). Finding F-08.
+- Options: 1. (default) Precedence resolves it: `change-phases.md` ranks above the other `general/` files, which include the lint tool, so `docs/` stays where the phases require it; the CR's own content passes the lint; the tool defect is reported for the template (F-08, Low); 2. Move the CR documents elsewhere, against `change-phases.md`.
+- Human response: none
+- Resolution: option 1, pending review
+
+## D-29: A .env value is in two committed statistics files (F-07, Critical)
+- Timestamp: 2026-10-29T14:27:52Z
+- Phase: 6
+- Type: blocking
+- Trigger: `verify-release` step 8, file check: `03_statistics/data/3e28dc22-d783-46a9-86e7-7e4ffaf4b7da.jsonl` (the baseline session's transcript backup) and `03_statistics/results/transcript.md` (its readable copy) each contain the value of `ORGANIZER_EMAILS` on 2 lines (checked per key, values never printed). Both files were added by the human's commit `a82fcea` ("update run-config -human", 2026-10-28), before the CR baseline `4d664d2`; no file or commit of this change run contains a `.env` value, and commit messages are clean (0). The step 8 rule makes any listed file a Critical finding. The agent may not edit `03_statistics/` (except `run-log.json` and `run-summary.md`) nor rewrite history, and lowering a Critical needs the human (`working-rules.md`).
+- Options: 1. (proposed) The human removes the address from the two files in a new commit (or deletes them; the post-run step can regenerate them) and, if the address should no longer be tied to the run, sets another local `ORGANIZER_EMAILS` in `.env`; the agent then re-runs the step 8 check (history keeps the old text; the check covers files and commit messages); 2. Lower F-07 to Low and accept it: the value is a local notification recipient (Mailpit catches all mail locally), not a credential, and the files are measurement data outside the product; 3. Keep F-07 Critical and open: the run cannot finish (AGENTS.md, DoD-05).
+- Human response: none
+- Resolution: pending human response

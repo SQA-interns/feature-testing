@@ -1,0 +1,7 @@
+== lint as is
+ERROR   docs  not part of a change request (allowed: change.md, acceptance-criteria.md, tech-stack.md, interview-log.md, input.sha256)
+warning acceptance-criteria.md  30 criteria in one CR; consider splitting it
+CR-001_organizer-search: 1 error(s), 1 warning(s) (signed)
+== lint with docs/ moved aside
+warning acceptance-criteria.md  30 criteria in one CR; consider splitting it
+CR-001_organizer-search: 0 error(s), 1 warning(s) (signed)

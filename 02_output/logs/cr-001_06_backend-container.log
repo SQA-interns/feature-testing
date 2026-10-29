@@ -1,0 +1,40 @@
+backend-1  | 2026-10-29T14:25:55.396Z  INFO 1 --- [registration-backend] [           main] s.k.r.RegistrationApplication            : Starting RegistrationApplication v0.1.0 using Java 21.0.10 with PID 1 (/app/app.jar started by app in /app)
+backend-1  | 2026-10-29T14:25:55.403Z  INFO 1 --- [registration-backend] [           main] s.k.r.RegistrationApplication            : No active profile set, falling back to 1 default profile: "default"
+backend-1  | 2026-10-29T14:25:56.618Z  INFO 1 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+backend-1  | 2026-10-29T14:25:56.690Z  INFO 1 --- [registration-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+backend-1  | 2026-10-29T14:25:57.635Z  INFO 1 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+backend-1  | 2026-10-29T14:25:57.656Z  INFO 1 --- [registration-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+backend-1  | 2026-10-29T14:25:57.657Z  INFO 1 --- [registration-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.26]
+backend-1  | 2026-10-29T14:25:57.691Z  INFO 1 --- [registration-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2200 ms
+backend-1  | 2026-10-29T14:25:58.266Z  INFO 1 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+backend-1  | 2026-10-29T14:25:58.575Z  INFO 1 --- [registration-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f85235
+backend-1  | 2026-10-29T14:25:58.577Z  INFO 1 --- [registration-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+backend-1  | 2026-10-29T14:25:58.609Z  INFO 1 --- [registration-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/registration (PostgreSQL 16.15)
+backend-1  | 2026-10-29T14:25:58.703Z  INFO 1 --- [registration-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.037s)
+backend-1  | 2026-10-29T14:25:58.739Z  INFO 1 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+backend-1  | 2026-10-29T14:25:58.743Z  INFO 1 --- [registration-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+backend-1  | 2026-10-29T14:25:58.872Z  INFO 1 --- [registration-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+backend-1  | 2026-10-29T14:25:58.941Z  INFO 1 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+backend-1  | 2026-10-29T14:25:59.588Z  INFO 1 --- [registration-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+backend-1  | 2026-10-29T14:25:59.702Z  INFO 1 --- [registration-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+backend-1  | 	Database JDBC URL [jdbc:postgresql://postgres:5432/registration]
+backend-1  | 	Database driver: PostgreSQL JDBC Driver
+backend-1  | 	Database dialect: PostgreSQLDialect
+backend-1  | 	Database version: 16.15
+backend-1  | 	Default catalog/schema: registration/public
+backend-1  | 	Autocommit mode: undefined/unknown
+backend-1  | 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+backend-1  | 	JDBC fetch size: none
+backend-1  | 	Pool: DataSourceConnectionProvider
+backend-1  | 	Minimum pool size: undefined/unknown
+backend-1  | 	Maximum pool size: undefined/unknown
+backend-1  | 2026-10-29T14:26:00.825Z  INFO 1 --- [registration-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+backend-1  | 2026-10-29T14:26:00.879Z  INFO 1 --- [registration-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+backend-1  | 2026-10-29T14:26:01.006Z  INFO 1 --- [registration-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+backend-1  | 2026-10-29T14:26:01.738Z  INFO 1 --- [registration-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name organizerAccount
+backend-1  | 2026-10-29T14:26:02.474Z  INFO 1 --- [registration-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+backend-1  | 2026-10-29T14:26:02.562Z  INFO 1 --- [registration-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+backend-1  | 2026-10-29T14:26:02.576Z  INFO 1 --- [registration-backend] [           main] s.k.r.RegistrationApplication            : Started RegistrationApplication in 7.801 seconds (process running for 8.521)
+backend-1  | 2026-10-29T14:26:04.302Z  INFO 1 --- [registration-backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+backend-1  | 2026-10-29T14:26:04.302Z  INFO 1 --- [registration-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+backend-1  | 2026-10-29T14:26:04.304Z  INFO 1 --- [registration-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

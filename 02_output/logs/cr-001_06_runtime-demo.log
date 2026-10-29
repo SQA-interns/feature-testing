@@ -1,0 +1,63 @@
+
+### Build and start the stack
+compose up exit 0
+backend Up 16 seconds (healthy)
+frontend Up 5 seconds (healthy)
+mailpit Up About an hour (healthy)
+postgres Up About an hour (healthy)
+
+### NFR-04 health
+form-config 200
+{"status":"UP"}
+
+### Clean state for the demo
+NOTICE:  truncate cascades to table "registration_option"
+NOTICE:  truncate cascades to table "registration_consent"
+TRUNCATE TABLE
+mailpit cleared 200
+
+### DoD-P01 one external and one student registration
+external 201
+student 201
+
+### DoD-P02 rows in PostgreSQL and JSON copies
+EXTERNAL|Ana|Koš
+STUDENT|Luka|Kranjc
+/data/json-copies/45074ff3-edd3-4760-bfa7-481130d443d5.json
+/data/json-copies/31ce9142-163a-4ba1-a2e6-22b9dfa2aa93.json
+
+### DoD-P03 emails in Mailpit
+<organizer address> | New registration: Conference 2026 | attachments 1
+<participant address> | Registration confirmed: Conference 2026 | attachments 0
+<organizer address> | New registration: Conference 2026 | attachments 1
+<participant address> | Registration confirmed: Conference 2026 | attachments 0
+
+### DoD-P04 export with and without organizer access
+export with access 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+workbook rows 3 (header + 2)
+export without access 401
+
+### CR-001 organizer page and search API
+GET /organizer 200
+<div id="root"></div>
+HTTP/1.1 401 
+wrong credentials 401
+all: count 2 newest first ['Kranjc', 'Koš']
+meal counts [('Lunch (vegetarian)', 2)]
+workshop counts [('Workshop: Testing in practice', True, 1), ('Workshop: Industry partnerships', True, 0), ('Workshop: Legacy systems', False, 0)]
+search kos: ['Koš']
+search koš: ['Koš']
+type STUDENT: ['Kranjc'] [('Lunch (vegetarian)', 1)]
+search 101 chars 400
+invalid filters 400 fields: [('type', 'UNKNOWN_TYPE'), ('workshop', 'WRONG_CATEGORY')]
+
+### NFR-02 data survives recreation of every container
+down exit 0
+up exit 0
+2
+20
+search after restart: count 2
+
+### SR-03 organizer search rate limit (local default 30 per minute)
+     29 401
+      3 429

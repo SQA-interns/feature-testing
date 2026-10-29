@@ -5,8 +5,8 @@
 Updated at every gate and before any stop, so a fresh session can resume from here.
 
 - Workflow: change run (`general/change-phases.md`) of CR-001 Organizer registration search on baseline `4d664d2`, run label `tjan/single-agent/sdd/v002/run-2-search`
-- Current phase: 5 complete
-- Last gate result: phase 5 passed 2026-10-29: first run 431/431; backend line 99.53 %, PIT 95.13 % (0 rounds); frontend line 99.63 %, Stryker 91.26 % after 1 round; D-27 approves D-23..D-26
-- Next step: phase 6, `general/skills/verify-release` with the change-run additions
+- Current phase: 6 in progress (report written; gate blocked by D-29)
+- Last gate result: phase 5 passed; phase 6 checks all done, F-07 Critical open
+- Next step: after the human answers D-29, apply it, re-run the step 8 file check, update the report and close phase 6; then phase 7
 - Environment notes: as in `02_output/docs/00_progress.md` (nvm, Docker Desktop, `COMPOSE_PROJECT_NAME=registration-sdd-run2`, `/usr/bin/grep`); logs of this run are `02_output/logs/cr-001_*`
-- Waiting for the human on: nothing
+- Waiting for the human on: D-29 (a .env value in two committed statistics files)

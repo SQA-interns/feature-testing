@@ -1,0 +1,34 @@
+| AC | Tests | Commits |
+|---|---|---|
+| AC-009-01 | e2e-06-organizer-search.spec.ts, us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-02 | us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-03 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-04 | us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-05 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-06 | OrganizerSearchAcceptanceTest.java (2), us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-07 | OrganizerSearchAcceptanceTest.java (2), us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-08 | OrganizerSearchTextAcceptanceTest.java (3) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-09 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-10 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-11 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-12 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-13 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-14 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-15 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-16 | OrganizerSearchTextAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-17 | us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-18 | OrganizerSearchAcceptanceTest.java (3) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-19 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-20 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-21 | us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-22 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-23 | OrganizerSearchAcceptanceTest.java (2), us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-24 | OrganizerSearchAcceptanceTest.java (2), us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-25 | OrganizerSearchAcceptanceTest.java (2) | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-26 | us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-27 | us009-organizer-filters.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-28 | us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-29 | us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+| AC-009-30 | us009-organizer-search.test.tsx | fa8705e, 29638bb, fe2e197, b004d2f, c0e6f55, a534995 (+16) |
+
+30 acceptance criteria; without a test: none; without a commit: none.
