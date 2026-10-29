@@ -13,6 +13,15 @@ export const MESSAGES = {
     "The registration form is not available right now. Please try again later.",
 };
 
+/** Texts of organizer-search-ui.md (CR-001). */
+export const ORGANIZER_MESSAGES = {
+  title: "Organizer registrations",
+  wrongCredentials: "Wrong username or password.",
+  loadFailed: "The registrations could not be loaded. Please try again later.",
+  searchTooLong: "The search text can have at most 100 characters.",
+  noMatch: "No registrations match",
+};
+
 const OPTION_CODES = [
   "UNKNOWN_OPTION",
   "INACTIVE_OPTION",
